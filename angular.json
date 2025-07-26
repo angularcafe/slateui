@@ -8,11 +8,6 @@
       "root": "projects/ui",
       "sourceRoot": "projects/ui/src",
       "prefix": "lib",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "none"
-        }
-      },
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
@@ -36,10 +31,14 @@
     },
     "docs": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "none"
+        }
+      },
       "root": "projects/docs",
       "sourceRoot": "projects/docs/src",
-      "prefix": "app",
+      "prefix": "docs",
       "architect": {
         "build": {
           "builder": "@angular/build:application",

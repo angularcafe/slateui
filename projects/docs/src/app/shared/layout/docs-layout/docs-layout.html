@@ -1,0 +1,23 @@
+<docs-header [(menuOpen)]="menuOpen" />
+
+<div class="container mx-auto px-8 pt-10">
+    <div class="flex">
+        <docs-sidebar [(menuOpen)]="menuOpen" />
+
+        <div class="flex gap-x-12">
+            <div class="flex-1 overflow-hidden px-px" data-page-content>
+                <div class="max-w-3xl">
+                    <router-outlet />
+                </div>
+            </div>
+            <!-- <docs-quick-links /> -->
+        </div>
+    </div>
+    <p class="px-8 py-8 text-center text-zinc-500">
+        Built with ❤️ by
+        <a href="https://x.com/immohammadjaved" target="_blank" rel="noreferrer"
+            class="font-medium underline underline-offset-4 hover:text-foreground">
+            &#64;immohammadjaved
+        </a>
+    </p>
+</div>
