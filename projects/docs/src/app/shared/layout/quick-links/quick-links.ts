@@ -2,13 +2,16 @@ import { afterNextRender, ChangeDetectorRef, Component, inject, Injector, signal
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideArrowUp, lucideList } from '@ng-icons/lucide';
 
 @Component({
   selector: 'docs-quick-links',
-  imports: [],
+  imports: [NgIcon],
+  viewProviders: [provideIcons({ lucideList, lucideArrowUp })],
   templateUrl: './quick-links.html',
   host: {
-    class: 'hidden lg:block sticky top-[5.5rem] w-64 h-[calc(100vh-8rem)] overflow-y-auto',
+    class: 'hidden lg:block w-64 h-full overflow-y-auto border-l border-border/50 bg-muted/10',
   },
 })
 export class QuickLinks {
@@ -41,18 +44,29 @@ export class QuickLinks {
       behavior: 'smooth',
     });
   }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
 }
 
 function getHeadingList(): any[] {
   const content = document.querySelector('[data-page-content]');
-  const headings = content?.querySelectorAll('h2, h3');
+  const headings = content?.querySelectorAll('h2[id]');
+  
+  // Only include main section headings
+  const allowedIds = ['keyFeatures', 'community', 'support', 'acknowledgements'];
 
-  return Array.from(headings ?? []).map(heading => {
-    return {
-      level: parseInt(heading.tagName.slice(1)),
-      id: heading.id,
-      text: heading.textContent,
-    } as any;
-  });
-
+  return Array.from(headings ?? [])
+    .filter(heading => allowedIds.includes(heading.id))
+    .map(heading => {
+      return {
+        level: 2,
+        id: heading.id,
+        text: heading.textContent,
+      } as any;
+    });
 }

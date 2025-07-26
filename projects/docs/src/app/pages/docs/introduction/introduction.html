@@ -1,54 +1,217 @@
-<p class="page-title">Getting Started</p>
-<h1 class="text-2xl font-semibold">Introduction</h1>
+<div class="space-y-8">
+    <!-- Header section -->
+    <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+            <div class="p-2 rounded-lg bg-muted border border-border flex items-center justify-center">
+                <ng-icon name="lucideRocket" size="20px" class="text-primary" />
+            </div>
+            <span class="text-sm font-medium text-primary uppercase tracking-wide">
+                Getting Started
+            </span>
+        </div>
+        
+        <div class="space-y-4">
+            <h1 class="text-4xl font-bold tracking-tight">Introduction</h1>
+            <p class="text-lg text-muted-foreground leading-relaxed max-w-3xl">
+                Angular UI is a modern, open-source UI library built for Angular. Powered by directive-based components,
+                Tailwind CSS 4, and Signals, it helps you build fast, accessible, and scalable UIs with complete flexibility and
+                full control over your markup.
+            </p>
+        </div>
+    </div>
 
-<p class="mt-2 text-md text-muted-foreground leading-6">
-    Angular UI is a modern, open-source UI library built for Angular. Powered by directive-based components,
-    Tailwind CSS 4, and Signals, it helps you build fast, accessible, and scalable UIs with complete flexibility and
-    full control over your markup.
-</p>
+    <!-- Key Features -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="keyFeatures">Key Features</h2>
+        
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="group p-6 rounded-xl border border-border hover:border-border/60 hover:shadow-lg transition-all duration-200">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="p-2 rounded-lg bg-green-100 dark:bg-green-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-10 h-10">
+                        <ng-icon name="lucideSettings" size="20px" class="text-green-600 dark:text-green-400" />
+                    </div>
+                    <h3 class="font-semibold">Modern Angular</h3>
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                    Built with the latest Angular features including Signals, Reactive Forms, and modern component architecture.
+                </p>
+            </div>
+            
+            <div class="group p-6 rounded-xl border border-border hover:border-border/60 hover:shadow-lg transition-all duration-200">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-10 h-10">
+                        <ng-icon name="lucidePalette" size="20px" class="text-purple-600 dark:text-purple-400" />
+                    </div>
+                    <h3 class="font-semibold">Tailwind CSS</h3>
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                    Fully styled with Tailwind CSS 4, featuring built-in dark mode and complete theme customization.
+                </p>
+            </div>
+            
+            <div class="group p-6 rounded-xl border border-border hover:border-border/60 hover:shadow-lg transition-all duration-200">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-10 h-10">
+                        <ng-icon name="lucideAccessibility" size="20px" class="text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h3 class="font-semibold">Accessible</h3>
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                    Keyboard navigation and screen reader support built-in, following WAI-ARIA best practices.
+                </p>
+            </div>
+            
+            <div class="group p-6 rounded-xl border border-border hover:border-border/60 hover:shadow-lg transition-all duration-200">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="p-2 rounded-lg bg-orange-100 dark:bg-orange-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-10 h-10">
+                        <ng-icon name="lucideTerminal" size="20px" class="text-orange-600 dark:text-orange-400" />
+                    </div>
+                    <h3 class="font-semibold">CLI Integration</h3>
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                    Easy integration via CLI with <code class="inline-code">&#64;angularui/cli</code> for rapid component installation.
+                </p>
+            </div>
+            
+            <div class="group p-6 rounded-xl border border-border hover:border-border/60 hover:shadow-lg transition-all duration-200">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="p-2 rounded-lg bg-red-100 dark:bg-red-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-10 h-10">
+                        <ng-icon name="lucidePlay" size="20px" class="text-red-600 dark:text-red-400" />
+                    </div>
+                    <h3 class="font-semibold">Live Previews</h3>
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                    Interactive documentation with live code examples to speed up your development workflow.
+                </p>
+            </div>
+            
+            <div class="group p-6 rounded-xl border border-border hover:border-border/60 hover:shadow-lg transition-all duration-200">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="p-2 rounded-lg bg-teal-100 dark:bg-teal-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-10 h-10">
+                        <ng-icon name="lucideSmartphone" size="20px" class="text-teal-600 dark:text-teal-400" />
+                    </div>
+                    <h3 class="font-semibold">Responsive</h3>
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                    Mobile-first design approach ensuring perfect rendering across all device sizes and orientations.
+                </p>
+            </div>
+        </div>
+    </div>
 
-<h2 class="text-lg font-semibold mt-8" id="keyFeatures">Key Features</h2>
+    <!-- Community section -->
+    <div class="space-y-4">
+        <h2 class="text-2xl font-semibold" id="community">Community</h2>
+        <div class="bg-muted/50 rounded-xl p-6 border border-border/50">
+            <p class="text-muted-foreground leading-relaxed mb-4">
+                Join our growing community of developers! Stay up-to-date with the latest news, share your projects, 
+                and get help from fellow developers.
+            </p>
+            <div class="flex flex-wrap gap-3">
+                <a href="#" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 text-sm font-medium">
+                    <ng-icon name="lucideMessageCircle" size="16px" class="mr-2" />
+                    Join Discord
+                </a>
+                <a href="https://github.com/angularcafe/slateui" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center px-4 py-2 rounded-lg border border-border hover:bg-muted/50 transition-colors duration-200 text-sm font-medium">
+                    <ng-icon name="lucideGithub" size="16px" class="mr-2" />
+                    GitHub Discussions
+                </a>
+            </div>
+        </div>
+    </div>
 
-<ul class="mt-3 text-muted-foreground space-y-1 list-decimal list-inside leading-7">
-    <li class="ml-3">Modern Angular components with support for Signals and Reactive Forms.</li>
-    <li class="ml-3">Fully styled with Tailwind CSS, with built-in dark mode and theme customization.</li>
-    <li class="ml-3">Keyboard accessible and responsive by default.</li>
-    <li class="ml-3">Easy integration via CLI - <code class="inline-code">&#64;angularui/cli</code>.</li>
-    <li class="ml-3">Interactive docs and live previews to speed up development.</li>
-</ul>
+    <!-- Support section -->
+    <div class="space-y-4">
+        <h2 class="text-2xl font-semibold" id="support">Support</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Need help or have questions? We're here to support you! Check out our resources or reach out to the community.
+            </p>
+            <div class="grid gap-4 md:grid-cols-2">
+                <div class="p-4 rounded-lg border border-border hover:border-border/60 transition-colors duration-200">
+                    <h3 class="font-medium mb-2 flex items-center">
+                        <ng-icon name="lucideGithub" size="16px" class="mr-2" />
+                        GitHub Issues
+                    </h3>
+                    <p class="text-sm text-muted-foreground mb-3">Report bugs, request features, or ask technical questions.</p>
+                    <a href="https://github.com/angularcafe/slateui" target="_blank" rel="noopener noreferrer" 
+                       class="text-sm text-primary hover:underline">View on GitHub →</a>
+                </div>
+                <div class="p-4 rounded-lg border border-border hover:border-border/60 transition-colors duration-200">
+                    <h3 class="font-medium mb-2 flex items-center">
+                        <ng-icon name="lucideBook" size="16px" class="mr-2" />
+                        Contributing Guide
+                    </h3>
+                    <p class="text-sm text-muted-foreground mb-3">Learn how to contribute to SlateUI and help improve the library.</p>
+                    <a href="#" class="text-sm text-primary hover:underline">Read the guide →</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-<h2 class="text-lg font-semibold mt-8" id="comunity">Community</h2>
-
-<p class="mt-2 text-md text-muted-foreground leading-6">
-    If you would like to stay up-to-date with the latest news and updates, or have any questions, feedback, or
-    suggestions, we invite you to join our community on <a href="#" class="text-foreground underline">Discord</a>.
-</p>
-
-<h2 class="text-lg font-semibold mt-8" id="support">Support</h2>
-<p class="mt-2 text-md text-muted-foreground leading-6">If you have any questions, feedback, or need help, feel free to
-    reach out to us on <a href="#" class="text-foreground underline">GitHub</a>. We're always happy to help and improve
-    our library based on your feedback.</p>
-
-<p class="mt-2 text-md text-muted-foreground leading-6">If you're interested in contributing to Angular UI,
-    please check out our <a href="#" class="text-foreground underline">Contributing Guide.</a></p>
-
-<h2 class="text-lg font-semibold mt-8" id="comunity">Acknowledgements</h2>
-<p class="mt-2 text-md text-muted-foreground leading-6">
-    Angular UI was inspired by some truly awesome libraries that came before it. Their ideas, passion, and open-source
-    spirit helped shape what we've built. We're incredibly thankful for their work—and we're proud to stand on the
-    foundation they've laid. Huge thanks to these amazing projects for lighting the way!
-</p>
-
-<ul class="mt-3 text-muted-foreground space-y-1 list-disc list-inside leading-7">
-    <li class="ml-3 text-md underline text-accent-foreground"><a href="https://angular.dev/" target="_blank">Angular</a>
-    </li>
-    <li class="ml-3 text-md underline text-accent-foreground"><a href="https://tailwindcss.com/"
-            target="_blank">Tailwind CSS</a></li>
-    <li class="ml-3 text-md underline text-accent-foreground"><a href="https://angularprimitives.com/"
-            target="_blank">Angular Primitives</a></li>
-    <li class="ml-3 text-md underline text-accent-foreground"><a href="https://ui.shadcn.com/"
-            target="_blank">shadcn/ui</a></li>
-</ul>
+    <!-- Acknowledgements section -->
+    <div class="space-y-4">
+        <h2 class="text-2xl font-semibold" id="acknowledgements">Acknowledgements</h2>
+        <p class="text-muted-foreground leading-relaxed">
+            SlateUI was inspired by some truly awesome libraries and projects that came before it. Their innovation, 
+            passion, and open-source spirit helped shape what we've built today. We're incredibly grateful for their work 
+            and proud to build upon the foundation they've created.
+        </p>
+        
+        <div class="grid gap-4 sm:grid-cols-2">
+            <a href="https://angular.dev/" target="_blank" rel="noopener noreferrer" 
+               class="group p-6 rounded-lg border border-border hover:border-border/60 hover:shadow-md transition-all duration-200">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 rounded-lg bg-red-100 dark:bg-red-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-12 h-12">
+                        <ng-icon name="lucideCode" size="24px" class="text-red-600 dark:text-red-400" />
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">Angular</h3>
+                        <p class="text-sm text-muted-foreground">Modern web framework for building scalable applications</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" 
+               class="group p-6 rounded-lg border border-border hover:border-border/60 hover:shadow-md transition-all duration-200">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-12 h-12">
+                        <ng-icon name="lucidePalette" size="24px" class="text-cyan-600 dark:text-cyan-400" />
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">Tailwind CSS</h3>
+                        <p class="text-sm text-muted-foreground">Utility-first CSS framework for rapid UI development</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://angularprimitives.com/" target="_blank" rel="noopener noreferrer" 
+               class="group p-6 rounded-lg border border-border hover:border-border/60 hover:shadow-md transition-all duration-200">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 rounded-lg bg-purple-100 dark:bg-purple-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-12 h-12">
+                        <ng-icon name="lucideBox" size="24px" class="text-purple-600 dark:text-purple-400" />
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">Angular Primitives</h3>
+                        <p class="text-sm text-muted-foreground">Unstyled, accessible components for Angular</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer" 
+               class="group p-6 rounded-lg border border-border hover:border-border/60 hover:shadow-md transition-all duration-200">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 rounded-lg bg-gray-100 dark:bg-gray-900/30 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-12 h-12">
+                        <ng-icon name="lucideComponent" size="24px" class="text-gray-600 dark:text-gray-400" />
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">shadcn/ui</h3>
+                        <p class="text-sm text-muted-foreground">Beautiful component library built with Radix UI</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

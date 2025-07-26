@@ -1,12 +1,12 @@
 import { Component, model } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideGithub, lucideMenu, lucideSun, lucideTwitter } from '@ng-icons/lucide';
+import { lucideGithub, lucideMenu, lucideSearch, lucideSun, lucideTwitter } from '@ng-icons/lucide';
 import { SlButton } from 'ui';
 @Component({
   selector: 'docs-header',
   imports: [NgIcon, SlButton, RouterLink],
-  viewProviders: [provideIcons({ lucideGithub, lucideTwitter, lucideMenu, lucideSun })],
+  viewProviders: [provideIcons({ lucideGithub, lucideTwitter, lucideMenu, lucideSun, lucideSearch })],
   templateUrl: './header.html'
 })
 export class Header {

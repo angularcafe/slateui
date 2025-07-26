@@ -2,12 +2,12 @@ import { NgTemplateOutlet } from '@angular/common';
 import { Component, model } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideBook, lucideInfo, lucidePalette, lucideRocket, lucideTerminal } from '@ng-icons/lucide';
+import { lucideBook, lucideExternalLink, lucideGithub, lucideInfo, lucideMessageCircle, lucidePalette, lucideRocket, lucideTerminal, lucideX } from '@ng-icons/lucide';
 
 @Component({
   selector: 'docs-sidebar',
   imports: [RouterLink, NgIcon, NgTemplateOutlet, RouterLinkActive],
-  viewProviders: [provideIcons({ lucideInfo, lucideBook, lucideRocket, lucidePalette, lucideTerminal })],
+  viewProviders: [provideIcons({ lucideInfo, lucideBook, lucideRocket, lucidePalette, lucideTerminal, lucideGithub, lucideExternalLink, lucideMessageCircle, lucideX })],
   templateUrl: './sidebar.html',
   host: {
     class: 'md:pe-12',

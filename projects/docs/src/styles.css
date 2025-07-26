@@ -66,15 +66,162 @@
     background-color: transparent !important;
 }
 
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* Grid pattern background */
+.bg-grid-pattern {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.dark .bg-grid-pattern {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Gradient animations for hero section */
+.bg-size-200 {
+    background-size: 200% 200%;
+}
+
+.animate-gradient {
+    animation: gradient 6s ease infinite;
+}
+
+@keyframes gradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Enhanced focus styles */
+*:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-muted-foreground);
+}
+
+/* Mobile scroll improvements */
+@media (max-width: 768px) {
+    /* Prevent zoom on double tap */
+    * {
+        touch-action: manipulation;
+    }
+    
+    /* Allow scrolling for main content areas */
+    [data-page-content] {
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+    }
+    
+    /* Improve sidebar scrolling on mobile */
+    .fixed.inset-0 .overflow-y-auto {
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+    
+    /* Fix modal and overlay touch behavior */
+    .fixed.inset-0 {
+        overscroll-behavior: none;
+    }
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Gradient text utilities */
+.gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
 }
 
 .page-title {
-    @apply from-indigo-700 to-blue-500 mb-2 inline-block bg-gradient-to-r bg-clip-text text-sm font-medium text-transparent
+    @apply from-blue-600 to-purple-600 mb-2 inline-block bg-gradient-to-r bg-clip-text text-sm font-medium text-transparent uppercase tracking-wide;
 }
 
 .inline-code {
-    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] text-sm text-foreground border border-border;
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] text-sm text-foreground border border-border font-mono;
+}
+
+/* Enhanced button hover effects */
+.group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+}
+
+/* Backdrop blur support detection */
+@supports (backdrop-filter: blur(10px)) {
+    .supports-backdrop-blur {
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Print styles */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
 }
