@@ -70,3 +70,11 @@ body {
     background-color: var(--color-background);
     color: var(--color-foreground);
 }
+
+.page-title {
+    @apply from-indigo-700 to-blue-500 mb-2 inline-block bg-gradient-to-r bg-clip-text text-sm font-medium text-transparent
+}
+
+.inline-code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] text-sm text-foreground border border-border;
+}

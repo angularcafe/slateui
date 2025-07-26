@@ -4,10 +4,11 @@ import { Sidebar } from "../sidebar/sidebar";
 import { Header } from "../header/header";
 import { filter } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
+import { QuickLinks } from '../quick-links/quick-links';
 
 @Component({
   selector: 'docs-docs-layout',
-  imports: [RouterOutlet, Sidebar, Header],
+  imports: [RouterOutlet, Sidebar, Header, QuickLinks],
   templateUrl: './docs-layout.html'
 })
 export class DocsLayout {

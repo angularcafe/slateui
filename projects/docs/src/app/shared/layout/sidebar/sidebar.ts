@@ -8,7 +8,10 @@ import { lucideBook, lucideInfo, lucidePalette, lucideRocket, lucideTerminal } f
   selector: 'docs-sidebar',
   imports: [RouterLink, NgIcon, NgTemplateOutlet, RouterLinkActive],
   viewProviders: [provideIcons({ lucideInfo, lucideBook, lucideRocket, lucidePalette, lucideTerminal })],
-  templateUrl: './sidebar.html'
+  templateUrl: './sidebar.html',
+  host: {
+    class: 'md:pe-12',
+  }
 })
 export class Sidebar {
   sections: NavSection[] = [
