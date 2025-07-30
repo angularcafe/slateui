@@ -1,0 +1,16 @@
+<div [(ngpTabsetValue)]="value" ngpTabset>
+    <div ngpTabList class="mb-3 flex gap-x-4 border-b border-border">
+        @for (tab of tabs(); track $index) {
+        <button [ngpTabButtonValue]="tab.value()" ngpTabButton
+            class="data-[focus-visible]:ring-indigo-700 -mb-px h-10 px-2 border-b-2 font-medium outline-none transition-colors data-[focus-visible]:ring-2 data-[focus-visible]:ring-opacity-50 data-[focus-visible]:ring-offset-2 border-transparent text-muted-foreground data-[active]:border-primary data-[active]:text-foreground cursor-pointer">{{
+            tab.label() }}</button>
+        }
+    </div>
+
+    @for (tab of tabs(); track $index) {
+    <div [ngpTabPanelValue]="tab.value()" ngpTabPanel
+        class="flex-1 outline-none not-[data-active]:hidden data-[active]:block">
+        <ng-container [ngTemplateOutlet]="tab.content()" />
+    </div>
+    }
+</div>
