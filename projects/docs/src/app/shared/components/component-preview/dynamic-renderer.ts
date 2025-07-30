@@ -7,14 +7,6 @@ export interface DynamicRendererConfig {
   imports: any[];
 }
 
-// Template registry for mapping template strings to component classes
-const templateRegistry = new Map<string, any>();
-
-// Function to register a template with its component class
-export function registerTemplate(template: string, componentClass: any) {
-  templateRegistry.set(template, componentClass);
-}
-
 @Component({
   selector: 'docs-dynamic-renderer',
   template: `<div #container ngSkipHydration></div>`,
@@ -46,17 +38,16 @@ export class DynamicRenderer implements OnDestroy {
     this.clearComponent();
 
     try {
-      // Get component from registry
-      const ComponentClass = templateRegistry.get(config.template);
-
-      if (!ComponentClass) {
-        // Fallback to HTML rendering if no component found
-        this.container.innerHTML = config.template;
-        return;
-      }
+      // Create dynamic component with the provided template and imports
+      @Component({
+        template: config.template,
+        standalone: true,
+        imports: [CommonModule, ...config.imports]
+      })
+      class DynamicComponent {}
 
       // Create component instance using stored injectors
-      this.componentRef = createComponent(ComponentClass, {
+      this.componentRef = createComponent(DynamicComponent, {
         environmentInjector: this.environmentInjector,
         elementInjector: this.injector
       });
@@ -67,7 +58,8 @@ export class DynamicRenderer implements OnDestroy {
 
     } catch (error) {
       console.error('Error rendering dynamic template:', error);
-      this.container.innerHTML = `<div class="text-red-500">Error rendering component</div>`;
+      // Fallback to HTML rendering if component creation fails
+      this.container.innerHTML = config.template;
     }
   }
 
