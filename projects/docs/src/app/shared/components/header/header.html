@@ -31,40 +31,27 @@
         
         <!-- Quick links width area with social icons -->
         <div class="hidden lg:flex w-64 flex-shrink-0 items-center justify-end px-6 lg:px-8 gap-x-2">
-            <a slButton variant="ghost" size="icon" target="_blank" href="https://github.com/angularcafe/slateui"
-               class="relative group">
+            <a slButton variant="ghost" size="icon" target="_blank" href="https://github.com/angularcafe/slateui">
                 <ng-icon name="lucideGithub" size="18px" />
-                <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                    GitHub
-                </span>
             </a>
-            <a slButton variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved"
-               class="relative group">
+            <a slButton variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved">
                 <ng-icon slButtonIcon name="lucideTwitter" size="18px" />
-                <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                    Twitter
-                </span>
             </a>
-            <button slButton variant="ghost" size="icon" class="relative group">
-                <ng-icon slButtonIcon name="lucideSun" size="18px" />
-                <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                    Theme
-                </span>
+            <button slButton variant="ghost" size="icon" (click)="toggleTheme()">
+                <ng-icon slButtonIcon [name]="themeService.isDark() ? 'lucideSun' : 'lucideMoon'" size="18px" />
             </button>
         </div>
         
         <!-- Mobile social icons (when quick links are hidden) -->
         <div class="flex lg:hidden items-center gap-x-1 sm:gap-x-2 mr-6">
-            <a slButton variant="ghost" size="icon" target="_blank" href="https://github.com/angularcafe/slateui"
-               class="relative group">
+            <a slButton variant="ghost" size="icon" target="_blank" href="https://github.com/angularcafe/slateui">
                 <ng-icon name="lucideGithub" size="18px" />
             </a>
-            <a slButton variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved"
-               class="relative group">
+            <a slButton variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved">
                 <ng-icon slButtonIcon name="lucideTwitter" size="18px" />
             </a>
-            <button slButton variant="ghost" size="icon" class="relative group">
-                <ng-icon slButtonIcon name="lucideSun" size="18px" />
+            <button slButton variant="ghost" size="icon" (click)="toggleTheme()">
+                <ng-icon slButtonIcon [name]="themeService.isDark() ? 'lucideSun' : 'lucideMoon'" size="18px" />
             </button>
         </div>
     </div>
