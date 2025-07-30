@@ -19,6 +19,7 @@
     --color-accent: oklch(0.97 0 0);
     --color-accent-foreground: oklch(0.205 0 0);
     --color-destructive: oklch(0.577 0.245 27.325);
+    --color-destructive-foreground: oklch(0.985 0 0);
     --color-border: oklch(0.922 0 0);
     --color-input: oklch(0.922 0 0);
     --color-ring: oklch(0.708 0 0);
@@ -49,6 +50,7 @@
     --color-accent: oklch(0.269 0 0);
     --color-accent-foreground: oklch(0.985 0 0);
     --color-destructive: oklch(0.704 0.191 22.216);
+    --color-destructive-foreground: oklch(0.985 0 0);
     --color-border: oklch(1 0 0 / 10%);
     --color-input: oklch(1 0 0 / 15%);
     --color-ring: oklch(0.556 0 0);
@@ -84,14 +86,14 @@ body {
 
 /* Grid pattern background */
 .bg-grid-pattern {
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
 }
 
 .dark .bg-grid-pattern {
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
@@ -107,9 +109,12 @@ body {
 }
 
 @keyframes gradient {
-    0%, 100% {
+
+    0%,
+    100% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
@@ -146,24 +151,25 @@ body {
 
 /* Mobile scroll improvements */
 @media (max-width: 768px) {
+
     /* Prevent zoom on double tap */
     * {
         touch-action: manipulation;
     }
-    
+
     /* Allow scrolling for main content areas */
     [data-page-content] {
         -webkit-overflow-scrolling: touch;
         overflow-scrolling: touch;
     }
-    
+
     /* Improve sidebar scrolling on mobile */
     .fixed.inset-0 .overflow-y-auto {
         -webkit-overflow-scrolling: touch;
         overflow-scrolling: touch;
         overscroll-behavior: contain;
     }
-    
+
     /* Fix modal and overlay touch behavior */
     .fixed.inset-0 {
         overscroll-behavior: none;
@@ -172,13 +178,27 @@ body {
 
 /* Animation utilities */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateX(-10px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .animate-fade-in {
@@ -220,7 +240,7 @@ body {
         background: white !important;
         color: black !important;
     }
-    
+
     .no-print {
         display: none !important;
     }

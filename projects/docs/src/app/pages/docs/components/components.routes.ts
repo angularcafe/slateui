@@ -10,7 +10,7 @@ export const routes: Routes = [
             },
             {
                 path: 'button',
-                loadComponent: () => import('./button/button').then(m => m.Button)
+                loadComponent: () => import('./button/button').then(m => m.ButtonComponent)
             },
             {
                 path: '',

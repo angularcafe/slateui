@@ -1,2 +1,14 @@
 <docs-component-preview title="Button" description="Displays a button or a component that looks like a button."
     [variants]="buttonVariants" />
+
+<ng-template #defaultTemplate>
+    <button button>Button</button>
+</ng-template>
+
+<ng-template #secondaryTemplate>
+    <button button variant="secondary">Secondary</button>
+</ng-template>
+
+<ng-template #destructiveTemplate>
+    <button button variant="destructive">Destructive</button>
+</ng-template>
