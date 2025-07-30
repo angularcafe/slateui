@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { DocsLayout } from '../../shared/layout/docs-layout/docs-layout';
+import { Docs } from './docs';
 
 export const routes: Routes = [
     {
         path: '',
-        component: DocsLayout,
+        component: Docs,
         children: [
             {
                 path: 'introduction',
@@ -17,6 +17,11 @@ export const routes: Routes = [
             {
                 path: 'components',
                 loadChildren: () => import('./components/components.routes').then(m => m.routes)
+            },
+            {
+                path: '',
+                redirectTo: 'introduction',
+                pathMatch: 'full'
             }
         ]
     }

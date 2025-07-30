@@ -1,17 +1,19 @@
 import { Component, effect, inject, PLATFORM_ID, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { Sidebar } from "../sidebar/sidebar";
-import { Header } from "../header/header";
+import { Sidebar } from "@components/sidebar/sidebar";
+import { Header } from "@components/header/header";
 import { filter } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
-import { QuickLinks } from '../quick-links/quick-links';
+import { QuickLinks } from '@components/quick-links/quick-links';
+import { Footer } from "@components/footer/footer";
 
 @Component({
-  selector: 'docs-docs-layout',
-  imports: [RouterOutlet, Sidebar, Header, QuickLinks],
-  templateUrl: './docs-layout.html'
+  selector: 'docs-docs',
+  imports: [RouterOutlet, Sidebar, Header, QuickLinks, Footer],
+  templateUrl: './docs.html'
 })
-export class DocsLayout {
+export class Docs {
+
   private readonly router = inject(Router);
   private readonly platform = inject(PLATFORM_ID);
   readonly year = new Date().getFullYear();
@@ -34,4 +36,5 @@ export class DocsLayout {
       });
     }
   }
+
 }

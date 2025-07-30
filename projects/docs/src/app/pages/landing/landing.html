@@ -1,1 +1,162 @@
-<p>landing works!</p>
+<!-- Common Header -->
+<docs-header [(menuOpen)]="menuOpen" />
+
+<!-- Mobile Sidebar -->
+@if (menuOpen()) {
+<div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm md:hidden" (click)="menuOpen.set(false)">
+    <div class="fixed left-0 top-0 h-screen w-80 max-w-[85vw] bg-background shadow-2xl border-r border-border/50 flex flex-col overflow-hidden"
+        (click)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()"
+        (touchmove)="$event.stopPropagation()">
+        <!-- Mobile header -->
+        <div class="flex items-center justify-between p-4 border-b border-border/50 flex-shrink-0">
+            <div class="flex items-center space-x-3">
+                <img class="h-6 w-auto dark:hidden" src="assets/slateui-logo.svg" alt="Slate UI" />
+                <img class="hidden h-6 w-auto dark:block" src="assets/slateui-logo-dark.svg" alt="Slate UI" />
+            </div>
+            <button (click)="menuOpen.set(false)"
+                class="h-8 w-8 rounded-lg flex items-center justify-center hover:bg-muted/50 transition-colors">
+                <ng-icon name="lucideX" size="16px" />
+            </button>
+        </div>
+        <div class="flex-1 min-h-0 overflow-y-auto overscroll-contain p-6">
+            <nav class="space-y-6">
+                <div class="space-y-3">
+                    <h2 class="text-sm font-semibold text-foreground/90 tracking-wide uppercase">
+                        Navigation
+                    </h2>
+                    <div class="space-y-1">
+                        <a routerLink="/docs/introduction" (click)="menuOpen.set(false)"
+                            class="block py-2 px-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                            Docs
+                        </a>
+                        <a routerLink="/docs/components" (click)="menuOpen.set(false)"
+                            class="block py-2 px-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                            Components
+                        </a>
+                        <a href="#" (click)="menuOpen.set(false)"
+                            class="block py-2 px-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                            Themes
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-border/50 space-y-3">
+                    <h2 class="text-sm font-semibold text-foreground/90 tracking-wide uppercase">
+                        Resources
+                    </h2>
+                    <div class="space-y-1">
+                        <a href="https://github.com/angularcafe/slateui" target="_blank"
+                            class="group flex items-center py-2 px-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                            <ng-icon class="mr-3 h-4 w-4" name="lucideGithub" />
+                            <span class="flex-1">GitHub</span>
+                            <ng-icon class="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                                name="lucideExternalLink" />
+                        </a>
+                        <a href="#" target="_blank"
+                            class="group flex items-center py-2 px-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                            <ng-icon class="mr-3 h-4 w-4" name="lucideMessageCircle" />
+                            <span class="flex-1">Discord</span>
+                            <ng-icon class="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                                name="lucideExternalLink" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+}
+
+<!-- Hero Section -->
+<div class="relative min-h-[calc(100vh-4rem)]">
+    <!-- Hero Content -->
+    <div class="relative overflow-hidden">
+        <!-- Simple Background -->
+        <div class="absolute inset-0 bg-white dark:bg-gray-950">
+            <div class="absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.05]"></div>
+        </div>
+
+        <div
+            class="relative container mx-auto px-6 lg:px-8 pt-16 pb-24 sm:pt-20 lg:pt-24 lg:pb-32 flex items-center min-h-[calc(100vh-4rem)]">
+            <div class="text-center max-w-5xl mx-auto w-full">
+                <!-- Badge -->
+                <div
+                    class="inline-flex items-center rounded-full border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/70 px-4 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 shadow-sm backdrop-blur-sm mb-8">
+                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                    Available now in beta
+                </div>
+
+                <!-- Main Heading -->
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
+                    <span class="text-gray-900 dark:text-white">
+                        Modern UI components
+                    </span>
+                    <span class="block mt-2">for Angular</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p
+                    class="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-4xl mx-auto font-light">
+                    Build beautiful, accessible, and high-performance applications with SlateUI.
+                    A comprehensive Angular component library designed for modern web development.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a routerLink="/docs/introduction" slButton size="lg"
+                        class="inline-flex items-center w-full sm:w-auto">
+                        <ng-icon name="lucideRocket" size="20px" class="mr-2" />
+                        Get Started
+                        <ng-icon name="lucideArrowRight" size="16px" class="ml-2" />
+                    </a>
+                    <a href="https://github.com/angularcafe/slateui" target="_blank" rel="noopener noreferrer" slButton
+                        variant="outline" size="lg" class="inline-flex items-center w-full sm:w-auto">
+                        <ng-icon name="lucideGithub" size="20px" class="mr-2" />
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-900/30">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+                Everything you need to build modern applications
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                SlateUI provides a comprehensive set of components and tools designed for the modern web,
+                with accessibility and developer experience at the core.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            @for (feature of features; track feature.title) {
+            <div class="group relative">
+                <div
+                    class="relative p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:bg-gray-50 dark:hover:bg-gray-900/80 transition-all duration-300 hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-gray-900/20">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 rounded-xl"
+                            [class]="'bg-' + feature.color + '-100 dark:bg-' + feature.color + '-900/20'">
+                            <ng-icon [name]="feature.icon" size="24px"
+                                [class]="'text-' + feature.color + '-600 dark:text-' + feature.color + '-400'" />
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                        {{ feature.title }}
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {{ feature.description }}
+                    </p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+<docs-footer />

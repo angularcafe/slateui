@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { DocsLayout } from '../../../shared/layout/docs-layout/docs-layout';
 
 export const routes: Routes = [
     {
@@ -12,6 +11,11 @@ export const routes: Routes = [
             {
                 path: 'button',
                 loadComponent: () => import('./button/button').then(m => m.Button)
+            },
+            {
+                path: '',
+                redirectTo: 'alert',
+                pathMatch: 'full'
             }
         ]
     }
