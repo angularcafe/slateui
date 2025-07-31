@@ -1,18 +1,18 @@
 <docs-header [(menuOpen)]="menuOpen" />
 
-<div class="flex h-[calc(100vh-4rem)] overflow-hidden">
+<div class="container mx-auto px-8 mt-10">
+<div class="flex">
     <docs-sidebar [(menuOpen)]="menuOpen" />
 
     <div class="flex flex-1 min-w-0 overflow-hidden">
-        <main class="flex-1 overflow-y-auto" data-page-content>
-            <div class="container mx-auto px-6 lg:px-8 py-8">
-                <div class="max-w-4xl">
-                    <router-outlet />
-                </div>
+        <main class="flex-1 overflow-hidden" data-page-content>
+            <div class="max-w-4xl">
+                <router-outlet />
             </div>
             <docs-footer />
         </main>
 
         <docs-quick-links />
     </div>
+</div>
 </div>

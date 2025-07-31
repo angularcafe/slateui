@@ -2,16 +2,13 @@ import { afterNextRender, ChangeDetectorRef, Component, inject, Injector, signal
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideArrowUp, lucideList } from '@ng-icons/lucide';
 
 @Component({
   selector: 'docs-quick-links',
-  imports: [NgIcon],
-  viewProviders: [provideIcons({ lucideList, lucideArrowUp })],
+  imports: [],
   templateUrl: './quick-links.html',
   host: {
-    class: 'hidden lg:block w-64 h-full overflow-y-auto border-l border-border/50 bg-muted/10',
+    class: 'hidden lg:block sticky w-64 h-[calc(100vh-8rem)] overflow-y-auto',
   },
 })
 export class QuickLinks {

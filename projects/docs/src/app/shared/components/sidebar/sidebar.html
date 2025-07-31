@@ -1,58 +1,37 @@
+@if (menuOpen()) {
+<div class="fixed inset-0 z-10 bg-muted/50" (click)="menuOpen.set(false)">
+    <div class="h-full w-72 max-w-full bg-background px-10 shadow-xl" (click)="$event.stopPropagation()">
+        <ng-container [ngTemplateOutlet]="content" />
+    </div>
+</div>
+} @else {
+<div class="hidden w-40 md:block xl:w-44">
+    <ng-container [ngTemplateOutlet]="content" />
+</div>
+}
+
 <ng-template #content>
-    <div class="flex flex-col gap-y-6 p-6 pb-8 h-full overflow-y-auto">
+    <div
+        class="sticky top-24 flex h-[calc(100dvh-65px)] w-full flex-col gap-y-4 overflow-auto overscroll-contain md:h-max md:overflow-visible">
         @for (section of sections; track section.title) {
-        <div class="space-y-3">
-            <h2 class="text-sm font-semibold text-foreground/90 tracking-wide uppercase">
+        <div class="mb-2">
+            <h2 class="mb-4 text-sm font-semibold text-zinc-800 dark:text-zinc-100">
                 {{ section.title }}
             </h2>
-            <div class="space-y-1">
+            <ul>
                 @for (link of section.links; track link.name) {
-                <div class="relative">
-                    <a class="group relative flex h-9 items-center rounded-lg px-3 text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-muted/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                <li class="text-zinc-600 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white">
+                    <a class="relative flex h-10 items-center border-l border-zinc-200 px-4 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-zinc-800"
                         [routerLink]="section?.link ? section.link + '/' + link.path : link.path"
-                        routerLinkActive="bg-primary/10 text-primary font-semibold shadow-sm dark:bg-primary/20">
+                        routerLinkActive="text-black dark:text-white font-medium before:w-0.5 before:bg-zinc-950 before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2 dark:before:bg-white">
                         @if (link.icon) {
-                        <ng-icon
-                            class="mr-3 h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors duration-200"
-                            [name]="link.icon" />
-                        }
-                        <span class="flex-1">{{ link.name }}</span>
+                        <ng-icon class="mr-2 text-base text-zinc-600 dark:text-zinc-300" [name]="link.icon" />
+                        } {{ link.name }}
                     </a>
-                </div>
+                </li>
                 }
-            </div>
+            </ul>
         </div>
         }
     </div>
 </ng-template>
-
-@if (menuOpen()) {
-<div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm" (click)="menuOpen.set(false)">
-    <div class="fixed left-0 top-0 h-screen w-80 max-w-[85vw] bg-background shadow-2xl border-r border-border/50 flex flex-col overflow-hidden"
-        (click)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()"
-        (touchmove)="$event.stopPropagation()">
-        <!-- Mobile header -->
-        <div class="flex items-center justify-between p-4 border-b border-border/50 flex-shrink-0">
-            <div class="flex items-center space-x-3">
-                <a routerLink="/">
-                    <img class="h-6 w-auto dark:hidden" src="assets/slateui-logo.svg" alt="Slate UI" />
-                    <img class="hidden h-6 w-auto dark:block" src="assets/slateui-logo-dark.svg" alt="Slate UI" />
-                </a>
-            </div>
-            <button (click)="menuOpen.set(false)"
-                class="h-8 w-8 rounded-lg flex items-center justify-center hover:bg-muted/50 transition-colors">
-                <ng-icon name="lucideX" size="16px" />
-            </button>
-        </div>
-        <div class="flex-1 min-h-0 overflow-y-auto overscroll-contain" style="-webkit-overflow-scrolling: touch;">
-            <ng-container [ngTemplateOutlet]="content" />
-        </div>
-    </div>
-</div>
-} @else {
-<div class="hidden w-64 flex-shrink-0 md:block xl:w-72 bg-muted/20 border-r border-border/50 h-full overflow-hidden">
-    <div class="h-full overflow-y-auto">
-        <ng-container [ngTemplateOutlet]="content" />
-    </div>
-</div>
-}

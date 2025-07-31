@@ -1,40 +1,13 @@
-<div class="w-full h-full">
-    <div class="sticky top-0 p-6 space-y-4">
-        <!-- Header -->
-        <div class="pb-3 border-b border-border/50">
-            <h2 class="text-sm font-semibold text-foreground/90 tracking-wide uppercase flex items-center">
-                <ng-icon name="lucideList" size="16px" class="mr-2 text-muted-foreground" />
-                On this page
-            </h2>
-        </div>
-        
-        <!-- Links -->
-        <nav class="space-y-1">
-            @if (links().length === 0) {
-            <div class="text-sm text-muted-foreground italic py-4">
-                No headings found
-            </div>
-            } @else {
-            @for (link of links(); track $index) {
-            <div class="group">
-                <a class="block py-2 px-3 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200 cursor-pointer font-medium"
-                    (click)="scrollTo(link.id)">
-                    <span class="block truncate">{{ link.text }}</span>
-                </a>
-            </div>
-            }
-            }
-        </nav>
-        
-        <!-- Back to top button -->
-        @if (links().length > 0) {
-        <div class="pt-4 border-t border-border/50">
-            <button (click)="scrollToTop()" 
-                    class="group flex w-full items-center justify-center py-2 px-3 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200">
-                <ng-icon name="lucideArrowUp" size="14px" class="mr-2 group-hover:-translate-y-0.5 transition-transform duration-200" />
-                Back to top
-            </button>
-        </div>
+<div class="w-40 flex-none xl:w-64">
+    <h2 class="text-md mb-2 font-semibold text-foreground">On this page</h2>
+    <ul class="">
+        @for (link of links(); track $index) {
+        <li>
+            <a class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 text-muted-foreground hover:text-foreground"
+                [class.pl-4]="link.level === 3" (click)="scrollTo(link.id)">
+                {{ link.text }}
+            </a>
+        </li>
         }
-    </div>
+    </ul>
 </div>
