@@ -8,7 +8,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   imports: [],
   templateUrl: './quick-links.html',
   host: {
-    class: 'hidden lg:block sticky w-64 h-[calc(100vh-8rem)] overflow-y-auto',
+    class: 'hidden lg:block sticky w-64 h-[calc(100vh-8rem)] overflow-y-auto pl-10',
   },
 })
 export class QuickLinks {
