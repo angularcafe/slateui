@@ -2,5 +2,5 @@
  * Public API Surface of ui
  */
 
-export * from './lib/button';
-export * from './lib/alert';
+export * from './registry/button';
+export * from './registry/alert';

@@ -3,10 +3,10 @@ import { RouterLink } from '@angular/router';
 import { ThemeService } from '@angularui/theme';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideGithub, lucideMenu, lucideSearch, lucideSun, lucideTwitter, lucideMoon } from '@ng-icons/lucide';
-import { Button } from 'ui';
+import { UiButton } from 'ui';
 @Component({
   selector: 'docs-header',
-  imports: [NgIcon, Button, RouterLink],
+  imports: [NgIcon, UiButton, RouterLink],
   viewProviders: [provideIcons({ lucideGithub, lucideTwitter, lucideMenu, lucideSun, lucideSearch, lucideMoon })],
   templateUrl: './header.html'
 })

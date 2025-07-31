@@ -6,13 +6,12 @@
         </p>
     </div>
 
-    @for (variant of variants(); track variant.title) {
+    @for (variant of variants; track variant.title) {
     <div class="space-y-6">
         <h3 class="text-lg font-semibold mb-3" [id]="variant.title">{{ variant?.title }}</h3>
         <docs-tabs>
             <docs-tab value="preview" label="Preview">
-                <!-- <docs-component-variant [variant]="variant"></docs-component-variant> -->
-                <ng-container *ngTemplateOutlet="variant?.template"></ng-container>
+                
             </docs-tab>
             <docs-tab value="code" label="Code">
                 <code class="language-html">{{ variant.code }}</code>

@@ -2,8 +2,8 @@
     class="sticky top-0 z-50 h-16 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div class="flex h-full w-full items-center">
         <!-- Mobile menu button - positioned first for better accessibility -->
-        <button class="md:hidden ml-6 mr-3" button variant="ghost" size="icon" (click)="toggle()">
-            <ng-icon buttonIcon name="lucideMenu" size="20px" />
+        <button class="md:hidden ml-6 mr-3" uiButton variant="ghost" size="icon" (click)="toggle()">
+            <ng-icon uiButtonIcon name="lucideMenu" size="20px" />
         </button>
 
         <!-- Sidebar width spacing on desktop -->
@@ -34,27 +34,27 @@
 
         <!-- Quick links width area with social icons -->
         <div class="hidden lg:flex w-64 flex-shrink-0 items-center justify-end px-6 lg:px-8 gap-x-2">
-            <a button variant="ghost" size="icon" target="_blank" href="https://github.com/angularcafe/slateui">
+            <a uiButton variant="ghost" size="icon" target="_blank" href="https://github.com/angularcafe/slateui">
                 <ng-icon name="lucideGithub" size="18px" />
             </a>
-            <a button variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved">
-                <ng-icon buttonIcon name="lucideTwitter" size="18px" />
+            <a uiButton variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved">
+                <ng-icon uiButtonIcon name="lucideTwitter" size="18px" />
             </a>
-            <button button variant="ghost" size="icon" (click)="toggleTheme()">
-                <ng-icon buttonIcon [name]="themeService.isDark() ? 'lucideSun' : 'lucideMoon'" size="18px" />
+            <button uiButton variant="ghost" size="icon" (click)="toggleTheme()">
+                <ng-icon uiButtonIcon [name]="themeService.isDark() ? 'lucideSun' : 'lucideMoon'" size="18px" />
             </button>
         </div>
 
         <!-- Mobile social icons (when quick links are hidden) -->
         <div class="flex lg:hidden items-center gap-x-1 sm:gap-x-2 mr-6">
-            <a button variant="ghost" size="icon" target="_blank" href="https://github.com/angularcafe/slateui">
-                <ng-icon name="lucideGithub" size="18px" />
+            <a uiButton variant="ghost" size="icon" target="_blank" href="https://github.com/angularcafe/slateui">
+                <ng-icon uiButtonIcon name="lucideGithub" size="18px" />
             </a>
-            <a button variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved">
-                <ng-icon buttonIcon name="lucideTwitter" size="18px" />
+            <a uiButton variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved">
+                <ng-icon uiButtonIcon name="lucideTwitter" size="18px" />
             </a>
-            <button button variant="ghost" size="icon" (click)="toggleTheme()">
-                <ng-icon buttonIcon [name]="themeService.isDark() ? 'lucideSun' : 'lucideMoon'" size="18px" />
+            <button uiButton variant="ghost" size="icon" (click)="toggleTheme()">
+                <ng-icon uiButtonIcon [name]="themeService.isDark() ? 'lucideSun' : 'lucideMoon'" size="18px" />
             </button>
         </div>
     </div>

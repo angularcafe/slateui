@@ -24,13 +24,13 @@ import {
   lucideX,
   lucideZap
 } from '@ng-icons/lucide';
-import { Button } from 'ui';
+import { UiButton } from 'ui';
 import { Header } from '@components/header/header';
 import { Footer } from "@components/footer/footer";
 
 @Component({
   selector: 'docs-landing',
-  imports: [NgIcon, RouterLink, Button, Header, Footer],
+  imports: [NgIcon, RouterLink, UiButton, Header, Footer],
   viewProviders: [provideIcons({
     lucideArrowRight,
     lucideCheck,

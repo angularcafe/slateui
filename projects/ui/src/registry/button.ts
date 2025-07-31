@@ -30,8 +30,8 @@ const buttonVariants = tv({
 type ButtonVariants = VariantProps<typeof buttonVariants>;
 
 @Directive({
-    selector: '[button]',
-    exportAs: 'button',
+    selector: '[uiButton]',
+    exportAs: 'uiButton',
     hostDirectives: [
         {
             directive: NgpButton,
@@ -42,7 +42,7 @@ type ButtonVariants = VariantProps<typeof buttonVariants>;
         '[class]': 'computedClass()'
     }
 })
-export class Button {
+export class UiButton {
     inputClass = input<string>('', { alias: 'class' });
     variant = input<ButtonVariants['variant']>('default');
     size = input<ButtonVariants['size']>('default');

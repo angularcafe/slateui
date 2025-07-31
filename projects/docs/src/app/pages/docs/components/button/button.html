@@ -1,14 +1,38 @@
-<docs-component-preview title="Button" description="Displays a button or a component that looks like a button."
-    [variants]="buttonVariants" />
+<!-- <docs-component-preview title="Button" description="Displays a button or a component that looks like a button." /> -->
+<div class="space-y-8">
+    <div class="space-y-4">
+        <h1 class="text-4xl font-semibold">Button</h1>
+        <p class="mt-4 text-md text-muted-foreground">
+            Displays a button or a component that looks like a button.
+        </p>
+    </div>
 
-<ng-template #defaultTemplate>
-    <button button>Button</button>
-</ng-template>
+    <h2 class="text-xl font-semibold border-b border-border pb-3" id="installation">Installation</h2>
 
-<ng-template #secondaryTemplate>
-    <button button variant="secondary">Secondary</button>
-</ng-template>
+    <h2 class="text-xl font-semibold border-b border-border pb-3" id="examples">Examples</h2>
 
-<ng-template #destructiveTemplate>
-    <button button variant="destructive">Destructive</button>
-</ng-template>
+    @for(variant of buttonVariants(); track variant.title) {
+        <div class="space-y-6">
+            <h3 class="text-lg font-semibold mb-3" [id]="variant.title">{{ variant?.title }}</h3>
+            <docs-tabs>
+                <docs-tab value="preview" label="Preview">
+                    @switch(variant.title.toLocaleLowerCase()) {
+                        @case ('default') {
+                            <button uiButton>Button</button>
+                        }
+                        @case ('outline') {
+                            <button uiButton variant="outline">Outline</button>
+                        }
+                        @case ('destructive') {
+                            <button uiButton variant="destructive">Destructive</button>
+                        }
+                    }
+                    
+                </docs-tab>
+                <docs-tab value="code" label="Code">
+                    <code class="language-html">{{ variant.code }}</code>
+                </docs-tab>
+            </docs-tabs>
+        </div>
+    }
+</div>
