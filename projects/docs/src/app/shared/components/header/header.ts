@@ -1,11 +1,13 @@
 import { Component, inject, model } from '@angular/core';
-import { ThemeService } from '@angularui/theme';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ThemeService } from '@slateui/theme';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideGithub, lucideMenu, lucideSun, lucideTwitter, lucideMoon } from '@ng-icons/lucide';
+import { lucideGithub, lucideMenu, lucideSun, lucideTwitter, lucideMoon, lucideX } from '@ng-icons/lucide';
 import { UiButton } from 'ui';
+
 @Component({
   selector: 'docs-header',
-  imports: [NgIcon, UiButton],
+  imports: [NgIcon, UiButton, RouterLink],
   viewProviders: [provideIcons({ lucideGithub, lucideTwitter, lucideMenu, lucideSun, lucideMoon })],
   templateUrl: './header.html'
 })

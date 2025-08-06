@@ -1,10 +1,12 @@
-<header class="sticky top-0 z-50 h-16 w-full border-b border-border/50 bg-background">
+<header class="sticky top-0 z-50 h-16 w-full  border-border/50 bg-background">
     <nav class="container relative mx-auto flex h-full w-full items-center gap-x-4 px-8">
         <button class="md:hidden" uiButton variant="ghost" size="icon" (click)="toggle()">
             <ng-icon name="lucideMenu" size="18px" />
         </button>
-        <img class="hidden h-9 w-auto md:block dark:hidden" src="assets/slateui-logo.svg" alt="Slate UI" />
-        <img class="hidden h-9 w-auto dark:md:block" src="assets/slateui-logo-dark.svg" alt="Slate UI" />
+        <a routerLink="/">
+            <img class="hidden h-9 w-auto md:block dark:hidden" src="assets/slateui-logo.svg" alt="Slate UI" />
+            <img class="hidden h-9 w-auto dark:md:block" src="assets/slateui-logo-dark.svg" alt="Slate UI" />
+        </a>
 
         <!-- <img class="block h-8 w-auto md:hidden" src="assets/slateui-logo.svg" alt="Slate UI" /> -->
         
