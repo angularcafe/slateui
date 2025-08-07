@@ -1,23 +1,124 @@
-<div class="space-y-8">
-    <div class="space-y-4">
-        <h1 class="text-4xl font-semibold">{{ title() }}</h1>
-        <p class="mt-4 text-md text-muted-foreground">
-            {{ description() }}
-        </p>
-    </div>
+<div class="space-y-16">
+    <!-- Clean Header Section -->
+    @if (meta(); as componentMeta) {
+        <div class="space-y-4">
+            <h1 class="text-3xl font-bold tracking-tight">{{ componentMeta.title }}</h1>
+            <p class="text-lg text-muted-foreground">{{ componentMeta.description }}</p>
+        </div>
 
-    @for (variant of variants; track variant.title) {
-    <div class="space-y-6">
-        <h3 class="text-lg font-semibold mb-3" [id]="variant.title">{{ variant?.title }}</h3>
-        <docs-tabs>
-            <docs-tab value="preview" label="Preview">
+        <!-- Clean Installation Section -->
+        @if (componentMeta.installation) {
+            <div class="space-y-8">
+                <h2 class="text-xl font-semibold" id="installation">Installation</h2>
                 
-            </docs-tab>
-            <docs-tab value="code" label="Code">
-                <code class="language-html">{{ variant.code }}</code>
-            </docs-tab>
-        </docs-tabs>
-    </div>
+                <div class="space-y-6">
+                    @if (componentMeta.installation.package) {
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-medium">Install the library</h3>
+                            <docs-code-block 
+                                [code]="'npm install ' + componentMeta.installation.package" 
+                                language="bash">
+                            </docs-code-block>
+                        </div>
+                    }
+                    
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-medium">Import the component</h3>
+                        <docs-code-block 
+                            [code]="componentMeta.installation.import" 
+                            language="typescript">
+                        </docs-code-block>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-medium">Basic usage</h3>
+                        <docs-code-block 
+                            [code]="componentMeta.installation.usage" 
+                            language="html">
+                        </docs-code-block>
+                    </div>
+                </div>
+            </div>
+        }
     }
 
+    <!-- Clean Examples Section -->
+    @if (variants().length > 0) {
+        <div class="space-y-12">
+            @for (variant of variants(); track variant.title) {
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="text-xl font-semibold mb-2" [id]="generateSlug(variant.title)">
+                            {{ variant.title }}
+                        </h2>
+                        @if (variant.description) {
+                            <p class="text-muted-foreground">{{ variant.description }}</p>
+                        }
+                    </div>
+                    
+                    <docs-tabs>
+                        <docs-tab value="preview" label="Preview">
+                            <div class="flex items-center justify-center min-h-[200px]">
+                                @if (variant.template) {
+                                    <ng-container *ngTemplateOutlet="variant.template; injector: createInjector()"></ng-container>
+                                } @else if (variant.component) {
+                                    <ng-container *ngComponentOutlet="variant.component; injector: createInjector()"></ng-container>
+                                }
+                            </div>
+                        </docs-tab>
+                        <docs-tab value="code" label="Code">
+                            <docs-code-block [code]="variant.code" language="html"></docs-code-block>
+                        </docs-tab>
+                    </docs-tabs>
+                </div>
+            }
+        </div>
+    }
+
+    <!-- Clean API Reference Section -->
+    @if (meta(); as componentMeta) {
+        @if (apiProps().length > 0) {
+            <div class="space-y-6">
+                <h2 class="text-xl font-semibold" id="api">API Reference</h2>
+                
+                <div class="border border-border rounded-lg overflow-hidden">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-border bg-muted/50">
+                                <th class="text-left py-3 px-4 font-medium text-sm">Property</th>
+                                <th class="text-left py-3 px-4 font-medium text-sm">Type</th>
+                                <th class="text-left py-3 px-4 font-medium text-sm">Default</th>
+                                <th class="text-left py-3 px-4 font-medium text-sm">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (prop of apiProps(); track prop.name; let isLast = $last) {
+                                <tr [class]="isLast ? '' : 'border-b border-border'">
+                                    <td class="py-3 px-4 align-top">
+                                        <code class="text-sm font-mono">{{ prop.name }}</code>
+                                        @if (prop.required) {
+                                            <span class="ml-2 text-red-500 text-xs">*</span>
+                                        }
+                                    </td>
+                                    <td class="py-3 px-4 align-top">
+                                        <code class="text-sm font-mono text-muted-foreground">{{ prop.type }}</code>
+                                    </td>
+                                    <td class="py-3 px-4 align-top">
+                                        @if (prop.default) {
+                                            <code class="text-sm font-mono text-muted-foreground">{{ prop.default }}</code>
+                                        } @else {
+                                            <span class="text-muted-foreground text-sm">—</span>
+                                        }
+                                    </td>
+                                    <td class="py-3 px-4 align-top">
+                                        <span class="text-sm">{{ prop.description }}</span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    }
 </div>

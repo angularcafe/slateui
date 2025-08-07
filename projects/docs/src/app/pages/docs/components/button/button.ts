@@ -1,14 +1,18 @@
-import { Component, signal } from '@angular/core';
-import { Tab } from '@components/tab/tab';
-import { Tabs } from '@components/tabs/tabs';
-import { buttonVariants } from './button.variants';
-import { UiButton } from 'ui';
+import { Component } from '@angular/core';
+import { ComponentPreview } from '@components/component-preview/component-preview';
+import { buttonVariants, buttonMeta } from './button.variants';
 
 @Component({
   selector: 'docs-button',
-  imports: [Tabs, Tab, UiButton],
-  templateUrl: './button.html'
+  imports: [ComponentPreview],
+  template: `
+    <docs-component-preview 
+      [meta]="buttonMeta" 
+      [variants]="buttonVariants">
+    </docs-component-preview>
+  `
 })
 export class Button {
-  buttonVariants = signal(buttonVariants);
+  buttonMeta = buttonMeta;
+  buttonVariants = buttonVariants;
 }

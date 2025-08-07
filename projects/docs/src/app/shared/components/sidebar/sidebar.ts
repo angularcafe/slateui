@@ -1,68 +1,12 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, model } from '@angular/core';
+import { Component, model, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideBook, lucideExternalLink, lucideGithub, lucideInfo, lucideMessageCircle, lucidePalette, lucideRocket, lucideTerminal, lucideX } from '@ng-icons/lucide';
-
-@Component({
-  selector: 'docs-sidebar',
-  imports: [RouterLink, NgIcon, NgTemplateOutlet, RouterLinkActive],
-  viewProviders: [provideIcons({ lucideInfo, lucideBook, lucideRocket, lucidePalette, lucideTerminal, lucideGithub, lucideExternalLink, lucideMessageCircle, lucideX })],
-  templateUrl: './sidebar.html',
-  host: {
-    class: 'md:pe-12',
-  }
-})
-export class Sidebar {
-  sections: NavSection[] = [
-    {
-      title: 'Getting Started',
-      link: '',
-      links: [
-        { name: 'Introduction', icon: 'lucideBook', path: 'introduction' },
-        { name: 'Installation', icon: 'lucideRocket', path: 'installation' },
-        { name: 'Theming', icon: 'lucidePalette', path: 'theming' },
-        { name: 'Schematics', icon: 'lucideTerminal', path: 'schematics' }
-      ]
-    },
-    {
-      title: 'Components',
-      link: 'components',
-      links: [
-        { name: 'Accordion', path: 'accordion' },
-        { name: 'Alert', path: 'alert' },
-        { name: 'Tabs', path: 'tabs' },
-        { name: 'Avatar', path: 'avatar' },
-        { name: 'Badge', path: 'badge' },
-        { name: 'Button', path: 'button' },
-        { name: 'Dialog', path: 'dialog' },
-        { name: 'Dropdown Menu', path: 'dropdown-menu' },
-        { name: 'Popver', path: 'popover' },
-        { name: 'Tooltip', path: 'tooltip' },
-        { name: 'Card', path: 'card' },
-        { name: 'Toast', path: 'toast' },
-        { name: 'Separator', path: 'separator' },
-        { name: 'Input', path: 'input' },
-        { name: 'Checkbox', path: 'checkbox' },
-        { name: 'Progress', path: 'progress' },
-      ]
-    }
-  ];
-
-  readonly menuOpen = model(false);
-
-  ngOnInit() {
-    const componentsSection = this.sections.find((section: any) => section.title === 'Components');
-    if (componentsSection) {
-      componentsSection.links.sort((a: NavLink, b: NavLink) => a.name.localeCompare(b.name));
-    }
-  }
-
-}
+import { lucideX } from '@ng-icons/lucide';
+import { UiButton } from 'ui';
 
 interface NavLink {
   name: string;
-  icon?: string;
   path: string;
 }
 
@@ -70,4 +14,59 @@ interface NavSection {
   title: string;
   link?: string;
   links: NavLink[];
+}
+
+// Angular 20 standalone component with enhanced navigation
+@Component({
+  selector: 'docs-sidebar',
+  standalone: true,
+  imports: [RouterLink, NgIcon, NgTemplateOutlet, RouterLinkActive, UiButton],
+  viewProviders: [provideIcons({ lucideX })],
+  templateUrl: './sidebar.html'
+})
+export class Sidebar {
+  // Two-way binding model signal for menu state
+  readonly menuOpen = model(false);
+  
+  // Clean navigation structure
+  readonly sections = signal<NavSection[]>([
+    {
+      title: 'Getting Started',
+      links: [
+        { name: 'Introduction', path: 'introduction' },
+        { name: 'Installation', path: 'installation' },
+        { name: 'Theming', path: 'theming' },
+        { name: 'Dark Mode', path: 'dark-mode' },
+        { name: 'CLI', path: 'cli' }
+      ]
+    },
+    {
+      title: 'Components',
+      link: 'components',
+      links: [
+        { name: 'Alert', path: 'alert' },
+        { name: 'Avatar', path: 'avatar' },
+        { name: 'Badge', path: 'badge' },
+        { name: 'Button', path: 'button' },
+        { name: 'Card', path: 'card' },
+        { name: 'Checkbox', path: 'checkbox' },
+        { name: 'Dialog', path: 'dialog' },
+        { name: 'Dropdown Menu', path: 'dropdown-menu' },
+        { name: 'Input', path: 'input' },
+        { name: 'Popover', path: 'popover' },
+        { name: 'Progress', path: 'progress' },
+        { name: 'Select', path: 'select' },
+        { name: 'Separator', path: 'separator' },
+        { name: 'Switch', path: 'switch' },
+        { name: 'Tabs', path: 'tabs' },
+        { name: 'Toast', path: 'toast' },
+        { name: 'Tooltip', path: 'tooltip' }
+      ]
+    }
+  ]);
+
+  // Close menu method for better UX
+  closeMenu(): void {
+    this.menuOpen.set(false);
+  }
 }

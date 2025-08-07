@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'highlight.js/styles/github-dark.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -111,8 +112,19 @@
     --sidebar-ring: oklch(0.556 0 0);
   }
 
+
+  @layer base {
+    * {
+      @apply border-border outline-ring/50;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+/* Shadcn/UI inspired code block styling */
 .hljs {
     background-color: transparent !important;
+    color: #f8fafc !important;
 }
 
 html {
@@ -145,47 +157,44 @@ body {
     @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] text-sm text-foreground border border-border font-mono;
 }
 
-/* Enhanced button hover effects */
-.group:hover .group-hover\:scale-110 {
-    transform: scale(1.1);
+/* Clean scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
 }
 
-/* Custom animations for landing page */
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.animate-float {
-    animation: float 6s ease-in-out infinite;
+::-webkit-scrollbar-thumb {
+    background: var(--color-muted-foreground);
+    border-radius: 3px;
 }
 
-.animate-float-delayed {
-    animation: float 6s ease-in-out infinite 2s;
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-foreground);
 }
 
-/* Background grid pattern */
-.bg-grid-pattern {
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+/* Firefox scrollbar styling */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-muted-foreground) transparent;
 }
 
-/* Enhanced gradient effects */
-.gradient-glow {
-    position: relative;
+/* Mobile menu styles */
+.menu-open {
+    overflow: hidden !important;
 }
 
-.gradient-glow::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gradient-glow:hover::before {
-    opacity: 1;
+/* Accessibility support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

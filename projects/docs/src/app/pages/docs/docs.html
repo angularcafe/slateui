@@ -1,18 +1,23 @@
+<!-- Clean header -->
 <docs-header [(menuOpen)]="menuOpen" />
 
-<div class="container mx-auto px-8 mt-10">
-<div class="flex">
-    <docs-sidebar [(menuOpen)]="menuOpen" />
+<!-- Main content area - properly aligned -->
+<div class="flex min-h-screen bg-background">
+  <!-- Fixed sidebar -->
+  <docs-sidebar [(menuOpen)]="menuOpen" />
 
-    <div class="flex flex-1 min-w-0 overflow-hidden">
-        <main class="flex-1 overflow-hidden" data-page-content>
-            <div class="max-w-4xl">
-                <router-outlet />
-            </div>
-            <docs-footer />
-        </main>
-
-        <docs-quick-links />
+  <!-- Main content -->
+  <main class="flex-1 min-w-0 lg:ml-60 xl:mr-56" data-page-content>
+    <div class="mx-auto max-w-4xl px-6 py-8">
+      <router-outlet />
+      
+      <!-- Simple footer -->
+      <div class="mt-24 pt-8 border-t border-border">
+        <docs-footer />
+      </div>
     </div>
-</div>
+  </main>
+
+  <!-- Fixed table of contents -->
+  <docs-quick-links />
 </div>

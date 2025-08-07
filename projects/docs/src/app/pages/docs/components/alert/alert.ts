@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
-import { alertVariants } from './alert.variants';
+import { ComponentPreview } from '@components/component-preview/component-preview';
+import { alertVariants, alertMeta } from './alert.variants';
 
 @Component({
   selector: 'docs-alert',
-  imports: [],
-  templateUrl: './alert.html'
+  imports: [ComponentPreview],
+  template: `
+    <docs-component-preview 
+      [meta]="alertMeta" 
+      [variants]="alertVariants">
+    </docs-component-preview>
+  `
 })
 export class Alert {
+  alertMeta = alertMeta;
   alertVariants = alertVariants;
 }
