@@ -9,7 +9,7 @@ import { lucideCopy, lucideCheck } from '@ng-icons/lucide';
   viewProviders: [provideIcons({ lucideCopy, lucideCheck })],
   template: `
     <div class="relative group">
-    <div class="rounded-xl bg-muted">
+    <div class="rounded-xl bg-zinc-900">
       <button 
               class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-8 w-8 text-zinc-400 hover:text-white hover:bg-zinc-800 absolute top-2 right-2"
               [class.text-green-400]="copied()"
