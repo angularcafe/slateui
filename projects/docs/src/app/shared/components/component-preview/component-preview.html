@@ -4,61 +4,13 @@
         <div class="space-y-4">
             <h1 class="text-3xl font-bold tracking-tight">{{ componentMeta.title }}</h1>
             <p class="text-lg text-muted-foreground">{{ componentMeta.description }}</p>
-        </div>
 
-        <!-- Clean Installation Section -->
-        @if (componentMeta.installation) {
-            <div class="space-y-8">
-                <h2 class="text-xl font-semibold" id="installation">Installation</h2>
-                
-                <div class="space-y-6">
-                    @if (componentMeta.installation.package) {
-                        <div class="space-y-3">
-                            <h3 class="text-sm font-medium">Install the library</h3>
-                            <docs-code-block 
-                                [code]="'npm install ' + componentMeta.installation.package" 
-                                language="bash">
-                            </docs-code-block>
-                        </div>
-                    }
-                    
-                    <div class="space-y-3">
-                        <h3 class="text-sm font-medium">Import the component</h3>
-                        <docs-code-block 
-                            [code]="componentMeta.installation.import" 
-                            language="typescript">
-                        </docs-code-block>
-                    </div>
-                    
-                    <div class="space-y-3">
-                        <h3 class="text-sm font-medium">Basic usage</h3>
-                        <docs-code-block 
-                            [code]="componentMeta.installation.usage" 
-                            language="html">
-                        </docs-code-block>
-                    </div>
-                </div>
-            </div>
-        }
-    }
-
-    <!-- Clean Examples Section -->
-    @if (variants().length > 0) {
-        <div class="space-y-12">
-            @for (variant of variants(); track variant.title) {
-                <div class="space-y-6">
-                    <div>
-                        <h2 class="text-xl font-semibold mb-2" [id]="generateSlug(variant.title)">
-                            {{ variant.title }}
-                        </h2>
-                        @if (variant.description) {
-                            <p class="text-muted-foreground">{{ variant.description }}</p>
-                        }
-                    </div>
-                    
+            @if (variants().length > 0) {
+                @let variant = variants()[0];
+                <div>
                     <docs-tabs>
                         <docs-tab value="preview" label="Preview">
-                            <div class="flex items-center justify-center min-h-[200px]">
+                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border border-border bg-zinc-50 p-8 dark:bg-zinc-950">
                                 @if (variant.template) {
                                     <ng-container *ngTemplateOutlet="variant.template; injector: createInjector()"></ng-container>
                                 } @else if (variant.component) {
@@ -67,7 +19,81 @@
                             </div>
                         </docs-tab>
                         <docs-tab value="code" label="Code">
-                            <docs-code-block [code]="variant.code" language="html"></docs-code-block>
+                            <docs-code-block [code]="variant.code" language="typescript"></docs-code-block>
+                        </docs-tab>
+                    </docs-tabs>
+                </div>
+            }
+        </div>
+        
+        <!-- Clean Installation Section -->
+        @if (componentMeta.installation) {
+            <div class="space-y-6">
+                <h2 class="text-xl font-semibold" id="installation">Installation</h2>
+                
+                <div class="space-y-6">
+                    @if (componentMeta.installation.package) {
+                        <docs-tabs>
+                            <docs-tab value="cli" label="Angular CLI">
+                                <docs-code-block 
+                                    [code]="'ng generate @slateui/cli:component ' + componentMeta.installation.package" 
+                                    language="bash">
+                                </docs-code-block>
+                            </docs-tab>
+                            <docs-tab value="code" label="Manual">
+                                <docs-code-block [code]="componentMeta.installation.package" language="typescript"></docs-code-block>
+                            </docs-tab>
+                        </docs-tabs>
+                    }
+                </div>
+
+                <h2 class="text-xl font-semibold">Usage</h2> 
+                <div class="">
+                    <docs-code-block class="mb-2"
+                        [code]="componentMeta.installation.import" 
+                        language="typescript">
+                    </docs-code-block>
+                    <div class="mb-2"></div>
+                    <div class="space-y-1">
+                        <docs-code-block 
+                            [code]="componentMeta.installation.usage" 
+                            language="html">
+                        </docs-code-block>
+                    </div>
+                </div>
+                
+                
+            </div>
+        }
+    }
+
+    <!-- Clean Examples Section -->
+    @if (variants().length > 0) {
+        <div class="space-y-12">
+            <h2 class="text-xl font-semibold" id="installation">Examples</h2>
+            @for (variant of variants(); track variant.title) {
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2" [id]="generateSlug(variant.title)">
+                            {{ variant.title }}
+                        </h3>
+                        <!-- @if (variant.description) {
+                            <p class="text-muted-foreground">{{ variant.description }}</p>
+                        } -->
+                    </div>
+                    
+                    <docs-tabs>
+                        <docs-tab value="preview" label="Preview">
+                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border border-border bg-zinc-50 p-8 dark:bg-zinc-950">
+                                @if (variant.template) {
+                                    <ng-container *ngTemplateOutlet="variant.template; injector: createInjector()"></ng-container>
+                                } @else if (variant.component) {
+                                    <ng-container *ngComponentOutlet="variant.component; injector: createInjector()"></ng-container>
+                                }
+                            </div>
+                        </docs-tab>
+                        <docs-tab value="code" label="Code">
+                            <docs-code-block [code]="variant.code" language="typescript"></docs-code-block>
                         </docs-tab>
                     </docs-tabs>
                 </div>
