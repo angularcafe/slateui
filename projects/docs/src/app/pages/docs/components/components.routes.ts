@@ -13,6 +13,18 @@ export const routes: Routes = [
                 loadComponent: () => import('./button/button').then(m => m.Button)
             },
             {
+                path: 'avatar',
+                loadComponent: () => import('./avatar/avatar').then(m => m.Avatar)
+            },
+            {
+                path: 'badge',
+                loadComponent: () => import('./badge/badge').then(m => m.Badge)
+            },
+            {
+                path: 'card',
+                loadComponent: () => import('./card/card').then(m => m.Card)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'
