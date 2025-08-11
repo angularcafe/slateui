@@ -15,6 +15,7 @@ export const appConfig: ApplicationConfig = {
     }),
     provideHighlightOptions({
       coreLibraryLoader: () => import('highlight.js/lib/core'),
+      lineNumbersLoader: () => import('ngx-highlightjs/line-numbers'),
       languages: {
         typescript: () => import('highlight.js/lib/languages/typescript'),
         html: () => import('highlight.js/lib/languages/xml'),

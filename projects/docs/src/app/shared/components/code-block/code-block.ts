@@ -1,25 +1,26 @@
 import { Component, input, signal } from '@angular/core';
-import { HighlightModule } from 'ngx-highlightjs';
+import { Highlight } from 'ngx-highlightjs';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideCopy, lucideCheck } from '@ng-icons/lucide';
+import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
+import { UiButton } from 'ui';
 
 @Component({
   selector: 'docs-code-block',
-  imports: [HighlightModule, NgIcon],
+  imports: [Highlight, NgIcon, HighlightLineNumbers, UiButton],
   viewProviders: [provideIcons({ lucideCopy, lucideCheck })],
   template: `
     <div class="relative group">
-    <div class="rounded-xl bg-zinc-900">
-      <button 
-              class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-8 w-8 text-zinc-400 hover:text-white hover:bg-zinc-800 absolute top-2 right-2"
-              [class.text-green-400]="copied()"
+    <div class="rounded-xl max-h-[400px] overflow-y-auto bg-zinc-900">
+      <button uiButton variant="ghost" size="icon"
+              class="absolute top-2 right-2"
               (click)="copyCode()"
               [title]="copied() ? 'Copied!' : 'Copy code'"
             >
               <ng-icon [name]="copied() ? 'lucideCheck' : 'lucideCopy'" size="16"></ng-icon>
             </button>
       <pre class="overflow-x-auto whitespace-nowrap">
-          <code class="whitespace-pre language-typescript" [class]="'language-' + language()" [highlight]="code()" [language]="language()"></code>
+          <code class="whitespace-pre language-typescript" [class]="'language-' + language()" [highlight]="code()" [language]="language()" lineNumbers></code>
       </pre>
     </div>
       
