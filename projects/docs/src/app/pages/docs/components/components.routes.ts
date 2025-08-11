@@ -25,6 +25,26 @@ export const routes: Routes = [
                 loadComponent: () => import('./card/card').then(m => m.Card)
             },
             {
+                path: 'accordion',
+                loadComponent: () => import('./accordion/accordion').then(m => m.Accordion)
+            },
+            {
+                path: 'dialog',
+                loadComponent: () => import('./dialog/dialog').then(m => m.Dialog)
+            },
+            {
+                path: 'tooltip',
+                loadComponent: () => import('./tooltip/tooltip').then(m => m.Tooltip)
+            },
+            {
+                path: 'popover',
+                loadComponent: () => import('./popover/popover').then(m => m.Popover)
+            },
+            {
+                path: 'separator',
+                loadComponent: () => import('./separator/separator').then(m => m.Separator)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'

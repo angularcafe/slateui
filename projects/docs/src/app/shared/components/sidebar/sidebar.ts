@@ -44,6 +44,7 @@ export class Sidebar {
       title: 'Components',
       link: 'components',
       links: [
+        { name: 'Accordion', path: 'accordion' },
         { name: 'Alert', path: 'alert' },
         { name: 'Avatar', path: 'avatar' },
         { name: 'Badge', path: 'badge' },
