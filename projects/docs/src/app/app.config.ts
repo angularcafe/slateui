@@ -20,7 +20,9 @@ export const appConfig: ApplicationConfig = {
         typescript: () => import('highlight.js/lib/languages/typescript'),
         html: () => import('highlight.js/lib/languages/xml'),
         bash: () => import('highlight.js/lib/languages/bash')
-      }
+      },
+      // Theme configuration for light/dark mode
+      themePath: 'assets/styles/highlight-themes/github.css'
     }),
   ]
 };

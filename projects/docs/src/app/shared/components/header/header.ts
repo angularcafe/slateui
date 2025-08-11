@@ -13,6 +13,7 @@ import { UiButton } from 'ui';
 })
 export class Header {
   themeService = inject(ThemeService);
+  
   /**
    * Whether the mobile menu is open.
    */
@@ -26,5 +27,7 @@ export class Header {
     this.themeService.setTheme(
       this.themeService.isDark() ? 'light' : 'dark'
     );
+    // The HighlightThemeService will automatically update the highlight.js theme
+    // through its subscription to theme changes
   }
 }

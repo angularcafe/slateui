@@ -49,6 +49,11 @@
               {
                 "glob": "**/*",
                 "input": "projects/docs/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/docs/src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -107,6 +112,11 @@
               {
                 "glob": "**/*",
                 "input": "projects/docs/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/docs/src/assets",
+                "output": "assets"
               }
             ],
             "styles": [

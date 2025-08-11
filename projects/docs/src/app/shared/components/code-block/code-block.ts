@@ -11,7 +11,7 @@ import { UiButton } from 'ui';
   viewProviders: [provideIcons({ lucideCopy, lucideCheck })],
   template: `
     <div class="relative group">
-    <div class="rounded-xl max-h-[400px] overflow-y-auto bg-zinc-900">
+    <div class="rounded-xl max-h-[400px] overflow-y-auto bg-muted">
       <button uiButton variant="ghost" size="icon"
               class="absolute top-2 right-2"
               (click)="copyCode()"
