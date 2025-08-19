@@ -1,7 +1,6 @@
 import { computed, Directive, input } from '@angular/core';
-import { VariantProps } from 'tailwind-variants';
+import { tv, VariantProps } from 'tailwind-variants';
 import { NgpButton } from "ng-primitives/button";
-import { tv } from 'tailwind-variants';
 
 const buttonVariants = tv({
     base: "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 ring-ring/10 dark:ring-ring/20 dark:outline-ring/40 outline-ring/50 data-[focus-visible]:ring-4 data-[focus-visible]:outline-1 aria-invalid:focus-visible:ring-0",

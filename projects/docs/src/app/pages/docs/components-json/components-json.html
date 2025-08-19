@@ -1,0 +1,359 @@
+<div class="space-y-8">
+    <div class="space-y-4">
+        <h1 class="text-2xl font-semibold">components.json</h1>
+        <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
+            The <code class="inline-code">components.json</code> file is the configuration file for SlateUI. It allows you to customize 
+            the behavior of the CLI, set your preferred styling approach, and configure project-specific settings.
+        </p>
+    </div>
+
+    <!-- Overview -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="overview">Overview</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                The <code class="inline-code">components.json</code> file is automatically created when you first run the SlateUI CLI. 
+                It stores your preferences and project configuration, making it easier to add components consistently across your project.
+            </p>
+            
+            <div class="bg-muted/50 rounded-lg p-4 border border-border">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span class="text-sm font-medium">Pro tip</span>
+                </div>
+                <p class="text-sm text-muted-foreground mt-2">
+                    You can manually edit this file to change your preferences, or regenerate it by running 
+                    <code class="inline-code">slateui init</code> again.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Location -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="file-location">File Location</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                The <code class="inline-code">components.json</code> file is typically placed in your project root directory:
+            </p>
+            
+            <div class="bg-muted/50 rounded-lg p-4 border border-border">
+                <pre class="text-sm font-mono">my-angular-app/
+├── components.json
+├── package.json
+├── angular.json
+├── tailwind.config.js
+└── src/
+    └── app/
+        └── components/</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Configuration Schema -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="configuration-schema">Configuration Schema</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                The configuration file supports the following main sections:
+            </p>
+            
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Basic Configuration</h3>
+                <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                    <li><code class="inline-code">style</code> - Choose between "default" or "new-york" styling</li>
+                    <li><code class="inline-code">framework</code> - Set to "angular" for Angular projects</li>
+                    <li><code class="inline-code">$schema</code> - Optional schema reference for IntelliSense</li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Tailwind Configuration</h3>
+                <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                    <li><code class="inline-code">config</code> - Path to your tailwind.config.js file</li>
+                    <li><code class="inline-code">css</code> - Path to your global CSS file</li>
+                    <li><code class="inline-code">baseColor</code> - Primary color for the design system</li>
+                    <li><code class="inline-code">cssVariables</code> - Enable/disable CSS custom properties</li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Directory Aliases</h3>
+                <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                    <li><code class="inline-code">components</code> - Where components will be generated</li>
+                    <li><code class="inline-code">utils</code> - Where utility functions will be placed</li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">TypeScript Configuration</h3>
+                <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                    <li><code class="inline-code">strict</code> - Enable strict TypeScript checking</li>
+                    <li><code class="inline-code">strictNullChecks</code> - Enable strict null checking</li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Import Aliases</h3>
+                <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                    <li><code class="inline-code">components</code> - Import alias for components</li>
+                    <li><code class="inline-code">utils</code> - Import alias for utilities</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Style Options -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="style-options">Style Options</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Choose your preferred styling approach:
+            </p>
+            
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Default Style</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    The default style provides a clean, modern design with subtle shadows and smooth transitions. 
+                    Use <code class="inline-code">"style": "default"</code> in your configuration.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">New York Style</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    A more vibrant style with stronger shadows and bolder visual elements. 
+                    Use <code class="inline-code">"style": "new-york"</code> in your configuration.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tailwind Configuration -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="tailwind-configuration">Tailwind Configuration</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Configure how Tailwind CSS is set up in your project:
+            </p>
+            
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Config File</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Specify the path to your Tailwind configuration file using <code class="inline-code">"config": "tailwind.config.js"</code>.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">CSS File</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Specify the path to your global CSS file where Tailwind directives are imported using <code class="inline-code">"css": "src/styles.css"</code>.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Base Color</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Choose your preferred base color for the design system using <code class="inline-code">"baseColor": "slate"</code>.
+                </p>
+                <p class="text-sm text-muted-foreground mt-2">
+                    Available colors include: <code class="inline-code">slate</code>, <code class="inline-code">gray</code>, <code class="inline-code">zinc</code>, 
+                    <code class="inline-code">neutral</code>, <code class="inline-code">stone</code>, <code class="inline-code">red</code>, 
+                    <code class="inline-code">orange</code>, <code class="inline-code">amber</code>, <code class="inline-code">yellow</code>, 
+                    <code class="inline-code">lime</code>, <code class="inline-code">green</code>, <code class="inline-code">emerald</code>, 
+                    <code class="inline-code">teal</code>, <code class="inline-code">cyan</code>, <code class="inline-code">sky</code>, 
+                    <code class="inline-code">blue</code>, <code class="inline-code">indigo</code>, <code class="inline-code">violet</code>, 
+                    <code class="inline-code">purple</code>, <code class="inline-code">fuchsia</code>, <code class="inline-code">pink</code>, 
+                    <code class="inline-code">rose</code>
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">CSS Variables</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Enable or disable CSS custom properties for theming using <code class="inline-code">"cssVariables": true</code>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Framework Configuration -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="framework-configuration">Framework Configuration</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Specify your target framework and its configuration:
+            </p>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                Use <code class="inline-code">"framework": "angular"</code> for Angular projects.
+            </p>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                Currently supported frameworks:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                <li><code class="inline-code">angular</code> - Angular 20+ with standalone components</li>
+                <li><code class="inline-code">react</code> - React 18+ with TypeScript</li>
+                <li><code class="inline-code">vue</code> - Vue 3+ with Composition API</li>
+                <li><code class="inline-code">svelte</code> - Svelte 5+ with TypeScript</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Directory Aliases -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="directory-aliases">Directory Aliases</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Configure where components and utilities are placed in your project:
+            </p>
+            
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Components Directory</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    The directory where SlateUI components will be generated. Use <code class="inline-code">"components": "src/app/components"</code>.
+                    This should match your project structure.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Utils Directory</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    The directory where utility functions (like <code class="inline-code">cn</code> for class merging) will be placed. 
+                    Use <code class="inline-code">"utils": "src/lib/utils"</code>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TypeScript Configuration -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="typescript-configuration">TypeScript Configuration</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Configure TypeScript settings for generated components:
+            </p>
+            
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Strict Mode</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Enable strict TypeScript checking for better type safety using <code class="inline-code">"strict": true</code>.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Strict Null Checks</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Enable strict null checking to prevent null/undefined errors using <code class="inline-code">"strictNullChecks": true</code>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Aliases -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="import-aliases">Import Aliases</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Configure import aliases for cleaner import statements:
+            </p>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                Use <code class="inline-code">"components": "@/components"</code> and <code class="inline-code">"utils": "@/lib/utils"</code>.
+            </p>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                These aliases will be used in generated components and can be configured in your TypeScript configuration:
+            </p>
+            
+            <div class="bg-muted/50 rounded-lg p-4 border border-border">
+                                 <pre class="text-sm font-mono">// tsconfig.json
+&#123;
+  "compilerOptions": &#123;
+    "baseUrl": ".",
+    "paths": &#123;
+      "@/*": ["src/*"]
+    &#125;
+  &#125;
+&#125;</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLI Integration -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="cli-integration">CLI Integration</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                The CLI automatically reads your <code class="inline-code">components.json</code> configuration when adding components:
+            </p>
+            
+            <div class="bg-muted/50 rounded-lg p-4 border border-border">
+                <pre class="text-sm font-mono">$ slateui add button
+✔ Reading components.json...
+✔ Using configuration from components.json
+✔ Adding button component...
+✔ Component added successfully!</pre>
+            </div>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                You can also override specific settings during CLI execution:
+            </p>
+            
+            <div class="bg-muted/50 rounded-lg p-4 border border-border">
+                <pre class="text-sm font-mono">$ slateui add button --style new-york --base-color blue
+✔ Overriding style: new-york
+✔ Overriding base color: blue
+✔ Adding button component...</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="troubleshooting">Troubleshooting</h2>
+        <div class="space-y-4">
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Common Issues</h3>
+                
+                <div class="space-y-3">
+                    <h4 class="font-medium">Invalid JSON</h4>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Ensure your JSON is valid. Use a JSON validator or your editor's built-in validation.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-medium">Missing Schema</h4>
+                    <p class="text-muted-foreground leading-relaxed">
+                        The <code class="inline-code">$schema</code> field is optional but provides IntelliSense in supported editors.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-medium">Path Issues</h4>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Ensure all file paths in your configuration exist and are accessible from your project root.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="next-steps">Next Steps</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Now that you understand the configuration:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                <li>Customize your <code class="inline-code">components.json</code> to match your project needs</li>
+                <li>Use the CLI to add components with your preferred configuration</li>
+                <li>Share your configuration with your team for consistency</li>
+                <li>Consider creating different configurations for different projects</li>
+            </ul>
+        </div>
+    </div>
+</div>

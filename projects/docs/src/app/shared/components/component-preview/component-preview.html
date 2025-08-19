@@ -10,7 +10,7 @@
                 <div>
                     <docs-tabs>
                         <docs-tab value="preview" label="Preview">
-                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border border-border p-8 bg-muted">
+                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border border-border p-8">
                                 @if (variant.template) {
                                     <ng-container *ngTemplateOutlet="variant.template; injector: createInjector()"></ng-container>
                                 } @else if (variant.component) {
@@ -84,7 +84,7 @@
                     
                     <docs-tabs>
                         <docs-tab value="preview" label="Preview">
-                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border bg-muted p-8">
+                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border p-8">
                                 @if (variant.template) {
                                     <ng-container *ngTemplateOutlet="variant.template; injector: createInjector()"></ng-container>
                                 } @else if (variant.component) {

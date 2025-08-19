@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { CodeBlock } from '../../../shared/components/code-block/code-block';
 
 @Component({
-  selector: 'docs-installation',
+  selector: 'docs-cli',
   standalone: true,
   imports: [CodeBlock],
-  templateUrl: './installation.html'
+  templateUrl: './cli.html'
 })
-export class Installation {
+export class Cli {
 
 }

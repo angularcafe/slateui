@@ -1,4 +1,4 @@
-import { computed, Directive, effect, inject, input, TemplateRef } from "@angular/core";
+import { computed, Directive, input } from "@angular/core";
 import { tv } from "tailwind-variants";
 import { NgpSeparator } from "ng-primitives/separator";
 
@@ -13,7 +13,8 @@ const separatorVariants = tv({
         '[class]': 'computedClass()'
     },
     hostDirectives: [{ 
-        directive: NgpSeparator, inputs: ['ngpSeparatorOrientation: uiSeparatorOrientation'] 
+        directive: NgpSeparator,
+        inputs: ['ngpSeparatorOrientation: uiSeparatorOrientation'] 
     }],
 })
 export class UiSeparator {

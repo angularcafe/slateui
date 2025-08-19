@@ -24,7 +24,22 @@ export class UiPopover {
     exportAs: 'uiPopoverTrigger',
     hostDirectives: [{
         directive: NgpPopoverTrigger,
-        inputs: ['ngpPopoverTriggerDisabled: uiPopoverTriggerDisabled, ngpPopoverTriggerPlacement: uiPopoverTriggerPlacement, ngpPopoverTriggerOffset: uiPopoverTriggerOffset, ngpPopoverTriggerShowDelay: uiPopoverTriggerShowDelay, ngpPopoverTriggerHideDelay: uiPopoverTriggerHideDelay, ngpPopoverTriggerFlip: uiPopoverTriggerFlip, ngpPopoverTriggerContainer: uiPopoverTriggerContainer, ngpPopoverTriggerCloseOnOutsideClick: uiPopoverTriggerCloseOnOutsideClick, ngpPopoverTriggerCloseOnEscape: uiPopoverTriggerCloseOnEscape, ngpPopoverTriggerScrollBehavior: uiPopoverTriggerScrollBehavior, ngpPopoverTriggerContext: uiPopoverTriggerContext'],
+        inputs: [
+            'ngpPopoverTriggerDisabled: uiPopoverTriggerDisabled',
+            'ngpPopoverTriggerPlacement: uiPopoverTriggerPlacement',
+            'ngpPopoverTriggerOffset: uiPopoverTriggerOffset',
+            'ngpPopoverTriggerShowDelay: uiPopoverTriggerShowDelay',
+            'ngpPopoverTriggerHideDelay: uiPopoverTriggerHideDelay',
+            'ngpPopoverTriggerFlip: uiPopoverTriggerFlip',
+            'ngpPopoverTriggerContainer: uiPopoverTriggerContainer',
+            'ngpPopoverTriggerCloseOnOutsideClick: uiPopoverTriggerCloseOnOutsideClick',
+            'ngpPopoverTriggerCloseOnEscape: uiPopoverTriggerCloseOnEscape',
+            'ngpPopoverTriggerScrollBehavior: uiPopoverTriggerScrollBehavior',
+            'ngpPopoverTriggerContext: uiPopoverTriggerContext'
+        ],
+        outputs: [
+            'ngpPopoverTriggerOpenChange: uiPopoverTriggerOpenChange'
+        ]
     }],
 })
 export class UiPopoverTrigger {

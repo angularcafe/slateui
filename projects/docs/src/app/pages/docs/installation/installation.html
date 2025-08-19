@@ -1,1 +1,221 @@
-<p>installation works!</p>
+<div class="space-y-8">
+    <div class="space-y-4">
+        <h1 class="text-2xl font-semibold">Installation</h1>
+        <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
+            Get started with SlateUI in your Angular project. Follow these steps to install and configure the library.
+        </p>
+    </div>
+
+    <!-- Prerequisites -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="prerequisites">Prerequisites</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Before installing SlateUI, ensure you have:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                <li>Node.js 18+ and npm 9+</li>
+                <li>Angular 20+ project</li>
+                <li>Tailwind CSS 4+ (recommended)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Installation Steps -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="installation-steps">Installation Steps</h2>
+        
+        <div class="space-y-6">
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">1. Install SlateUI</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Install the core SlateUI package:
+                </p>
+                <docs-code-block 
+                    language="bash"
+                    code="npm install @slateui/ui">
+                </docs-code-block>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">2. Install Theme Package</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Install the theme package for dark mode support:
+                </p>
+                <docs-code-block 
+                    language="bash"
+                    code="npm install @slateui/theme">
+                </docs-code-block>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">3. Install Tailwind CSS</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Install Tailwind CSS 4 (recommended):
+                </p>
+                <docs-code-block 
+                    language="bash"
+                    code="npm install tailwindcss @tailwindcss/postcss">
+                </docs-code-block>
+            </div>
+        </div>
+    </div>
+
+    <!-- Configuration -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="configuration">Configuration</h2>
+        
+        <div class="space-y-6">
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Angular Configuration</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Update your <code class="inline-code">app.config.ts</code> to include SlateUI providers:
+                </p>
+                <docs-code-block 
+                    language="typescript"
+                    code="import { ApplicationConfig } from '@angular/core';
+import { provideSlateUiTheme } from '@slateui/theme';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideSlateUiTheme({
+      strategy: 'class',
+    }),
+    // ... other providers
+  ],
+};">
+                </docs-code-block>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Tailwind CSS Configuration</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Create or update your <code class="inline-code">tailwind.config.js</code>:
+                </p>
+                <docs-code-block 
+                    language="javascript"
+                    code="module.exports = {
+  content: [
+    './src/**/*.{html,ts}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        primary: 'var(--primary)',
+        'primary-foreground': 'var(--primary-foreground)',
+        secondary: 'var(--secondary)',
+        'secondary-foreground': 'var(--secondary-foreground)',
+        muted: 'var(--muted)',
+        'muted-foreground': 'var(--muted-foreground)',
+        accent: 'var(--accent)',
+        'accent-foreground': 'var(--accent-foreground)',
+        destructive: 'var(--destructive)',
+        border: 'var(--border)',
+        input: 'var(--input)',
+        ring: 'var(--ring)',
+      },
+    },
+  },
+  plugins: [],
+};">
+                </docs-code-block>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">CSS Variables</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                    Add CSS variables to your <code class="inline-code">styles.css</code>:
+                </p>
+                <docs-code-block 
+                    language="css"
+                    code=":root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+}">
+                </docs-code-block>
+            </div>
+        </div>
+    </div>
+
+    <!-- Usage Example -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="usage-example">Usage Example</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Here's a simple example of how to use SlateUI components:
+            </p>
+                            <docs-code-block 
+                    language="typescript"
+                    code="import &#123; Component &#125; from '@angular/core';
+import &#123; UiButton &#125; from '@slateui/ui';
+
+@Component(&#123;
+  selector: 'app-example',
+  standalone: true,
+  imports: [UiButton],
+  template: `
+    &lt;button uiButton variant=&quot;default&quot;&gt;
+      Click me
+    &lt;/button&gt;
+  `
+&#125;)
+export class ExampleComponent &#123;&#125;">
+            </docs-code-block>
+        </div>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="next-steps">Next Steps</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Now that you have SlateUI installed:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                <li>Explore the available components in the Components section</li>
+                <li>Configure your theme and dark mode preferences</li>
+                <li>Use the CLI to add specific components to your project</li>
+                <li>Customize the design system to match your brand</li>
+            </ul>
+        </div>
+    </div>
+</div>

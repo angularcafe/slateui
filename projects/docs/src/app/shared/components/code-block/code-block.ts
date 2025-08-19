@@ -12,11 +12,10 @@ import { UiButton } from 'ui';
   template: `
     <div class="relative group">
     <div class="rounded-xl max-h-[400px] overflow-y-auto bg-muted">
-      <button uiButton variant="ghost" size="icon"
+      <button uiButton variant="outline" size="icon"
               class="absolute top-2 right-2"
               (click)="copyCode()"
-              [title]="copied() ? 'Copied!' : 'Copy code'"
-            >
+              [title]="copied() ? 'Copied!' : 'Copy code'">
               <ng-icon [name]="copied() ? 'lucideCheck' : 'lucideCopy'" size="16"></ng-icon>
             </button>
       <pre class="overflow-x-auto whitespace-nowrap">

@@ -1,6 +1,6 @@
 import { computed, Directive, input } from '@angular/core';
-import { NgpAccordion, NgpAccordionTrigger, NgpAccordionItem, NgpAccordionContent } from 'ng-primitives/accordion';
 import { tv } from 'tailwind-variants';
+import { NgpAccordion, NgpAccordionTrigger, NgpAccordionItem, NgpAccordionContent } from 'ng-primitives/accordion';
 
 const accordionVariants = tv({
     slots: {
@@ -15,6 +15,9 @@ const { accordionItem, accordionTrigger, accordionContent } = accordionVariants(
 @Directive({
     selector: '[uiAccordion]',
     exportAs: 'uiAccordion',
+    host: {
+        '[class]': 'computedClass()'
+    },
     hostDirectives: [
         {
             directive: NgpAccordion,
@@ -25,12 +28,15 @@ const { accordionItem, accordionTrigger, accordionContent } = accordionVariants(
                 'ngpAccordionDisabled:disabled',
                 'ngpAccordionOrientation:orientation',
             ],
-            outputs: ['ngpAccordionValueChange: uiAccordionValueChange'],
+            outputs: [
+                'ngpAccordionValueChange: uiAccordionValueChange'
+            ],
         },
     ],
 })
 export class UiAccordion {
-
+    inputClass = input<string>('', { alias: 'class' });
+    computedClass = computed(() => accordionTrigger({ class: this.inputClass() }));
 }
 
 
@@ -45,7 +51,6 @@ export class UiAccordion {
 export class UiAccordionTrigger {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => accordionTrigger({ class: this.inputClass() }));
-
 }
 
 @Directive({

@@ -1,0 +1,305 @@
+<div class="space-y-8">
+    <div class="space-y-4">
+        <h1 class="text-2xl font-semibold">CLI</h1>
+        <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
+            Use the SlateUI CLI to add components to your Angular project.
+        </p>
+    </div>
+
+    <!-- Installation -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="installation">Installation</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Install the SlateUI CLI as a dev dependency in your project:
+            </p>
+            <docs-code-block 
+                language="bash"
+                code="npm install -D @slateui/cli">
+            </docs-code-block>
+        </div>
+    </div>
+
+    <!-- init -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="init">init</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Use the <code class="inline-code">init</code> command to initialize configuration and dependencies for a new project.
+            </p>
+            <p class="text-muted-foreground leading-relaxed">
+                The <code class="inline-code">init</code> command installs dependencies, adds the <code class="inline-code">cn</code> util and configures CSS variables for the project.
+            </p>
+            
+            <div class="space-y-3">
+                <docs-code-block 
+                    language="bash"
+                    code="ng g @slateui/cli:init">
+                </docs-code-block>
+            </div>
+        </div>
+    </div>
+
+    <!-- add -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="add">add</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Use the <code class="inline-code">add</code> command to add components and dependencies to your project.
+            </p>
+            
+            <div class="space-y-3">
+                <docs-code-block class="block mb-2" 
+                    language="bash"
+                    code="ng g @slateui/cli:add button">
+                </docs-code-block>
+                <docs-code-block class="block mb-2"
+                    language="bash"
+                    code="ng g @slateui/cli:add card dialog">
+                </docs-code-block>
+                <docs-code-block 
+                    language="bash"
+                    code="ng g @slateui/cli:add --all">
+                </docs-code-block>
+            </div>
+        </div>
+    </div>
+
+    <!-- Command Options -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="options">Command Options</h2>
+        <div class="space-y-6">
+            
+            <!-- init options -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">init Options</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-border">
+                        <thead>
+                            <tr class="bg-muted/50">
+                                <th class="border border-border px-4 py-2 text-left font-medium">Option</th>
+                                <th class="border border-border px-4 py-2 text-left font-medium">Description</th>
+                                <th class="border border-border px-4 py-2 text-left font-medium">Default</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-t, --template</td>
+                                <td class="border border-border px-4 py-2">The template to use (angular, angular-monorepo)</td>
+                                <td class="border border-border px-4 py-2">angular</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-b, --base-color</td>
+                                <td class="border border-border px-4 py-2">The base color to use (neutral, gray, zinc, stone, slate)</td>
+                                <td class="border border-border px-4 py-2">slate</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-y, --yes</td>
+                                <td class="border border-border px-4 py-2">Skip confirmation prompt</td>
+                                <td class="border border-border px-4 py-2">true</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-f, --force</td>
+                                <td class="border border-border px-4 py-2">Force overwrite of existing configuration</td>
+                                <td class="border border-border px-4 py-2">false</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-c, --cwd</td>
+                                <td class="border border-border px-4 py-2">The working directory</td>
+                                <td class="border border-border px-4 py-2">current directory</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-s, --silent</td>
+                                <td class="border border-border px-4 py-2">Mute output</td>
+                                <td class="border border-border px-4 py-2">false</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">--src-dir</td>
+                                <td class="border border-border px-4 py-2">Use the src directory when creating a new project</td>
+                                <td class="border border-border px-4 py-2">false</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">--css-variables</td>
+                                <td class="border border-border px-4 py-2">Use CSS variables for theming</td>
+                                <td class="border border-border px-4 py-2">true</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- add options -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">add Options</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-border">
+                        <thead>
+                            <tr class="bg-muted/50">
+                                <th class="border border-border px-4 py-2 text-left font-medium">Option</th>
+                                <th class="border border-border px-4 py-2 text-left font-medium">Description</th>
+                                <th class="border border-border px-4 py-2 text-left font-medium">Default</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-y, --yes</td>
+                                <td class="border border-border px-4 py-2">Skip confirmation prompt</td>
+                                <td class="border border-border px-4 py-2">false</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-o, --overwrite</td>
+                                <td class="border border-border px-4 py-2">Overwrite existing files</td>
+                                <td class="border border-border px-4 py-2">false</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-c, --cwd</td>
+                                <td class="border border-border px-4 py-2">The working directory</td>
+                                <td class="border border-border px-4 py-2">current directory</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-a, --all</td>
+                                <td class="border border-border px-4 py-2">Add all available components</td>
+                                <td class="border border-border px-4 py-2">false</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-p, --path</td>
+                                <td class="border border-border px-4 py-2">The path to add the component to</td>
+                                <td class="border border-border px-4 py-2">-</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">-s, --silent</td>
+                                <td class="border border-border px-4 py-2">Mute output</td>
+                                <td class="border border-border px-4 py-2">false</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">--src-dir</td>
+                                <td class="border border-border px-4 py-2">Use the src directory when creating a new project</td>
+                                <td class="border border-border px-4 py-2">false</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-border px-4 py-2 font-mono text-sm">--css-variables</td>
+                                <td class="border border-border px-4 py-2">Use CSS variables for theming</td>
+                                <td class="border border-border px-4 py-2">true</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Examples -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="examples">Examples</h2>
+        <div class="space-y-6">
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Initializing a New Project</h3>
+                <docs-code-block 
+                    language="bash"
+                    code="$ ng g @slateui/cli:init
+✔ Which style would you like to use? › Default
+✔ Which color would you like to use as base color? › Slate
+✔ Where is your global CSS file? › src/styles.css
+✔ Do you want to use CSS variables for colors? › Yes
+✔ Where is your tailwind.config.js located? › tailwind.config.js
+✔ Configure the import alias for components: › @/components
+✔ Configure the import alias for utils: › @/lib/utils
+
+Installing dependencies...
+  ✓ @slateui/ui
+  ✓ tailwindcss
+  ✓ class-variance-authority
+  ✓ clsx
+  ✓ tailwind-merge
+
+Updating your tailwind.config.js...
+Updating your CSS file...
+Creating components directory...
+Creating utils file...">
+                </docs-code-block>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Adding a Single Component</h3>
+                <docs-code-block 
+                    language="bash"
+                    code="$ ng g @slateui/cli:add button
+✔ Which style would you like to use? › Default
+✔ Which color would you like to use as base color? › Slate
+✔ Where is your global CSS file? › src/styles.css
+✔ Do you want to use CSS variables for colors? › Yes
+✔ Where is your tailwind.config.js located? › tailwind.config.js
+✔ Configure the import alias for components: › @/components
+✔ Configure the import alias for utils: › @/lib/utils
+
+Adding the following components to your project:
+  ✓ button
+
+Installing dependencies...
+  ✓ @slateui/ui
+  ✓ tailwindcss
+  ✓ class-variance-authority
+  ✓ clsx
+  ✓ tailwind-merge
+
+Updating your tailwind.config.js...
+Updating your CSS file...
+Creating components directory...
+Creating utils file...
+Creating component files...">
+                </docs-code-block>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Adding Multiple Components</h3>
+                <docs-code-block 
+                    language="bash"
+                    code="$ ng g @slateui/cli:add card dialog popover
+✔ Which style would you like to use? › Default
+✔ Which color would you like to use as base color? › Slate
+✔ Where is your global CSS file? › src/styles.css
+✔ Do you want to use CSS variables for colors? › Yes
+✔ Where is your tailwind.config.js located? › tailwind.config.js
+✔ Configure the import alias for components: › @/components
+✔ Configure the import alias for utils: › @/lib/utils
+
+Adding the following components to your project:
+  ✓ card
+  ✓ dialog
+  ✓ popover
+
+Installing dependencies...
+  ✓ @slateui/ui
+  ✓ @floating-ui/react
+  ✓ tailwindcss
+  ✓ class-variance-authority
+  ✓ clsx
+  ✓ tailwind-merge
+
+Updating your tailwind.config.js...
+Updating your CSS file...
+Creating components directory...
+Creating utils file...
+Creating component files...">
+                </docs-code-block>
+            </div>
+        </div>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="next-steps">Next Steps</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                After successfully adding components with the CLI:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                <li>Review the generated component files in your project</li>
+                <li>Check the updated Tailwind CSS configuration</li>
+                <li>Import and use the components in your Angular components</li>
+                <li>Customize the styling using the provided CSS variables</li>
+                <li>Explore the component variants and props</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -6,12 +6,12 @@ import { tv } from "tailwind-variants";
 const avatarVariants = tv({
     slots: {
         avatar: 'relative flex w-12 h-12 shrink-0 overflow-hidden rounded-full',
-        imageVariant: 'aspect-square size-full',
-        fallbackVariant: 'bg-muted flex size-full items-center justify-center rounded-full'
+        avatarImage: 'aspect-square size-full',
+        avatarFallback: 'bg-muted flex size-full items-center justify-center rounded-full'
     }
 });
 
-const { avatar, imageVariant, fallbackVariant } = avatarVariants();
+const { avatar, avatarImage, avatarFallback } = avatarVariants();
 
 @Directive({
     selector: '[uiAvatar]',
@@ -36,7 +36,7 @@ export class UiAvatar {
 })
 export class UiAvatarImage {
     inputClass = input<string>('', { alias: 'class' });
-    computedClass = computed(() => imageVariant({ class: this.inputClass() }));
+    computedClass = computed(() => avatarImage({ class: this.inputClass() }));
 }
 
 @Directive({
@@ -52,7 +52,7 @@ export class UiAvatarImage {
 })
 export class UiAvatarFallback {
     inputClass = input<string>('', { alias: 'class' });
-    computedClass = computed(() => fallbackVariant({ class: this.inputClass() }));
+    computedClass = computed(() => avatarFallback({ class: this.inputClass() }));
     readonly delay = input<number, NumberInput>(0, {
         alias: 'uiAvatarFallbackDelay',
         transform: numberAttribute,

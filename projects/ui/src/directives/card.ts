@@ -1,5 +1,5 @@
 import { computed, Directive, input } from '@angular/core';
-import { tv, VariantProps } from 'tailwind-variants';
+import { tv } from 'tailwind-variants';
 
 const badgeVariants = tv({
     slots: {

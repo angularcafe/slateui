@@ -22,7 +22,14 @@ const { dialog, dialogOverlay, dialogHeader, dialogFooter, dialogTitle, dialogDe
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [{ directive: NgpDialog, inputs: ['ngpDialogRole: uiDialogRole, ngpDialogModal: uiDialogModal'] }]
+    hostDirectives: [
+        { directive: NgpDialog,
+            inputs: [
+                'ngpDialogRole: uiDialogRole',
+                'ngpDialogModal: uiDialogModal'
+            ] 
+        }
+    ]
 })
 export class UiDialog {
     inputClass = input<string>('', { alias: 'class' });
@@ -35,7 +42,7 @@ export class UiDialog {
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [NgpDialogTitle]
+    hostDirectives: []
 })
 export class UiDialogHeader {
     inputClass = input<string>('', { alias: 'class' });
@@ -74,7 +81,7 @@ export class UiDialogDescription {
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [NgpDialogTitle]
+    hostDirectives: []
 })
 export class UiDialogFooter {
     inputClass = input<string>('', { alias: 'class' });
@@ -87,7 +94,14 @@ export class UiDialogFooter {
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [{ directive: NgpDialogTrigger, inputs: ['ngpDialogTrigger: uiDialogTrigger'] }]
+    hostDirectives: [
+        {
+            directive: NgpDialogTrigger, 
+            inputs: [
+                'ngpDialogTrigger: uiDialogTrigger',
+                'ngpDialogTriggerCloseOnEscape: uiDialogTriggerCloseOnEscape']
+        }
+    ]
 })
 export class UiDialogTrigger {
     inputClass = input<string>('', { alias: 'class' });
@@ -100,7 +114,14 @@ export class UiDialogTrigger {
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [{ directive: NgpDialogOverlay, inputs: ['ngpDialogOverlayCloseOnClick: uiDialogOverlayCloseOnClick'] }]
+    hostDirectives: [
+        { 
+            directive: NgpDialogOverlay,
+            inputs: [
+                'ngpDialogOverlayCloseOnClick: uiDialogOverlayCloseOnClick'
+            ]
+        }
+    ]
 })
 export class UiDialogOverlay {
     inputClass = input<string>('', { alias: 'class' });

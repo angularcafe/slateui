@@ -2,13 +2,13 @@
  * Public API Surface of ui
  */
 
-export * from './registry/button';
-export * from './registry/alert';
-export * from './registry/avatar';
-export * from './registry/badge';
-export * from './registry/card';
-export * from './registry/accordion';
-export * from './registry/dialog';
-export * from './registry/tooltip';
-export * from './registry/popover';
-export * from './registry/separator';
+export * from './directives/button';
+export * from './directives/alert';
+export * from './directives/avatar';
+export * from './directives/badge';
+export * from './directives/card';
+export * from './directives/accordion';
+export * from './directives/dialog';
+export * from './directives/tooltip';
+export * from './directives/popover';
+export * from './directives/separator';

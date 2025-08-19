@@ -27,10 +27,23 @@ export class UiTooltip {
 @Directive({
     selector: '[uiTooltipTrigger]',
     exportAs: 'uiTooltipTrigger',
-    hostDirectives: [{
-        directive: NgpTooltipTrigger,
-        inputs: ['ngpTooltipTriggerDisabled: uiTooltipTriggerDisabled, ngpTooltipTriggerPlacement: uiTooltipTriggerPlacement, ngpTooltipTriggerOffset: uiTooltipTriggerOffset, ngpTooltipTriggerShowDelay: uiTooltipTriggerShowDelay, ngpTooltipTriggerHideDelay: uiTooltipTriggerHideDelay, ngpTooltipTriggerFlip: uiTooltipTriggerFlip, ngpTooltipTriggerContainer: uiTooltipTriggerContainer, ngpTooltipTriggerContext: uiTooltipTriggerContext'],
-    }],
+    hostDirectives: [
+        {
+            directive: NgpTooltipTrigger,
+            inputs: [
+                'ngpTooltipTriggerDisabled: uiTooltipTriggerDisabled',
+                'ngpTooltipTriggerPlacement: uiTooltipTriggerPlacement',
+                'ngpTooltipTriggerOffset: uiTooltipTriggerOffset',
+                'ngpTooltipTriggerShowDelay: uiTooltipTriggerShowDelay',
+                'ngpTooltipTriggerHideDelay: uiTooltipTriggerHideDelay',
+                'ngpTooltipTriggerFlip: uiTooltipTriggerFlip',
+                'ngpTooltipTriggerContainer: uiTooltipTriggerContainer',
+                'ngpTooltipTriggerShowOnOverflow: uiTooltipTriggerShowOnOverflow',
+                'ngpTooltipTriggerContext: uiTooltipTriggerContext',
+                'ngpTooltipTriggerUseTextContent: uiTooltipTriggerUseTextContent',
+            ],
+        }
+],
 })
 export class UiTooltipTrigger {
     inputClass = input<string>('', { alias: 'class' });
