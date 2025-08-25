@@ -18,6 +18,9 @@
       "ui": [
         "./dist/ui"
       ],
+      "cli": [
+        "./dist/cli"
+      ],
       "@components/*": [
         "./projects/docs/src/app/shared/components/*"
       ],
@@ -43,6 +46,12 @@
     },
     {
       "path": "./projects/docs/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/cli/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/cli/tsconfig.spec.json"
     }
   ]
 }
