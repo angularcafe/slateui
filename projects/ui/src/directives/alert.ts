@@ -9,7 +9,7 @@ const alertVariants = tv({
     },
     variants: {
         variant: {
-            default: { alert: 'bg-background text-foreground border-border' },
+            default: { alert: 'bg-background text-foreground' },
             destructive: { alert: 'border-destructive/50 text-destructive [&>[uiIcon]]:text-current' },
         },
     },

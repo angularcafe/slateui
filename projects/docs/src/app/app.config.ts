@@ -19,7 +19,9 @@ export const appConfig: ApplicationConfig = {
       languages: {
         typescript: () => import('highlight.js/lib/languages/typescript'),
         html: () => import('highlight.js/lib/languages/xml'),
-        bash: () => import('highlight.js/lib/languages/bash')
+        bash: () => import('highlight.js/lib/languages/bash'),
+        css: () => import('highlight.js/lib/languages/css'),
+        json: () => import('highlight.js/lib/languages/json')
       },
       // Theme configuration for light/dark mode
       themePath: 'assets/styles/highlight-themes/github.css'

@@ -1,5 +1,5 @@
 import { Component, TemplateRef } from '@angular/core';
-import { UiTooltip, UiTooltipTrigger, UiButton } from 'ui';
+import { UiTooltip, UiTooltipTrigger, UiButton, UiTooltipArrow } from 'ui';
 import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 
 @Component({
@@ -8,9 +8,10 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
     <button uiButton variant="outline" [uiTooltipTrigger]="tooltip">Hover</button>
     <ng-template #tooltip>
       <div uiTooltip>Add to library</div>
+      <div uiTooltipArrow></div>
     </ng-template>
   `,
-  imports: [UiTooltip, UiTooltipTrigger, UiButton]
+  imports: [UiTooltip, UiTooltipTrigger, UiTooltipArrow, UiButton]
 })
 export class TooltipDefaultExample {}
 
@@ -20,7 +21,7 @@ export const tooltipMeta: IComponentMeta = {
   installation: {
     package: 'tooltip',
     import: `import { UiTooltip, UiTooltipTrigger } from '@components/ui/tooltip';`,
-    usage: `<button [uiTooltipTrigger]="tooltip">Hover</button><ng-template #tooltip><div uiTooltip>Add to library</div></ng-template>`
+    usage: `<button [uiTooltipTrigger]="tooltip">Hover</button><ng-template #tooltip><div uiTooltip>Add to library</div><div uiTooltipArrow></div></ng-template>`
   },
   api: {
     props: [

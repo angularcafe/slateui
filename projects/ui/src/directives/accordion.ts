@@ -4,7 +4,7 @@ import { NgpAccordion, NgpAccordionTrigger, NgpAccordionItem, NgpAccordionConten
 
 const accordionVariants = tv({
     slots: {
-        accordionItem: 'border-b border-border last:border-b-0',
+        accordionItem: 'border-b last:border-b-0',
         accordionTrigger: 'ring-ring/10 dark:ring-ring/20 dark:outline-ring/40 outline-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all hover:underline focus-visible:ring-4 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&[data-open]>[uiIcon]]:rotate-180 cursor-pointer',
         accordionContent: 'data-[closed]:animate-accordion-up data-[closed]:fill-mode-forwards data-[open]:animate-accordion-down data-[open]:fill-mode-forwards  overflow-hidden text-sm [&_:is(div)]:pb-4',
     }

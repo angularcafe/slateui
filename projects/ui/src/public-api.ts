@@ -1,7 +1,3 @@
-/*
- * Public API Surface of ui
- */
-
 export * from './directives/button';
 export * from './directives/alert';
 export * from './directives/avatar';
@@ -12,3 +8,7 @@ export * from './directives/dialog';
 export * from './directives/tooltip';
 export * from './directives/popover';
 export * from './directives/separator';
+export * from './directives/label';
+export * from './directives/progress';
+export * from './directives/tabs';
+export * from './directives/dropdown-menu';

@@ -45,6 +45,18 @@ export const routes: Routes = [
                 loadComponent: () => import('./separator/separator').then(m => m.Separator)
             },
             {
+                path: 'tabs',
+                loadComponent: () => import('./tabs/tabs').then(m => m.Tabs)
+            },
+            {
+                path: 'progress',
+                loadComponent: () => import('./progress/progress').then(m => m.Progress)
+            },
+            {
+                path: 'label',
+                loadComponent: () => import('./label/label').then(m => m.Label)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'

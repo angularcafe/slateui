@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "./tw-animate.css";
-/* Highlight.js themes are now managed dynamically through HighlightThemeService */
 
 @custom-variant dark (&:where(.dark, .dark *));
 
