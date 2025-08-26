@@ -20,7 +20,7 @@ export const tooltipMeta: IComponentMeta = {
   description: 'A popup that displays contextual information.',
   installation: {
     package: 'tooltip',
-    import: `import { UiTooltip, UiTooltipTrigger } from '@components/ui/tooltip';`,
+    import: `import { UiTooltip, UiTooltipTrigger } from '@workspace/ui/directives/tooltip';`,
     usage: `<button [uiTooltipTrigger]="tooltip">Hover</button><ng-template #tooltip><div uiTooltip>Add to library</div><div uiTooltipArrow></div></ng-template>`
   },
   api: {
@@ -36,8 +36,8 @@ export const tooltipVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Basic tooltip with a trigger.',
-    code: `import { UiTooltip, UiTooltipTrigger } from '@components/ui/tooltip';
-import { UiButton } from '@components/ui/button';
+    code: `import { UiTooltip, UiTooltipTrigger } from '@workspace/ui/directives/tooltip';
+import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'tooltip-default-example',

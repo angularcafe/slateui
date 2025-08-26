@@ -20,7 +20,7 @@ export const separatorMeta: IComponentMeta = {
   description: 'Visually separates content.',
   installation: {
     package: 'separator',
-    import: `import { UiSeparator } from '@components/ui/separator';`,
+    import: `import { UiSeparator } from '@workspace/ui/directives/separator';`,
     usage: `<div uiSeparator></div>`
   },
   api: {
@@ -35,7 +35,7 @@ export const separatorVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Horizontal separator between blocks.',
-    code: `import { UiSeparator } from '@components/ui/separator';
+    code: `import { UiSeparator } from '@workspace/ui/directives/separator';
 
 @Component({
   selector: 'separator-default-example',

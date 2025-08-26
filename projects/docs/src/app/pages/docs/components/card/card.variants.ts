@@ -32,7 +32,7 @@ export const cardMeta: IComponentMeta = {
   description: 'Displays content within a container with header, content and footer slots.',
   installation: {
     package: 'card',
-    import: `import { UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardAction, UiCardContent, UiCardFooter } from '@components/ui/card';`,
+    import: `import { UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardAction, UiCardContent, UiCardFooter } from '@workspace/ui/directives/card';`,
     usage: `<div uiCard>
   <div uiCardHeader>
     <div uiCardTitle>Title</div>
@@ -53,8 +53,8 @@ export const cardVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Card with header, content and footer.',
-    code: `import { UiCard, UiCardAction, UiCardContent, UiCardDescription, UiCardFooter, UiCardHeader, UiCardTitle } from '@components/ui/card';
-import { UiButton } from '@components/ui/button';
+    code: `import { UiCard, UiCardAction, UiCardContent, UiCardDescription, UiCardFooter, UiCardHeader, UiCardTitle } from '@workspace/ui/directives/card';
+import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'card-default-example',

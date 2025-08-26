@@ -41,7 +41,7 @@ export const dialogMeta: IComponentMeta = {
   description: 'A window overlaid on either the primary window or another dialog window.',
   installation: {
     package: 'dialog',
-    import: `import { UiDialog, UiDialogTrigger, UiDialogHeader, UiDialogTitle, UiDialogDescription, UiDialogFooter, UiDialogOverlay } from '@components/ui/dialog';`,
+    import: `import { UiDialog, UiDialogTrigger, UiDialogHeader, UiDialogTitle, UiDialogDescription, UiDialogFooter, UiDialogOverlay } from '@workspace/ui/directives/dialog';`,
     usage: `<button [uiDialogTrigger]="dialog">Open</button><ng-template #dialog let-close="close"><div uiDialogOverlay><div uiDialog>...</div></div></ng-template>`
   },
   api: {
@@ -57,8 +57,8 @@ export const dialogVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Basic dialog with header, content, and footer.',
-    code: `import { UiDialog, UiDialogTrigger, UiDialogHeader, UiDialogTitle, UiDialogDescription, UiDialogFooter, UiDialogOverlay } from '@components/ui/dialog';
-import { UiButton } from '@components/ui/button';
+    code: `import { UiDialog, UiDialogTrigger, UiDialogHeader, UiDialogTitle, UiDialogDescription, UiDialogFooter, UiDialogOverlay } from '@workspace/ui/directives/dialog';
+import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'dialog-default-example',

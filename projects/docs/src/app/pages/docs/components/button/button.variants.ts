@@ -96,7 +96,7 @@ export const buttonMeta: IComponentMeta = {
   description: 'Displays a button or a component that looks like a button.',
   installation: {
     package: 'button',
-    import: `import { UiButton } from '@components/ui/button';`,
+    import: `import { UiButton } from '@workspace/ui/directives/button';`,
     usage: `<button uiButton>Button</button>`
   },
   api: {
@@ -132,7 +132,7 @@ export const buttonVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'The default button appearance.',
-    code: `import { UiButton } from '@components/ui/button';
+    code: `import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'button-default-example',
@@ -145,7 +145,7 @@ export class ButtonDefaultExample {}`,
   {
     title: 'Outline',
     description: 'A button with an outlined appearance.',
-    code: `import { UiButton } from '@components/ui/button';
+    code: `import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'button-outline-example',
@@ -158,7 +158,7 @@ export class ButtonOutlineExample {}`,
   {
     title: 'Destructive',
     description: 'A button for destructive actions.',
-    code: `import { UiButton } from '@components/ui/button';
+    code: `import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'button-destructive-example',
@@ -171,7 +171,7 @@ export class ButtonDestructiveExample {}`,
   {
     title: 'Secondary',
     description: 'A secondary button style.',
-    code: `import { UiButton } from '@components/ui/button';
+    code: `import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'button-secondary-example',
@@ -184,7 +184,7 @@ export class ButtonSecondaryExample {}`,
   {
     title: 'Ghost',
     description: 'A button with a subtle appearance.',
-    code: `import { UiButton } from '@components/ui/button';
+    code: `import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'button-ghost-example',
@@ -197,7 +197,7 @@ export class ButtonGhostExample {}`,
   {
     title: 'Link',
     description: 'A button that looks like a link.',
-    code: `import { UiButton } from '@components/ui/button';
+    code: `import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'button-link-example',
@@ -210,7 +210,7 @@ export class ButtonLinkExample {}`,
   {
     title: 'Sizes',
     description: 'Buttons in different sizes.',
-    code: `import { UiButton } from '@components/ui/button';
+    code: `import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'button-sizes-example',
@@ -229,7 +229,7 @@ export class ButtonSizesExample {}`,
   {
     title: 'With Icon',
     description: 'Buttons with icons and icon-only buttons.',
-    code: `import { UiButton } from '@components/ui/button';
+    code: `import { UiButton } from '@workspace/ui/directives/button';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideDownload, lucideUpload } from '@ng-icons/lucide';
 
@@ -255,7 +255,7 @@ export class ButtonWithIconExample {}`,
   {
     title: 'Loading State',
     description: 'A button with loading indicator.',
-    code: `import { UiButton } from '@components/ui/button';
+    code: `import { UiButton } from '@workspace/ui/directives/button';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideLoaderCircle } from '@ng-icons/lucide';
 

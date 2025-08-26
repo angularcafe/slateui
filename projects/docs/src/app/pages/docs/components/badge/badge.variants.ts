@@ -35,7 +35,7 @@ export const badgeMeta: IComponentMeta = {
   description: 'Displays a badge for labelling content.',
   installation: {
     package: 'badge',
-    import: `import { UiBadge } from '@components/ui/badge';`,
+    import: `import { UiBadge } from '@workspace/ui/directives/badge';`,
     usage: `<span uiBadge>Badge</span>`
   },
   api: {
@@ -49,7 +49,7 @@ export const badgeMeta: IComponentMeta = {
 export const badgeVariants: IVariant[] = [
   {
     title: 'Default',
-    code: `import { UiBadge } from '@components/ui/badge';
+    code: `import { UiBadge } from '@workspace/ui/directives/badge';
 
 @Component({
   selector: 'badge-default-example',
@@ -61,7 +61,7 @@ export class BadgeDefaultExample {}`,
   },
   {
     title: 'Secondary',
-    code: `import { UiBadge } from '@components/ui/badge';
+    code: `import { UiBadge } from '@workspace/ui/directives/badge';
 
 @Component({
   selector: 'badge-secondary-example',
@@ -73,7 +73,7 @@ export class BadgeSecondaryExample {}`,
   },
   {
     title: 'Destructive',
-    code: `import { UiBadge } from '@components/ui/badge';
+    code: `import { UiBadge } from '@workspace/ui/directives/badge';
 
 @Component({
   selector: 'badge-destructive-example',
@@ -85,7 +85,7 @@ export class BadgeDestructiveExample {}`,
   },
   {
     title: 'Outline',
-    code: `import { UiBadge } from '@components/ui/badge';
+    code: `import { UiBadge } from '@workspace/ui/directives/badge';
 
 @Component({
   selector: 'badge-outline-example',

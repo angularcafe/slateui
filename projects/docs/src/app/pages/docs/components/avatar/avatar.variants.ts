@@ -31,7 +31,7 @@ export const avatarMeta: IComponentMeta = {
   description: 'An image representation of a user or entity with a fallback.',
   installation: {
     package: 'avatar',
-    import: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@components/ui/avatar';`,
+    import: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@workspace/ui/directives/avatar';`,
     usage: `<div uiAvatar>
   <img uiAvatarImage src="assets/avatar.png" alt="" />
   <div uiAvatarFallback>AB</div>
@@ -49,7 +49,7 @@ export const avatarVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Avatar with image and fallback content.',
-    code: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@components/ui/avatar';
+    code: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@workspace/ui/directives/avatar';
 
 @Component({
   selector: 'avatar-default-example',
@@ -67,7 +67,7 @@ export class AvatarDefaultExample {}`,
   {
     title: 'Fallback delay',
     description: 'Show fallback after a delay when image fails to load.',
-    code: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@components/ui/avatar';
+    code: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@workspace/ui/directives/avatar';
 
 @Component({
   selector: 'avatar-fallback-delay-example',

@@ -54,7 +54,7 @@ export const alertMeta: IComponentMeta = {
   description: 'Displays a callout for user attention.',
   installation: {
     package: 'alert',
-    import: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@components/ui/alert';`,
+    import: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/directives/alert';`,
     usage: `<div uiAlert>
   <div uiAlertTitle>Alert Title</div>
   <div uiAlertDescription>Alert description</div>
@@ -81,7 +81,7 @@ export const alertVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'The default alert appearance.',
-    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@components/ui/alert';
+    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/directives/alert';
 
 @Component({
   selector: 'alert-default-example',
@@ -101,7 +101,7 @@ export class AlertDefaultExample {}`,
   {
     title: 'Destructive',
     description: 'An alert for error messages.',
-    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@components/ui/alert';
+    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/directives/alert';
 
 @Component({
   selector: 'alert-destructive-example',
@@ -121,7 +121,7 @@ export class AlertDestructiveExample {}`,
   {
     title: 'With Icon',
     description: 'An alert with an icon.',
-    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@components/ui/alert';
+    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/directives/alert';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideCircleAlert } from '@ng-icons/lucide';
 

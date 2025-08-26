@@ -21,7 +21,7 @@ export const popoverMeta: IComponentMeta = {
   description: 'Displays content in a popover anchored to a trigger.',
   installation: {
     package: 'popover',
-    import: `import { UiPopover, UiPopoverTrigger } from '@components/ui/popover';`,
+    import: `import { UiPopover, UiPopoverTrigger } from '@workspace/ui/directives/popover';`,
     usage: `<button [uiPopoverTrigger]="popover">Open</button><ng-template #popover><div uiPopover>Content</div></ng-template>`
   },
   api: {
@@ -37,8 +37,8 @@ export const popoverVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Basic popover with a trigger.',
-    code: `import { UiPopover, UiPopoverTrigger } from '@components/ui/popover';
-import { UiButton } from '@components/ui/button';
+    code: `import { UiPopover, UiPopoverTrigger } from '@workspace/ui/directives/popover';
+import { UiButton } from '@workspace/ui/directives/button';
 
 @Component({
   selector: 'popover-default-example',

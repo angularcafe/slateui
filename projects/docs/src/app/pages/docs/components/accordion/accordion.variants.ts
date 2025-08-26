@@ -45,7 +45,7 @@ export const accordionMeta: IComponentMeta = {
   description: 'A vertically stacked set of expandable content sections.',
   installation: {
     package: 'accordion',
-    import: `import { UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent } from '@components/ui/accordion';`,
+    import: `import { UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent } from '@workspace/ui/directives/accordion';`,
     usage: `<div uiAccordion uiAccordionType="single"><div uiAccordionItem value="item-1"><div uiAccordionTrigger>Header</div><div uiAccordionContent>Content</div></div></div>`
   },
   api: {
@@ -66,7 +66,7 @@ export const accordionVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Single collapsible accordion.',
-    code: `import { UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent } from '@components/ui/accordion';
+    code: `import { UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent } from '@workspace/ui/directives/accordion';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideChevronDown } from '@ng-icons/lucide';
 
