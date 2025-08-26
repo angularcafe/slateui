@@ -1,7 +1,7 @@
 export const styles = {
     neutral: `
 @import 'tailwindcss';
-@import 'tailwindcss-animate';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -87,7 +87,7 @@ export const styles = {
     
     slate: `
 @import 'tailwindcss';
-@import 'tailwindcss-animate';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -173,7 +173,7 @@ export const styles = {
 
     zinc: `
 @import 'tailwindcss';
-@import 'tailwindcss-animate';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -259,7 +259,7 @@ export const styles = {
 
     stone: `
 @import 'tailwindcss';
-@import 'tailwindcss-animate';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -345,7 +345,7 @@ export const styles = {
 
     gray: `
 @import 'tailwindcss';
-@import 'tailwindcss-animate';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 

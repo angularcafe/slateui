@@ -42,7 +42,8 @@
     "rxjs": "~7.8.0",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.1.11",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "tw-animate-css": "^1.3.7"
   },
   "devDependencies": {
     "@angular/build": "^20.1.3",
