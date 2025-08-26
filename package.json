@@ -31,6 +31,7 @@
     "@angular/router": "^20.0.0",
     "@angular/ssr": "^20.1.3",
     "@floating-ui/dom": "^1.6.0",
+    "@ng-icons/bootstrap-icons": "^32.1.0",
     "@ng-icons/core": "^32.1.0",
     "@ng-icons/lucide": "^32.1.0",
     "@slateui/theme": "^1.0.0",
