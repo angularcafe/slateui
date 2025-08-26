@@ -1,63 +1,107 @@
-# Cli
+# SlateUI CLI — Angular UI setup and component generator
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+The `@slateui/cli` package provides Angular schematics to quickly set up SlateUI in your project and add fully-typed, accessibility-friendly UI directives from the official registry.
 
-## Code scaffolding
+## Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Initialize SlateUI**: Configure Tailwind, theme tokens, and base color in one command.
+- **Add directives on demand**: Install directives like `button`, `badge`, `accordion`, etc., or add them all at once.
 
-```bash
-ng generate component component-name
-```
+## Installation
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
+Install the CLI as a dev dependency (recommended):
 
 ```bash
-ng build cli
+npm install -D @slateui/cli
+# or
+yarn add -D @slateui/cli
+# or
+pnpm add -D @slateui/cli
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+## Quick start
 
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/cli
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Initialize SlateUI in your Angular application:
 
 ```bash
-ng test
+ng g @slateui/cli:init
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Then add a directive from the registry (example: `button`):
 
 ```bash
-ng e2e
+ng g @slateui/cli:add button
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Or add everything available:
 
-## Additional Resources
+```bash
+ng g @slateui/cli:add --all
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Schematics and options
+
+### `init` — Initialize SlateUI
+
+Sets up SlateUI in your project. This will configure Tailwind, add styles, and set your chosen base color.
+
+Usage:
+
+```bash
+ng g @slateui/cli:init [options]
+```
+
+Options:
+
+- `--project <name>`: Target Angular app project. Defaults to your workspace default.
+- `--baseColor <neutral|slate|zinc|stone|gray>`: Base color palette. Default: `neutral`.
+- `--confirmOverwrite <y|n>`: When `styles.css` already has content, confirm whether to overwrite.
+
+Examples:
+
+```bash
+ng g @slateui/cli:init --baseColor=slate
+ng g @slateui/cli:init --project=my-app --baseColor=neutral --confirmOverwrite=y
+```
+
+### `add` — Add a SlateUI directive from the registry
+
+Installs directive files from the official SlateUI registry into your project.
+
+Usage:
+
+```bash
+ng g @slateui/cli:add <itemName> [options]
+```
+
+Options:
+
+- `itemName` (positional): Directive name, e.g., `button`, `badge`, `accordion`.
+- `--all` (boolean): Add all available directives.
+
+Examples:
+
+```bash
+ng g @slateui/cli:add button
+ng g @slateui/cli:add --all
+```
+
+## Best practices
+
+- Run `init` before `add` so your theme and styles are in place.
+- Commit your changes before running schematics so you can easily review file edits.
+- Prefer adding directives incrementally to keep your bundle lean.
+
+- For monorepos with multiple apps, pass `--project <name>` to target the correct app.
+
+
+## Documentation
+
+Visit [https://slateui.dev/docs/cli](https://slateui.dev/docs/cli) to view the complete documentation.
+
+
+
+
+## License
+
+MIT © SlateUI

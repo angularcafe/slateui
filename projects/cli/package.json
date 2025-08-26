@@ -1,6 +1,32 @@
 {
   "name": "@slateui/cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "description": "@slateui/cli - initialize themes and add UI directives",
+  "keywords": [
+    "angular",
+    "cli",
+    "schematics",
+    "ui",
+    "components",
+    "directives",
+    "tailwind",
+    "slateui",
+    "slateui-cli",
+    "@slateui/cli"
+  ],
+  "author": {
+    "name": "Mohammad Javed",
+    "url": "https://github.com/immohammadjaved"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angularcafe/slateui"
+  },
+  "homepage": "https://slateui.dev",
+  "bugs": {
+    "url": "https://github.com/angularcafe/slateui/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.schematics.json",
     "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/cli/"
@@ -17,5 +43,11 @@
     "copyfiles": "file:../../node_modules/copyfiles",
     "typescript": "file:../../node_modules/typescript"
   },
+  "files": [
+    "schematics/",
+    "fesm2022/",
+    "package.json",
+    "README.md"
+  ],
   "sideEffects": false
 }
