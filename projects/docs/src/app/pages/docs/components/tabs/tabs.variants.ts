@@ -106,7 +106,7 @@ export const tabsMeta: IComponentMeta = {
   description: 'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
   installation: {
     package: 'tabs',
-    import: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from 'ui';`,
+    import: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@workspace/ui/directives';`,
     usage: `
 <div uiTabs>
   <div uiTabsList>
@@ -177,7 +177,7 @@ export const tabsVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Basic horizontal tabs with text labels.',
-    code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from 'ui';
+    code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@workspace/ui/directives';
 
 @Component({
   selector: 'tabs-default-example',
@@ -203,7 +203,7 @@ export class TabsDefaultExample {}`,
   {
     title: 'With Icons',
     description: 'Tabs with icons alongside text labels.',
-    code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from 'ui';
+    code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@workspace/ui/directives';
 
 @Component({
   selector: 'tabs-with-icons-example',
@@ -239,7 +239,7 @@ export class TabsWithIconsExample {}`,
   {
     title: 'Vertical',
     description: 'Tabs arranged vertically instead of horizontally.',
-    code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from 'ui';
+    code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@workspace/ui/directives';
 
 @Component({
   selector: 'tabs-vertical-example',
@@ -269,7 +269,7 @@ export class TabsVerticalExample {}`,
   {
     title: 'Disabled',
     description: 'Tabs with disabled states for certain triggers.',
-    code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from 'ui';
+    code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@workspace/ui/directives';
 
 @Component({
   selector: 'tabs-disabled-example',
