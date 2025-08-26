@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "name": "slate-cli",
+  "version": "1.0.0",
+  "description": "Slate CLI registry for Angular components and directives",
+  "author": "Slate Team",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:directive",
+      "title": "Button Directive",
+      "description": "A flexible button directive with multiple variants and states",
+      "files": [
+        {
+          "path": "directives/button.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "badge",
+      "type": "registry:directive",
+      "title": "Badge Directive",
+      "description": "A badge directive for displaying status, counts, and labels",
+      "files": [
+        {
+          "path": "directives/badge.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "accordion",
+      "type": "registry:directive",
+      "description": "An accordion directive for collapsible content sections",
+      "files": [
+        {
+          "path": "directives/accordion.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    }
+  ]
+} 
