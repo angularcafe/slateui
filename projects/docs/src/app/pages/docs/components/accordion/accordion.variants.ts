@@ -7,7 +7,7 @@ import { lucideChevronDown } from '@ng-icons/lucide';
 @Component({
   selector: 'accordion-default-example',
   template: `
-    <div uiAccordion type="single" collapsible>
+    <div uiAccordion uiAccordionType="single" uiAccordionCollapsible>
       <div uiAccordionItem value="item-1">
         <div uiAccordionTrigger>
           Is it accessible?
@@ -29,9 +29,16 @@ import { lucideChevronDown } from '@ng-icons/lucide';
     </div>
   `,
   providers: [provideIcons({ lucideChevronDown })],
-  imports: [UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent, NgIcon]
+  imports: [UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent, NgIcon],
+  host: {
+    class: 'w-full'
+  }
 })
-export class AccordionDefaultExample {}
+export class AccordionDefaultExample {
+  onValueChange(value: any) {
+    console.log(value);
+  }
+}
 
 export const accordionMeta: IComponentMeta = {
   title: 'Accordion',
@@ -39,14 +46,18 @@ export const accordionMeta: IComponentMeta = {
   installation: {
     package: 'accordion',
     import: `import { UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent } from '@components/ui/accordion';`,
-    usage: `<div uiAccordion><div uiAccordionItem><div uiAccordionTrigger>Header</div><div uiAccordionContent>Content</div></div></div>`
+    usage: `<div uiAccordion uiAccordionType="single"><div uiAccordionItem value="item-1"><div uiAccordionTrigger>Header</div><div uiAccordionContent>Content</div></div></div>`
   },
   api: {
     props: [
-      { name: 'type', type: '"single" | "multiple"', description: 'Accordion behavior type.' },
-      { name: 'collapsible', type: 'boolean', description: 'Allow closing the active item.' },
-      { name: 'value', type: 'string', description: 'Item value (for controlled state).' },
+      { name: 'uiAccordionType', type: '"single" | "multiple"', description: 'Accordion behavior type.' },
+      { name: 'uiAccordionCollapsible', type: 'boolean', description: 'Allow closing the active item.' },
+      { name: 'uiAccordionValue', type: 'string', description: 'Accordion value (for controlled state).' },
+      { name: 'uiAccordionDisabled', type: 'boolean', description: 'Whether the accordion is disabled.' },
       { name: 'class', type: 'string', description: 'Additional CSS classes.' }
+    ],
+    outputs: [
+      { name: 'uiAccordionValueChange', type: 'EventEmitter<any>', description: 'Emitted when the accordion value changes.' }
     ]
   }
 };
@@ -62,7 +73,7 @@ import { lucideChevronDown } from '@ng-icons/lucide';
 @Component({
   selector: 'accordion-default-example',
   template: \`
-    <div uiAccordion type=\"single\" collapsible>
+    <div uiAccordion uiAccordionType=\"single\" uiAccordionCollapsible>
       <div uiAccordionItem value=\"item-1\">
         <div uiAccordionTrigger>
           Is it accessible?

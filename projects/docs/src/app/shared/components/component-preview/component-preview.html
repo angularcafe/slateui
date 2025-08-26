@@ -10,7 +10,7 @@
                 <div>
                     <docs-tabs>
                         <docs-tab value="preview" label="Preview">
-                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border border-border p-8">
+                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border p-8">
                                 @if (variant.template) {
                                     <ng-container *ngTemplateOutlet="variant.template; injector: createInjector()"></ng-container>
                                 } @else if (variant.component) {
@@ -103,47 +103,86 @@
 
     <!-- Clean API Reference Section -->
     @if (meta(); as componentMeta) {
-        @if (apiProps().length > 0) {
+        @if (apiProps().length > 0 || apiOutputs().length > 0) {
             <div class="space-y-6">
                 <h2 class="text-xl font-semibold" id="api">API Reference</h2>
                 
-                <div class="border border-border rounded-lg overflow-hidden">
-                    <table class="w-full">
-                        <thead>
-                            <tr class="border-b border-border bg-muted/50">
-                                <th class="text-left py-3 px-4 font-medium text-sm">Property</th>
-                                <th class="text-left py-3 px-4 font-medium text-sm">Type</th>
-                                <th class="text-left py-3 px-4 font-medium text-sm">Default</th>
-                                <th class="text-left py-3 px-4 font-medium text-sm">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (prop of apiProps(); track prop.name; let isLast = $last) {
-                                <tr [class]="isLast ? '' : 'border-b border-border'">
-                                    <td class="py-3 px-4 align-top">
-                                        <code class="text-sm font-mono">{{ prop.name }}</code>
-                                        @if (prop.required) {
-                                            <span class="ml-2 text-red-500 text-xs">*</span>
-                                        }
-                                    </td>
-                                    <td class="py-3 px-4 align-top">
-                                        <code class="text-sm font-mono text-muted-foreground">{{ prop.type }}</code>
-                                    </td>
-                                    <td class="py-3 px-4 align-top">
-                                        @if (prop.default) {
-                                            <code class="text-sm font-mono text-muted-foreground">{{ prop.default }}</code>
-                                        } @else {
-                                            <span class="text-muted-foreground text-sm">—</span>
-                                        }
-                                    </td>
-                                    <td class="py-3 px-4 align-top">
-                                        <span class="text-sm">{{ prop.description }}</span>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                <!-- Properties Table -->
+                @if (apiProps().length > 0) {
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold">Properties</h3>
+                        <div class="border rounded-lg overflow-hidden">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b bg-muted/50">
+                                        <th class="text-left py-3 px-4 font-medium text-sm">Property</th>
+                                        <th class="text-left py-3 px-4 font-medium text-sm">Type</th>
+                                        <th class="text-left py-3 px-4 font-medium text-sm">Default</th>
+                                        <th class="text-left py-3 px-4 font-medium text-sm">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (prop of apiProps(); track prop.name; let isLast = $last) {
+                                        <tr [class]="isLast ? '' : 'border-b'">
+                                            <td class="py-3 px-4 align-top">
+                                                <code class="text-sm font-mono">{{ prop.name }}</code>
+                                                @if (prop.required) {
+                                                    <span class="ml-2 text-red-500 text-xs">*</span>
+                                                }
+                                            </td>
+                                            <td class="py-3 px-4 align-top">
+                                                <code class="text-sm font-mono text-muted-foreground">{{ prop.type }}</code>
+                                            </td>
+                                            <td class="py-3 px-4 align-top">
+                                                @if (prop.default) {
+                                                    <code class="text-sm font-mono text-muted-foreground">{{ prop.default }}</code>
+                                                } @else {
+                                                    <span class="text-muted-foreground text-sm">—</span>
+                                                }
+                                            </td>
+                                            <td class="py-3 px-4 align-top">
+                                                <span class="text-sm">{{ prop.description }}</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+                
+                <!-- Outputs Table -->
+                @if (apiOutputs().length > 0) {
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold">Outputs</h3>
+                        <div class="border rounded-lg overflow-hidden">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b bg-muted/50">
+                                        <th class="text-left py-3 px-4 font-medium text-sm">Output</th>
+                                        <th class="text-left py-3 px-4 font-medium text-sm">Type</th>
+                                        <th class="text-left py-3 px-4 font-medium text-sm">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (output of apiOutputs(); track output.name; let isLast = $last) {
+                                        <tr [class]="isLast ? '' : 'border-b'">
+                                            <td class="py-3 px-4 align-top">
+                                                <code class="text-sm font-mono">{{ output.name }}</code>
+                                            </td>
+                                            <td class="py-3 px-4 align-top">
+                                                <code class="text-sm font-mono text-muted-foreground">{{ output.type }}</code>
+                                            </td>
+                                            <td class="py-3 px-4 align-top">
+                                                <span class="text-sm">{{ output.description }}</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
             </div>
         }
     }

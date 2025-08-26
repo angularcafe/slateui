@@ -31,6 +31,11 @@ export interface IComponentMeta {
       description: string;
       required?: boolean;
     }>;
+    outputs?: Array<{
+      name: string;
+      type: string;
+      description: string;
+    }>;
     examples?: string[];
   };
 }
@@ -56,6 +61,7 @@ export class ComponentPreview {
   
   // Computed signals for derived state
   protected readonly apiProps = computed(() => this.meta()?.api?.props || []);
+  protected readonly apiOutputs = computed(() => this.meta()?.api?.outputs || []);
   protected readonly hasVariants = computed(() => this.variants().length > 0);
   protected readonly hasInstallation = computed(() => Boolean(this.meta()?.installation));
   
