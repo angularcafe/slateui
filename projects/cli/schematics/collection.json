@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "init": {
+      "description": "Initialize SlateUI in your Angular project with base color selection.",
+      "factory": "./init/index#init",
+      "schema": "./init/schema.json"
+    },
+    "add": {
+      "description": "Add SlateUI directives from the official registry. Use --all to add all directives.",
+      "factory": "./add/index#add",
+      "schema": "./add/schema.json"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SlateUIInit",
+  "title": "SlateUI Init Options Schema",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "x-prompt": "Which application project would you like to add SlateUI to? (leave blank for default)",
+      "description": "The target application project to add SlateUI to (leave blank for default project)"
+    },
+    "baseColor": {
+      "type": "string",
+      "x-prompt": {
+        "message": "What is the base color to use for SlateUI?",
+        "type": "list",
+        "items": [
+          {
+            "value": "neutral",
+            "label": "neutral (default)"
+          },
+          {
+            "value": "slate",
+            "label": "slate"
+          },
+          {
+            "value": "zinc",
+            "label": "zinc"
+          },
+          {
+            "value": "stone",
+            "label": "stone"
+          },
+          {
+            "value": "gray",
+            "label": "gray"
+          }
+        ]
+      },
+      "default": "neutral",
+      "description": "The base color palette for SlateUI components"
+    },
+    "confirmOverwrite": {
+      "type": "string",
+      "x-prompt": "The styles.css file already contains content. Do you want to overwrite it with the new theme? (y/N)",
+      "description": "Confirm overwriting existing styles.css content with new theme"
+    }
+  },
+  "required": []
+}

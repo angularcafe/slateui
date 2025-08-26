@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "AddRegistryItem",
+  "title": "Add Registry Item Options Schema",
+  "type": "object",
+  "properties": {
+    "itemName": {
+      "type": "string",
+      "description": "The name of the SlateUI directive to add (e.g., button, badge, accordion).",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "all": {
+      "type": "boolean",
+      "description": "Add all available SlateUI directives from the registry.",
+      "default": false
+    }
+  }
+} 
