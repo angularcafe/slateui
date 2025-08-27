@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from 'ui';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideUser, lucideLock } from '@ng-icons/lucide';
 import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 
 // Tabs example components for dynamic rendering
@@ -29,15 +31,11 @@ export class TabsDefaultExample {}
     <div uiTabs class="w-full max-w-md">
       <div uiTabsList>
         <button uiTabsTrigger uiTabsTriggerValue="account">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-          </svg>
+          <ng-icon name="lucideUser" class="w-4 h-4 mr-2" />
           Account
         </button>
         <button uiTabsTrigger uiTabsTriggerValue="password">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
+          <ng-icon name="lucideLock" class="w-4 h-4 mr-2" />
           Password
         </button>
       </div>
@@ -49,7 +47,8 @@ export class TabsDefaultExample {}
       </div>
     </div>
   `,
-  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent]
+  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent, NgIcon],
+  providers: [provideIcons({ lucideUser, lucideLock })]
 })
 export class TabsWithIconsExample {}
 
@@ -204,6 +203,8 @@ export class TabsDefaultExample {}`,
     title: 'With Icons',
     description: 'Tabs with icons alongside text labels.',
     code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@workspace/ui/directives';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideUser, lucideLock } from '@ng-icons/lucide';
 
 @Component({
   selector: 'tabs-with-icons-example',
@@ -211,15 +212,11 @@ export class TabsDefaultExample {}`,
     <div uiTabs class="w-full max-w-md">
       <div uiTabsList>
         <button uiTabsTrigger uiTabsTriggerValue="account">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-          </svg>
+          <ng-icon name="lucideUser" class="w-4 h-4 mr-2" />
           Account
         </button>
         <button uiTabsTrigger uiTabsTriggerValue="password">
-          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
+          <ng-icon name="lucideLock" class="w-4 h-4 mr-2" />
           Password
         </button>
       </div>
@@ -231,40 +228,11 @@ export class TabsDefaultExample {}`,
       </div>
     </div>
   \`,
-  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent]
+  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent, NgIcon],
+  providers: [provideIcons({ lucideUser, lucideLock })]
 })
 export class TabsWithIconsExample {}`,
     component: TabsWithIconsExample
-  },
-  {
-    title: 'Vertical',
-    description: 'Tabs arranged vertically instead of horizontally.',
-    code: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@workspace/ui/directives';
-
-@Component({
-  selector: 'tabs-vertical-example',
-  template: \`
-    <div uiTabs uiTabsOrientation="vertical" class="w-full max-w-md">
-      <div uiTabsList class="flex-col h-auto">
-        <button uiTabsTrigger uiTabsTriggerValue="account">Account</button>
-        <button uiTabsTrigger uiTabsTriggerValue="password">Password</button>
-        <button uiTabsTrigger uiTabsTriggerValue="notifications">Notifications</button>
-      </div>
-      <div uiTabsContent uiTabsContentValue="account">
-        <div class="p-4">Make changes to your account here.</div>
-      </div>
-      <div uiTabsContent uiTabsContentValue="password">
-        <div class="p-4">Change your password here.</div>
-      </div>
-      <div uiTabsContent uiTabsContentValue="notifications">
-        <div class="p-4">Manage your notifications here.</div>
-      </div>
-    </div>
-  \`,
-  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent]
-})
-export class TabsVerticalExample {}`,
-    component: TabsVerticalExample
   },
   {
     title: 'Disabled',

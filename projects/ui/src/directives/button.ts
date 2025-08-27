@@ -8,9 +8,9 @@ const buttonVariants = tv({
         variant: {
             default: "bg-primary text-primary-foreground shadow-sm data-[hover]:bg-primary/90 data-[press]:bg-primary/90",
             destructive: "bg-destructive text-white shadow-xs data-[hover]:bg-destructive/90 data-[press]:bg-destructive/90",
-            outline: "border border-input bg-background shadow-xs data-[hover]:bg-accent data-[press]:bg-accent data-[hover]:text-accent-foreground data-[press]:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+            outline: "border border-input bg-background shadow-xs data-[hover]:bg-accent data-[press]:bg-accent data-[hover]:text-accent-foreground data-[press]:text-accent-foreground dark:bg-input/30 dark:border-input dark:data-[hover]:bg-input/50",
             secondary: "bg-secondary text-secondary-foreground shadow-xs data-[hover]:bg-secondary/80 data-[press]:bg-secondary/80",
-            ghost: "data-[hover]:bg-accent data-[press]:bg-accent  data-[hover]:text-accent-foreground data-[press]:text-accent-foreground",
+            ghost: "data-[hover]:bg-accent data-[press]:bg-accent  data-[hover]:text-accent-foreground data-[press]:text-accent-foreground dark:data-[hover]:bg-accent/50 dark:data-[press]:bg-accent/50",
             link: "text-primary underline-offset-4 data-[hover]:underline data-[press]:underline",
         },
         size: {

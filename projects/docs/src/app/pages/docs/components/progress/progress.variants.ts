@@ -10,7 +10,10 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
       <div uiProgressIndicator></div>
     </div>
   `,
-  imports: [UiProgress, UiProgressIndicator]
+  imports: [UiProgress, UiProgressIndicator],
+  host: {
+    class: 'w-full'
+  }
 })
 export class ProgressDefaultExample {
   readonly value = signal(33);
@@ -22,7 +25,7 @@ export const progressMeta: IComponentMeta = {
   description: 'Displays an indicator showing the completion progress of a task.',
   installation: {
     package: 'progress',
-    import: `import { UiProgress, UiProgressIndicator } from 'ui';`,
+    import: `import { UiProgress, UiProgressIndicator } from '@workspace/ui/directives/progress';`,
     usage: `
 <div uiProgress [uiProgressValue]="value()">
   <div uiProgressIndicator></div>
@@ -70,7 +73,7 @@ export const progressVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Basic progress bar with default styling.',
-    code: `import { UiProgress, UiProgressIndicator } from 'ui';
+    code: `import { UiProgress, UiProgressIndicator } from '@workspace/ui/directives/progress';
 
 @Component({
   selector: 'progress-default-example',
