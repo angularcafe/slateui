@@ -31,10 +31,11 @@ import { UiButton } from 'ui';
 import { Header } from '@components/header/header';
 import { Footer } from "@components/footer/footer";
 import { bootstrapGithub } from '@ng-icons/bootstrap-icons';
+import { Sidebar } from '@components/sidebar/sidebar';
 
 @Component({
   selector: 'docs-landing',
-  imports: [NgIcon, RouterLink, UiButton, Header, Footer, CommonModule],
+  imports: [NgIcon, RouterLink, UiButton, Header, Footer, CommonModule, Sidebar],
   viewProviders: [provideIcons({
     lucideArrowRight,
     lucideArrowUpRight,
