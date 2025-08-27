@@ -5,9 +5,21 @@
 <div class="relative min-h-[calc(100vh-4rem)]">
     <!-- Hero Content -->
     <div class="relative overflow-hidden">
-        <!-- Simple Background -->
+        <!-- Enhanced Background with Texture -->
         <div class="absolute inset-0 bg-background">
+            <!-- Subtle grid pattern -->
             <div class="absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.05]"></div>
+            
+            <!-- Simple gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-br from-background via-background/98 to-muted/30"></div>
+            
+            <!-- Floating geometric shapes with subtle animation -->
+            <div class="absolute top-20 left-10 w-32 h-32 rounded-full bg-blue-500/5 blur-3xl animate-pulse"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 rounded-full bg-purple-500/5 blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-40 left-1/4 w-20 h-20 rounded-full bg-green-500/5 blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
+            
+            <!-- Subtle dot pattern -->
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, currentColor 1px, transparent 1px); background-size: 20px 20px;"></div>
         </div>
 
         <div
@@ -15,9 +27,9 @@
             <div class="text-center max-w-5xl mx-auto w-full">
                 <!-- Launch Badge -->
                 <div class="inline-flex items-center mb-8">
-                    <div class="inline-flex items-center rounded-full border border-border bg-background px-3 py-1 text-sm font-medium">
-                        <ng-icon name="lucideSparkles" size="14px" class="mr-2" />
-                        Available now in beta
+                    <div class="inline-flex items-center rounded-full border border-yellow-300 bg-yellow-50 dark:bg-yellow-900/20 px-3 py-1 text-sm font-medium text-yellow-800 dark:text-yellow-200">
+                        <ng-icon name="lucideWrench" size="14px" class="mr-2" />
+                        Under development
                     </div>
                 </div>
 
@@ -34,7 +46,7 @@
                 <p
                     class="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl leading-relaxed text-muted-foreground max-w-4xl mx-auto font-light">
                     Build beautiful, accessible, and high-performance applications with SlateUI.
-                    A comprehensive Angular component library designed for modern web development.
+                    A comprehensive Angular component library built on <a href="https://angularprimitives.com/" target="_blank" rel="noopener noreferrer" class="underline">Angular Primitives</a>, designed for modern web development.
                 </p>
 
                 <!-- CTA Buttons -->
@@ -47,7 +59,7 @@
                     </a>
                     <a href="https://github.com/angularcafe/slateui" target="_blank" rel="noopener noreferrer" uiButton
                         variant="outline" size="lg" class="inline-flex items-center w-full sm:w-auto">
-                        <ng-icon name="lucideGithub" size="20px" class="mr-2" />
+                        <ng-icon name="bootstrapGithub" size="20px" class="mr-2" />
                         View on GitHub
                         <ng-icon name="lucideExternalLink" size="16px" class="ml-2" />
                     </a>
@@ -74,20 +86,19 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             @for (feature of features; track feature.title) {
-            <div class="group relative">
+            <div class="group relative h-full">
                 <div
-                    class="relative p-8 rounded-2xl border border-border bg-card hover:bg-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1">
+                    class="relative p-8 rounded-2xl border border-border bg-card hover:bg-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 h-full flex flex-col">
                     <div class="flex items-center mb-6">
-                        <div class="relative p-3 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors duration-300">
-                            <ng-icon [name]="feature.icon" size="24px" class="text-primary" />
-                            <!-- Decorative ring -->
-                            <div class="absolute inset-0 rounded-xl ring-1 ring-primary/20 group-hover:ring-primary/30 transition-all duration-300"></div>
+                        <div class="p-3 rounded-xl group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-12 h-12"
+                             [ngClass]="feature.iconBg">
+                            <ng-icon [name]="feature.icon" size="24px" [ngClass]="feature.iconColor" />
                         </div>
                     </div>
                     <h3 class="text-xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                         {{ feature.title }}
                     </h3>
-                    <p class="text-muted-foreground leading-relaxed">
+                    <p class="text-muted-foreground leading-relaxed flex-grow">
                         {{ feature.description }}
                     </p>
                     
