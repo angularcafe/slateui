@@ -34,10 +34,128 @@
     {
       "name": "accordion",
       "type": "registry:directive",
+      "title": "Accordion Directive",
       "description": "An accordion directive for collapsible content sections",
       "files": [
         {
           "path": "directives/accordion.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "tabs",
+      "type": "registry:directive",
+      "title": "Tabs Directive",
+      "description": "A tabs directive for organizing content into multiple views with tab navigation",
+      "files": [
+        {
+          "path": "directives/tabs.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "dialog",
+      "type": "registry:directive",
+      "title": "Dialog Directive",
+      "description": "A dialog directive for creating modal dialogs and overlays",
+      "files": [
+        {
+          "path": "directives/dialog.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "popover",
+      "type": "registry:directive",
+      "title": "Popover Directive",
+      "description": "A popover directive for displaying floating content triggered by user interaction",
+      "files": [
+        {
+          "path": "directives/popover.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "card",
+      "type": "registry:directive",
+      "title": "Card Directive",
+      "description": "A card directive for displaying content in a structured container with header, body, and footer sections",
+      "files": [
+        {
+          "path": "directives/card.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "alert",
+      "type": "registry:directive",
+      "title": "Alert Directive",
+      "description": "An alert directive for displaying important messages and notifications to users",
+      "files": [
+        {
+          "path": "directives/alert.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:directive",
+      "title": "Tooltip Directive",
+      "description": "A tooltip directive for showing additional information on hover or focus",
+      "files": [
+        {
+          "path": "directives/tooltip.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "progress",
+      "type": "registry:directive",
+      "title": "Progress Directive",
+      "description": "A progress directive for displaying progress bars and loading indicators",
+      "files": [
+        {
+          "path": "directives/progress.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "separator",
+      "type": "registry:directive",
+      "title": "Separator Directive",
+      "description": "A separator directive for creating visual dividers between content sections",
+      "files": [
+        {
+          "path": "directives/separator.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "avatar",
+      "type": "registry:directive",
+      "title": "Avatar Directive",
+      "description": "An avatar directive for displaying user profile images and fallback content",
+      "files": [
+        {
+          "path": "directives/avatar.ts",
           "type": "registry:directive"
         }
       ],
