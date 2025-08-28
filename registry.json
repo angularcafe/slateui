@@ -173,6 +173,45 @@
         }
       ],
       "dependencies": []
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:directive",
+      "title": "Dropdown Menu Directive",
+      "description": "A dropdown menu directive for creating interactive dropdown menus with support for submenus, shortcuts, labels, and separators",
+      "files": [
+        {
+          "path": "directives/dropdown-menu.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:directive",
+      "title": "Breadcrumb Directive",
+      "description": "A breadcrumb directive for displaying navigation hierarchy and current page location",
+      "files": [
+        {
+          "path": "directives/breadcrumb.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "label",
+      "type": "registry:directive",
+      "title": "Label Directive",
+      "description": "A label directive for providing accessible labels and descriptions for form controls and other elements",
+      "files": [
+        {
+          "path": "directives/label.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
     }
   ]
 } 
