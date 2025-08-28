@@ -35,7 +35,7 @@
                 @for (link of section.links; track link.name) {
                 <li>
                     <a class="block py-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                        [routerLink]="section?.link ? section.link + '/' + link.path : link.path"
+                        [routerLink]="'/docs/' + (section?.link ? section.link + '/' + link.path : link.path)"
                         routerLinkActive="!text-foreground font-medium">
                         {{ link.name }}
                     </a>
