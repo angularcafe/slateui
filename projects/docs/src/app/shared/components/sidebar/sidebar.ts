@@ -46,6 +46,7 @@ export class Sidebar {
       links: [
         { name: 'Accordion', path: 'accordion' },
         { name: 'Alert', path: 'alert' },
+        { name: 'Alert Dialog', path: 'alert-dialog' },
         { name: 'Avatar', path: 'avatar' },
         { name: 'Badge', path: 'badge' },
         { name: 'Button', path: 'button' },
@@ -54,8 +55,8 @@ export class Sidebar {
         // { name: 'Checkbox', path: 'checkbox' },
         { name: 'Dialog', path: 'dialog' },
         { name: 'Dropdown Menu', path: 'dropdown-menu' },
-        // { name: 'Label', path: 'label' },
-        // { name: 'Input', path: 'input' },
+        //         { name: 'Label', path: 'label' },
+        { name: 'Input', path: 'input' },
         { name: 'Popover', path: 'popover' },
         { name: 'Progress', path: 'progress' },
         // { name: 'Select', path: 'select' },

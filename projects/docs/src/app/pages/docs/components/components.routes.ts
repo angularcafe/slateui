@@ -65,6 +65,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./label/label').then(m => m.Label)
             },
             {
+                path: 'input',
+                loadComponent: () => import('./input/input').then(m => m.Input)
+            },
+            {
                 path: 'table',
                 loadComponent: () => import('./table/table').then(m => m.Table)
             },
