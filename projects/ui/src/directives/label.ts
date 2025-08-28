@@ -3,8 +3,12 @@ import { tv } from "tailwind-variants";
 import { NgpLabel } from "ng-primitives/form-field";
 
 const labelVariants = tv({
-    base: 'flex items-center gap-2 text-sm leading-none font-medium select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50'
+    slots: {
+        label: 'flex items-center gap-2 text-sm leading-none font-medium select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50'
+    }
 });
+
+const { label } = labelVariants();
 
 @Directive({
     selector: '[uiLabel]',
@@ -16,5 +20,5 @@ const labelVariants = tv({
 })
 export class UiLabel {
     inputClass = input<string>('', { alias: 'class' });
-    computedClass = computed(() => labelVariants({ class: this.inputClass() }));
+    computedClass = computed(() => label({ class: this.inputClass() }));
 }

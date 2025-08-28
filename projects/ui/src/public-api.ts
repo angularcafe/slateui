@@ -13,3 +13,4 @@ export * from './directives/progress';
 export * from './directives/tabs';
 export * from './directives/dropdown-menu';
 export * from './directives/table';
+export * from './directives/breadcrumb';

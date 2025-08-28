@@ -21,6 +21,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./badge/badge').then(m => m.Badge)
             },
             {
+                path: 'breadcrumb',
+                loadComponent: () => import('./breadcrumb/breadcrumb').then(m => m.Breadcrumb)
+            },
+            {
                 path: 'card',
                 loadComponent: () => import('./card/card').then(m => m.Card)
             },

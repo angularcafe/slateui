@@ -49,6 +49,7 @@ export class Sidebar {
         { name: 'Avatar', path: 'avatar' },
         { name: 'Badge', path: 'badge' },
         { name: 'Button', path: 'button' },
+        { name: 'Breadcrumb', path: 'breadcrumb' },
         { name: 'Card', path: 'card' },
         // { name: 'Checkbox', path: 'checkbox' },
         { name: 'Dialog', path: 'dialog' },
