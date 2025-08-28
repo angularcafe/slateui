@@ -160,6 +160,19 @@
         }
       ],
       "dependencies": []
+    },
+    {
+      "name": "table",
+      "type": "registry:directive",
+      "title": "Table Directive",
+      "description": "A responsive table directive for displaying tabular data with proper styling and accessibility",
+      "files": [
+        {
+          "path": "directives/table.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
     }
   ]
 } 

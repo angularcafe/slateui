@@ -12,3 +12,4 @@ export * from './directives/label';
 export * from './directives/progress';
 export * from './directives/tabs';
 export * from './directives/dropdown-menu';
+export * from './directives/table';

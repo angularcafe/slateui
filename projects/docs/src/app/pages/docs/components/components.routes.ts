@@ -57,6 +57,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./label/label').then(m => m.Label)
             },
             {
+                path: 'table',
+                loadComponent: () => import('./table/table').then(m => m.Table)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'
