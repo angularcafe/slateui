@@ -65,6 +65,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./table/table').then(m => m.Table)
             },
             {
+                path: 'dropdown-menu',
+                loadComponent: () => import('./dropdown-menu/dropdown-menu').then(m => m.DropdownMenu)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'

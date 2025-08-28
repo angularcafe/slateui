@@ -178,7 +178,7 @@ export const breadcrumbVariants: IVariant[] = [
     </li>
     <li uiBreadcrumbItem>
       <span uiBreadcrumbEllipsis>
-        <ng-icon name="lucideX" size="16" />
+        <ng-icon name="lucideEllipsis" size="16" />
       </span>
     </li>
     <li uiBreadcrumbSeparator>
