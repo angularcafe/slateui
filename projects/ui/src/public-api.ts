@@ -5,6 +5,7 @@ export * from './directives/badge';
 export * from './directives/card';
 export * from './directives/accordion';
 export * from './directives/dialog';
+export * from './directives/alert-dialog';
 export * from './directives/tooltip';
 export * from './directives/popover';
 export * from './directives/separator';
