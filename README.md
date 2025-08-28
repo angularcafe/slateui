@@ -1,59 +1,51 @@
-# Slateui
+# SlateUI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
 
-## Development server
 
-To start a local development server, run:
+SlateUI is a modern, accessible UI component library for Angular that provides directive-based components built with Angular Primitives, Tailwind CSS 4, and Signals. It offers a comprehensive set of pre-built UI components that are fully typed, accessibility-friendly, and designed for modern web applications.
 
-```bash
-ng serve
-```
+## Key Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **🎯 Directive-Based Architecture**: Lightweight, composable UI directives instead of heavy components
+- **🔧 Angular Primitives**: Built on top of Angular Primitives for robust, accessible foundation with built-in WAI-ARIA compliance, keyboard navigation, and screen reader support
+- **🎨 Modern Design System**: Built on Tailwind CSS 4 with customizable theme tokens
+- **⚡ Performance Optimized**: Leverages Angular Signals and modern build optimizations
+- **🔧 Developer Experience**: Full TypeScript support with excellent IntelliSense
+- **📱 Responsive**: Mobile-first design approach with responsive utilities
+- **🌙 Theme Support**: Built-in light/dark mode with system preference detection
+- **📦 Tree-Shakable**: Only import what you need to keep bundles lean
 
-## Code scaffolding
+## Documentation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Website**: [https://slateui.dev](https://slateui.dev)
+- **CLI Documentation**: [https://slateui.dev/docs/cli](https://slateui.dev/docs/cli)
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Contributing
 
-```bash
-ng generate --help
-```
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-## Building
+## License
 
-To build the project run:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```bash
-ng build
-```
+## Acknowledgments
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Built with [Angular](https://angular.io/)
+- Powered by [Angular Primitives](https://ng-primitives.dev/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Inspired by [shadcn/ui](https://ui.shadcn.com/)
 
-## Running unit tests
+## Support
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- **Issues**: [GitHub Issues](https://github.com/angularcafe/slateui/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/angularcafe/slateui/discussions)
+- **Website**: [https://slateui.dev](https://slateui.dev)
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+<div align="center">
 
-For end-to-end (e2e) testing, run:
+Made with ❤️ by the [@immohammadjaved](https://x.com/immohammadjaved)
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+</div>
