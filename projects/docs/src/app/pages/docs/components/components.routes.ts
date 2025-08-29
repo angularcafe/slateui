@@ -69,6 +69,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./input/input').then(m => m.Input)
             },
             {
+                path: 'textarea',
+                loadComponent: () => import('./textarea/textarea').then(m => m.Textarea)
+            },
+            {
                 path: 'table',
                 loadComponent: () => import('./table/table').then(m => m.Table)
             },

@@ -93,7 +93,7 @@ export class InputWithButtonExample {
     <form (ngSubmit)="onSubmit()">
       <div class="grid items-center gap-1.5" uiFormField>
         <label uiLabel>Username</label>
-        <input uiInput placeholder="slateui" [(ngModel)]="username" name="username" />
+        <input uiInput placeholder="slateui" [(ngModel)]="username" name="username" required />
         <p uiDescription>This is your public display name.</p>
       </div>
       <button uiButton type="submit">Submit</button>

@@ -57,6 +57,7 @@ export class Sidebar {
         { name: 'Dropdown Menu', path: 'dropdown-menu' },
         { name: 'Label', path: 'label' },
         { name: 'Input', path: 'input' },
+        { name: 'Textarea', path: 'textarea' },
         { name: 'Popover', path: 'popover' },
         { name: 'Progress', path: 'progress' },
         // { name: 'Select', path: 'select' },
