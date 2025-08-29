@@ -7,6 +7,7 @@ export * from './directives/accordion';
 export * from './directives/dialog';
 export * from './directives/alert-dialog';
 export * from './directives/input';
+export * from './directives/textarea';
 export * from './directives/tooltip';
 export * from './directives/popover';
 export * from './directives/separator';
