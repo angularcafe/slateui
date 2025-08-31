@@ -52,7 +52,7 @@ export class Sidebar {
         { name: 'Button', path: 'button' },
         { name: 'Breadcrumb', path: 'breadcrumb' },
         { name: 'Card', path: 'card' },
-        // { name: 'Checkbox', path: 'checkbox' },
+        { name: 'Checkbox', path: 'checkbox' },
         { name: 'Dialog', path: 'dialog' },
         { name: 'Dropdown Menu', path: 'dropdown-menu' },
         { name: 'Label', path: 'label' },

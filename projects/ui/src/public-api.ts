@@ -18,3 +18,4 @@ export * from './directives/dropdown-menu';
 export * from './directives/table';
 export * from './directives/breadcrumb';
 export * from './directives/form-field';
+export * from './directives/checkbox';

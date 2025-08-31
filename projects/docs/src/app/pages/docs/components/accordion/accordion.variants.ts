@@ -9,19 +9,19 @@ import { lucideChevronDown } from '@ng-icons/lucide';
   template: `
     <div uiAccordion uiAccordionType="single" uiAccordionCollapsible>
       <div uiAccordionItem value="item-1">
-        <div uiAccordionTrigger>
+        <button uiAccordionTrigger>
           Is it accessible?
           <ng-icon uiIcon name="lucideChevronDown" size="16px"></ng-icon>
-        </div>
+        </button>
         <div uiAccordionContent>
           Yes. It adheres to the WAI-ARIA design pattern.
         </div>
       </div>
       <div uiAccordionItem value="item-2">
-        <div uiAccordionTrigger>
+        <button uiAccordionTrigger>
           Is it unstyled?
           <ng-icon uiIcon name="lucideChevronDown" size="16px"></ng-icon>
-        </div>
+        </button>
         <div uiAccordionContent>
           Yes. It's unstyled by default, giving you freedom over the look and feel.
         </div>
@@ -31,7 +31,7 @@ import { lucideChevronDown } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideChevronDown })],
   imports: [UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent, NgIcon],
   host: {
-    class: 'w-full'
+    class: 'w-2/3 space-y-6 mx-auto'
   }
 })
 export class AccordionDefaultExample {

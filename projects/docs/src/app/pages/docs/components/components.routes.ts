@@ -29,6 +29,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./card/card').then(m => m.Card)
             },
             {
+                path: 'checkbox',
+                loadComponent: () => import('./checkbox/checkbox').then(m => m.Checkbox)
+            },
+            {
                 path: 'accordion',
                 loadComponent: () => import('./accordion/accordion').then(m => m.Accordion)
             },
