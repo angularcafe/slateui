@@ -85,6 +85,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./dropdown-menu/dropdown-menu').then(m => m.DropdownMenu)
             },
             {
+                path: 'toggle',
+                loadComponent: () => import('./toggle/toggle').then(m => m.Toggle)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'
