@@ -19,3 +19,4 @@ export * from './directives/table';
 export * from './directives/breadcrumb';
 export * from './directives/form-field';
 export * from './directives/checkbox';
+export * from './directives/toggle';
