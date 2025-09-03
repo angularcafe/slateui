@@ -28,6 +28,11 @@ export class Sidebar {
   // Two-way binding model signal for menu state
   readonly menuOpen = model(false);
   
+  // Sort method for components
+  private sortComponents(components: NavLink[]): NavLink[] {
+    return components.sort((a, b) => a.name.localeCompare(b.name));
+  }
+  
   // Clean navigation structure
   readonly sections = signal<NavSection[]>([
     {
@@ -43,7 +48,7 @@ export class Sidebar {
     {
       title: 'Components',
       link: 'components',
-      links: [
+      links: this.sortComponents([
         { name: 'Accordion', path: 'accordion' },
         { name: 'Alert', path: 'alert' },
         { name: 'Alert Dialog', path: 'alert-dialog' },
@@ -67,8 +72,10 @@ export class Sidebar {
         // { name: 'Toast', path: 'toast' },
         { name: 'Tooltip', path: 'tooltip' },
         { name: 'Table', path: 'table' },
-        { name: 'Toggle', path: 'toggle' }
-      ]
+        { name: 'Toggle', path: 'toggle' },
+        { name: 'Toggle Group', path: 'toggle-group' },
+        { name: 'Skeleton', path: 'skeleton' }
+      ])
     }
   ]);
 
