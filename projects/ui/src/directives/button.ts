@@ -45,5 +45,5 @@ export class UiButton {
     inputClass = input<string>('', { alias: 'class' });
     variant = input<ButtonVariants['variant']>('default');
     size = input<ButtonVariants['size']>('default');
-    computedClass = computed(() => buttonVariants({ variant: this.variant(), size: this.size(), class: this.inputClass(), }));
+    computedClass = computed(() => buttonVariants({ variant: this.variant(), size: this.size(), class: this.inputClass() }));
 }

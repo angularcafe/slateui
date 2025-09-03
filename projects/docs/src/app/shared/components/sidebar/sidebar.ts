@@ -67,7 +67,8 @@ export class Sidebar {
         // { name: 'Toast', path: 'toast' },
         { name: 'Tooltip', path: 'tooltip' },
         { name: 'Table', path: 'table' },
-        { name: 'Toggle', path: 'toggle' }
+        { name: 'Toggle', path: 'toggle' },
+        { name: 'Toggle Group', path: 'toggle-group' }
       ]
     }
   ]);

@@ -89,6 +89,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./toggle/toggle').then(m => m.Toggle)
             },
             {
+                path: 'toggle-group',
+                loadComponent: () => import('./toggle-group/toggle-group').then(m => m.ToggleGroup)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'

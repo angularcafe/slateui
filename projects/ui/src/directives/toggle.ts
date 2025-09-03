@@ -1,5 +1,5 @@
 import { computed, Directive, input } from "@angular/core";
-import { tv } from "tailwind-variants";
+import { tv, VariantProps } from "tailwind-variants";
 import { NgpToggle } from "ng-primitives/toggle";
 import { NgpButton } from "ng-primitives/button";
 
@@ -23,6 +23,7 @@ const toggleVariants = tv({
     },
 });
 
+type ToggleVariants = VariantProps<typeof toggleVariants>;
 
 @Directive({
     selector: '[uiToggle]',
@@ -49,8 +50,8 @@ const toggleVariants = tv({
         }],
 })
 export class UiToggle {
-    variant = input<'default' | 'outline'>('default', { alias: 'variant' });
-    size = input<'default' | 'sm' | 'lg'>('default', { alias: 'size' });
+    variant = input<ToggleVariants['variant']>('default', { alias: 'variant' });
+    size = input<ToggleVariants['size']>('default', { alias: 'size' });
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => toggleVariants({ variant: this.variant(), size: this.size(), class: this.inputClass() }));
 }
