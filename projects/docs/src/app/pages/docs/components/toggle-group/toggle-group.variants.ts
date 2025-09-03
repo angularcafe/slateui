@@ -150,7 +150,7 @@ export class ToggleGroupTextExample {}
 
 export const toggleGroupMeta: IComponentMeta = {
   title: 'Toggle Group',
-  description: 'A set of two-state buttons that can be toggled on or off. Uses a single tv() method with slots and variants. Toggle group items automatically inherit variant and size from their parent toggle group.',
+  description: 'A set of two-state buttons that can be toggled on or off.',
   installation: {
     package: 'toggle-group',
     import: `import { UiToggleGroup, UiToggleGroupItem } from '@workspace/ui/directives/toggle-group';`,

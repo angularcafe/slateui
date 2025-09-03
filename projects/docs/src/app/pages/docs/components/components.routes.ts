@@ -93,6 +93,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./toggle-group/toggle-group').then(m => m.ToggleGroup)
             },
             {
+                path: 'skeleton',
+                loadComponent: () => import('./skeleton/skeleton').then(m => m.Skeleton)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'
