@@ -212,6 +212,110 @@
         }
       ],
       "dependencies": []
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:directive",
+      "title": "Alert Dialog Directive",
+      "description": "An alert dialog directive for displaying critical alerts and confirmations with proper accessibility",
+      "files": [
+        {
+          "path": "directives/alert-dialog.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:directive",
+      "title": "Checkbox Directive",
+      "description": "A checkbox directive for creating accessible checkboxes with proper styling and state management",
+      "files": [
+        {
+          "path": "directives/checkbox.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "form-field",
+      "type": "registry:directive",
+      "title": "Form Field Directive",
+      "description": "A form field directive for creating consistent form layouts with labels, inputs, and validation states",
+      "files": [
+        {
+          "path": "directives/form-field.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "input",
+      "type": "registry:directive",
+      "title": "Input Directive",
+      "description": "An input directive for creating styled text inputs with validation states and accessibility features",
+      "files": [
+        {
+          "path": "directives/input.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:directive",
+      "title": "Skeleton Directive",
+      "description": "A skeleton directive for displaying loading placeholders while content is being fetched",
+      "files": [
+        {
+          "path": "directives/skeleton.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "textarea",
+      "type": "registry:directive",
+      "title": "Textarea Directive",
+      "description": "A textarea directive for creating styled multi-line text inputs with validation states and accessibility features",
+      "files": [
+        {
+          "path": "directives/textarea.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:directive",
+      "title": "Toggle Group Directive",
+      "description": "A toggle group directive for creating groups of toggle buttons with single or multiple selection modes",
+      "files": [
+        {
+          "path": "directives/toggle-group.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "toggle",
+      "type": "registry:directive",
+      "title": "Toggle Directive",
+      "description": "A toggle directive for creating toggle buttons with on/off states and proper accessibility",
+      "files": [
+        {
+          "path": "directives/toggle.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
     }
   ]
 } 
