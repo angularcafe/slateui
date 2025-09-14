@@ -41,6 +41,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./dialog/dialog').then(m => m.Dialog)
             },
             {
+                path: 'sheet',
+                loadComponent: () => import('./sheet/sheet').then(m => m.Sheet)
+            },
+            {
                 path: 'alert-dialog',
                 loadComponent: () => import('./alert-dialog/alert-dialog').then(m => m.AlertDialog)
             },

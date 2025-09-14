@@ -59,6 +59,7 @@ export class Sidebar {
         { name: 'Card', path: 'card' },
         { name: 'Checkbox', path: 'checkbox' },
         { name: 'Dialog', path: 'dialog' },
+        { name: 'Sheet', path: 'sheet' },
         { name: 'Dropdown Menu', path: 'dropdown-menu' },
         { name: 'Label', path: 'label' },
         { name: 'Input', path: 'input' },
