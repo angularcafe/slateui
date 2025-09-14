@@ -71,6 +71,19 @@
       "dependencies": []
     },
     {
+      "name": "sheet",
+      "type": "registry:directive",
+      "title": "Sheet Directive",
+      "description": "A sheet directive for displaying content that slides in from different sides of the screen, extending the Dialog component",
+      "files": [
+        {
+          "path": "directives/sheet.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
       "name": "popover",
       "type": "registry:directive",
       "title": "Popover Directive",
