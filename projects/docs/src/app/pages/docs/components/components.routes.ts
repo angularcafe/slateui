@@ -101,6 +101,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./skeleton/skeleton').then(m => m.Skeleton)
             },
             {
+                path: 'switch',
+                loadComponent: () => import('./switch/switch').then(m => m.Switch)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'
