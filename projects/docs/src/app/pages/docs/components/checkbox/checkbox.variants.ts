@@ -10,19 +10,19 @@ import { UiCheckbox, UiLabel, UiButton, UiFormField, UiDescription } from 'ui';
   template: `
     <div class="flex flex-col gap-6">
         <div class="flex items-center gap-3" uiFormField>
-            <span [(uiCheckboxChecked)]="termsChecked" uiCheckbox>
+            <button [(checked)]="termsChecked" uiCheckbox>
             @if (termsChecked()) {
                 <ng-icon name="lucideCheck" aria-hidden="true" />
             }
-            </span>
+            </button>
             <label uiLabel>Accept terms and conditions</label>
         </div>
         <div class="flex items-start gap-3" uiFormField>
-            <span [(uiCheckboxChecked)]="termsWithDescChecked" uiCheckbox>
+            <button [(checked)]="termsWithDescChecked" uiCheckbox>
             @if (termsWithDescChecked()) {
                 <ng-icon name="lucideCheck" aria-hidden="true" />
             }
-            </span>
+            </button>
             <div class="grid gap-2">
             <label uiLabel>Accept terms and conditions</label>
                 <p uiDescription>
@@ -31,23 +31,23 @@ import { UiCheckbox, UiLabel, UiButton, UiFormField, UiDescription } from 'ui';
             </div>
         </div>
         <div class="flex items-center gap-3" uiFormField>
-            <span [(uiCheckboxChecked)]="disabledChecked" uiCheckbox disabled>
+            <button [(checked)]="disabledChecked" uiCheckbox disabled>
             @if (disabledChecked()) {
                 <ng-icon name="lucideCheck" aria-hidden="true" />
             }
-            </span>
+            </button>
             <label uiLabel>Accept terms and conditions</label>
         </div>
         <div class="grid w-full max-w-md items-start gap-3" uiLabel uiFormField>
             <div class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
-                <span 
-                [(uiCheckboxChecked)]="notificationsChecked"
+                <button 
+                [(checked)]="notificationsChecked"
                 uiCheckbox 
                 class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600">
                 @if (notificationsChecked()) {
                     <ng-icon name="lucideCheck" aria-hidden="true" />
                 }
-                </span>
+                </button>
                 <div class="grid gap-1.5 font-normal">
                 <p uiLabel>
                     Enable notifications
@@ -79,11 +79,11 @@ export class CheckboxDefaultExample {
     selector: 'checkbox-with-label-example',
     template: `
       <div class="flex items-center gap-3" uiFormField>
-        <span [(uiCheckboxChecked)]="checked" uiCheckbox>
+        <button [(checked)]="checked" uiCheckbox>
         @if (checked()) {
             <ng-icon name="lucideCheck" aria-hidden="true" />
         }
-        </span>
+        </button>
         <label uiLabel>Accept terms and conditions</label>
     </div>
     `,
@@ -101,11 +101,11 @@ export class CheckboxDefaultExample {
   template: `
     <div class="grid w-full max-w-sm items-start gap-3" uiFormField>
       <div class="flex items-start gap-3">
-        <span [(uiCheckboxChecked)]="checked" uiCheckbox>
+        <button [(checked)]="checked" uiCheckbox>
           @if (checked()) {
             <ng-icon name="lucideCheck" aria-hidden="true" />
           }
-        </span>
+        </button>
         <div class="grid gap-2">
           <label uiLabel>Accept terms and conditions</label>
           <p uiDescription>
@@ -129,11 +129,11 @@ export class CheckboxWithDescriptionExample {
   template: `
     <div class="w-2/3 space-y-6 mx-auto">
       <div class="flex items-start gap-3" uiFormField>
-        <span [(uiCheckboxChecked)]="checked" uiCheckbox disabled>
+        <button [(checked)]="checked" uiCheckbox disabled>
           @if (checked()) {
             <ng-icon name="lucideCheck" aria-hidden="true" />
           }
-        </span>
+        </button>
         <label uiLabel>Enable notifications</label>
       </div>
     </div>
@@ -154,25 +154,23 @@ export class CheckboxDisabledExample {
   selector: 'checkbox-custom-styling-example',
   template: `
     <div class="grid w-full max-w-md items-start gap-3" uiLabel uiFormField>
-            <div class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
-                <span 
-                [(uiCheckboxChecked)]="checked"
-                uiCheckbox 
-                class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600">
-                @if (checked()) {
-                    <ng-icon name="lucideCheck" aria-hidden="true" />
-                }
-                </span>
-                <div class="grid gap-1.5 font-normal">
-                <p uiLabel>
-                    Enable notifications
-                </p>
-                <p uiDescription>
-                    You can enable or disable notifications at any time.
-                </p>
-                </div>
+      <div class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
+        <button [(checked)]="checked" uiCheckbox 
+        class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600">
+        @if (checked()) {
+            <ng-icon name="lucideCheck" aria-hidden="true" />
+        }
+        </button>
+        <div class="grid gap-1.5 font-normal">
+            <p uiLabel>
+                Enable notifications
+            </p>
+            <p uiDescription>
+                You can enable or disable notifications at any time.
+            </p>
             </div>
         </div>
+    </div>
   `,
   standalone: true,
   imports: [UiCheckbox, NgIcon, UiFormField, UiDescription, UiLabel],
@@ -198,66 +196,66 @@ export class CheckboxCustomStylingExample {
         <div class="space-y-3">
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
-              <span [(uiCheckboxChecked)]="recents" uiCheckbox>
+              <button [(checked)]="recents" uiCheckbox>
                 @if (recents()) {
                   <ng-icon name="lucideCheck" aria-hidden="true" />
                 }
-              </span>
+              </button>
               <label uiLabel class="text-sm font-normal">Recents</label>
             </div>
           </div>
           
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
-              <span [(uiCheckboxChecked)]="home" uiCheckbox>
+              <button [(checked)]="home" uiCheckbox>
                 @if (home()) {
                   <ng-icon name="lucideCheck" aria-hidden="true" />
                 }
-              </span>
+              </button>
               <label uiLabel class="text-sm font-normal">Home</label>
             </div>
           </div>
           
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
-              <span [(uiCheckboxChecked)]="applications" uiCheckbox>
+              <button [(checked)]="applications" uiCheckbox>
                 @if (applications()) {
                   <ng-icon name="lucideCheck" aria-hidden="true" />
                 }
-              </span>
+              </button>
               <label uiLabel class="text-sm font-normal">Applications</label>
             </div>
           </div>
           
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
-              <span [(uiCheckboxChecked)]="desktop" uiCheckbox>
+              <button [(checked)]="desktop" uiCheckbox>
                 @if (desktop()) {
                   <ng-icon name="lucideCheck" aria-hidden="true" />
                 }
-              </span>
+              </button>
               <label uiLabel class="text-sm font-normal">Desktop</label>
             </div>
           </div>
           
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
-              <span [(uiCheckboxChecked)]="downloads" uiCheckbox>
+              <button [(checked)]="downloads" uiCheckbox>
                 @if (downloads()) {
                   <ng-icon name="lucideCheck" aria-hidden="true" />
                 }
-              </span>
+              </button>
               <label uiLabel class="text-sm font-normal">Downloads</label>
             </div>
           </div>
           
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
-              <span [(uiCheckboxChecked)]="documents" uiCheckbox>
+              <button [(checked)]="documents" uiCheckbox>
                 @if (documents()) {
                   <ng-icon name="lucideCheck" aria-hidden="true" />
                 }
-              </span>
+              </button>
               <label uiLabel class="text-sm font-normal">Documents</label>
             </div>
           </div>
@@ -320,37 +318,37 @@ export const checkboxMeta: IComponentMeta = {
   description: 'A control that allows the user to toggle between checked and not checked.',
   installation: {
     import: `import { UiCheckbox } from '@workspace/ui/directives/checkbox';`,
-    usage: `<span [(uiCheckboxChecked)]="checked" uiCheckbox>
+    usage: `<button [(checked)]="checked" uiCheckbox>
 @if (checked()) {
     <ng-icon name="lucideCheck" aria-hidden="true" />
 }
-</span>`
+</button>`
   },
   api: {
     props: [
       {
-        name: 'uiCheckboxChecked',
+        name: 'checked',
         type: 'boolean',
         default: 'false',
         description: 'Whether the checkbox is checked.',
         required: false
       },
       {
-        name: 'uiCheckboxIndeterminate',
+        name: 'indeterminate',
         type: 'boolean',
         default: 'false',
         description: 'Whether the checkbox is in an indeterminate state.',
         required: false
       },
       {
-        name: 'uiCheckboxRequired',
+        name: 'required',
         type: 'boolean',
         default: 'false',
         description: 'Whether the checkbox is required.',
         required: false
       },
       {
-        name: 'uiCheckboxDisabled',
+        name: 'disabled',
         type: 'boolean',
         default: 'false',
         description: 'Whether the checkbox is disabled.',
@@ -366,12 +364,12 @@ export const checkboxMeta: IComponentMeta = {
     ],
     outputs: [
       {
-        name: 'uiCheckboxCheckedChange',
+        name: 'checkedChange',
         type: 'boolean',
         description: 'Emitted when the checked state changes.'
       },
       {
-        name: 'uiCheckboxIndeterminateChange',
+        name: 'indeterminateChange',
         type: 'boolean',
         description: 'Emitted when the indeterminate state changes.'
       }
@@ -393,19 +391,19 @@ import { UiCheckbox, UiLabel, UiFormField, UiDescription } from '@workspace/ui/d
   template: \`
     <div class="flex flex-col gap-6">
       <div class="flex items-center gap-3" uiFormField>
-        <span [(uiCheckboxChecked)]="termsChecked" uiCheckbox>
+        <button [(checked)]="termsChecked" uiCheckbox>
           @if (termsChecked()) {
             <ng-icon name="lucideCheck" aria-hidden="true" />
           }
-        </span>
+        </button>
         <label uiLabel>Accept terms and conditions</label>
       </div>
       <div class="flex items-start gap-3" uiFormField>
-        <span [(uiCheckboxChecked)]="termsWithDescChecked" uiCheckbox>
+        <button [(checked)]="termsWithDescChecked" uiCheckbox>
           @if (termsWithDescChecked()) {
             <ng-icon name="lucideCheck" aria-hidden="true" />
           }
-        </span>
+        </button>
         <div class="grid gap-2">
           <label uiLabel>Accept terms and conditions</label>
           <p uiDescription>
@@ -414,23 +412,23 @@ import { UiCheckbox, UiLabel, UiFormField, UiDescription } from '@workspace/ui/d
         </div>
       </div>
       <div class="flex items-center gap-3" uiFormField>
-        <span [(uiCheckboxChecked)]="disabledChecked" uiCheckbox disabled>
+        <button [(checked)]="disabledChecked" uiCheckbox disabled>
           @if (disabledChecked()) {
             <ng-icon name="lucideCheck" aria-hidden="true" />
           }
-        </span>
+        </button>
         <label uiLabel>Accept terms and conditions</label>
       </div>
       <div class="grid w-full max-w-sm items-start gap-3" uiFormField>
         <div class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
-          <span 
-            [(uiCheckboxChecked)]="notificationsChecked"
+          <button 
+            [(checked)]="notificationsChecked"
             uiCheckbox 
             class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600">
             @if (notificationsChecked()) {
               <ng-icon name="lucideCheck" aria-hidden="true" />
             }
-          </span>
+          </button>
           <div class="grid gap-1.5 font-normal">
             <p class="text-sm leading-none font-medium">
               Enable notifications
@@ -467,11 +465,11 @@ import { UiCheckbox, UiLabel, NgIcon, UiFormField } from '@workspace/ui/directiv
   selector: 'checkbox-with-label-example',
   template: \`
     <div class="flex items-center gap-3" uiFormField>
-      <span [(uiCheckboxChecked)]="checked" uiCheckbox>
+      <button [(checked)]="checked" uiCheckbox>
         @if (checked()) {
           <ng-icon name="lucideCheck" aria-hidden="true" />
         }
-      </span>
+      </button>
       <label uiLabel>Accept terms and conditions</label>
     </div>
   \`,
@@ -497,11 +495,11 @@ import { UiCheckbox, UiLabel, UiFormField, UiDescription } from '@workspace/ui/d
   template: \`
     <div class="grid w-full max-w-sm items-start gap-3" uiFormField>
       <div class="flex items-start gap-3">
-        <span [(uiCheckboxChecked)]="checked" uiCheckbox>
+        <button [(checked)]="checked" uiCheckbox>
           @if (checked()) {
             <ng-icon name="lucideCheck" aria-hidden="true" />
           }
-        </span>
+        </button>
         <div class="grid gap-2">
           <label uiLabel>Accept terms and conditions</label>
           <p uiDescription>
@@ -533,11 +531,11 @@ import { UiCheckbox, UiLabel, UiFormField } from '@workspace/ui/directives/check
   template: \`
     <div class="grid w-full max-w-sm items-start gap-3" uiFormField>
       <div class="flex items-start gap-3">
-        <span [(uiCheckboxChecked)]="checked" uiCheckbox disabled>
+        <button [(checked)]="checked" uiCheckbox disabled>
           @if (checked()) {
             <ng-icon name="lucideCheck" aria-hidden="true" />
           }
-        </span>
+        </button>
         <label uiLabel>Enable notifications</label>
       </div>
     </div>
@@ -564,14 +562,14 @@ import { UiCheckbox, UiFormField, UiDescription } from '@workspace/ui/directives
   template: \`
     <div class="grid w-full max-w-sm items-start gap-3" uiFormField>
       <div class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
-        <span 
-          [(uiCheckboxChecked)]="checked"
-          uiCheckbox 
-          class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600">
-          @if (checked()) {
+        <button 
+        [(checked)]="checked"
+        uiCheckbox 
+        class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600">
+        @if (checked()) {
             <ng-icon name="lucideCheck" aria-hidden="true" />
-          }
-        </span>
+        }
+        </button>
         <div class="grid gap-1.5 font-normal">
           <p class="text-sm leading-none font-medium">
             Enable notifications
@@ -614,66 +612,66 @@ import { UiCheckbox, UiLabel, UiButton, UiFormField } from '@workspace/ui/direct
       <div class="space-y-3">
         <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
           <div class="flex items-center gap-2">
-            <span [(uiCheckboxChecked)]="recents" uiCheckbox>
+            <button [(checked)]="recents" uiCheckbox>
               @if (recents()) {
                 <ng-icon name="lucideCheck" aria-hidden="true" />
               }
-            </span>
+            </button>
             <label uiLabel class="text-sm font-normal">Recents</label>
           </div>
         </div>
         
         <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
           <div class="flex items-center gap-2">
-            <span [(uiCheckboxChecked)]="home" uiCheckbox>
+            <button [(checked)]="home" uiCheckbox>
               @if (home()) {
                 <ng-icon name="lucideCheck" aria-hidden="true" />
               }
-            </span>
+            </button>
             <label uiLabel class="text-sm font-normal">Home</label>
           </div>
         </div>
         
         <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
           <div class="flex items-center gap-2">
-            <span [(uiCheckboxChecked)]="applications" uiCheckbox>
+            <button [(checked)]="applications" uiCheckbox>
               @if (applications()) {
                 <ng-icon name="lucideCheck" aria-hidden="true" />
               }
-            </span>
+            </button>
             <label uiLabel class="text-sm font-normal">Applications</label>
           </div>
         </div>
         
         <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
           <div class="flex items-center gap-2">
-            <span [(uiCheckboxChecked)]="desktop" uiCheckbox>
+            <button [(checked)]="desktop" uiCheckbox>
               @if (desktop()) {
                 <ng-icon name="lucideCheck" aria-hidden="true" />
               }
-            </span>
+            </button>
             <label uiLabel class="text-sm font-normal">Desktop</label>
           </div>
         </div>
         
         <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
           <div class="flex items-center gap-2">
-            <span [(uiCheckboxChecked)]="downloads" uiCheckbox>
+            <button [(checked)]="downloads" uiCheckbox>
               @if (downloads()) {
                 <ng-icon name="lucideCheck" aria-hidden="true" />
               }
-            </span>
+            </button>
             <label uiLabel class="text-sm font-normal">Downloads</label>
           </div>
         </div>
         
         <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
           <div class="flex items-center gap-2">
-            <span [(uiCheckboxChecked)]="documents" uiCheckbox>
+            <button [(checked)]="documents" uiCheckbox>
               @if (documents()) {
                 <ng-icon name="lucideCheck" aria-hidden="true" />
               }
-            </span>
+            </button>
             <label uiLabel class="text-sm font-normal">Documents</label>
           </div>
         </div>
