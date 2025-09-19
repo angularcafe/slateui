@@ -15,14 +15,14 @@ const checkboxVariants = tv({
     hostDirectives: [{
         directive: NgpCheckbox,
         inputs: [
-            'ngpCheckboxChecked: uiCheckboxChecked',
-            'ngpCheckboxIndeterminate: uiCheckboxIndeterminate',
+            'ngpCheckboxChecked: checked',
+            'ngpCheckboxIndeterminate: indeterminate',
             'ngpCheckboxRequired: required',
             'ngpCheckboxDisabled: disabled',
         ],
         outputs: [
-            'ngpCheckboxCheckedChange: uiCheckboxCheckedChange',
-            'ngpCheckboxIndeterminateChange: uiCheckboxIndeterminateChange',
+            'ngpCheckboxCheckedChange: checkedChange',
+            'ngpCheckboxIndeterminateChange: indeterminateChange',
         ],
     }],
 })

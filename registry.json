@@ -162,6 +162,19 @@
       "dependencies": []
     },
     {
+      "name": "switch",
+      "type": "registry:directive",
+      "title": "Switch Directive",
+      "description": "A switch directive for creating toggle switches with on/off states and proper accessibility",
+      "files": [
+        {
+          "path": "directives/switch.ts",
+          "type": "registry:directive"
+        }
+      ],
+      "dependencies": []
+    },
+    {
       "name": "avatar",
       "type": "registry:directive",
       "title": "Avatar Directive",

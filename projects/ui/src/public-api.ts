@@ -23,3 +23,4 @@ export * from './directives/checkbox';
 export * from './directives/toggle';
 export * from './directives/toggle-group';
 export * from './directives/skeleton';
+export * from './directives/switch';
