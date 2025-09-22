@@ -105,6 +105,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./switch/switch').then(m => m.Switch)
             },
             {
+                path: 'radio-group',
+                loadComponent: () => import('./radio-group/radio-group').then(m => m.RadioGroup)
+            },
+            {
                 path: '',
                 redirectTo: 'alert',
                 pathMatch: 'full'
