@@ -1,4 +1,4 @@
-import { computed, Directive, input } from '@angular/core';
+import { computed, Component, ChangeDetectionStrategy, input } from '@angular/core';
 import { tv, VariantProps } from 'tailwind-variants';
 
 const alertVariants = tv({
@@ -22,12 +22,14 @@ const { alert, alertTitle, alertDescription } = alertVariants();
 
 type AlertVariants = VariantProps<typeof alertVariants>;
 
-@Directive({
-    selector: '[uiAlert]',
+@Component({
+    selector: 'ui-alert',
     exportAs: 'uiAlert',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: '<ng-content />'
 })
 export class UiAlert {
     inputClass = input<string>('', { alias: 'class' });
@@ -35,24 +37,28 @@ export class UiAlert {
     computedClass = computed(() => alert({ variant: this.variant(), class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAlertTitle]',
+@Component({
+    selector: 'ui-alert-title',
     exportAs: 'uiAlertTitle',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: '<ng-content />'
 })
 export class UiAlertTitle {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => alertTitle({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAlertDescription]',
+@Component({
+    selector: 'ui-alert-description',
     exportAs: 'uiAlertDescription',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: '<ng-content />'
 })
 export class UiAlertDescription {
     inputClass = input<string>('', { alias: 'class' });
