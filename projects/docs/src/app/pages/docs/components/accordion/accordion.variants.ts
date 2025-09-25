@@ -1,35 +1,30 @@
 import { Component } from '@angular/core';
 import { UiAccordion, UiAccordionContent, UiAccordionItem, UiAccordionTrigger } from 'ui';
 import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
-import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideChevronDown } from '@ng-icons/lucide';
 
 @Component({
   selector: 'accordion-default-example',
   template: `
-    <div uiAccordion uiAccordionType="single" uiAccordionCollapsible>
-      <div uiAccordionItem value="item-1">
-        <button uiAccordionTrigger>
+    <ui-accordion uiAccordionType="single" uiAccordionCollapsible>
+      <ui-accordion-item value="item-1">
+        <ui-accordion-trigger>
           Is it accessible?
-          <ng-icon uiIcon name="lucideChevronDown" size="16px"></ng-icon>
-        </button>
-        <div uiAccordionContent>
+        </ui-accordion-trigger>
+        <ui-accordion-content>
           Yes. It adheres to the WAI-ARIA design pattern.
-        </div>
-      </div>
-      <div uiAccordionItem value="item-2">
-        <button uiAccordionTrigger>
+        </ui-accordion-content>
+      </ui-accordion-item>
+      <ui-accordion-item value="item-2">
+        <ui-accordion-trigger>
           Is it unstyled?
-          <ng-icon uiIcon name="lucideChevronDown" size="16px"></ng-icon>
-        </button>
-        <div uiAccordionContent>
+        </ui-accordion-trigger>
+        <ui-accordion-content>
           Yes. It's unstyled by default, giving you freedom over the look and feel.
-        </div>
-      </div>
-    </div>
+        </ui-accordion-content>
+      </ui-accordion-item>
+    </ui-accordion>
   `,
-  providers: [provideIcons({ lucideChevronDown })],
-  imports: [UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent, NgIcon],
+  imports: [UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent],
   host: {
     class: 'w-2/3 space-y-6 mx-auto'
   }

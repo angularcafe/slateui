@@ -1,6 +1,8 @@
-import { computed, Directive, input } from '@angular/core';
+import { Component, computed, Directive, input } from '@angular/core';
 import { tv } from 'tailwind-variants';
 import { NgpAccordion, NgpAccordionTrigger, NgpAccordionItem, NgpAccordionContent } from 'ng-primitives/accordion';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideChevronDown } from '@ng-icons/lucide';
 
 const accordionVariants = tv({
     slots: {
@@ -13,9 +15,10 @@ const accordionVariants = tv({
 
 const { accordion, accordionItem, accordionTrigger, accordionContent } = accordionVariants();
 
-@Directive({
-    selector: '[uiAccordion]',
+@Component({
+    selector: 'ui-accordion',
     exportAs: 'uiAccordion',
+    template: '<ng-content />',
     host: {
         '[class]': 'computedClass()'
     },
@@ -40,22 +43,26 @@ export class UiAccordion {
 }
 
 
-@Directive({
-    selector: '[uiAccordionTrigger]',
+@Component({
+    selector: 'ui-accordion-trigger',
     exportAs: 'uiAccordionTrigger',
+    template: '<ng-content /><ng-icon uiIcon name="lucideChevronDown" size="16px"></ng-icon>',
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [NgpAccordionTrigger]
+    hostDirectives: [NgpAccordionTrigger],
+    imports: [NgIcon],
+    providers: [provideIcons({ lucideChevronDown })]
 })
 export class UiAccordionTrigger {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => accordionTrigger({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAccordionItem]',
+@Component({
+    selector: 'ui-accordion-item',
     exportAs: 'uiAccordionItem',
+    template: '<ng-content />',
     host: {
         '[class]': 'computedClass()'
     },
@@ -72,9 +79,10 @@ export class UiAccordionItem {
 }
 
 
-@Directive({
-    selector: '[uiAccordionContent]',
+@Component({
+    selector: 'ui-accordion-content',
     exportAs: 'uiAccordionContent',
+    template: '<ng-content />',
     host: {
         '[class]': 'computedClass()'
     },
