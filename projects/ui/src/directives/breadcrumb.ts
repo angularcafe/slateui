@@ -1,5 +1,7 @@
-import { computed, Directive, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { tv } from 'tailwind-variants';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideEllipsis } from '@ng-icons/lucide';
 
 const breadcrumbVariants = tv({
     slots: {
@@ -15,84 +17,91 @@ const breadcrumbVariants = tv({
 
 const { breadcrumb, breadcrumbList, breadcrumbItem, breadcrumbLink, breadcrumbPage, breadcrumbSeparator, breadcrumbEllipsis } = breadcrumbVariants();
 
-@Directive({
-    selector: '[uiBreadcrumb]',
+@Component({
+    selector: 'ui-breadcrumb',
     exportAs: 'uiBreadcrumb',
-    host: {
-        '[class]': 'computedClass()'
-    }
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `<nav [class]="computedClass()"><ng-content /></nav>`
 })
 export class UiBreadcrumb {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => breadcrumb({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiBreadcrumbList]',
+@Component({
+    selector: 'ui-breadcrumb-list',
     exportAs: 'uiBreadcrumbList',
-    host: {
-        '[class]': 'computedClass()'
-    }
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `<ol [class]="computedClass()"><ng-content /></ol>`
 })
 export class UiBreadcrumbList {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => breadcrumbList({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiBreadcrumbItem]',
+@Component({
+    selector: 'ui-breadcrumb-item',
     exportAs: 'uiBreadcrumbItem',
-    host: {
-        '[class]': 'computedClass()'
-    }
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `<li [class]="computedClass()"><ng-content /></li>`
 })
 export class UiBreadcrumbItem {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => breadcrumbItem({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiBreadcrumbLink]',
+@Component({
+    selector: 'ui-breadcrumb-link',
     exportAs: 'uiBreadcrumbLink',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: `<ng-content />`
 })
 export class UiBreadcrumbLink {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => breadcrumbLink({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiBreadcrumbPage]',
+@Component({
+    selector: 'ui-breadcrumb-page',
     exportAs: 'uiBreadcrumbPage',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: `<ng-content />`
 })
 export class UiBreadcrumbPage {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => breadcrumbPage({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiBreadcrumbSeparator]',
+@Component({
+    selector: 'ui-breadcrumb-separator',
     exportAs: 'uiBreadcrumbSeparator',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: `<ng-content />`
 })
 export class UiBreadcrumbSeparator {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => breadcrumbSeparator({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiBreadcrumbEllipsis]',
+@Component({
+    selector: 'ui-breadcrumb-ellipsis',
     exportAs: 'uiBreadcrumbEllipsis',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: `<ng-icon name="lucideEllipsis" size="16" />`,
+    imports: [NgIcon],
+    providers: [provideIcons({ lucideEllipsis })]
 })
 export class UiBreadcrumbEllipsis {
     inputClass = input<string>('', { alias: 'class' });
