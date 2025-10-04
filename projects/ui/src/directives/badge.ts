@@ -1,4 +1,4 @@
-import { computed, Directive, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { tv, VariantProps } from 'tailwind-variants';
 
 const badgeVariants = tv({
@@ -18,12 +18,14 @@ const badgeVariants = tv({
 
 type BadgeVariants = VariantProps<typeof badgeVariants>;
 
-@Directive({
-    selector: '[uiBadge]',
+@Component({
+    selector: 'ui-badge',
     exportAs: 'uiBadge',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: '<ng-content />'
 })
 export class UiBadge {
     inputClass = input<string>('', { alias: 'class' });

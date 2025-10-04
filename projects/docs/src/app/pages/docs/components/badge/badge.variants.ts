@@ -4,28 +4,28 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
 
 @Component({
   selector: 'badge-default-example',
-  template: `<span uiBadge>Default</span>`,
+  template: `<ui-badge>Default</ui-badge>`,
   imports: [UiBadge]
 })
 export class BadgeDefaultExample {}
 
 @Component({
   selector: 'badge-secondary-example',
-  template: `<span uiBadge variant="secondary">Secondary</span>`,
+  template: `<ui-badge variant="secondary">Secondary</ui-badge>`,
   imports: [UiBadge]
 })
 export class BadgeSecondaryExample {}
 
 @Component({
   selector: 'badge-destructive-example',
-  template: `<span uiBadge variant="destructive">Destructive</span>`,
+  template: `<ui-badge variant="destructive">Destructive</ui-badge>`,
   imports: [UiBadge]
 })
 export class BadgeDestructiveExample {}
 
 @Component({
   selector: 'badge-outline-example',
-  template: `<span uiBadge variant="outline">Outline</span>`,
+  template: `<ui-badge variant="outline">Outline</ui-badge>`,
   imports: [UiBadge]
 })
 export class BadgeOutlineExample {}
@@ -35,8 +35,8 @@ export const badgeMeta: IComponentMeta = {
   description: 'Displays a badge for labelling content.',
   installation: {
     package: 'badge',
-    import: `import { UiBadge } from '@workspace/ui/directives/badge';`,
-    usage: `<span uiBadge>Badge</span>`
+    import: `import { UiBadge } from '@workspace/ui/badge';`,
+    usage: `<ui-badge>Badge</ui-badge>`
   },
   api: {
     props: [
@@ -49,11 +49,11 @@ export const badgeMeta: IComponentMeta = {
 export const badgeVariants: IVariant[] = [
   {
     title: 'Default',
-    code: `import { UiBadge } from '@workspace/ui/directives/badge';
+    code: `import { UiBadge } from '@workspace/ui/badge';
 
 @Component({
   selector: 'badge-default-example',
-  template: \`<span uiBadge>Default</span>\`,
+  template: \`<ui-badge>Default</ui-badge>\`,
   imports: [UiBadge]
 })
 export class BadgeDefaultExample {}`,
@@ -61,11 +61,11 @@ export class BadgeDefaultExample {}`,
   },
   {
     title: 'Secondary',
-    code: `import { UiBadge } from '@workspace/ui/directives/badge';
+    code: `import { UiBadge } from '@workspace/ui/badge';
 
 @Component({
   selector: 'badge-secondary-example',
-  template: \`<span uiBadge variant="secondary">Secondary</span>\`,
+  template: \`<ui-badge variant="secondary">Secondary</ui-badge>\`,
   imports: [UiBadge]
 })
 export class BadgeSecondaryExample {}`,
@@ -73,11 +73,11 @@ export class BadgeSecondaryExample {}`,
   },
   {
     title: 'Destructive',
-    code: `import { UiBadge } from '@workspace/ui/directives/badge';
+    code: `import { UiBadge } from '@workspace/ui/badge';
 
 @Component({
   selector: 'badge-destructive-example',
-  template: \`<span uiBadge variant="destructive">Destructive</span>\`,
+  template: \`<ui-badge variant="destructive">Destructive</ui-badge>\`,
   imports: [UiBadge]
 })
 export class BadgeDestructiveExample {}`,
@@ -85,11 +85,11 @@ export class BadgeDestructiveExample {}`,
   },
   {
     title: 'Outline',
-    code: `import { UiBadge } from '@workspace/ui/directives/badge';
+    code: `import { UiBadge } from '@workspace/ui/badge';
 
 @Component({
   selector: 'badge-outline-example',
-  template: \`<span uiBadge variant="outline">Outline</span>\`,
+  template: \`<ui-badge variant="outline">Outline</ui-badge>\`,
   imports: [UiBadge]
 })
 export class BadgeOutlineExample {}`,
