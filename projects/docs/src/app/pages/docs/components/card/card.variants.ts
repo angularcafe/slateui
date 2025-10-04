@@ -7,17 +7,17 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
 @Component({
   selector: 'card-default-example',
   template: `
-    <div uiCard class="w-full max-w-sm">
-      <div uiCardHeader>
-        <div uiCardTitle>Login to your account</div>
-        <div uiCardDescription>
+    <ui-card class="w-full max-w-sm">
+      <ui-card-header>
+        <ui-card-title>Login to your account</ui-card-title>
+        <ui-card-description>
           Enter your email below to login to your account
-        </div>
-        <div uiCardAction>
+        </ui-card-description>
+        <ui-card-action>
           <button uiButton variant="link">Sign Up</button>
-        </div>
-      </div>
-      <div uiCardContent>
+        </ui-card-action>
+      </ui-card-header>
+      <ui-card-content>
         <form>
           <div class="flex flex-col gap-6">
             <div class="grid gap-2" uiFormField>
@@ -35,16 +35,16 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
             </div>
           </div>
         </form>
-      </div>
-      <div uiCardFooter class="flex-col gap-2">
+      </ui-card-content>
+      <ui-card-footer class="flex-col gap-2">
         <button uiButton type="submit" class="w-full">
           Login
         </button>
         <button uiButton variant="outline" class="w-full">
           Login with Google
         </button>
-      </div>
-    </div>
+      </ui-card-footer>
+    </ui-card>
   `,
   imports: [UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardAction, UiCardContent, UiCardFooter, UiLabel, UiInput, UiButton, UiFormField],
   host: {
@@ -81,26 +81,26 @@ export const cardVariants: IVariant[] = [
     title: 'Default',
     description: 'Login to your account',
     code: `import { Component } from '@angular/core';
-import { UiCard, UiCardAction, UiCardContent, UiCardDescription, UiCardFooter, UiCardHeader, UiCardTitle } from '@workspace/ui/directives/card';
-import { UiInput } from '@workspace/ui/directives/input';
-import { UiLabel } from '@workspace/ui/directives/label';
-import { UiButton } from '@workspace/ui/directives/button';
-import { UiFormField } from '@workspace/ui/directives/form-field';
+import { UiCard, UiCardAction, UiCardContent, UiCardDescription, UiCardFooter, UiCardHeader, UiCardTitle } from '@workspace/ui/card';
+import { UiInput } from '@workspace/ui/input';
+import { UiLabel } from '@workspace/ui/label';
+import { UiButton } from '@workspace/ui/button';
+import { UiFormField } from '@workspace/ui/form-field';
 
 @Component({
   selector: 'card-default-example',
   template: \`
-    <div uiCard class="w-full max-w-sm">
-      <div uiCardHeader>
-        <div uiCardTitle>Login to your account</div>
-        <div uiCardDescription>
+    <ui-card class="w-full max-w-sm">
+      <ui-card-header>
+        <ui-card-title>Login to your account</ui-card-title>
+        <ui-card-description>
           Enter your email below to login to your account
-        </div>
-        <div uiCardAction>
+        </ui-card-description>
+        <ui-card-action>
           <button uiButton variant="link">Sign Up</button>
-        </div>
-      </div>
-      <div uiCardContent>
+        </ui-card-action>
+      </ui-card-header>
+      <ui-card-content>
         <form>
           <div class="flex flex-col gap-6">
             <div class="grid gap-2" uiFormField>
@@ -118,16 +118,16 @@ import { UiFormField } from '@workspace/ui/directives/form-field';
             </div>
           </div>
         </form>
-      </div>
-      <div uiCardFooter class="flex-col gap-2">
+      </ui-card-content>
+      <ui-card-footer class="flex-col gap-2">
         <button uiButton type="submit" class="w-full">
           Login
         </button>
         <button uiButton variant="outline" class="w-full">
           Login with Google
         </button>
-      </div>
-    </div>
+      </ui-card-footer>
+    </ui-card>
   \`,
   imports: [UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardAction, UiCardContent, UiCardFooter, UiLabel, UiInput, UiButton, UiFormField],
   host: {
