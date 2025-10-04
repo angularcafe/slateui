@@ -3,7 +3,7 @@
         <!-- Left side - aligned with sidebar -->
         <div class="flex items-center gap-4">
             <button class="lg:hidden" uiButton variant="ghost" size="icon" (click)="toggle()">
-                <ng-icon name="lucideMenu" size="18px" />
+                <ng-icon name="tablerMenu" size="18px" />
             </button>
             <a routerLink="/" class="hidden lg:block">
                 <img class="hidden h-9 w-auto md:block dark:hidden" src="assets/slateui-logo.svg" alt="Slate UI" />
@@ -21,7 +21,7 @@
                 <ng-icon name="bootstrapTwitterX" size="18px" />
             </a>
             <button uiButton variant="ghost" size="icon" (click)="toggleTheme()">
-                <ng-icon [name]="themeService.isDark() ? 'lucideSun' : 'lucideMoon'" size="18px" />
+                <ng-icon name="tablerBlur" size="18px" />
             </button>
         </div>
     </nav>
