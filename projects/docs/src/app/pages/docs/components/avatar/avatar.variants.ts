@@ -5,10 +5,10 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
 @Component({
   selector: 'avatar-default-example',
   template: `
-    <div uiAvatar>
-      <img uiAvatarImage src="assets/avatar.png" alt="Avatar" />
-      <div uiAvatarFallback>AB</div>
-    </div>
+    <ui-avatar>
+      <ui-avatar-image src="assets/avatar.png" alt="Avatar" />
+      <ui-avatar-fallback>AB</ui-avatar-fallback>
+    </ui-avatar>
   `,
   imports: [UiAvatar, UiAvatarImage, UiAvatarFallback]
 })
@@ -17,10 +17,10 @@ export class AvatarDefaultExample {}
 @Component({
   selector: 'avatar-fallback-delay-example',
   template: `
-    <div uiAvatar>
-      <img uiAvatarImage src="assets/avatar.png" alt="Broken" />
-      <div uiAvatarFallback uiAvatarFallbackDelay="500">AB</div>
-    </div>
+    <ui-avatar>
+      <ui-avatar-image src="assets/avatar.png" alt="Broken" />
+      <ui-avatar-fallback delay="500">AB</ui-avatar-fallback>
+    </ui-avatar>
   `,
   imports: [UiAvatar, UiAvatarImage, UiAvatarFallback]
 })
@@ -31,16 +31,16 @@ export const avatarMeta: IComponentMeta = {
   description: 'An image representation of a user or entity with a fallback.',
   installation: {
     package: 'avatar',
-    import: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@workspace/ui/directives/avatar';`,
-    usage: `<div uiAvatar>
-  <img uiAvatarImage src="assets/avatar.png" alt="" />
-  <div uiAvatarFallback>AB</div>
-</div>`
+    import: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@workspace/ui/avatar';`,
+    usage: `<ui-avatar>
+  <ui-avatar-image src="assets/avatar.png" alt="" />
+  <ui-avatar-fallback>AB</ui-avatar-fallback>
+</ui-avatar>`
   },
   api: {
     props: [
       { name: 'class', type: 'string', description: 'Additional CSS classes for the avatar container.' },
-      { name: 'uiAvatarFallbackDelay', type: 'number', default: '0', description: 'Delay in ms before showing fallback.' }
+      { name: 'delay', type: 'number', default: '0', description: 'Delay in ms before showing fallback.' }
     ]
   }
 };
@@ -49,15 +49,15 @@ export const avatarVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'Avatar with image and fallback content.',
-    code: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@workspace/ui/directives/avatar';
+    code: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@workspace/ui/avatar';
 
 @Component({
   selector: 'avatar-default-example',
   template: \`
-    <div uiAvatar>
-      <img uiAvatarImage src="assets/avatar.png" alt="Avatar" />
-      <div uiAvatarFallback>AB</div>
-    </div>
+    <ui-avatar>
+      <ui-avatar-image src="assets/avatar.png" alt="Avatar" />
+      <ui-avatar-fallback>AB</ui-avatar-fallback>
+    </ui-avatar>
   \`,
   imports: [UiAvatar, UiAvatarImage, UiAvatarFallback]
 })
@@ -67,15 +67,15 @@ export class AvatarDefaultExample {}`,
   {
     title: 'Fallback delay',
     description: 'Show fallback after a delay when image fails to load.',
-    code: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@workspace/ui/directives/avatar';
+    code: `import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@workspace/ui/avatar';
 
 @Component({
   selector: 'avatar-fallback-delay-example',
   template: \`
-    <div uiAvatar>
-      <img uiAvatarImage src="assets/avatar.png" alt="Broken" />
-      <div uiAvatarFallback uiAvatarFallbackDelay="500">AB</div>
-    </div>
+    <ui-avatar>
+      <ui-avatar-image src="assets/avatar.png" alt="Broken" />
+      <ui-avatar-fallback delay="500">AB</ui-avatar-fallback>
+    </ui-avatar>
   \`,
   imports: [UiAvatar, UiAvatarImage, UiAvatarFallback]
 })

@@ -1,6 +1,6 @@
 import { computed, Directive, input } from "@angular/core";
 import { tv } from "tailwind-variants";
-import { NgpDialog, NgpDialogDescription, NgpDialogOverlay, NgpDialogTitle, NgpDialogTrigger } from "ng-primitives/dialog";
+import { NgpDialog, NgpDialogDescription, NgpDialogOverlay, NgpDialogTitle, NgpDialogTrigger, provideDialogConfig } from "ng-primitives/dialog";
 
 const alertDialogVariants = tv({
     slots: {
@@ -105,7 +105,8 @@ export class UiAlertDialogFooter {
                 'ngpDialogTriggerCloseOnEscape: uiAlertDialogTriggerCloseOnEscape'
             ]
         }
-    ]
+    ],
+    providers: [provideDialogConfig({ closeOnEscape: false })]
 })
 export class UiAlertDialogTrigger {
     inputClass = input<string>('', { alias: 'class' });
@@ -125,7 +126,8 @@ export class UiAlertDialogTrigger {
                 'ngpDialogOverlayCloseOnClick: uiAlertDialogOverlayCloseOnClick'
             ]
         }
-    ]
+    ],
+    providers: [provideDialogConfig({ closeOnClick: false })]
 })
 export class UiAlertDialogOverlay {
     inputClass = input<string>('', { alias: 'class' });

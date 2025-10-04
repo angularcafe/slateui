@@ -67,6 +67,7 @@ export class Sidebar {
         { name: 'Popover', path: 'popover' },
         { name: 'Progress', path: 'progress' },
         // { name: 'Select', path: 'select' },
+        { name: 'Radio Group', path: 'radio-group' },
         { name: 'Separator', path: 'separator' },
         { name: 'Switch', path: 'switch' },
         { name: 'Tabs', path: 'tabs' },

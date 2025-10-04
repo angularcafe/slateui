@@ -8,12 +8,12 @@ import { lucideCircleAlert } from '@ng-icons/lucide';
 @Component({
   selector: 'alert-default-example',
   template: `
-    <div uiAlert>
-      <div uiAlertTitle>Heads up!</div>
-      <div uiAlertDescription>
+    <ui-alert>
+      <ui-alert-title>Heads up!</ui-alert-title>
+      <ui-alert-description>
         You can add components to your app using the CLI.
-      </div>
-    </div>
+      </ui-alert-description>
+    </ui-alert>
   `,
   imports: [UiAlert, UiAlertTitle, UiAlertDescription]
 })
@@ -22,12 +22,12 @@ export class AlertDefaultExample {}
 @Component({
   selector: 'alert-destructive-example',
   template: `
-    <div uiAlert variant="destructive">
-      <div uiAlertTitle>Error</div>
-      <div uiAlertDescription>
+    <ui-alert variant="destructive">
+      <ui-alert-title>Error</ui-alert-title>
+      <ui-alert-description>
         Your session has expired. Please log in again.
-      </div>
-    </div>
+      </ui-alert-description>
+    </ui-alert>
   `,
   imports: [UiAlert, UiAlertTitle, UiAlertDescription]
 })
@@ -36,13 +36,13 @@ export class AlertDestructiveExample {}
 @Component({
   selector: 'alert-with-icon-example',
   template: `
-    <div uiAlert>
+    <ui-alert>
       <ng-icon uiIcon name="lucideCircleAlert"></ng-icon>
-      <div uiAlertTitle>Well done!</div>
-      <div uiAlertDescription>
+      <ui-alert-title>Well done!</ui-alert-title>
+      <ui-alert-description>
         You successfully read this important alert message.
-      </div>
-    </div>
+      </ui-alert-description>
+    </ui-alert>
   `,
   providers: [provideIcons({ lucideCircleAlert })],
   imports: [UiAlert, UiAlertTitle, UiAlertDescription, NgIcon]
@@ -54,11 +54,11 @@ export const alertMeta: IComponentMeta = {
   description: 'Displays a callout for user attention.',
   installation: {
     package: 'alert',
-    import: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/directives/alert';`,
-    usage: `<div uiAlert>
-  <div uiAlertTitle>Alert Title</div>
-  <div uiAlertDescription>Alert description</div>
-</div>`
+    import: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/alert';`,
+    usage: `<ui-alert>
+  <ui-alert-title>Alert Title</ui-alert-title>
+  <ui-alert-description>Alert description</ui-alert-description>
+</ui-alert>`
   },
   api: {
     props: [
@@ -81,17 +81,17 @@ export const alertVariants: IVariant[] = [
   {
     title: 'Default',
     description: 'The default alert appearance.',
-    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/directives/alert';
+    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/alert';
 
 @Component({
   selector: 'alert-default-example',
   template: \`
-    <div uiAlert>
-      <div uiAlertTitle>Heads up!</div>
-      <div uiAlertDescription>
+    <ui-alert>
+      <ui-alert-title>Heads up!</ui-alert-title>
+      <ui-alert-description>
         You can add components to your app using the CLI.
-      </div>
-    </div>
+      </ui-alert-description>
+    </ui-alert>
   \`,
   imports: [UiAlert, UiAlertTitle, UiAlertDescription]
 })
@@ -101,17 +101,17 @@ export class AlertDefaultExample {}`,
   {
     title: 'Destructive',
     description: 'An alert for error messages.',
-    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/directives/alert';
+    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/alert';
 
 @Component({
   selector: 'alert-destructive-example',
   template: \`
-    <div uiAlert variant="destructive">
-      <div uiAlertTitle>Error</div>
-      <div uiAlertDescription>
+    <ui-alert variant="destructive">
+      <ui-alert-title>Error</ui-alert-title>
+      <ui-alert-description>
         Your session has expired. Please log in again.
-      </div>
-    </div>
+      </ui-alert-description>
+    </ui-alert>
   \`,
   imports: [UiAlert, UiAlertTitle, UiAlertDescription]
 })
@@ -121,20 +121,20 @@ export class AlertDestructiveExample {}`,
   {
     title: 'With Icon',
     description: 'An alert with an icon.',
-    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/directives/alert';
+    code: `import { UiAlert, UiAlertTitle, UiAlertDescription } from '@workspace/ui/alert';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideCircleAlert } from '@ng-icons/lucide';
 
 @Component({
   selector: 'alert-with-icon-example',
   template: \`
-    <div uiAlert>
+    <ui-alert>
       <ng-icon uiIcon name="lucideCircleAlert"></ng-icon>
-      <div uiAlertTitle>Well done!</div>
-      <div uiAlertDescription>
+      <ui-alert-title>Well done!</ui-alert-title>
+      <ui-alert-description>
         You successfully read this important alert message.
-      </div>
-    </div>
+      </ui-alert-description>
+    </ui-alert>
   \`,
   providers: [provideIcons({ lucideCircleAlert })],
   imports: [UiAlert, UiAlertTitle, UiAlertDescription, NgIcon]

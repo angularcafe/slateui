@@ -2,14 +2,14 @@ import { Component, inject, model } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '@slateui/theme';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideMenu, lucideSun, lucideMoon } from '@ng-icons/lucide';
 import { bootstrapGithub, bootstrapTwitterX } from '@ng-icons/bootstrap-icons'
+import { tablerBlur, tablerMenu } from '@ng-icons/tabler-icons';
 import { UiButton } from 'ui';
 
 @Component({
   selector: 'docs-header',
   imports: [NgIcon, UiButton, RouterLink],
-  viewProviders: [provideIcons({ lucideMenu, lucideSun, lucideMoon, bootstrapGithub, bootstrapTwitterX })],
+  viewProviders: [provideIcons({ bootstrapGithub, bootstrapTwitterX, tablerBlur, tablerMenu })],
   templateUrl: './header.html'
 })
 export class Header {
@@ -28,7 +28,5 @@ export class Header {
     this.themeService.setTheme(
       this.themeService.isDark() ? 'light' : 'dark'
     );
-    // The HighlightThemeService will automatically update the highlight.js theme
-    // through its subscription to theme changes
   }
 }

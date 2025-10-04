@@ -1,5 +1,4 @@
-import { NumberInput } from '@angular/cdk/coercion';
-import { computed, Directive, input, numberAttribute } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { NgpAvatar, NgpAvatarFallback, NgpAvatarImage } from "ng-primitives/avatar";
 import { tv } from "tailwind-variants";
 
@@ -13,48 +12,43 @@ const avatarVariants = tv({
 
 const { avatar, avatarImage, avatarFallback } = avatarVariants();
 
-@Directive({
-    selector: '[uiAvatar]',
+@Component({
+    selector: 'ui-avatar',
     exportAs: 'uiAvatar',
     hostDirectives: [NgpAvatar],
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: `<ng-content />`
 })
 export class UiAvatar {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => avatar({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAvatarImage]',
+@Component({
+    selector: 'ui-avatar-image',
     exportAs: 'uiAvatarImage',
-    hostDirectives: [NgpAvatarImage],
-    host: {
-        '[class]': 'computedClass()'
-    }
+    template: `<img [src]="src()" [alt]="alt()" [class]="computedClass()" ngpAvatarImage />`,
+    imports: [NgpAvatarImage]
 })
 export class UiAvatarImage {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => avatarImage({ class: this.inputClass() }));
+    src = input<string>('', { alias: 'src' });
+    alt = input<string>('', { alias: 'alt' });
 }
 
-@Directive({
-    selector: '[uiAvatarFallback]',
+@Component({
+    selector: 'ui-avatar-fallback',
     exportAs: 'uiAvatarFallback',
-    hostDirectives: [{
-        directive: NgpAvatarFallback,
-        inputs: ['ngpAvatarFallbackDelay: delay()'],
-    }],
+    hostDirectives: [NgpAvatarFallback],
     host: {
         '[class]': 'computedClass()'
-    }
+    },
+    template: `<ng-content />`,
 })
 export class UiAvatarFallback {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => avatarFallback({ class: this.inputClass() }));
-    readonly delay = input<number, NumberInput>(0, {
-        alias: 'uiAvatarFallbackDelay',
-        transform: numberAttribute,
-    });
 }
