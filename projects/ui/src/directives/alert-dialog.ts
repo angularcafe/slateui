@@ -1,4 +1,4 @@
-import { computed, Directive, input } from "@angular/core";
+import { ChangeDetectionStrategy, Component, computed, input } from "@angular/core";
 import { tv } from "tailwind-variants";
 import { NgpDialog, NgpDialogDescription, NgpDialogOverlay, NgpDialogTitle, NgpDialogTrigger, provideDialogConfig } from "ng-primitives/dialog";
 
@@ -18,82 +18,84 @@ const alertDialogVariants = tv({
 
 const { alertDialog, alertDialogOverlay, alertDialogHeader, alertDialogFooter, alertDialogTitle, alertDialogDescription, alertDialogTrigger, alertDialogCancel, alertDialogAction } = alertDialogVariants();
 
-@Directive({
-    selector: '[uiAlertDialog]',
+@Component({
+    selector: 'ui-alert-dialog',
     exportAs: 'uiAlertDialog',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [
-        { 
-            directive: NgpDialog,
-            inputs: [
-                'ngpDialogRole: uiAlertDialogRole',
-                'ngpDialogModal: uiAlertDialogModal'
-            ] 
-        }
-    ]
+    hostDirectives: [NgpDialog],
+    template: `<ng-content />`
 })
 export class UiAlertDialog {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => alertDialog({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAlertDialogHeader]',
+@Component({
+    selector: 'ui-alert-dialog-header',
     exportAs: 'uiAlertDialogHeader',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: []
+    hostDirectives: [],
+    template: `<ng-content />`
 })
 export class UiAlertDialogHeader {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => alertDialogHeader({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAlertDialogTitle]',
+@Component({
+    selector: 'ui-alert-dialog-title',
     exportAs: 'uiAlertDialogTitle',
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [NgpDialogTitle]
+    hostDirectives: [NgpDialogTitle],
+    template: `<ng-content />`
 })
 export class UiAlertDialogTitle {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => alertDialogTitle({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAlertDialogDescription]',
+@Component({
+    selector: 'ui-alert-dialog-description',
     exportAs: 'uiAlertDialogDescription',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [NgpDialogDescription]
+    hostDirectives: [NgpDialogDescription],
+    template: `<ng-content />`
 })
 export class UiAlertDialogDescription {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => alertDialogDescription({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAlertDialogFooter]',
+@Component({
+    selector: 'ui-alert-dialog-footer',
     exportAs: 'uiAlertDialogFooter',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: []
+    hostDirectives: [],
+    template: `<ng-content />`
 })
 export class UiAlertDialogFooter {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => alertDialogFooter({ class: this.inputClass() }));
 }
 
-@Directive({
+@Component({
     selector: '[uiAlertDialogTrigger]',
     exportAs: 'uiAlertDialogTrigger',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
     },
@@ -101,59 +103,58 @@ export class UiAlertDialogFooter {
         {
             directive: NgpDialogTrigger, 
             inputs: [
-                'ngpDialogTrigger: uiAlertDialogTrigger',
-                'ngpDialogTriggerCloseOnEscape: uiAlertDialogTriggerCloseOnEscape'
+                'ngpDialogTrigger: uiAlertDialogTrigger'
             ]
         }
     ],
-    providers: [provideDialogConfig({ closeOnEscape: false })]
+    providers: [provideDialogConfig({ closeOnEscape: false })],
+    template: `<ng-content />`
 })
 export class UiAlertDialogTrigger {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => alertDialogTrigger({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAlertDialogOverlay]',
+@Component({
+    selector: 'ui-alert-dialog-overlay',
     exportAs: 'uiAlertDialogOverlay',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: [
-        { 
-            directive: NgpDialogOverlay,
-            inputs: [
-                'ngpDialogOverlayCloseOnClick: uiAlertDialogOverlayCloseOnClick'
-            ]
-        }
-    ],
-    providers: [provideDialogConfig({ closeOnClick: false })]
+    hostDirectives: [NgpDialogOverlay],
+    providers: [provideDialogConfig({ closeOnClick: false })],
+    template: `<ng-content />`
 })
 export class UiAlertDialogOverlay {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => alertDialogOverlay({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAlertDialogCancel]',
+@Component({
+    selector: 'ui-alert-dialog-cancel',
     exportAs: 'uiAlertDialogCancel',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: []
+    hostDirectives: [],
+    template: `<ng-content />`
 })
 export class UiAlertDialogCancel {
     inputClass = input<string>('', { alias: 'class' });
     computedClass = computed(() => alertDialogCancel({ class: this.inputClass() }));
 }
 
-@Directive({
-    selector: '[uiAlertDialogAction]',
+@Component({
+    selector: 'ui-alert-dialog-action',
     exportAs: 'uiAlertDialogAction',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class]': 'computedClass()'
     },
-    hostDirectives: []
+    hostDirectives: [],
+    template: `<ng-content />`
 })
 export class UiAlertDialogAction {
     inputClass = input<string>('', { alias: 'class' });
