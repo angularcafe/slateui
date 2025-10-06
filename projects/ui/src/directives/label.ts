@@ -4,7 +4,7 @@ import { NgpLabel } from "ng-primitives/form-field";
 
 const labelVariants = tv({
     slots: {
-        label: 'flex items-center gap-2 text-sm leading-none font-medium select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50'
+        label: 'flex items-center gap-2 text-sm leading-none font-medium select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 peer-data-[disabled]:cursor-not-allowed peer-data-[disabled]:opacity-50'
     }
 });
 
