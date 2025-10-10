@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UiBreadcrumb, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, UiBreadcrumbList, UiBreadcrumbEllipsis, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem } from 'ui';
+import { UiBreadcrumb, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, UiBreadcrumbList, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem, UiBreadcrumbEllipsis } from 'ui';
 import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideChevronRight, lucideHouse, lucideFileText, lucideSettings, lucideEllipsis } from '@ng-icons/lucide';
@@ -9,25 +9,25 @@ import { lucideChevronRight, lucideHouse, lucideFileText, lucideSettings, lucide
   selector: 'breadcrumb-default-example',
   standalone: true,
   template: `
-    <nav uiBreadcrumb>
-      <ol uiBreadcrumbList>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#">Home</a>
-        </li>
-        <li uiBreadcrumbSeparator>
+    <ui-breadcrumb>
+      <ui-breadcrumb-list>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link><a href="#">Home</a></ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#">Components</a>
-        </li>
-        <li uiBreadcrumbSeparator>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link><a href="#">Components</a></ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <span uiBreadcrumbPage>Breadcrumb</span>
-        </li>
-      </ol>
-    </nav>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-page>Breadcrumb</ui-breadcrumb-page>
+        </ui-breadcrumb-item>
+      </ui-breadcrumb-list>
+    </ui-breadcrumb>
   `,
   imports: [UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, NgIcon],
   providers: [provideIcons({ lucideChevronRight })]
@@ -38,34 +38,34 @@ export class BreadcrumbDefaultExample {}
   selector: 'breadcrumb-with-icons-example',
   standalone: true,
   template: `
-    <nav uiBreadcrumb>
-      <ol uiBreadcrumbList>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#" class="flex items-center gap-1">
+    <ui-breadcrumb>
+      <ui-breadcrumb-list>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link href="#" class="flex items-center gap-1">
             <ng-icon name="lucideHouse" size="16" />
             Home
-          </a>
-        </li>
-        <li uiBreadcrumbSeparator>
+          </ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#" class="flex items-center gap-1">
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link href="#" class="flex items-center gap-1">
             <ng-icon name="lucideFileText" size="16" />
             Documents
-          </a>
-        </li>
-        <li uiBreadcrumbSeparator>
+          </ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <span uiBreadcrumbPage class="flex items-center gap-1">
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-page class="flex items-center gap-1">
             <ng-icon name="lucideSettings" size="16" />
             Settings
-          </span>
-        </li>
-      </ol>
-    </nav>
+          </ui-breadcrumb-page>
+        </ui-breadcrumb-item>
+      </ui-breadcrumb-list>
+    </ui-breadcrumb>
   `,
   imports: [UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, NgIcon],
   providers: [provideIcons({ lucideChevronRight, lucideHouse, lucideFileText, lucideSettings })]
@@ -76,40 +76,38 @@ export class BreadcrumbWithIconsExample {}
   selector: 'breadcrumb-collapsed-example',
   standalone: true,
   template: `
-    <nav uiBreadcrumb>
-      <ol uiBreadcrumbList>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#">Home</a>
-        </li>
-        <li uiBreadcrumbSeparator>
+    <ui-breadcrumb>
+      <ui-breadcrumb-list>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link><a href="#">Home</a></ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <span uiBreadcrumbEllipsis [uiDropdownMenuTrigger]="menu">
-            <ng-icon name="lucideEllipsis" size="16" />
-          </span>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-ellipsis [uiDropdownMenuTrigger]="menu" />
           <ng-template #menu>
             <div uiDropdownMenu class="w-56">
-              <button uiDropdownMenuItem>Documentation </button>
+              <button uiDropdownMenuItem>Documentation</button>
               <button uiDropdownMenuItem>API</button>
               <button uiDropdownMenuItem>Examples</button>
             </div>
           </ng-template>
-        </li>
-        <li uiBreadcrumbSeparator>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#">Components</a>
-        </li>
-        <li uiBreadcrumbSeparator>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link><a href="#">Components</a></ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <span uiBreadcrumbPage>Breadcrumb</span>
-        </li>
-      </ol>
-    </nav>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-page>Breadcrumb</ui-breadcrumb-page>
+        </ui-breadcrumb-item>
+      </ui-breadcrumb-list>
+    </ui-breadcrumb>
   `,
   imports: [UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, UiBreadcrumbEllipsis, NgIcon, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem],
   providers: [provideIcons({ lucideChevronRight, lucideEllipsis })]
@@ -134,25 +132,25 @@ import { lucideChevronRight } from '@ng-icons/lucide';
 @Component({
   selector: 'breadcrumb-default-example',
   template: \`
-    <nav uiBreadcrumb>
-      <ol uiBreadcrumbList>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#">Home</a>
-        </li>
-        <li uiBreadcrumbSeparator>
+    <ui-breadcrumb>
+      <ui-breadcrumb-list>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link><a href="#">Home</a></ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#">Components</a>
-        </li>
-        <li uiBreadcrumbSeparator>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link><a href="#">Components</a></ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <span uiBreadcrumbPage>Breadcrumb</span>
-        </li>
-      </ol>
-    </nav>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-page>Breadcrumb</ui-breadcrumb-page>
+        </ui-breadcrumb-item>
+      </ui-breadcrumb-list>
+    </ui-breadcrumb>
   \`,
   imports: [UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, NgIcon],
   providers: [provideIcons({ lucideChevronRight })]
@@ -177,34 +175,34 @@ import { lucideChevronRight, lucideHouse, lucideFileText, lucideSettings } from 
 @Component({
   selector: 'breadcrumb-with-icons-example',
   template: \`
-    <nav uiBreadcrumb>
-      <ol uiBreadcrumbList>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#" class="flex items-center gap-1">
+    <ui-breadcrumb>
+      <ui-breadcrumb-list>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link href="#" class="flex items-center gap-1">
             <ng-icon name="lucideHouse" size="16" />
             Home
-          </a>
-        </li>
-        <li uiBreadcrumbSeparator>
+          </ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#" class="flex items-center gap-1">
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link href="#" class="flex items-center gap-1">
             <ng-icon name="lucideFileText" size="16" />
             Documents
-          </a>
-        </li>
-        <li uiBreadcrumbSeparator>
+          </ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <span uiBreadcrumbPage class="flex items-center gap-1">
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-page class="flex items-center gap-1">
             <ng-icon name="lucideSettings" size="16" />
             Settings
-          </span>
-        </li>
-      </ol>
-    </nav>
+          </ui-breadcrumb-page>
+        </ui-breadcrumb-item>
+      </ui-breadcrumb-list>
+    </ui-breadcrumb>
   \`,
   imports: [UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, NgIcon],
   providers: [provideIcons({ lucideChevronRight, lucideHouse, lucideFileText, lucideSettings })]
@@ -231,18 +229,16 @@ import { lucideChevronRight, lucideEllipsis } from '@ng-icons/lucide';
 @Component({
   selector: 'breadcrumb-collapsed-example',
   template: \`
-    <nav uiBreadcrumb>
-      <ol uiBreadcrumbList>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#">Home</a>
-        </li>
-        <li uiBreadcrumbSeparator>
+    <ui-breadcrumb>
+      <ui-breadcrumb-list>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link><a href="#">Home</a></ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <span uiBreadcrumbEllipsis [uiDropdownMenuTrigger]="menu">
-            <ng-icon name="lucideEllipsis" size="16" />
-          </span>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-ellipsis [uiDropdownMenuTrigger]="menu" />
           <ng-template #menu>
             <div uiDropdownMenu class="w-56">
               <button uiDropdownMenuItem>Documentation</button>
@@ -250,21 +246,21 @@ import { lucideChevronRight, lucideEllipsis } from '@ng-icons/lucide';
               <button uiDropdownMenuItem>Examples</button>
             </div>
           </ng-template>
-        </li>
-        <li uiBreadcrumbSeparator>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <a uiBreadcrumbLink href="#">Components</a>
-        </li>
-        <li uiBreadcrumbSeparator>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-link><a href="#">Components</a></ui-breadcrumb-link>
+        </ui-breadcrumb-item>
+        <ui-breadcrumb-separator>
           <ng-icon name="lucideChevronRight" size="16" />
-        </li>
-        <li uiBreadcrumbItem>
-          <span uiBreadcrumbPage>Breadcrumb</span>
-        </li>
-      </ol>
-    </nav>
+        </ui-breadcrumb-separator>
+        <ui-breadcrumb-item>
+          <ui-breadcrumb-page>Breadcrumb</ui-breadcrumb-page>
+        </ui-breadcrumb-item>
+      </ui-breadcrumb-list>
+    </ui-breadcrumb>
   \`,
   imports: [UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, UiBreadcrumbEllipsis, NgIcon, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem],
   providers: [provideIcons({ lucideChevronRight, lucideEllipsis })]
@@ -281,19 +277,19 @@ export const breadcrumbMeta: IComponentMeta = {
     package: 'breadcrumb',
     import: `import { UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, UiBreadcrumbEllipsis } from '@workspace/ui/directives/breadcrumb';
 import { UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem } from '@workspace/ui/directives/dropdown-menu';`,
-    usage: `<nav uiBreadcrumb>
-  <ol uiBreadcrumbList>
-    <li uiBreadcrumbItem>
-      <a uiBreadcrumbLink href="#">Home</a>
-    </li>
-    <li uiBreadcrumbSeparator>
+    usage: `<ui-breadcrumb>
+  <ui-breadcrumb-list>
+    <ui-breadcrumb-item>
+      <ui-breadcrumb-link><a href="#">Home</a></ui-breadcrumb-link>
+    </ui-breadcrumb-item>
+    <ui-breadcrumb-separator>
       <ng-icon name=\"lucideChevronRight\" size=\"16\" />
-    </li>
-    <li uiBreadcrumbItem>
-      <span uiBreadcrumbPage>Current</span>
-    </li>
-  </ol>
-</nav>`
+    </ui-breadcrumb-separator>
+    <ui-breadcrumb-item>
+      <ui-breadcrumb-page>Current</ui-breadcrumb-page>
+    </ui-breadcrumb-item>
+  </ui-breadcrumb-list>
+</ui-breadcrumb>`
   },
   api: {
     props: [
