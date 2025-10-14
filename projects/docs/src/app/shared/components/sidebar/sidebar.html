@@ -2,12 +2,20 @@
 <div class="fixed inset-0 z-50 bg-black/50 lg:hidden" (click)="menuOpen.set(false)">
     <div class="h-full overflow-y-auto w-72 bg-background border-r border-border px-6 py-6" (click)="$event.stopPropagation()">
         <div class="flex items-center justify-between mb-6">
-            <a routerLink="/">
-                <img class="h-9 w-auto lg:hidden dark:hidden" src="assets/slateui-logo.svg" alt="Slate UI" />
-                <img class="hidden h-9 w-auto lg:hidden dark:block" src="assets/slateui-logo-dark.svg" alt="Slate UI" />
-            </a>
-            <button uiButton variant="ghost"  size="icon" (click)="menuOpen.set(false)">
-                <ng-icon name="lucideX" class="h-4 w-4" />
+            <div class="flex gap-x-1 sm:gap-x-2">
+                <a uiButton variant="ghost" size="icon" target="_blank"
+                    href="https://github.com/angularcafe/slateui">
+                    <ng-icon name="bootstrapGithub" size="18px" />
+                </a>
+                <a uiButton variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved">
+                    <ng-icon name="bootstrapTwitterX" size="18px" />
+                </a>
+                <button uiButton variant="ghost" size="icon" (click)="toggleTheme()">
+                    <ng-icon name="tablerBlur" size="18px" />
+                </button>
+            </div>
+            <button uiButton variant="outline"  size="icon" (click)="menuOpen.set(false)">
+                <ng-icon name="lucideX" size="18px" />
             </button>
         </div>
         <ng-container [ngTemplateOutlet]="content" />

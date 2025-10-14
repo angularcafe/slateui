@@ -2,17 +2,14 @@
     <nav class="flex h-full items-center justify-between px-6 lg:pl-6 lg:pr-6 xl:pr-6">
         <!-- Left side - aligned with sidebar -->
         <div class="flex items-center gap-4">
-            <button class="lg:hidden" uiButton variant="ghost" size="icon" (click)="toggle()">
-                <ng-icon name="tablerMenu" size="18px" />
-            </button>
-            <a routerLink="/" class="hidden lg:block">
-                <img class="hidden h-9 w-auto md:block dark:hidden" src="assets/slateui-logo.svg" alt="Slate UI" />
-                <img class="hidden h-9 w-auto dark:md:block" src="assets/slateui-logo-dark.svg" alt="Slate UI" />
+            <a routerLink="/">
+                <img class="h-8 md:h-9 w-auto dark:hidden" src="assets/slateui-logo.svg" alt="Slate UI" />
+                <img class="hidden h-8 md:h-9 w-auto dark:block" src="assets/slateui-logo-dark.svg" alt="Slate UI" />
             </a>
         </div>
         
         <!-- Right side - aligned with quick links -->
-        <div class="flex gap-x-1 sm:gap-x-2">
+        <div class="hidden md:flex gap-x-1 sm:gap-x-2">
             <a uiButton variant="ghost" size="icon" target="_blank"
                 href="https://github.com/angularcafe/slateui">
                 <ng-icon name="bootstrapGithub" size="18px" />
@@ -22,6 +19,11 @@
             </a>
             <button uiButton variant="ghost" size="icon" (click)="toggleTheme()">
                 <ng-icon name="tablerBlur" size="18px" />
+            </button>
+        </div>
+        <div class="md:hidden">
+            <button class="lg:hidden" uiButton variant="ghost" size="icon" (click)="toggle()">
+                <ng-icon name="tablerMenu" size="24px" />
             </button>
         </div>
     </nav>
