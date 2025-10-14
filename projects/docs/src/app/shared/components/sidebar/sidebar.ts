@@ -1,8 +1,11 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, model, signal } from '@angular/core';
+import { Component, inject, model, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { bootstrapGithub, bootstrapTwitterX } from '@ng-icons/bootstrap-icons';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideX } from '@ng-icons/lucide';
+import { tablerBlur } from '@ng-icons/tabler-icons';
+import { ThemeService } from '@slateui/theme';
 import { UiButton } from 'ui';
 
 interface NavLink {
@@ -21,10 +24,11 @@ interface NavSection {
   selector: 'docs-sidebar',
   standalone: true,
   imports: [RouterLink, NgIcon, NgTemplateOutlet, RouterLinkActive, UiButton],
-  viewProviders: [provideIcons({ lucideX })],
+  viewProviders: [provideIcons({ lucideX, bootstrapGithub, bootstrapTwitterX, tablerBlur })],
   templateUrl: './sidebar.html'
 })
 export class Sidebar {
+  themeService = inject(ThemeService);
   // Two-way binding model signal for menu state
   readonly menuOpen = model(false);
   
@@ -84,5 +88,11 @@ export class Sidebar {
   // Close menu method for better UX
   closeMenu(): void {
     this.menuOpen.set(false);
+  }
+
+  toggleTheme() {
+    this.themeService.setTheme(
+      this.themeService.isDark() ? 'light' : 'dark'
+    );
   }
 }
