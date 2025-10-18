@@ -13,7 +13,7 @@ const tooltipVariants = tv({
       'absolute bg-primary text-primary-foreground data-[enter]:animate-in data-[enter]:fade-in-0 data-[enter]:zoom-in-95 data-[exit]:animate-out data-[exit]:fade-out-0 data-[exit]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-fit origin-(--ngp-tooltip-transform-origin) rounded-md px-3 py-1.5 text-xs text-balance',
     tooltipTrigger: '',
     tooltipArrow:
-      'absoulte bg-primary fill-primary z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px]',
+      'absolute bg-primary fill-primary z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px]',
   },
 });
 
