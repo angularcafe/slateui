@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 import {
   UiTable,
   UiTableHeader,
@@ -8,21 +8,21 @@ import {
   UiTableHead,
   UiTableCell,
   UiTableCaption,
-} from 'ui';
-import { UiBadge, UiButton } from 'ui';
+} from "ui";
+import { UiBadge, UiButton } from "ui";
 import {
   IVariant,
   IComponentMeta,
-} from '@components/component-preview/component-preview';
-import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideArrowUpDown, lucideX } from '@ng-icons/lucide';
+} from "@components/component-preview/component-preview";
+import { NgIcon, provideIcons } from "@ng-icons/core";
+import { lucideArrowUpDown, lucideX } from "@ng-icons/lucide";
 
 // Basic table example
 @Component({
-  selector: 'table-basic-example',
+  selector: "table-basic-example",
   standalone: true,
   host: {
-    class: 'w-full',
+    class: "w-full",
   },
   template: `
     <div class="relative w-full overflow-x-auto">
@@ -62,10 +62,10 @@ export class TableBasicExample {}
 
 // Table with footer example
 @Component({
-  selector: 'table-with-footer-example',
+  selector: "table-with-footer-example",
   standalone: true,
   host: {
-    class: 'w-full',
+    class: "w-full",
   },
   template: `
     <div class="relative w-full overflow-x-auto">
@@ -117,10 +117,10 @@ export class TableWithFooterExample {}
 
 // Table with caption example
 @Component({
-  selector: 'table-with-caption-example',
+  selector: "table-with-caption-example",
   standalone: true,
   host: {
-    class: 'w-full',
+    class: "w-full",
   },
   template: `
     <div class="relative w-full overflow-x-auto">
@@ -167,10 +167,10 @@ export class TableWithCaptionExample {}
 
 // Table with actions example
 @Component({
-  selector: 'table-with-actions-example',
+  selector: "table-with-actions-example",
   standalone: true,
   host: {
-    class: 'w-full',
+    class: "w-full",
   },
   template: `
     <div class="relative w-full overflow-x-auto">
@@ -234,7 +234,6 @@ export class TableWithCaptionExample {}
     UiTableHead,
     UiTableCell,
     NgIcon,
-    UiBadge,
     UiButton,
   ],
   providers: [provideIcons({ lucideX })],
@@ -242,11 +241,11 @@ export class TableWithCaptionExample {}
 export class TableWithActionsExample {}
 
 export const tableMeta: IComponentMeta = {
-  title: 'Table',
+  title: "Table",
   description:
-    'A responsive table component for displaying tabular data with proper styling and accessibility.',
+    "A responsive table component for displaying tabular data with proper styling and accessibility.",
   installation: {
-    package: 'table',
+    package: "table",
     import: `import { UiTable, UiTableHeader, UiTableBody, UiTableFooter, UiTableRow, UiTableHead, UiTableCell, UiTableCaption } from '@workspace/ui/directives/table';`,
     usage: `
 <div class="relative w-full overflow-x-auto">
@@ -269,49 +268,49 @@ export const tableMeta: IComponentMeta = {
   api: {
     props: [
       {
-        name: 'uiTable',
-        type: 'Directive',
-        description: 'Main table container directive with responsive styling.',
+        name: "uiTable",
+        type: "Directive",
+        description: "Main table container directive with responsive styling.",
       },
       {
-        name: 'uiTableHeader',
-        type: 'Directive',
-        description: 'Table header section with border styling.',
+        name: "uiTableHeader",
+        type: "Directive",
+        description: "Table header section with border styling.",
       },
       {
-        name: 'uiTableBody',
-        type: 'Directive',
-        description: 'Table body section with proper row border handling.',
+        name: "uiTableBody",
+        type: "Directive",
+        description: "Table body section with proper row border handling.",
       },
       {
-        name: 'uiTableFooter',
-        type: 'Directive',
-        description: 'Table footer section with muted background and border.',
+        name: "uiTableFooter",
+        type: "Directive",
+        description: "Table footer section with muted background and border.",
       },
       {
-        name: 'uiTableRow',
-        type: 'Directive',
-        description: 'Table row with hover effects and selection states.',
+        name: "uiTableRow",
+        type: "Directive",
+        description: "Table row with hover effects and selection states.",
       },
       {
-        name: 'uiTableHead',
-        type: 'Directive',
-        description: 'Header cell with proper alignment and checkbox support.',
+        name: "uiTableHead",
+        type: "Directive",
+        description: "Header cell with proper alignment and checkbox support.",
       },
       {
-        name: 'uiTableCell',
-        type: 'Directive',
-        description: 'Data cell with padding and checkbox alignment.',
+        name: "uiTableCell",
+        type: "Directive",
+        description: "Data cell with padding and checkbox alignment.",
       },
       {
-        name: 'uiTableCaption',
-        type: 'Directive',
-        description: 'Table caption with muted text styling.',
+        name: "uiTableCaption",
+        type: "Directive",
+        description: "Table caption with muted text styling.",
       },
       {
-        name: 'class',
-        type: 'string',
-        description: 'Additional CSS classes to apply to the table elements.',
+        name: "class",
+        type: "string",
+        description: "Additional CSS classes to apply to the table elements.",
       },
     ],
   },
@@ -319,8 +318,8 @@ export const tableMeta: IComponentMeta = {
 
 export const tableVariants: IVariant[] = [
   {
-    title: 'Basic Table',
-    description: 'A simple table with basic data display.',
+    title: "Basic Table",
+    description: "A simple table with basic data display.",
     code: `import { UiTable, UiTableHeader, UiTableBody, UiTableRow, UiTableHead, UiTableCell } from '@workspace/ui/directives/table';
 
 @Component({
@@ -357,8 +356,8 @@ export class TableBasicExample {}`,
     component: TableBasicExample,
   },
   {
-    title: 'Table with Footer',
-    description: 'A table with a footer section for totals or summaries.',
+    title: "Table with Footer",
+    description: "A table with a footer section for totals or summaries.",
     code: `import { UiTable, UiTableHeader, UiTableBody, UiTableFooter, UiTableRow, UiTableHead, UiTableCell } from '@workspace/ui/directives/table';
 
 @Component({
@@ -398,8 +397,8 @@ export class TableWithFooterExample {}`,
     component: TableWithFooterExample,
   },
   {
-    title: 'Table with Caption',
-    description: 'A table with a descriptive caption.',
+    title: "Table with Caption",
+    description: "A table with a descriptive caption.",
     code: `import { UiTable, UiTableHeader, UiTableBody, UiTableRow, UiTableHead, UiTableCell, UiTableCaption } from '@workspace/ui/directives/table';
 
 @Component({
@@ -434,9 +433,9 @@ export class TableWithCaptionExample {}`,
     component: TableWithCaptionExample,
   },
   {
-    title: 'Table with Actions',
+    title: "Table with Actions",
     description:
-      'A table with user avatars, status badges, and action buttons.',
+      "A table with user avatars, status badges, and action buttons.",
     code: `import { UiTable, UiTableHeader, UiTableBody, UiTableRow, UiTableHead, UiTableCell } from '@workspace/ui/directives/table';
 import { UiBadge } from '@workspace/ui/directives/badge';
 import { UiButton } from '@workspace/ui/directives/button';
