@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'docs-components-json',
   standalone: true,
   imports: [],
-  templateUrl: './components-json.html'
+  templateUrl: './components-json.html',
 })
-export class ComponentsJson {
-
-}
+export class ComponentsJson {}

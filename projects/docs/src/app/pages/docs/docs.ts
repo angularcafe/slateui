@@ -1,12 +1,19 @@
-import { Component, effect, inject, PLATFORM_ID, signal, computed } from '@angular/core';
+import {
+  Component,
+  effect,
+  inject,
+  PLATFORM_ID,
+  signal,
+  computed,
+} from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Sidebar } from "@components/sidebar/sidebar";
-import { Header } from "@components/header/header";
+import { Sidebar } from '@components/sidebar/sidebar';
+import { Header } from '@components/header/header';
 import { QuickLinks } from '@components/quick-links/quick-links';
-import { Footer } from "@components/footer/footer";
+import { Footer } from '@components/footer/footer';
 
 // Angular 20 standalone component with modern features
 @Component({
@@ -16,16 +23,16 @@ import { Footer } from "@components/footer/footer";
   templateUrl: './docs.html',
   host: {
     class: 'block min-h-screen',
-  }
+  },
 })
 export class Docs {
   // Injected dependencies using Angular 20 inject function
   private readonly router = inject(Router);
   private readonly platform = inject(PLATFORM_ID);
-  
+
   // Signal-based state management
   readonly menuOpen = signal(false);
-  
+
   // Computed values using Angular 20 computed signals
   readonly currentYear = computed(() => new Date().getFullYear());
   readonly isBrowser = computed(() => isPlatformBrowser(this.platform));
@@ -34,8 +41,8 @@ export class Docs {
     // Navigation listener with automatic cleanup
     this.router.events
       .pipe(
-        filter(event => event instanceof NavigationEnd),
-        takeUntilDestroyed()
+        filter((event) => event instanceof NavigationEnd),
+        takeUntilDestroyed(),
       )
       .subscribe(() => this.menuOpen.set(false));
 
@@ -56,7 +63,7 @@ export class Docs {
 
   // Enhanced menu toggle with proper accessibility
   toggleMenu(): void {
-    this.menuOpen.update(open => !open);
+    this.menuOpen.update((open) => !open);
   }
 
   // Close menu programmatically

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { UiSkeleton } from 'ui';
-import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
+import {
+  IVariant,
+  IComponentMeta,
+} from '@components/component-preview/component-preview';
 
 @Component({
   selector: 'skeleton-default-example',
@@ -13,7 +16,7 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
       </div>
     </div>
   `,
-  imports: [UiSkeleton]
+  imports: [UiSkeleton],
 })
 export class SkeletonDefaultExample {}
 
@@ -28,7 +31,7 @@ export class SkeletonDefaultExample {}
       </div>
     </div>
   `,
-  imports: [UiSkeleton]
+  imports: [UiSkeleton],
 })
 export class SkeletonCardExample {}
 
@@ -59,7 +62,7 @@ export class SkeletonCardExample {}
       </div>
     </div>
   `,
-  imports: [UiSkeleton]
+  imports: [UiSkeleton],
 })
 export class SkeletonListExample {}
 
@@ -69,13 +72,17 @@ export const skeletonMeta: IComponentMeta = {
   installation: {
     package: 'skeleton',
     import: `import { UiSkeleton } from '@workspace/ui/directives/skeleton';`,
-    usage: `<div uiSkeleton class="h-4 w-[250px]"></div>`
+    usage: `<div uiSkeleton class="h-4 w-[250px]"></div>`,
   },
   api: {
     props: [
-      { name: 'class', type: 'string', description: 'Additional CSS classes to apply to the skeleton element.' }
-    ]
-  }
+      {
+        name: 'class',
+        type: 'string',
+        description: 'Additional CSS classes to apply to the skeleton element.',
+      },
+    ],
+  },
 };
 
 export const skeletonVariants: IVariant[] = [
@@ -98,11 +105,12 @@ export const skeletonVariants: IVariant[] = [
   imports: [UiSkeleton]
 })
 export class SkeletonDefaultExample {}`,
-    component: SkeletonDefaultExample
+    component: SkeletonDefaultExample,
   },
   {
     title: 'Card',
-    description: 'A skeleton for card layouts with image and text placeholders.',
+    description:
+      'A skeleton for card layouts with image and text placeholders.',
     code: `import { UiSkeleton } from '@workspace/ui/directives/skeleton';
 
 @Component({
@@ -119,7 +127,7 @@ export class SkeletonDefaultExample {}`,
   imports: [UiSkeleton]
 })
 export class SkeletonCardExample {}`,
-    component: SkeletonCardExample
+    component: SkeletonCardExample,
   },
   {
     title: 'List',
@@ -156,6 +164,6 @@ export class SkeletonCardExample {}`,
   imports: [UiSkeleton]
 })
 export class SkeletonListExample {}`,
-    component: SkeletonListExample
-  }
+    component: SkeletonListExample,
+  },
 ];

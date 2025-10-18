@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { UiSeparator } from 'ui';
-import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
+import {
+  IVariant,
+  IComponentMeta,
+} from '@components/component-preview/component-preview';
 
 @Component({
   selector: 'separator-default-example',
@@ -11,7 +14,7 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
       <div>Section 2</div>
     </div>
   `,
-  imports: [UiSeparator]
+  imports: [UiSeparator],
 })
 export class SeparatorDefaultExample {}
 
@@ -21,14 +24,19 @@ export const separatorMeta: IComponentMeta = {
   installation: {
     package: 'separator',
     import: `import { UiSeparator } from '@workspace/ui/directives/separator';`,
-    usage: `<div uiSeparator></div>`
+    usage: `<div uiSeparator></div>`,
   },
   api: {
     props: [
-      { name: 'uiSeparatorOrientation', type: '"horizontal" | "vertical"', default: '"horizontal"', description: 'Orientation of the separator.' },
-      { name: 'class', type: 'string', description: 'Additional CSS classes.' }
-    ]
-  }
+      {
+        name: 'uiSeparatorOrientation',
+        type: '"horizontal" | "vertical"',
+        default: '"horizontal"',
+        description: 'Orientation of the separator.',
+      },
+      { name: 'class', type: 'string', description: 'Additional CSS classes.' },
+    ],
+  },
 };
 
 export const separatorVariants: IVariant[] = [
@@ -49,7 +57,6 @@ export const separatorVariants: IVariant[] = [
   imports: [UiSeparator]
 })
 export class SeparatorDefaultExample {}`,
-    component: SeparatorDefaultExample
-  }
+    component: SeparatorDefaultExample,
+  },
 ];
-

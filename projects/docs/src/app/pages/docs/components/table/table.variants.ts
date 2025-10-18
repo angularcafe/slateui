@@ -1,7 +1,19 @@
 import { Component } from '@angular/core';
-import { UiTable, UiTableHeader, UiTableBody, UiTableFooter, UiTableRow, UiTableHead, UiTableCell, UiTableCaption } from 'ui';
+import {
+  UiTable,
+  UiTableHeader,
+  UiTableBody,
+  UiTableFooter,
+  UiTableRow,
+  UiTableHead,
+  UiTableCell,
+  UiTableCaption,
+} from 'ui';
 import { UiBadge, UiButton } from 'ui';
-import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
+import {
+  IVariant,
+  IComponentMeta,
+} from '@components/component-preview/component-preview';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideArrowUpDown, lucideX } from '@ng-icons/lucide';
 
@@ -10,7 +22,7 @@ import { lucideArrowUpDown, lucideX } from '@ng-icons/lucide';
   selector: 'table-basic-example',
   standalone: true,
   host: {
-    class: 'w-full'
+    class: 'w-full',
   },
   template: `
     <div class="relative w-full overflow-x-auto">
@@ -37,7 +49,14 @@ import { lucideArrowUpDown, lucideX } from '@ng-icons/lucide';
       </table>
     </div>
   `,
-  imports: [UiTable, UiTableHeader, UiTableBody, UiTableRow, UiTableHead, UiTableCell],
+  imports: [
+    UiTable,
+    UiTableHeader,
+    UiTableBody,
+    UiTableRow,
+    UiTableHead,
+    UiTableCell,
+  ],
 })
 export class TableBasicExample {}
 
@@ -46,7 +65,7 @@ export class TableBasicExample {}
   selector: 'table-with-footer-example',
   standalone: true,
   host: {
-    class: 'w-full'
+    class: 'w-full',
   },
   template: `
     <div class="relative w-full overflow-x-auto">
@@ -75,14 +94,24 @@ export class TableBasicExample {}
         </tbody>
         <tfoot uiTableFooter>
           <tr uiTableRow>
-            <td uiTableCell colSpan="3" class="text-right font-medium">Total</td>
+            <td uiTableCell colSpan="3" class="text-right font-medium">
+              Total
+            </td>
             <td uiTableCell class="font-medium">$2,073</td>
           </tr>
         </tfoot>
       </table>
     </div>
   `,
-  imports: [UiTable, UiTableHeader, UiTableBody, UiTableFooter, UiTableRow, UiTableHead, UiTableCell]
+  imports: [
+    UiTable,
+    UiTableHeader,
+    UiTableBody,
+    UiTableFooter,
+    UiTableRow,
+    UiTableHead,
+    UiTableCell,
+  ],
 })
 export class TableWithFooterExample {}
 
@@ -91,12 +120,14 @@ export class TableWithFooterExample {}
   selector: 'table-with-caption-example',
   standalone: true,
   host: {
-    class: 'w-full'
+    class: 'w-full',
   },
   template: `
     <div class="relative w-full overflow-x-auto">
       <table uiTable>
-        <caption uiTableCaption>A list of your recent invoices.</caption>
+        <caption uiTableCaption>
+          A list of your recent invoices.
+        </caption>
         <thead uiTableHeader>
           <tr uiTableRow>
             <th uiTableHead>Invoice</th>
@@ -122,7 +153,15 @@ export class TableWithFooterExample {}
       </table>
     </div>
   `,
-  imports: [UiTable, UiTableHeader, UiTableBody, UiTableRow, UiTableHead, UiTableCell, UiTableCaption]
+  imports: [
+    UiTable,
+    UiTableHeader,
+    UiTableBody,
+    UiTableRow,
+    UiTableHead,
+    UiTableCell,
+    UiTableCaption,
+  ],
 })
 export class TableWithCaptionExample {}
 
@@ -131,7 +170,7 @@ export class TableWithCaptionExample {}
   selector: 'table-with-actions-example',
   standalone: true,
   host: {
-    class: 'w-full'
+    class: 'w-full',
   },
   template: `
     <div class="relative w-full overflow-x-auto">
@@ -187,14 +226,25 @@ export class TableWithCaptionExample {}
       </table>
     </div>
   `,
-  imports: [UiTable, UiTableHeader, UiTableBody, UiTableRow, UiTableHead, UiTableCell, NgIcon, UiBadge, UiButton],
-  providers: [provideIcons({ lucideX })]
+  imports: [
+    UiTable,
+    UiTableHeader,
+    UiTableBody,
+    UiTableRow,
+    UiTableHead,
+    UiTableCell,
+    NgIcon,
+    UiBadge,
+    UiButton,
+  ],
+  providers: [provideIcons({ lucideX })],
 })
 export class TableWithActionsExample {}
 
 export const tableMeta: IComponentMeta = {
   title: 'Table',
-  description: 'A responsive table component for displaying tabular data with proper styling and accessibility.',
+  description:
+    'A responsive table component for displaying tabular data with proper styling and accessibility.',
   installation: {
     package: 'table',
     import: `import { UiTable, UiTableHeader, UiTableBody, UiTableFooter, UiTableRow, UiTableHead, UiTableCell, UiTableCaption } from '@workspace/ui/directives/table';`,
@@ -214,57 +264,57 @@ export const tableMeta: IComponentMeta = {
       </tr>
     </tbody>
   </table>
-</div>`
+</div>`,
   },
   api: {
     props: [
       {
         name: 'uiTable',
         type: 'Directive',
-        description: 'Main table container directive with responsive styling.'
+        description: 'Main table container directive with responsive styling.',
       },
       {
         name: 'uiTableHeader',
         type: 'Directive',
-        description: 'Table header section with border styling.'
+        description: 'Table header section with border styling.',
       },
       {
         name: 'uiTableBody',
         type: 'Directive',
-        description: 'Table body section with proper row border handling.'
+        description: 'Table body section with proper row border handling.',
       },
       {
         name: 'uiTableFooter',
         type: 'Directive',
-        description: 'Table footer section with muted background and border.'
+        description: 'Table footer section with muted background and border.',
       },
       {
         name: 'uiTableRow',
         type: 'Directive',
-        description: 'Table row with hover effects and selection states.'
+        description: 'Table row with hover effects and selection states.',
       },
       {
         name: 'uiTableHead',
         type: 'Directive',
-        description: 'Header cell with proper alignment and checkbox support.'
+        description: 'Header cell with proper alignment and checkbox support.',
       },
       {
         name: 'uiTableCell',
         type: 'Directive',
-        description: 'Data cell with padding and checkbox alignment.'
+        description: 'Data cell with padding and checkbox alignment.',
       },
       {
         name: 'uiTableCaption',
         type: 'Directive',
-        description: 'Table caption with muted text styling.'
+        description: 'Table caption with muted text styling.',
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the table elements.'
-      }
-    ]
-  }
+        description: 'Additional CSS classes to apply to the table elements.',
+      },
+    ],
+  },
 };
 
 export const tableVariants: IVariant[] = [
@@ -304,7 +354,7 @@ export const tableVariants: IVariant[] = [
   imports: [UiTable, UiTableHeader, UiTableBody, UiTableRow, UiTableHead, UiTableCell]
 })
 export class TableBasicExample {}`,
-    component: TableBasicExample
+    component: TableBasicExample,
   },
   {
     title: 'Table with Footer',
@@ -345,7 +395,7 @@ export class TableBasicExample {}`,
   imports: [UiTable, UiTableHeader, UiTableBody, UiTableFooter, UiTableRow, UiTableHead, UiTableCell]
 })
 export class TableWithFooterExample {}`,
-    component: TableWithFooterExample
+    component: TableWithFooterExample,
   },
   {
     title: 'Table with Caption',
@@ -381,11 +431,12 @@ export class TableWithFooterExample {}`,
   imports: [UiTable, UiTableHeader, UiTableBody, UiTableRow, UiTableHead, UiTableCell, UiTableCaption]
 })
 export class TableWithCaptionExample {}`,
-    component: TableWithCaptionExample
+    component: TableWithCaptionExample,
   },
   {
     title: 'Table with Actions',
-    description: 'A table with user avatars, status badges, and action buttons.',
+    description:
+      'A table with user avatars, status badges, and action buttons.',
     code: `import { UiTable, UiTableHeader, UiTableBody, UiTableRow, UiTableHead, UiTableCell } from '@workspace/ui/directives/table';
 import { UiBadge } from '@workspace/ui/directives/badge';
 import { UiButton } from '@workspace/ui/directives/button';
@@ -434,6 +485,6 @@ import { lucideX } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideX })]
 })
 export class TableWithActionsExample {}`,
-    component: TableWithActionsExample
-  }
+    component: TableWithActionsExample,
+  },
 ];

@@ -11,7 +11,8 @@
     "test": "ng test",
     "serve:ssr:docs": "node dist/docs/server/server.mjs",
     "lint": "ng lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "format": "prettier --write \"projects/**/*.{ts,html}\""
   },
   "prettier": {
     "overrides": [

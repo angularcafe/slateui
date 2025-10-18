@@ -6,11 +6,9 @@ import { toggleVariants, toggleMeta } from './toggle.variants';
   selector: 'docs-toggle',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview 
-      [meta]="toggleMeta" 
-      [variants]="toggleVariants">
+    <docs-component-preview [meta]="toggleMeta" [variants]="toggleVariants">
     </docs-component-preview>
-  `
+  `,
 })
 export class Toggle {
   toggleMeta = toggleMeta;

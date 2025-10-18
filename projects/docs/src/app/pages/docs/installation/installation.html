@@ -1,193 +1,211 @@
 <div class="space-y-8">
-    <div class="space-y-4">
-        <h1 class="text-2xl font-semibold">Installation</h1>
-        <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
-            Get started with SlateUI in your Angular project. Follow these steps to install and configure the library
-            using our CLI tool.
-        </p>
-    </div>
+  <div class="space-y-4">
+    <h1 class="text-2xl font-semibold">Installation</h1>
+    <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
+      Get started with SlateUI in your Angular project. Follow these steps to
+      install and configure the library using our CLI tool.
+    </p>
+  </div>
 
-    <docs-tabs>
-        <docs-tab value="cli" label="CLI">
-            <div class="space-y-6">
-                <h2 class="text-2xl font-semibold" id="installation-steps">Installation Steps</h2>
+  <docs-tabs>
+    <docs-tab value="cli" label="CLI">
+      <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="installation-steps">
+          Installation Steps
+        </h2>
 
-                <!-- Step 1: Install CLI -->
-                <div class="relative">
-                    <div class="flex items-start space-x-4">
-                        <!-- Step Number Circle -->
-                        <div
-                            class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">
-                            1
-                        </div>
-
-                        <!-- Step Content -->
-                        <div class="flex-1 space-y-3">
-                            <h3 class="text-lg font-medium">Install SlateUI CLI</h3>
-                            <p class="text-muted-foreground leading-relaxed">
-                                Install the SlateUI CLI as a development dependency:
-                            </p>
-                            <docs-code-block language="bash" [code]="cliInstallCommand">
-                            </docs-code-block>
-                        </div>
-                    </div>
-
-                    <!-- Connecting Line -->
-                    <div class="absolute left-4 top-8 w-0.5 h-full bg-border"></div>
-                </div>
-
-                <!-- Step 2: Initialize Project -->
-                <div class="relative">
-                    <div class="flex items-start space-x-4">
-                        <!-- Step Number Circle -->
-                        <div
-                            class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">
-                            2
-                        </div>
-
-                        <!-- Step Content -->
-                        <div class="flex-1 space-y-3">
-                            <h3 class="text-lg font-medium">Initialize SlateUI</h3>
-                            <p class="text-muted-foreground leading-relaxed">
-                                Run the initialization command to set up SlateUI in your project:
-                            </p>
-                            <docs-code-block language="bash" [code]="cliInitCommand">
-                            </docs-code-block>
-                            <p class="text-sm text-muted-foreground">
-                                This command will automatically install required dependencies and configure your
-                                project.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Connecting Line -->
-                    <div class="absolute left-4 top-8 w-0.5 h-full bg-border"></div>
-                </div>
-
-                <!-- Step 3: Start Development -->
-                <div class="relative">
-                    <div class="flex items-start space-x-4">
-                        <!-- Step Number Circle -->
-                        <div
-                            class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">
-                            3
-                        </div>
-
-                        <!-- Step Content -->
-                        <div class="flex-1 space-y-3">
-                            <h3 class="text-lg font-medium">Add components</h3>
-                            <p class="text-muted-foreground leading-relaxed">
-                                You can now start adding components to your project.
-                            </p>
-                            <docs-code-block language="bash" [code]="cliAddComponentCommand">
-                            </docs-code-block>
-                        </div>
-                    </div>
-                </div>
+        <!-- Step 1: Install CLI -->
+        <div class="relative">
+          <div class="flex items-start space-x-4">
+            <!-- Step Number Circle -->
+            <div
+              class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold"
+            >
+              1
             </div>
-        </docs-tab>
-        <docs-tab value="manual" label="Manual">
-            <!-- Manual Installation (Alternative) -->
-            <div class="space-y-6">
-                <h2 class="text-2xl font-semibold" id="manual-installation">Manual Installation</h2>
-                <div class="space-y-4">
-                    <p class="text-muted-foreground leading-relaxed">
-                        If you prefer to install SlateUI manually without the CLI, you can follow these steps:
-                    </p>
 
-                    <!-- Step 1: Install Dependencies -->
-                    <div class="relative">
-                        <div class="flex items-start space-x-4">
-                            <!-- Step Number Circle -->
-                            <div
-                                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">
-                                1
-                            </div>
-
-                            <!-- Step Content -->
-                            <div class="flex-1 space-y-3">
-                                <h3 class="text-lg font-medium">Install Core Dependencies</h3>
-                                <p class="text-muted-foreground leading-relaxed">
-                                    Add the following dependencies to your project:
-                                </p>
-                                <div class="max-w-2xl">
-                                    <docs-code-block language="bash" [code]="manualDependenciesCommand">
-                                    </docs-code-block>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Connecting Line -->
-                        <div class="absolute left-4 top-8 w-0.5 h-full bg-border"></div>
-                    </div>
-
-                    <!-- Step 2: Install Tailwind CSS -->
-                    <div class="relative">
-                        <div class="flex items-start space-x-4">
-                            <!-- Step Number Circle -->
-                            <div
-                                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">
-                                2
-                            </div>
-
-                            <!-- Step Content -->
-                            <div class="flex-1 space-y-3">
-                                <h3 class="text-lg font-medium">Setup Tailwind CSS</h3>
-                                <p class="text-muted-foreground leading-relaxed">
-                                   Follow the 
-                                    <a href="https://tailwindcss.com/docs/installation/framework-guides/angular" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">official Tailwind CSS Angular framework guide</a>.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Connecting Line -->
-                        <div class="absolute left-4 top-8 w-0.5 h-full bg-border"></div>
-                    </div>
-
-                    <!-- Step 3: Configuration -->
-                    <div class="relative">
-                        <div class="flex items-start space-x-4">
-                            <!-- Step Number Circle -->
-                            <div
-                                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">
-                                3
-                            </div>
-
-                            <!-- Step Content -->
-                            <div class="flex-1 space-y-3">
-                                <h3 class="text-lg font-medium">Add CSS Variables</h3>
-                                <p class="text-muted-foreground leading-relaxed">
-                                    Add CSS variables to your <code class="inline-code">styles.css</code>:
-                                </p>
-                                <docs-code-block language="css" [code]="cssVariables">
-                                </docs-code-block>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Step Content -->
+            <div class="flex-1 space-y-3">
+              <h3 class="text-lg font-medium">Install SlateUI CLI</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Install the SlateUI CLI as a development dependency:
+              </p>
+              <docs-code-block language="bash" [code]="cliInstallCommand">
+              </docs-code-block>
             </div>
-        </docs-tab>
-    </docs-tabs>
+          </div>
 
-    <!-- Installation Steps -->
-
-
-
-
-
-    <!-- Next Steps -->
-    <div class="space-y-6 mt-10">
-        <h2 class="text-2xl font-semibold" id="next-steps">Next Steps</h2>
-        <div class="space-y-4">
-            <p class="text-muted-foreground leading-relaxed">
-                Now that you have SlateUI installed:
-            </p>
-            <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
-                <li>Explore the available components in the Components section</li>
-                <li>Configure your theme and dark mode preferences</li>
-                <li>Use the CLI to add specific components to your project</li>
-                <li>Customize the design system to match your brand</li>
-            </ul>
+          <!-- Connecting Line -->
+          <div class="absolute left-4 top-8 w-0.5 h-full bg-border"></div>
         </div>
+
+        <!-- Step 2: Initialize Project -->
+        <div class="relative">
+          <div class="flex items-start space-x-4">
+            <!-- Step Number Circle -->
+            <div
+              class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold"
+            >
+              2
+            </div>
+
+            <!-- Step Content -->
+            <div class="flex-1 space-y-3">
+              <h3 class="text-lg font-medium">Initialize SlateUI</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Run the initialization command to set up SlateUI in your
+                project:
+              </p>
+              <docs-code-block language="bash" [code]="cliInitCommand">
+              </docs-code-block>
+              <p class="text-sm text-muted-foreground">
+                This command will automatically install required dependencies
+                and configure your project.
+              </p>
+            </div>
+          </div>
+
+          <!-- Connecting Line -->
+          <div class="absolute left-4 top-8 w-0.5 h-full bg-border"></div>
+        </div>
+
+        <!-- Step 3: Start Development -->
+        <div class="relative">
+          <div class="flex items-start space-x-4">
+            <!-- Step Number Circle -->
+            <div
+              class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold"
+            >
+              3
+            </div>
+
+            <!-- Step Content -->
+            <div class="flex-1 space-y-3">
+              <h3 class="text-lg font-medium">Add components</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                You can now start adding components to your project.
+              </p>
+              <docs-code-block language="bash" [code]="cliAddComponentCommand">
+              </docs-code-block>
+            </div>
+          </div>
+        </div>
+      </div>
+    </docs-tab>
+    <docs-tab value="manual" label="Manual">
+      <!-- Manual Installation (Alternative) -->
+      <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="manual-installation">
+          Manual Installation
+        </h2>
+        <div class="space-y-4">
+          <p class="text-muted-foreground leading-relaxed">
+            If you prefer to install SlateUI manually without the CLI, you can
+            follow these steps:
+          </p>
+
+          <!-- Step 1: Install Dependencies -->
+          <div class="relative">
+            <div class="flex items-start space-x-4">
+              <!-- Step Number Circle -->
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold"
+              >
+                1
+              </div>
+
+              <!-- Step Content -->
+              <div class="flex-1 space-y-3">
+                <h3 class="text-lg font-medium">Install Core Dependencies</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                  Add the following dependencies to your project:
+                </p>
+                <div class="max-w-2xl">
+                  <docs-code-block
+                    language="bash"
+                    [code]="manualDependenciesCommand"
+                  >
+                  </docs-code-block>
+                </div>
+              </div>
+            </div>
+
+            <!-- Connecting Line -->
+            <div class="absolute left-4 top-8 w-0.5 h-full bg-border"></div>
+          </div>
+
+          <!-- Step 2: Install Tailwind CSS -->
+          <div class="relative">
+            <div class="flex items-start space-x-4">
+              <!-- Step Number Circle -->
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold"
+              >
+                2
+              </div>
+
+              <!-- Step Content -->
+              <div class="flex-1 space-y-3">
+                <h3 class="text-lg font-medium">Setup Tailwind CSS</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                  Follow the
+                  <a
+                    href="https://tailwindcss.com/docs/installation/framework-guides/angular"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                    >official Tailwind CSS Angular framework guide</a
+                  >.
+                </p>
+              </div>
+            </div>
+
+            <!-- Connecting Line -->
+            <div class="absolute left-4 top-8 w-0.5 h-full bg-border"></div>
+          </div>
+
+          <!-- Step 3: Configuration -->
+          <div class="relative">
+            <div class="flex items-start space-x-4">
+              <!-- Step Number Circle -->
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold"
+              >
+                3
+              </div>
+
+              <!-- Step Content -->
+              <div class="flex-1 space-y-3">
+                <h3 class="text-lg font-medium">Add CSS Variables</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                  Add CSS variables to your
+                  <code class="inline-code">styles.css</code>:
+                </p>
+                <docs-code-block language="css" [code]="cssVariables">
+                </docs-code-block>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </docs-tab>
+  </docs-tabs>
+
+  <!-- Installation Steps -->
+
+  <!-- Next Steps -->
+  <div class="space-y-6 mt-10">
+    <h2 class="text-2xl font-semibold" id="next-steps">Next Steps</h2>
+    <div class="space-y-4">
+      <p class="text-muted-foreground leading-relaxed">
+        Now that you have SlateUI installed:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+        <li>Explore the available components in the Components section</li>
+        <li>Configure your theme and dark mode preferences</li>
+        <li>Use the CLI to add specific components to your project</li>
+        <li>Customize the design system to match your brand</li>
+      </ul>
     </div>
+  </div>
 </div>

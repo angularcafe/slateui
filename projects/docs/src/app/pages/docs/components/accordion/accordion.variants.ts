@@ -1,19 +1,19 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 import {
   UiAccordion,
   UiAccordionContent,
   UiAccordionItem,
   UiAccordionTrigger,
-} from "ui";
+} from 'ui';
 import {
   IVariant,
   IComponentMeta,
-} from "@components/component-preview/component-preview";
-import { NgIcon, provideIcons } from "@ng-icons/core";
-import { lucideChevronDown } from "@ng-icons/lucide";
+} from '@components/component-preview/component-preview';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideChevronDown } from '@ng-icons/lucide';
 
 @Component({
-  selector: "accordion-default-example",
+  selector: 'accordion-default-example',
   template: `
     <div uiAccordion uiAccordionType="single" uiAccordionCollapsible>
       <div uiAccordionItem value="item-1">
@@ -46,7 +46,7 @@ import { lucideChevronDown } from "@ng-icons/lucide";
     NgIcon,
   ],
   host: {
-    class: "w-2/3 space-y-6 mx-auto",
+    class: 'w-2/3 space-y-6 mx-auto',
   },
 })
 export class AccordionDefaultExample {
@@ -56,42 +56,42 @@ export class AccordionDefaultExample {
 }
 
 export const accordionMeta: IComponentMeta = {
-  title: "Accordion",
-  description: "A vertically stacked set of expandable content sections.",
+  title: 'Accordion',
+  description: 'A vertically stacked set of expandable content sections.',
   installation: {
-    package: "accordion",
+    package: 'accordion',
     import: `import { UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent } from '@workspace/ui/directives/accordion';`,
     usage: `<div uiAccordion uiAccordionType="single"><div uiAccordionItem value="item-1"><div uiAccordionTrigger>Header</div><div uiAccordionContent>Content</div></div></div>`,
   },
   api: {
     props: [
       {
-        name: "uiAccordionType",
+        name: 'uiAccordionType',
         type: '"single" | "multiple"',
-        description: "Accordion behavior type.",
+        description: 'Accordion behavior type.',
       },
       {
-        name: "uiAccordionCollapsible",
-        type: "boolean",
-        description: "Allow closing the active item.",
+        name: 'uiAccordionCollapsible',
+        type: 'boolean',
+        description: 'Allow closing the active item.',
       },
       {
-        name: "uiAccordionValue",
-        type: "string",
-        description: "Accordion value (for controlled state).",
+        name: 'uiAccordionValue',
+        type: 'string',
+        description: 'Accordion value (for controlled state).',
       },
       {
-        name: "uiAccordionDisabled",
-        type: "boolean",
-        description: "Whether the accordion is disabled.",
+        name: 'uiAccordionDisabled',
+        type: 'boolean',
+        description: 'Whether the accordion is disabled.',
       },
-      { name: "class", type: "string", description: "Additional CSS classes." },
+      { name: 'class', type: 'string', description: 'Additional CSS classes.' },
     ],
     outputs: [
       {
-        name: "uiAccordionValueChange",
-        type: "EventEmitter<any>",
-        description: "Emitted when the accordion value changes.",
+        name: 'uiAccordionValueChange',
+        type: 'EventEmitter<any>',
+        description: 'Emitted when the accordion value changes.',
       },
     ],
   },
@@ -99,8 +99,8 @@ export const accordionMeta: IComponentMeta = {
 
 export const accordionVariants: IVariant[] = [
   {
-    title: "Default",
-    description: "Single collapsible accordion.",
+    title: 'Default',
+    description: 'Single collapsible accordion.',
     code: `import { UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent } from '@workspace/ui/directives/accordion';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideChevronDown } from '@ng-icons/lucide';

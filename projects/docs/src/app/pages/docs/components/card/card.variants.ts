@@ -1,8 +1,20 @@
 import { Component } from '@angular/core';
-import { UiCard, UiCardAction, UiCardContent, UiCardDescription, UiCardFooter, UiCardHeader, UiCardTitle, UiFormField } from 'ui';
+import {
+  UiCard,
+  UiCardAction,
+  UiCardContent,
+  UiCardDescription,
+  UiCardFooter,
+  UiCardHeader,
+  UiCardTitle,
+  UiFormField,
+} from 'ui';
 import { UiButton } from 'ui';
 import { UiInput, UiLabel } from 'ui';
-import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
+import {
+  IVariant,
+  IComponentMeta,
+} from '@components/component-preview/component-preview';
 
 @Component({
   selector: 'card-default-example',
@@ -22,12 +34,17 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
           <div class="flex flex-col gap-6">
             <div class="grid gap-2" uiFormField>
               <label uiLabel>Email</label>
-              <input uiInput type="email" placeholder="m@example.com" required />
+              <input
+                uiInput
+                type="email"
+                placeholder="m@example.com"
+                required
+              />
             </div>
             <div class="grid gap-2" uiFormField>
               <div class="flex items-center">
                 <label uiLabel>Password</label>
-                <a href="#" uiButton variant="link" class="ml-auto" >
+                <a href="#" uiButton variant="link" class="ml-auto">
                   Forgot your password?
                 </a>
               </div>
@@ -37,19 +54,29 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
         </form>
       </ui-card-content>
       <ui-card-footer class="flex-col gap-2">
-        <button uiButton type="submit" class="w-full">
-          Login
-        </button>
+        <button uiButton type="submit" class="w-full">Login</button>
         <button uiButton variant="outline" class="w-full">
           Login with Google
         </button>
       </ui-card-footer>
     </ui-card>
   `,
-  imports: [UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardAction, UiCardContent, UiCardFooter, UiLabel, UiInput, UiButton, UiFormField],
+  imports: [
+    UiCard,
+    UiCardHeader,
+    UiCardTitle,
+    UiCardDescription,
+    UiCardAction,
+    UiCardContent,
+    UiCardFooter,
+    UiLabel,
+    UiInput,
+    UiButton,
+    UiFormField,
+  ],
   host: {
-    class: 'w-2/3 mx-auto'
-  }
+    class: 'w-2/3 mx-auto',
+  },
 })
 export class CardDefaultExample {}
 
@@ -67,13 +94,17 @@ export const cardMeta: IComponentMeta = {
   </div>
   <div uiCardContent>Content</div>
   <div uiCardFooter>Footer</div>
-</div>`
+</div>`,
   },
   api: {
     props: [
-      { name: 'class', type: 'string', description: 'Additional CSS classes for card container.' }
-    ]
-  }
+      {
+        name: 'class',
+        type: 'string',
+        description: 'Additional CSS classes for card container.',
+      },
+    ],
+  },
 };
 
 export const cardVariants: IVariant[] = [
@@ -135,7 +166,6 @@ import { UiFormField } from '@workspace/ui/form-field';
   }
 })
 export class CardDefaultExample {}`,
-    component: CardDefaultExample
-  }
+    component: CardDefaultExample,
+  },
 ];
-
