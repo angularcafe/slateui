@@ -3,13 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'lib-cli',
   imports: [],
-  template: `
-    <p>
-      cli works!
-    </p>
-  `,
-  styles: ``
+  template: ` <p>cli works!</p> `,
+  styles: ``,
 })
-export class Cli {
-
-}
+export class Cli {}

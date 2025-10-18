@@ -6,11 +6,9 @@ import { inputVariants, inputMeta } from './input.variants';
   selector: 'docs-input',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview 
-      [meta]="inputMeta" 
-      [variants]="inputVariants">
+    <docs-component-preview [meta]="inputMeta" [variants]="inputVariants">
     </docs-component-preview>
-  `
+  `,
 })
 export class Input {
   inputMeta = inputMeta;

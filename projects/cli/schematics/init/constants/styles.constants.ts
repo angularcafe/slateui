@@ -1,5 +1,5 @@
 export const styles = {
-    neutral: `
+  neutral: `
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -84,8 +84,8 @@ export const styles = {
     @apply bg-background text-foreground;
   }
 }`,
-    
-    slate: `
+
+  slate: `
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -171,7 +171,7 @@ export const styles = {
   }
 }`,
 
-    zinc: `
+  zinc: `
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -257,7 +257,7 @@ export const styles = {
   }
 }`,
 
-    stone: `
+  stone: `
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -343,7 +343,7 @@ export const styles = {
   }
 }`,
 
-    gray: `
+  gray: `
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -427,5 +427,5 @@ export const styles = {
   body {
     @apply bg-background text-foreground;
   }
-}`
+}`,
 };

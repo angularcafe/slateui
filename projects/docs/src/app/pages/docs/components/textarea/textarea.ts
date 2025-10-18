@@ -7,11 +7,9 @@ import { textareaVariants, textareaMeta } from './textarea.variants';
   standalone: true,
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview 
-      [meta]="textareaMeta" 
-      [variants]="textareaVariants">
+    <docs-component-preview [meta]="textareaMeta" [variants]="textareaVariants">
     </docs-component-preview>
-  `
+  `,
 })
 export class Textarea {
   textareaMeta = textareaMeta;

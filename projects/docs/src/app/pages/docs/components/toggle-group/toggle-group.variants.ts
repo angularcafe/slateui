@@ -1,8 +1,18 @@
 import { Component, effect, model } from '@angular/core';
 import { UiToggleGroup, UiToggleGroupItem } from 'ui';
-import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
+import {
+  IVariant,
+  IComponentMeta,
+} from '@components/component-preview/component-preview';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideBold, lucideItalic, lucideUnderline, lucideAlignLeft, lucideAlignCenter, lucideAlignRight } from '@ng-icons/lucide';
+import {
+  lucideBold,
+  lucideItalic,
+  lucideUnderline,
+  lucideAlignLeft,
+  lucideAlignCenter,
+  lucideAlignRight,
+} from '@ng-icons/lucide';
 
 // Toggle Group example components for dynamic rendering
 @Component({
@@ -21,7 +31,7 @@ import { lucideBold, lucideItalic, lucideUnderline, lucideAlignLeft, lucideAlign
     </div>
   `,
   imports: [UiToggleGroup, UiToggleGroupItem, NgIcon],
-  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
+  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })],
 })
 export class ToggleGroupDefaultExample {}
 
@@ -41,7 +51,7 @@ export class ToggleGroupDefaultExample {}
     </div>
   `,
   imports: [UiToggleGroup, UiToggleGroupItem, NgIcon],
-  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
+  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })],
 })
 export class ToggleGroupOutlineExample {}
 
@@ -61,7 +71,7 @@ export class ToggleGroupOutlineExample {}
     </div>
   `,
   imports: [UiToggleGroup, UiToggleGroupItem, NgIcon],
-  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
+  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })],
 })
 export class ToggleGroupSingleExample {}
 
@@ -81,7 +91,7 @@ export class ToggleGroupSingleExample {}
     </div>
   `,
   imports: [UiToggleGroup, UiToggleGroupItem, NgIcon],
-  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
+  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })],
 })
 export class ToggleGroupSmallExample {}
 
@@ -101,7 +111,7 @@ export class ToggleGroupSmallExample {}
     </div>
   `,
   imports: [UiToggleGroup, UiToggleGroupItem, NgIcon],
-  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
+  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })],
 })
 export class ToggleGroupLargeExample {}
 
@@ -121,7 +131,7 @@ export class ToggleGroupLargeExample {}
     </div>
   `,
   imports: [UiToggleGroup, UiToggleGroupItem, NgIcon],
-  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
+  providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })],
 })
 export class ToggleGroupDisabledExample {}
 
@@ -144,7 +154,9 @@ export class ToggleGroupDisabledExample {}
     </div>
   `,
   imports: [UiToggleGroup, UiToggleGroupItem, NgIcon],
-  providers: [provideIcons({ lucideAlignLeft, lucideAlignCenter, lucideAlignRight })]
+  providers: [
+    provideIcons({ lucideAlignLeft, lucideAlignCenter, lucideAlignRight }),
+  ],
 })
 export class ToggleGroupTextExample {}
 
@@ -158,7 +170,7 @@ export const toggleGroupMeta: IComponentMeta = {
   <button uiToggleGroupItem value="a">A</button>
   <button uiToggleGroupItem value="b">B</button>
   <button uiToggleGroupItem value="c">C</button>
-</div>`
+</div>`,
   },
   api: {
     props: [
@@ -166,56 +178,60 @@ export const toggleGroupMeta: IComponentMeta = {
         name: 'variant',
         type: '"default" | "outline"',
         default: '"default"',
-        description: 'The visual variant of the toggle group. Applied to both the group container and all items.'
+        description:
+          'The visual variant of the toggle group. Applied to both the group container and all items.',
       },
       {
         name: 'size',
         type: '"default" | "sm" | "lg"',
         default: '"default"',
-        description: 'The size of the toggle group. Applied to both the group container and all items.'
+        description:
+          'The size of the toggle group. Applied to both the group container and all items.',
       },
       {
         name: 'type',
         type: '"single" | "multiple"',
         default: '"single"',
-        description: 'Whether to allow single or multiple selections.'
+        description: 'Whether to allow single or multiple selections.',
       },
       {
         name: 'disabled',
         type: 'boolean',
         default: 'false',
-        description: 'Whether the toggle group is disabled.'
+        description: 'Whether the toggle group is disabled.',
       },
       {
         name: 'groupValue',
         type: 'string | string[]',
-        description: 'The current value(s) of the toggle group.'
+        description: 'The current value(s) of the toggle group.',
       },
       {
         name: 'value',
         type: 'string',
-        description: 'The value of the toggle group item. Items inherit variant and size from parent.'
+        description:
+          'The value of the toggle group item. Items inherit variant and size from parent.',
       },
       {
         name: 'disabled',
         type: 'boolean',
         default: 'false',
-        description: 'Whether the toggle group item is disabled.'
+        description: 'Whether the toggle group item is disabled.',
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the toggle group or item.'
-      }
+        description:
+          'Additional CSS classes to apply to the toggle group or item.',
+      },
     ],
     outputs: [
       {
         name: 'groupValueChange',
         type: 'EventEmitter<string | string[]>',
-        description: 'Event emitted when the toggle group value changes.'
-      }
-    ]
-  }
+        description: 'Event emitted when the toggle group value changes.',
+      },
+    ],
+  },
 };
 
 export const toggleGroupVariants: IVariant[] = [
@@ -245,7 +261,7 @@ import { lucideBold, lucideItalic, lucideUnderline } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
 })
 export class ToggleGroupDefaultExample {}`,
-    component: ToggleGroupDefaultExample
+    component: ToggleGroupDefaultExample,
   },
   {
     title: 'Outline',
@@ -273,7 +289,7 @@ import { lucideBold, lucideItalic, lucideUnderline } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
 })
 export class ToggleGroupOutlineExample {}`,
-    component: ToggleGroupOutlineExample
+    component: ToggleGroupOutlineExample,
   },
   {
     title: 'Single Selection',
@@ -301,7 +317,7 @@ import { lucideBold, lucideItalic, lucideUnderline } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
 })
 export class ToggleGroupSingleExample {}`,
-    component: ToggleGroupSingleExample
+    component: ToggleGroupSingleExample,
   },
   {
     title: 'Small Size',
@@ -329,7 +345,7 @@ import { lucideBold, lucideItalic, lucideUnderline } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
 })
 export class ToggleGroupSmallExample {}`,
-    component: ToggleGroupSmallExample
+    component: ToggleGroupSmallExample,
   },
   {
     title: 'Large Size',
@@ -357,7 +373,7 @@ import { lucideBold, lucideItalic, lucideUnderline } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
 })
 export class ToggleGroupLargeExample {}`,
-    component: ToggleGroupLargeExample
+    component: ToggleGroupLargeExample,
   },
   {
     title: 'Disabled',
@@ -385,7 +401,7 @@ import { lucideBold, lucideItalic, lucideUnderline } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideBold, lucideItalic, lucideUnderline })]
 })
 export class ToggleGroupDisabledExample {}`,
-    component: ToggleGroupDisabledExample
+    component: ToggleGroupDisabledExample,
   },
   {
     title: 'With Text',
@@ -416,7 +432,6 @@ import { lucideAlignLeft, lucideAlignCenter, lucideAlignRight } from '@ng-icons/
   providers: [provideIcons({ lucideAlignLeft, lucideAlignCenter, lucideAlignRight })]
 })
 export class ToggleGroupTextExample {}`,
-    component: ToggleGroupTextExample
-  }
+    component: ToggleGroupTextExample,
+  },
 ];
-

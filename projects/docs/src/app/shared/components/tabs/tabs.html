@@ -1,16 +1,26 @@
 <div [(ngpTabsetValue)]="value" ngpTabset>
-    <div ngpTabList class="text-muted-foreground inline-flex h-9 w-fit items-center p-[3px] justify-start gap-4 rounded-none bg-transparent px-2 md:px-0">
-        @for (tab of tabs(); track $index) {
-        <button [ngpTabButtonValue]="tab.value()" ngpTabButton
-            class="data-[active]:bg-background dark:data-[active]:text-foreground data-[focus-visible]:border-ring data-[focus-visible]:ring-ring/50 data-[focus-visible]:outline-ring dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent py-1 font-medium whitespace-nowrap transition-[color,box-shadow] data-[focus-visible]:ring-[3px] data-[focus-visible]:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-muted-foreground data-[active]:text-foreground px-0 text-base data-[active]:shadow-none dark:data-[active]:border-transparent dark:data-[active]:bg-transparent">{{
-            tab.label() }}</button>
-        }
-    </div>
-
+  <div
+    ngpTabList
+    class="text-muted-foreground inline-flex h-9 w-fit items-center p-[3px] justify-start gap-4 rounded-none bg-transparent px-2 md:px-0"
+  >
     @for (tab of tabs(); track $index) {
-    <div [ngpTabPanelValue]="tab.value()" ngpTabPanel
-        class="flex-1 outline-none not-[data-active]:hidden data-[active]:block">
-        <ng-container [ngTemplateOutlet]="tab.content()" />
-    </div>
+      <button
+        [ngpTabButtonValue]="tab.value()"
+        ngpTabButton
+        class="data-[active]:bg-background dark:data-[active]:text-foreground data-[focus-visible]:border-ring data-[focus-visible]:ring-ring/50 data-[focus-visible]:outline-ring dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent py-1 font-medium whitespace-nowrap transition-[color,box-shadow] data-[focus-visible]:ring-[3px] data-[focus-visible]:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-muted-foreground data-[active]:text-foreground px-0 text-base data-[active]:shadow-none dark:data-[active]:border-transparent dark:data-[active]:bg-transparent"
+      >
+        {{ tab.label() }}
+      </button>
     }
+  </div>
+
+  @for (tab of tabs(); track $index) {
+    <div
+      [ngpTabPanelValue]="tab.value()"
+      ngpTabPanel
+      class="flex-1 outline-none not-[data-active]:hidden data-[active]:block"
+    >
+      <ng-container [ngTemplateOutlet]="tab.content()" />
+    </div>
+  }
 </div>

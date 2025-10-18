@@ -1,6 +1,15 @@
 import { Component, model } from '@angular/core';
-import { UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel } from 'ui';
-import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
+import {
+  UiRadioGroup,
+  UiRadioItem,
+  UiRadio,
+  UiRadioIndicator,
+  UiLabel,
+} from 'ui';
+import {
+  IVariant,
+  IComponentMeta,
+} from '@components/component-preview/component-preview';
 
 // Radio Group example components for dynamic rendering
 @Component({
@@ -27,7 +36,7 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
       </div>
     </div>
   `,
-  imports: [UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel]
+  imports: [UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel],
 })
 export class RadioGroupDefaultExample {
   selectedValue = model('comfortable');
@@ -51,7 +60,7 @@ export class RadioGroupDefaultExample {
       </div>
     </div>
   `,
-  imports: [UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel]
+  imports: [UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel],
 })
 export class RadioGroupDisabledExample {
   selectedValue = model('option1');
@@ -81,7 +90,7 @@ export class RadioGroupDisabledExample {
       </div>
     </div>
   `,
-  imports: [UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel]
+  imports: [UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel],
 })
 export class RadioGroupHorizontalExample {
   selectedValue = model('yes');
@@ -92,7 +101,9 @@ export class RadioGroupHorizontalExample {
   template: `
     <form (ngSubmit)="onSubmit()" class="w-2/3 space-y-6">
       <div class="space-y-3">
-        <label class="text-sm font-medium leading-none">Notify me about...</label>
+        <label class="text-sm font-medium leading-none"
+          >Notify me about...</label
+        >
         <div uiRadioGroup [(defaultValue)]="notificationType">
           <div uiRadioItem value="all">
             <div uiRadio>
@@ -104,7 +115,9 @@ export class RadioGroupHorizontalExample {
             <div uiRadio>
               <div uiRadioIndicator></div>
             </div>
-            <label uiLabel class="font-normal">Direct messages and mentions</label>
+            <label uiLabel class="font-normal"
+              >Direct messages and mentions</label
+            >
           </div>
           <div uiRadioItem value="none">
             <div uiRadio>
@@ -114,16 +127,19 @@ export class RadioGroupHorizontalExample {
           </div>
         </div>
       </div>
-      <button type="submit" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+      <button
+        type="submit"
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+      >
         Submit
       </button>
     </form>
   `,
-  imports: [UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel]
+  imports: [UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel],
 })
 export class RadioGroupFormExample {
   notificationType = model('all');
-  
+
   onSubmit() {
     console.log('Selected:', this.notificationType());
   }
@@ -131,7 +147,8 @@ export class RadioGroupFormExample {
 
 export const radioGroupMeta: IComponentMeta = {
   title: 'Radio Group',
-  description: 'A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.',
+  description:
+    'A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.',
   installation: {
     package: 'radio-group',
     import: `import { UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel } from '@workspace/ui/directives/radio-group';`,
@@ -148,7 +165,7 @@ export const radioGroupMeta: IComponentMeta = {
     </div>
     <label uiLabel>Option Two</label>
   </div>
-</div>`
+</div>`,
   },
   api: {
     props: [
@@ -156,34 +173,34 @@ export const radioGroupMeta: IComponentMeta = {
         name: 'defaultValue',
         type: 'string',
         default: 'undefined',
-        description: 'The value of the selected radio button.'
+        description: 'The value of the selected radio button.',
       },
       {
         name: 'disabled',
         type: 'boolean',
         default: 'false',
-        description: 'Whether the radio group is disabled.'
+        description: 'Whether the radio group is disabled.',
       },
       {
         name: 'orientation',
         type: '"vertical" | "horizontal"',
         default: '"vertical"',
-        description: 'The orientation of the radio group.'
+        description: 'The orientation of the radio group.',
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the radio group.'
-      }
+        description: 'Additional CSS classes to apply to the radio group.',
+      },
     ],
     outputs: [
       {
         name: 'defaultValueChange',
         type: 'string',
-        description: 'Emitted when the selected value changes.'
-      }
-    ]
-  }
+        description: 'Emitted when the selected value changes.',
+      },
+    ],
+  },
 };
 
 export const radioGroupVariants: IVariant[] = [
@@ -222,11 +239,12 @@ import { UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel } from '@
 export class RadioGroupDefaultExample {
   selectedValue = model('comfortable');
 }`,
-    component: RadioGroupDefaultExample
+    component: RadioGroupDefaultExample,
   },
   {
     title: 'Disabled',
-    description: 'A disabled radio group where all options are non-interactive.',
+    description:
+      'A disabled radio group where all options are non-interactive.',
     code: `import { Component, model } from '@angular/core';
 import { UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel } from '@workspace/ui/directives/radio-group';
 
@@ -253,7 +271,7 @@ import { UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel } from '@
 export class RadioGroupDisabledExample {
   selectedValue = model('option1');
 }`,
-    component: RadioGroupDisabledExample
+    component: RadioGroupDisabledExample,
   },
   {
     title: 'Horizontal',
@@ -290,11 +308,12 @@ import { UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel } from '@
 export class RadioGroupHorizontalExample {
   selectedValue = model('yes');
 }`,
-    component: RadioGroupHorizontalExample
+    component: RadioGroupHorizontalExample,
   },
   {
     title: 'Form',
-    description: 'A radio group used in a form context with proper form integration.',
+    description:
+      'A radio group used in a form context with proper form integration.',
     code: `import { Component, model } from '@angular/core';
 import { UiRadioGroup, UiRadioItem, UiRadio, UiRadioIndicator, UiLabel } from '@workspace/ui/directives/radio-group';
 
@@ -339,6 +358,6 @@ export class RadioGroupFormExample {
     console.log('Selected:', this.notificationType());
   }
 }`,
-    component: RadioGroupFormExample
-  }
+    component: RadioGroupFormExample,
+  },
 ];

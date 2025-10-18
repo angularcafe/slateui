@@ -1,127 +1,211 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <!-- Primary Meta Tags -->
-  <title>SlateUI - Modern UI Components for Angular | Built with Angular Primitives</title>
-  <meta name="title" content="SlateUI - Modern UI Components for Angular | Built with Angular Primitves">
-  <meta name="description" content="SlateUI is a modern, accessible UI component library for Angular featuring directive-based components, Tailwind CSS 4, Signals, and WAI-ARIA compliance. Build fast, scalable UIs with complete flexibility.">
-  <meta name="keywords" content="Angular, UI components, Tailwind CSS, Signals, TypeScript, web development, frontend, accessibility, WAI-ARIA, modern web, component library">
-  <meta name="author" content="Mohamamd Javed">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://slateui.dev/">
-  <meta property="og:title" content="SlateUI - Modern UI Component Library for Angular">
-  <meta property="og:description" content="SlateUI is a modern, accessible UI component library for Angular featuring directive-based components, Tailwind CSS 4, Signals, and WAI-ARIA compliance.">
-  <meta property="og:image" content="https://slateui.dev/assets/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="SlateUI - Modern Angular UI Component Library">
-  <meta property="og:site_name" content="SlateUI">
-  <meta property="og:locale" content="en_US">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://slateui.dev/">
-  <meta property="twitter:title" content="SlateUI - Modern UI Component Library for Angular">
-  <meta property="twitter:description" content="SlateUI is a modern, accessible UI component library for Angular featuring directive-based components, Tailwind CSS 4, Signals, and WAI-ARIA compliance.">
-  <meta property="twitter:image" content="https://slateui.dev/assets/og-image.png">
-  <meta property="twitter:image:alt" content="SlateUI - Modern Angular UI Component Library">
-  
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="SlateUI">
-  <meta name="application-name" content="SlateUI">
-  <meta name="mobile-web-app-capable" content="yes">
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://slateui.dev/">
-  
-  <!-- Base URL -->
-  <base href="/">
-  
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-  
-  <!-- Manifest -->
-  <link rel="manifest" href="manifest.json">
-  
-  <!-- DNS Prefetch and Preconnect for Performance -->
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="dns-prefetch" href="//fonts.gstatic.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Font Loading with Performance Optimization -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"></noscript>
-  
-  <!-- Critical CSS Inline -->
-  <style>
-    /* Critical CSS for above-the-fold content */
-    body { margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    .font-inter { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    /* Prevent layout shift during font loading */
-    .font-inter { font-display: swap; }
-  </style>
-  
-  <!-- Theme Script with Performance Optimization -->
-  <script>
-    (function(){
-      'use strict';
-      try {
-        var theme = localStorage.getItem('theme') || 'system';
-        var isDark = theme === 'system' 
-          ? window.matchMedia('(prefers-color-scheme: dark)').matches 
-          : theme === 'dark';
-        
-        var root = document.documentElement;
-        if (root) {
-          root.classList.remove('light', 'dark');
-          if (isDark) {
-            root.classList.add('dark');
-            root.setAttribute('data-theme', 'dark');
-          } else {
-            root.classList.remove('dark');
-            root.removeAttribute('data-theme');
-          }
-          root.style.colorScheme = isDark ? 'dark' : 'light';
-        }
-      } catch (e) {
+    <!-- Primary Meta Tags -->
+    <title>
+      SlateUI - Modern UI Components for Angular | Built with Angular Primitives
+    </title>
+    <meta
+      name="title"
+      content="SlateUI - Modern UI Components for Angular | Built with Angular Primitves"
+    />
+    <meta
+      name="description"
+      content="SlateUI is a modern, accessible UI component library for Angular featuring directive-based components, Tailwind CSS 4, Signals, and WAI-ARIA compliance. Build fast, scalable UIs with complete flexibility."
+    />
+    <meta
+      name="keywords"
+      content="Angular, UI components, Tailwind CSS, Signals, TypeScript, web development, frontend, accessibility, WAI-ARIA, modern web, component library"
+    />
+    <meta name="author" content="Mohamamd Javed" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://slateui.dev/" />
+    <meta
+      property="og:title"
+      content="SlateUI - Modern UI Component Library for Angular"
+    />
+    <meta
+      property="og:description"
+      content="SlateUI is a modern, accessible UI component library for Angular featuring directive-based components, Tailwind CSS 4, Signals, and WAI-ARIA compliance."
+    />
+    <meta
+      property="og:image"
+      content="https://slateui.dev/assets/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="SlateUI - Modern Angular UI Component Library"
+    />
+    <meta property="og:site_name" content="SlateUI" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://slateui.dev/" />
+    <meta
+      property="twitter:title"
+      content="SlateUI - Modern UI Component Library for Angular"
+    />
+    <meta
+      property="twitter:description"
+      content="SlateUI is a modern, accessible UI component library for Angular featuring directive-based components, Tailwind CSS 4, Signals, and WAI-ARIA compliance."
+    />
+    <meta
+      property="twitter:image"
+      content="https://slateui.dev/assets/og-image.png"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="SlateUI - Modern Angular UI Component Library"
+    />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="SlateUI" />
+    <meta name="application-name" content="SlateUI" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://slateui.dev/" />
+
+    <!-- Base URL -->
+    <base href="/" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- DNS Prefetch and Preconnect for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font Loading with Performance Optimization -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    /></noscript>
+
+    <!-- Critical CSS Inline -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      body {
+        margin: 0;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+      }
+      .font-inter {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+      }
+      /* Prevent layout shift during font loading */
+      .font-inter {
+        font-display: swap;
+      }
+    </style>
+
+    <!-- Theme Script with Performance Optimization -->
+    <script>
+      (function () {
+        "use strict";
         try {
+          var theme = localStorage.getItem("theme") || "system";
+          var isDark =
+            theme === "system"
+              ? window.matchMedia("(prefers-color-scheme: dark)").matches
+              : theme === "dark";
+
           var root = document.documentElement;
           if (root) {
-            root.classList.remove('light', 'dark');
-            root.removeAttribute('data-theme');
-            root.style.colorScheme = 'light';
+            root.classList.remove("light", "dark");
+            if (isDark) {
+              root.classList.add("dark");
+              root.setAttribute("data-theme", "dark");
+            } else {
+              root.classList.remove("dark");
+              root.removeAttribute("data-theme");
+            }
+            root.style.colorScheme = isDark ? "dark" : "light";
           }
-        } catch (e) {}
-      }
-    })();
-  </script>
-</head>
+        } catch (e) {
+          try {
+            var root = document.documentElement;
+            if (root) {
+              root.classList.remove("light", "dark");
+              root.removeAttribute("data-theme");
+              root.style.colorScheme = "light";
+            }
+          } catch (e) {}
+        }
+      })();
+    </script>
+  </head>
 
-<body class="font-inter">
-  <app-root></app-root>
-  
-  <!-- No-JS Fallback -->
-  <noscript>
-    <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;">
-      <h1>SlateUI</h1>
-      <p>This application requires JavaScript to function properly. Please enable JavaScript in your browser.</p>
-    </div>
-  </noscript>
-</body>
+  <body class="font-inter">
+    <app-root></app-root>
 
+    <!-- No-JS Fallback -->
+    <noscript>
+      <div
+        style="
+          padding: 20px;
+          text-align: center;
+          font-family: Arial, sans-serif;
+        "
+      >
+        <h1>SlateUI</h1>
+        <p>
+          This application requires JavaScript to function properly. Please
+          enable JavaScript in your browser.
+        </p>
+      </div>
+    </noscript>
+  </body>
 </html>

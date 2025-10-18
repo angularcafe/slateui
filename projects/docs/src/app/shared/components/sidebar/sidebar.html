@@ -1,56 +1,85 @@
 @if (menuOpen()) {
-<div class="fixed inset-0 z-50 bg-black/50 lg:hidden" (click)="menuOpen.set(false)">
-    <div class="h-full overflow-y-auto w-72 bg-background border-r border-border px-6 py-6" (click)="$event.stopPropagation()">
-        <div class="flex items-center justify-between mb-6">
-            <div class="flex gap-x-1 sm:gap-x-2">
-                <a uiButton variant="ghost" size="icon" target="_blank"
-                    href="https://github.com/angularcafe/slateui">
-                    <ng-icon name="bootstrapGithub" size="18px" />
-                </a>
-                <a uiButton variant="ghost" size="icon" target="_blank" href="https://x.com/immohammadjaved">
-                    <ng-icon name="bootstrapTwitterX" size="18px" />
-                </a>
-                <button uiButton variant="ghost" size="icon" (click)="toggleTheme()">
-                    <ng-icon name="tablerBlur" size="18px" />
-                </button>
-            </div>
-            <button uiButton variant="outline"  size="icon" (click)="menuOpen.set(false)">
-                <ng-icon name="lucideX" size="18px" />
-            </button>
+  <div
+    class="fixed inset-0 z-50 bg-black/50 lg:hidden"
+    (click)="menuOpen.set(false)"
+  >
+    <div
+      class="h-full overflow-y-auto w-72 bg-background border-r border-border px-6 py-6"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex gap-x-1 sm:gap-x-2">
+          <a
+            uiButton
+            variant="ghost"
+            size="icon"
+            target="_blank"
+            href="https://github.com/angularcafe/slateui"
+          >
+            <ng-icon name="bootstrapGithub" size="18px" />
+          </a>
+          <a
+            uiButton
+            variant="ghost"
+            size="icon"
+            target="_blank"
+            href="https://x.com/immohammadjaved"
+          >
+            <ng-icon name="bootstrapTwitterX" size="18px" />
+          </a>
+          <button uiButton variant="ghost" size="icon" (click)="toggleTheme()">
+            <ng-icon name="tablerBlur" size="18px" />
+          </button>
         </div>
-        <ng-container [ngTemplateOutlet]="content" />
+        <button
+          uiButton
+          variant="outline"
+          size="icon"
+          (click)="menuOpen.set(false)"
+        >
+          <ng-icon name="lucideX" size="18px" />
+        </button>
+      </div>
+      <ng-container [ngTemplateOutlet]="content" />
     </div>
-</div>
+  </div>
 } @else {
-<div class="hidden lg:block w-60 border-r fixed left-0 top-16 h-[calc(100vh-4rem)]">
+  <div
+    class="hidden lg:block w-60 border-r fixed left-0 top-16 h-[calc(100vh-4rem)]"
+  >
     <div class="h-full overflow-y-auto px-6 py-6">
-        <ng-container [ngTemplateOutlet]="content" />
+      <ng-container [ngTemplateOutlet]="content" />
     </div>
-</div>
+  </div>
 }
 
 <ng-template #content>
-    <nav class="space-y-8">
-        @for (section of sections(); track section.title) {
-        <div>
-            <!-- Simple section header -->
-            <h3 class="text-sm font-medium text-foreground mb-3">
-                {{ section.title }}
-            </h3>
-            
-            <!-- Clean navigation links -->
-            <ul class="space-y-1">
-                @for (link of section.links; track link.name) {
-                <li>
-                    <a class="block py-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                        [routerLink]="'/docs/' + (section?.link ? section.link + '/' + link.path : link.path)"
-                        routerLinkActive="!text-foreground font-medium">
-                        {{ link.name }}
-                    </a>
-                </li>
-                }
-            </ul>
-        </div>
-        }
-    </nav>
+  <nav class="space-y-8">
+    @for (section of sections(); track section.title) {
+      <div>
+        <!-- Simple section header -->
+        <h3 class="text-sm font-medium text-foreground mb-3">
+          {{ section.title }}
+        </h3>
+
+        <!-- Clean navigation links -->
+        <ul class="space-y-1">
+          @for (link of section.links; track link.name) {
+            <li>
+              <a
+                class="block py-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                [routerLink]="
+                  '/docs/' +
+                  (section?.link ? section.link + '/' + link.path : link.path)
+                "
+                routerLinkActive="!text-foreground font-medium"
+              >
+                {{ link.name }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </nav>
 </ng-template>

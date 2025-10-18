@@ -7,11 +7,9 @@ import { checkboxVariants, checkboxMeta } from './checkbox.variants';
   standalone: true,
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview 
-      [meta]="checkboxMeta" 
-      [variants]="checkboxVariants">
+    <docs-component-preview [meta]="checkboxMeta" [variants]="checkboxVariants">
     </docs-component-preview>
-  `
+  `,
 })
 export class Checkbox {
   checkboxMeta = checkboxMeta;

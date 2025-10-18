@@ -3,7 +3,7 @@ import { Component, input, TemplateRef, viewChild } from '@angular/core';
 @Component({
   selector: 'docs-tab',
   imports: [],
-  templateUrl: './tab.html'
+  templateUrl: './tab.html',
 })
 export class Tab {
   /**

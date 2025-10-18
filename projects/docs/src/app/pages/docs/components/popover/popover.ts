@@ -6,14 +6,11 @@ import { popoverVariants, popoverMeta } from './popover.variants';
   selector: 'docs-popover',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview 
-      [meta]="popoverMeta" 
-      [variants]="popoverVariants">
+    <docs-component-preview [meta]="popoverMeta" [variants]="popoverVariants">
     </docs-component-preview>
-  `
+  `,
 })
 export class Popover {
   popoverMeta = popoverMeta;
   popoverVariants = popoverVariants;
 }
-

@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { CodeBlock } from '../../../shared/components/code-block/code-block';
 import { Tabs } from '@components/tabs/tabs';
 import { Tab } from '@components/tab/tab';
-import { UiButton } from "ui";
+import { UiButton } from 'ui';
 
 @Component({
   selector: 'docs-installation',
   standalone: true,
   imports: [CodeBlock, Tabs, Tab],
-  templateUrl: './installation.html'
+  templateUrl: './installation.html',
 })
 export class Installation {
   // CLI Installation Commands
@@ -17,8 +17,10 @@ export class Installation {
   readonly cliAddComponentCommand = 'ng g @slateui/cli:add button';
 
   // Manual Installation Commands
-  readonly manualDependenciesCommand = 'npm install @angular/cdk @floating-ui/dom ng-primitives tailwind-variants tailwind-merge tw-animate-css';
-  readonly manualTailwindCommand = 'npm install tailwindcss @tailwindcss/postcss';
+  readonly manualDependenciesCommand =
+    'npm install @angular/cdk @floating-ui/dom ng-primitives tailwind-variants tailwind-merge tw-animate-css';
+  readonly manualTailwindCommand =
+    'npm install tailwindcss @tailwindcss/postcss';
 
   // CSS Variables
   readonly cssVariables = `@import 'tailwindcss';

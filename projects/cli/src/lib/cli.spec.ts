@@ -8,9 +8,8 @@ describe('Cli', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Cli]
-    })
-    .compileComponents();
+      imports: [Cli],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Cli);
     component = fixture.componentInstance;

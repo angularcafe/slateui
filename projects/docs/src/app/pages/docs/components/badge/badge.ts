@@ -6,14 +6,11 @@ import { badgeVariants, badgeMeta } from './badge.variants';
   selector: 'docs-badge',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview 
-      [meta]="badgeMeta" 
-      [variants]="badgeVariants">
+    <docs-component-preview [meta]="badgeMeta" [variants]="badgeVariants">
     </docs-component-preview>
-  `
+  `,
 })
 export class Badge {
   badgeMeta = badgeMeta;
   badgeVariants = badgeVariants;
 }
-
