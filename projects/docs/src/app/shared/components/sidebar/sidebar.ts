@@ -1,12 +1,12 @@
-import { NgTemplateOutlet } from '@angular/common';
-import { Component, inject, model, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { bootstrapGithub, bootstrapTwitterX } from '@ng-icons/bootstrap-icons';
-import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideX } from '@ng-icons/lucide';
-import { tablerBlur } from '@ng-icons/tabler-icons';
-import { ThemeService } from '@slateui/theme';
-import { UiButton } from 'ui';
+import { NgTemplateOutlet } from "@angular/common";
+import { Component, inject, model, signal } from "@angular/core";
+import { RouterLink, RouterLinkActive } from "@angular/router";
+import { bootstrapGithub, bootstrapTwitterX } from "@ng-icons/bootstrap-icons";
+import { NgIcon, provideIcons } from "@ng-icons/core";
+import { lucideX } from "@ng-icons/lucide";
+import { tablerBlur } from "@ng-icons/tabler-icons";
+import { ThemeService } from "@slateui/theme";
+import { UiButton } from "ui";
 
 interface NavLink {
   name: string;
@@ -21,68 +21,70 @@ interface NavSection {
 
 // Angular 20 standalone component with enhanced navigation
 @Component({
-  selector: 'docs-sidebar',
+  selector: "docs-sidebar",
   standalone: true,
   imports: [RouterLink, NgIcon, NgTemplateOutlet, RouterLinkActive, UiButton],
-  viewProviders: [provideIcons({ lucideX, bootstrapGithub, bootstrapTwitterX, tablerBlur })],
-  templateUrl: './sidebar.html'
+  viewProviders: [
+    provideIcons({ lucideX, bootstrapGithub, bootstrapTwitterX, tablerBlur }),
+  ],
+  templateUrl: "./sidebar.html",
 })
 export class Sidebar {
   themeService = inject(ThemeService);
   // Two-way binding model signal for menu state
   readonly menuOpen = model(false);
-  
+
   // Sort method for components
   private sortComponents(components: NavLink[]): NavLink[] {
     return components.sort((a, b) => a.name.localeCompare(b.name));
   }
-  
+
   // Clean navigation structure
   readonly sections = signal<NavSection[]>([
     {
-      title: 'Getting Started',
+      title: "Getting Started",
       links: [
-        { name: 'Introduction', path: 'introduction' },
-        { name: 'Installation', path: 'installation' },
-        { name: 'Theming', path: 'theming' },
-        { name: 'Dark Mode', path: 'dark-mode' },
-        { name: 'CLI', path: 'cli' }
-      ]
+        { name: "Introduction", path: "introduction" },
+        { name: "Installation", path: "installation" },
+        { name: "Theming", path: "theming" },
+        { name: "Dark Mode", path: "dark-mode" },
+        { name: "CLI", path: "cli" },
+      ],
     },
     {
-      title: 'Components',
-      link: 'components',
+      title: "Components",
+      link: "components",
       links: this.sortComponents([
-        { name: 'Accordion', path: 'accordion' },
-        { name: 'Alert', path: 'alert' },
-        { name: 'Alert Dialog', path: 'alert-dialog' },
-        { name: 'Avatar', path: 'avatar' },
-        { name: 'Badge', path: 'badge' },
-        { name: 'Button', path: 'button' },
-        { name: 'Breadcrumb', path: 'breadcrumb' },
-        { name: 'Card', path: 'card' },
-        { name: 'Checkbox', path: 'checkbox' },
-        { name: 'Dialog', path: 'dialog' },
-        { name: 'Sheet', path: 'sheet' },
-        { name: 'Dropdown Menu', path: 'dropdown-menu' },
-        { name: 'Label', path: 'label' },
-        { name: 'Input', path: 'input' },
-        { name: 'Textarea', path: 'textarea' },
-        { name: 'Popover', path: 'popover' },
-        { name: 'Progress', path: 'progress' },
+        { name: "Accordion", path: "accordion" },
+        { name: "Alert", path: "alert" },
+        { name: "Alert Dialog", path: "alert-dialog" },
+        { name: "Avatar", path: "avatar" },
+        { name: "Badge", path: "badge" },
+        { name: "Button", path: "button" },
+        { name: "Breadcrumb", path: "breadcrumb" },
+        { name: "Card", path: "card" },
+        { name: "Checkbox", path: "checkbox" },
+        { name: "Dialog", path: "dialog" },
+        { name: "Sheet", path: "sheet" },
+        { name: "Dropdown Menu", path: "dropdown-menu" },
+        { name: "Label", path: "label" },
+        { name: "Input", path: "input" },
+        { name: "Textarea", path: "textarea" },
+        { name: "Popover", path: "popover" },
+        { name: "Progress", path: "progress" },
         // { name: 'Select', path: 'select' },
-        { name: 'Radio Group', path: 'radio-group' },
-        { name: 'Separator', path: 'separator' },
-        { name: 'Switch', path: 'switch' },
-        { name: 'Tabs', path: 'tabs' },
+        { name: "Radio Group", path: "radio-group" },
+        { name: "Separator", path: "separator" },
+        { name: "Switch", path: "switch" },
+        { name: "Tabs", path: "tabs" },
         // { name: 'Toast', path: 'toast' },
-        { name: 'Tooltip', path: 'tooltip' },
-        { name: 'Table', path: 'table' },
-        { name: 'Toggle', path: 'toggle' },
-        { name: 'Toggle Group', path: 'toggle-group' },
-        { name: 'Skeleton', path: 'skeleton' }
-      ])
-    }
+        { name: "Tooltip", path: "tooltip" },
+        { name: "Table", path: "table" },
+        { name: "Toggle", path: "toggle" },
+        { name: "Toggle Group", path: "toggle-group" },
+        { name: "Skeleton", path: "skeleton" },
+      ]),
+    },
   ]);
 
   // Close menu method for better UX
@@ -91,8 +93,6 @@ export class Sidebar {
   }
 
   toggleTheme() {
-    this.themeService.setTheme(
-      this.themeService.isDark() ? 'light' : 'dark'
-    );
+    this.themeService.setTheme(this.themeService.isDark() ? "light" : "dark");
   }
 }
