@@ -1,35 +1,32 @@
 import { Component } from '@angular/core';
 import { UiBadge } from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 
 @Component({
   selector: 'badge-default-example',
   template: `<ui-badge>Default</ui-badge>`,
-  imports: [UiBadge],
+  imports: [UiBadge]
 })
 export class BadgeDefaultExample {}
 
 @Component({
   selector: 'badge-secondary-example',
   template: `<ui-badge variant="secondary">Secondary</ui-badge>`,
-  imports: [UiBadge],
+  imports: [UiBadge]
 })
 export class BadgeSecondaryExample {}
 
 @Component({
   selector: 'badge-destructive-example',
   template: `<ui-badge variant="destructive">Destructive</ui-badge>`,
-  imports: [UiBadge],
+  imports: [UiBadge]
 })
 export class BadgeDestructiveExample {}
 
 @Component({
   selector: 'badge-outline-example',
   template: `<ui-badge variant="outline">Outline</ui-badge>`,
-  imports: [UiBadge],
+  imports: [UiBadge]
 })
 export class BadgeOutlineExample {}
 
@@ -39,19 +36,14 @@ export const badgeMeta: IComponentMeta = {
   installation: {
     package: 'badge',
     import: `import { UiBadge } from '@workspace/ui/badge';`,
-    usage: `<ui-badge>Badge</ui-badge>`,
+    usage: `<ui-badge>Badge</ui-badge>`
   },
   api: {
     props: [
-      {
-        name: 'variant',
-        type: '"default" | "secondary" | "destructive" | "outline"',
-        default: '"default"',
-        description: 'Visual variant of the badge.',
-      },
-      { name: 'class', type: 'string', description: 'Additional CSS classes.' },
-    ],
-  },
+      { name: 'variant', type: '"default" | "secondary" | "destructive" | "outline"', default: '"default"', description: 'Visual variant of the badge.' },
+      { name: 'class', type: 'string', description: 'Additional CSS classes.' }
+    ]
+  }
 };
 
 export const badgeVariants: IVariant[] = [
@@ -65,7 +57,7 @@ export const badgeVariants: IVariant[] = [
   imports: [UiBadge]
 })
 export class BadgeDefaultExample {}`,
-    component: BadgeDefaultExample,
+    component: BadgeDefaultExample
   },
   {
     title: 'Secondary',
@@ -77,7 +69,7 @@ export class BadgeDefaultExample {}`,
   imports: [UiBadge]
 })
 export class BadgeSecondaryExample {}`,
-    component: BadgeSecondaryExample,
+    component: BadgeSecondaryExample
   },
   {
     title: 'Destructive',
@@ -89,7 +81,7 @@ export class BadgeSecondaryExample {}`,
   imports: [UiBadge]
 })
 export class BadgeDestructiveExample {}`,
-    component: BadgeDestructiveExample,
+    component: BadgeDestructiveExample
   },
   {
     title: 'Outline',
@@ -101,6 +93,7 @@ export class BadgeDestructiveExample {}`,
   imports: [UiBadge]
 })
 export class BadgeOutlineExample {}`,
-    component: BadgeOutlineExample,
-  },
+    component: BadgeOutlineExample
+  }
 ];
+

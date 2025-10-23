@@ -2,191 +2,122 @@
 <docs-header [(menuOpen)]="menuOpen" />
 
 <div class="lg:hidden">
-  <docs-sidebar [(menuOpen)]="menuOpen" />
+    <docs-sidebar [(menuOpen)]="menuOpen" />
 </div>
 
 <!-- Hero Section -->
 <div class="relative min-h-[calc(100vh-4rem)]">
-  <!-- Hero Content -->
-  <div class="relative overflow-hidden">
-    <!-- Enhanced Background with Texture -->
-    <div class="absolute inset-0 bg-background">
-      <!-- Subtle grid pattern -->
-      <div
-        class="absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.05]"
-      ></div>
-
-      <!-- Simple gradient overlay -->
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-background via-background/98 to-muted/30"
-      ></div>
-
-      <!-- Floating geometric shapes with subtle animation -->
-      <div
-        class="absolute top-20 left-10 w-32 h-32 rounded-full bg-blue-500/5 blur-3xl animate-pulse"
-      ></div>
-      <div
-        class="absolute top-40 right-20 w-24 h-24 rounded-full bg-purple-500/5 blur-3xl animate-pulse"
-        style="animation-delay: 2s"
-      ></div>
-      <div
-        class="absolute bottom-40 left-1/4 w-20 h-20 rounded-full bg-green-500/5 blur-3xl animate-pulse"
-        style="animation-delay: 4s"
-      ></div>
-
-      <!-- Subtle dot pattern -->
-      <div
-        class="absolute inset-0 opacity-10"
-        style="
-          background-image: radial-gradient(
-            circle,
-            currentColor 1px,
-            transparent 1px
-          );
-          background-size: 20px 20px;
-        "
-      ></div>
-    </div>
-
-    <div
-      class="relative container mx-auto px-6 lg:px-8 pt-16 pb-24 sm:pt-20 lg:pt-24 lg:pb-32 flex items-center min-h-[calc(100vh-4rem)]"
-    >
-      <div class="text-center max-w-5xl mx-auto w-full">
-        <!-- Launch Badge -->
-        <div class="inline-flex items-center mb-8">
-          <div
-            class="inline-flex items-center rounded-full border border-yellow-300 bg-yellow-50 dark:bg-yellow-900/20 px-3 py-1 text-sm font-medium text-yellow-800 dark:text-yellow-200"
-          >
-            <ng-icon name="lucideWrench" size="14px" class="mr-2" />
-            Under development
-          </div>
+    <!-- Hero Content -->
+    <div class="relative overflow-hidden">
+        <!-- Enhanced Background with Texture -->
+        <div class="absolute inset-0 bg-background">
+            <!-- Subtle grid pattern -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.05]"></div>
+            
+            <!-- Simple gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-br from-background via-background/98 to-muted/30"></div>
+            
+            <!-- Floating geometric shapes with subtle animation -->
+            <div class="absolute top-20 left-10 w-32 h-32 rounded-full bg-blue-500/5 blur-3xl animate-pulse"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 rounded-full bg-purple-500/5 blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-40 left-1/4 w-20 h-20 rounded-full bg-green-500/5 blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
+            
+            <!-- Subtle dot pattern -->
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, currentColor 1px, transparent 1px); background-size: 20px 20px;"></div>
         </div>
 
-        <!-- Main Heading -->
-        <h1
-          class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-tight"
-        >
-          <span class="text-foreground"> Modern UI Components <br />for </span>
-          <span
-            class="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent"
-          >
-            Angular</span
-          >
-        </h1>
-
-        <!-- Subtitle -->
-        <p
-          class="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl leading-relaxed text-muted-foreground max-w-4xl mx-auto font-light"
-        >
-          Build beautiful, accessible, and high-performance applications with
-          SlateUI. A comprehensive Angular component library built on
-          <a
-            href="https://angularprimitives.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline"
-            >Angular Primitives</a
-          >, designed for modern web development.
-        </p>
-
-        <!-- CTA Buttons -->
         <div
-          class="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <a
-            routerLink="/docs/introduction"
-            uiButton
-            size="lg"
-            class="inline-flex items-center w-full sm:w-auto"
-          >
-            <ng-icon name="lucideRocket" size="20px" class="mr-2" />
-            Get Started
-            <ng-icon name="lucideArrowRight" size="16px" class="ml-2" />
-          </a>
-          <a
-            href="https://github.com/angularcafe/slateui"
-            target="_blank"
-            rel="noopener noreferrer"
-            uiButton
-            variant="outline"
-            size="lg"
-            class="inline-flex items-center w-full sm:w-auto"
-          >
-            <ng-icon name="bootstrapGithub" size="20px" class="mr-2" />
-            View on GitHub
-            <ng-icon name="lucideExternalLink" size="16px" class="ml-2" />
-          </a>
+            class="relative container mx-auto px-6 lg:px-8 pt-16 pb-24 sm:pt-20 lg:pt-24 lg:pb-32 flex items-center min-h-[calc(100vh-4rem)]">
+            <div class="text-center max-w-5xl mx-auto w-full">
+                <!-- Launch Badge -->
+                <div class="inline-flex items-center mb-8">
+                    <div class="inline-flex items-center rounded-full border border-yellow-300 bg-yellow-50 dark:bg-yellow-900/20 px-3 py-1 text-sm font-medium text-yellow-800 dark:text-yellow-200">
+                        <ng-icon name="lucideWrench" size="14px" class="mr-2" />
+                        Under development
+                    </div>
+                </div>
+
+                <!-- Main Heading -->
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl  font-bold tracking-tight text-foreground leading-tight">
+                    <span class="text-foreground">
+                        Modern UI Components <br/>for
+                    </span>
+                    <span class="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent"> Angular</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p
+                    class="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl leading-relaxed text-muted-foreground max-w-4xl mx-auto font-light">
+                    Build beautiful, accessible, and high-performance applications with SlateUI.
+                    A comprehensive Angular component library built on <a href="https://angularprimitives.com/" target="_blank" rel="noopener noreferrer" class="underline">Angular Primitives</a>, designed for modern web development.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a routerLink="/docs/introduction" uiButton size="lg"
+                        class="inline-flex items-center w-full sm:w-auto">
+                        <ng-icon name="lucideRocket" size="20px" class="mr-2" />
+                        Get Started
+                        <ng-icon name="lucideArrowRight" size="16px" class="ml-2" />
+                    </a>
+                    <a href="https://github.com/angularcafe/slateui" target="_blank" rel="noopener noreferrer" uiButton
+                        variant="outline" size="lg" class="inline-flex items-center w-full sm:w-auto">
+                        <ng-icon name="bootstrapGithub" size="20px" class="mr-2" />
+                        View on GitHub
+                        <ng-icon name="lucideExternalLink" size="16px" class="ml-2" />
+                    </a>
+                </div>
+
+
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 
 <!-- Features Section -->
 <div class="py-24 lg:py-32 bg-muted/30">
-  <div class="container mx-auto px-6 lg:px-8">
-    <div class="text-center mb-20">
-      <h2
-        class="text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-6"
-      >
-        Everything you need to build modern applications
-      </h2>
-      <p
-        class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
-      >
-        Beautifully designed Angular components inspired by shadcn/ui. Copy,
-        paste, and customize. Built with accessibility, performance, and
-        developer experience at the core.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-      @for (feature of features; track feature.title) {
-        <div class="group relative h-full">
-          <div
-            class="relative p-8 rounded-2xl border border-border bg-card hover:bg-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 h-full flex flex-col"
-          >
-            <div class="flex items-center mb-6">
-              <div
-                class="p-3 rounded-xl group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-12 h-12"
-                [ngClass]="feature.iconBg"
-              >
-                <ng-icon
-                  [name]="feature.icon"
-                  size="24px"
-                  [ngClass]="feature.iconColor"
-                />
-              </div>
-            </div>
-            <h3
-              class="text-xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300"
-            >
-              {{ feature.title }}
-            </h3>
-            <p class="text-muted-foreground leading-relaxed flex-grow">
-              {{ feature.description }}
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-6">
+                Everything you need to build modern applications
+            </h2>
+            <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Beautifully designed Angular components inspired by shadcn/ui. Copy, paste, and customize.
+                Built with accessibility, performance, and developer experience at the core.
             </p>
-
-            <!-- Hover indicator -->
-            <div
-              class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <ng-icon
-                name="lucideArrowUpRight"
-                size="18px"
-                class="text-muted-foreground"
-              />
-            </div>
-
-            <!-- Subtle gradient overlay on hover -->
-            <div
-              class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-            ></div>
-          </div>
         </div>
-      }
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            @for (feature of features; track feature.title) {
+            <div class="group relative h-full">
+                <div
+                    class="relative p-8 rounded-2xl border border-border bg-card hover:bg-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 h-full flex flex-col">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 rounded-xl group-hover:scale-110 transition-transform duration-200 flex items-center justify-center w-12 h-12"
+                             [ngClass]="feature.iconBg">
+                            <ng-icon [name]="feature.icon" size="24px" [ngClass]="feature.iconColor" />
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                        {{ feature.title }}
+                    </h3>
+                    <p class="text-muted-foreground leading-relaxed flex-grow">
+                        {{ feature.description }}
+                    </p>
+                    
+                    <!-- Hover indicator -->
+                    <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <ng-icon name="lucideArrowUpRight" size="18px" class="text-muted-foreground" />
+                    </div>
+                    
+                    <!-- Subtle gradient overlay on hover -->
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+            </div>
+            }
+        </div>
     </div>
-  </div>
 </div>
 
 <docs-footer />

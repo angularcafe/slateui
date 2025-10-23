@@ -7,11 +7,13 @@ import { labelVariants, labelMeta } from './label.variants';
   standalone: true,
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="labelMeta" [variants]="labelVariants">
+    <docs-component-preview 
+      [meta]="labelMeta" 
+      [variants]="labelVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Label {
   labelMeta = labelMeta;
   labelVariants = labelVariants;
-}
+} 

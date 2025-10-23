@@ -1,38 +1,35 @@
 import { Component, model } from '@angular/core';
 import { UiFormField, UiLabel, UiSwitch, UiSwitchThumb } from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 
 // Switch example components for dynamic rendering
 @Component({
   selector: 'switch-default-example',
   template: `
     <div class="flex items-center space-x-2" uiFormField>
-      <button uiSwitch [(checked)]="checked">
-        <span uiSwitchThumb></span>
-      </button>
-      <label uiLabel>Airplane Mode</label>
+        <button uiSwitch [(checked)]="checked">
+            <span uiSwitchThumb></span>
+        </button>
+        <label uiLabel>Airplane Mode</label>
     </div>
   `,
-  imports: [UiSwitch, UiSwitchThumb, UiFormField, UiLabel],
+  imports: [UiSwitch, UiSwitchThumb, UiFormField, UiLabel]
 })
 export class SwitchDefaultExample {
-  checked = model(false);
+    checked = model(false);
 }
 
 @Component({
   selector: 'switch-disabled-example',
   template: `
     <div class="flex items-center space-x-2" uiFormField>
-      <button uiSwitch disabled [(checked)]="checked">
-        <span uiSwitchThumb></span>
-      </button>
-      <label uiLabel>Disabled Switch</label>
+        <button uiSwitch disabled [(checked)]="checked">
+            <span uiSwitchThumb></span>
+        </button>
+        <label uiLabel>Disabled Switch</label>
     </div>
   `,
-  imports: [UiSwitch, UiSwitchThumb, UiFormField, UiLabel],
+  imports: [UiSwitch, UiSwitchThumb, UiFormField, UiLabel]
 })
 export class SwitchDisabledExample {
   checked = model(false);
@@ -45,10 +42,12 @@ export class SwitchDisabledExample {
       <button uiSwitch checked [(checked)]="checked">
         <span uiSwitchThumb></span>
       </button>
-      <label uiLabel> WiFi </label>
+      <label uiLabel>
+        WiFi
+      </label>
     </div>
   `,
-  imports: [UiSwitch, UiSwitchThumb, UiFormField, UiLabel],
+  imports: [UiSwitch, UiSwitchThumb, UiFormField, UiLabel]
 })
 export class SwitchCheckedExample {
   checked = model(true);
@@ -61,9 +60,7 @@ export class SwitchCheckedExample {
       <div uiFormField class="space-y-4">
         <h3 class="mb-4 text-lg font-medium">Email Notifications</h3>
         <div class="space-y-4">
-          <div
-            class="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm"
-          >
+          <div class="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
             <div class="space-y-0.5">
               <label uiLabel>Marketing emails</label>
               <p class="text-sm text-muted-foreground">
@@ -74,9 +71,7 @@ export class SwitchCheckedExample {
               <span uiSwitchThumb></span>
             </button>
           </div>
-          <div
-            class="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm"
-          >
+          <div class="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
             <div class="space-y-0.5">
               <label uiLabel>Security emails</label>
               <p class="text-sm text-muted-foreground">
@@ -87,11 +82,11 @@ export class SwitchCheckedExample {
               <span uiSwitchThumb></span>
             </button>
           </div>
+          </div>
         </div>
       </div>
-    </div>
   `,
-  imports: [UiSwitch, UiSwitchThumb, UiFormField, UiLabel],
+  imports: [UiSwitch, UiSwitchThumb, UiFormField, UiLabel]
 })
 export class SwitchFormExample {
   marketingEmails = model(false);
@@ -101,8 +96,7 @@ export class SwitchFormExample {
 // Component metadata for documentation
 export const switchMeta: IComponentMeta = {
   title: 'Switch',
-  description:
-    'A control that allows the user to toggle between checked and not checked.',
+  description: 'A control that allows the user to toggle between checked and not checked.',
   installation: {
     package: `switch';`,
     import: `import { UiSwitch, UiSwitchThumb } from '@workspace/ui/directives/switch';
@@ -113,7 +107,7 @@ import { UiLabel } from '@workspace/ui/directives/label';`,
     <span uiSwitchThumb></span>
   </button>
   <label uiLabel>Switch Label</label>
-</div>`,
+</div>`
   },
   api: {
     props: [
@@ -121,28 +115,28 @@ import { UiLabel } from '@workspace/ui/directives/label';`,
         name: 'checked',
         type: 'boolean',
         default: 'false',
-        description: 'Whether the switch is checked.',
+        description: 'Whether the switch is checked.'
       },
       {
         name: 'disabled',
         type: 'boolean',
         default: 'false',
-        description: 'Whether the switch is disabled.',
+        description: 'Whether the switch is disabled.'
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the switch.',
-      },
+        description: 'Additional CSS classes to apply to the switch.'
+      }
     ],
     outputs: [
       {
         name: 'checkedChange',
         type: 'boolean',
-        description: 'Emitted when the checked state changes.',
-      },
-    ],
-  },
+        description: 'Emitted when the checked state changes.'
+      }
+    ]
+  }
 };
 
 export const switchVariants: IVariant[] = [
@@ -169,7 +163,7 @@ import { UiLabel } from '@workspace/ui/directives/label';
 export class SwitchDefaultExample {
   checked = model(false);
 }`,
-    component: SwitchDefaultExample,
+    component: SwitchDefaultExample
   },
   {
     title: 'Disabled',
@@ -194,7 +188,7 @@ import { UiLabel } from '@workspace/ui/directives/label';
 export class SwitchDisabledExample {
   checked = model(false);
 }`,
-    component: SwitchDisabledExample,
+    component: SwitchDisabledExample
   },
   {
     title: 'Checked',
@@ -221,12 +215,11 @@ import { UiLabel } from '@workspace/ui/directives/label';
 export class SwitchCheckedExample {
   checked = model(true);
 }`,
-    component: SwitchCheckedExample,
+    component: SwitchCheckedExample
   },
   {
     title: 'Form',
-    description:
-      'A switch used in a form context with labels and descriptions.',
+    description: 'A switch used in a form context with labels and descriptions.',
     code: `import { Component, model } from '@angular/core';
 import { UiSwitch, UiSwitchThumb } from '@workspace/ui/directives/switch';
 import { UiFormField } from '@workspace/ui/directives/form-field';
@@ -271,6 +264,6 @@ export class SwitchFormExample {
   marketingEmails = model(false);
   securityEmails = model(true);
 }`,
-    component: SwitchFormExample,
-  },
+    component: SwitchFormExample
+  }
 ];

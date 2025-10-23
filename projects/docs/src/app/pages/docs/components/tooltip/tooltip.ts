@@ -6,11 +6,14 @@ import { tooltipVariants, tooltipMeta } from './tooltip.variants';
   selector: 'docs-tooltip',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="tooltipMeta" [variants]="tooltipVariants">
+    <docs-component-preview 
+      [meta]="tooltipMeta" 
+      [variants]="tooltipVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Tooltip {
   tooltipMeta = tooltipMeta;
   tooltipVariants = tooltipVariants;
 }
+

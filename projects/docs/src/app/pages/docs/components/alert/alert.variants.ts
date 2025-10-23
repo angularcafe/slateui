@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { UiAlert, UiAlertDescription, UiAlertTitle } from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideCircleAlert } from '@ng-icons/lucide';
 
@@ -18,7 +15,7 @@ import { lucideCircleAlert } from '@ng-icons/lucide';
       </ui-alert-description>
     </ui-alert>
   `,
-  imports: [UiAlert, UiAlertTitle, UiAlertDescription],
+  imports: [UiAlert, UiAlertTitle, UiAlertDescription]
 })
 export class AlertDefaultExample {}
 
@@ -32,7 +29,7 @@ export class AlertDefaultExample {}
       </ui-alert-description>
     </ui-alert>
   `,
-  imports: [UiAlert, UiAlertTitle, UiAlertDescription],
+  imports: [UiAlert, UiAlertTitle, UiAlertDescription]
 })
 export class AlertDestructiveExample {}
 
@@ -48,7 +45,7 @@ export class AlertDestructiveExample {}
     </ui-alert>
   `,
   providers: [provideIcons({ lucideCircleAlert })],
-  imports: [UiAlert, UiAlertTitle, UiAlertDescription, NgIcon],
+  imports: [UiAlert, UiAlertTitle, UiAlertDescription, NgIcon]
 })
 export class AlertWithIconExample {}
 
@@ -61,7 +58,7 @@ export const alertMeta: IComponentMeta = {
     usage: `<ui-alert>
   <ui-alert-title>Alert Title</ui-alert-title>
   <ui-alert-description>Alert description</ui-alert-description>
-</ui-alert>`,
+</ui-alert>`
   },
   api: {
     props: [
@@ -69,15 +66,15 @@ export const alertMeta: IComponentMeta = {
         name: 'variant',
         type: '"default" | "destructive"',
         default: '"default"',
-        description: 'The visual variant of the alert.',
+        description: 'The visual variant of the alert.'
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the alert.',
-      },
-    ],
-  },
+        description: 'Additional CSS classes to apply to the alert.'
+      }
+    ]
+  }
 };
 
 export const alertVariants: IVariant[] = [
@@ -99,7 +96,7 @@ export const alertVariants: IVariant[] = [
   imports: [UiAlert, UiAlertTitle, UiAlertDescription]
 })
 export class AlertDefaultExample {}`,
-    component: AlertDefaultExample,
+    component: AlertDefaultExample
   },
   {
     title: 'Destructive',
@@ -119,7 +116,7 @@ export class AlertDefaultExample {}`,
   imports: [UiAlert, UiAlertTitle, UiAlertDescription]
 })
 export class AlertDestructiveExample {}`,
-    component: AlertDestructiveExample,
+    component: AlertDestructiveExample
   },
   {
     title: 'With Icon',
@@ -143,6 +140,6 @@ import { lucideCircleAlert } from '@ng-icons/lucide';
   imports: [UiAlert, UiAlertTitle, UiAlertDescription, NgIcon]
 })
 export class AlertWithIconExample {}`,
-    component: AlertWithIconExample,
-  },
+    component: AlertWithIconExample
+  }
 ];

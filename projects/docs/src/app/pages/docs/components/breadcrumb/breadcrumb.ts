@@ -7,12 +7,11 @@ import { breadcrumbVariants, breadcrumbMeta } from './breadcrumb.variants';
   standalone: true,
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview
-      [meta]="breadcrumbMeta"
-      [variants]="breadcrumbVariants"
-    >
+    <docs-component-preview 
+      [meta]="breadcrumbMeta" 
+      [variants]="breadcrumbVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Breadcrumb {
   breadcrumbMeta = breadcrumbMeta;

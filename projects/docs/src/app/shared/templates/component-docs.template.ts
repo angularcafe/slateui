@@ -1,9 +1,9 @@
 /**
  * TEMPLATE: Component Documentation Setup
- *
+ * 
  * This template provides a standardized way to create documentation for UI components.
  * Copy this template and modify it for your component.
- *
+ * 
  * Steps to use this template:
  * 1. Copy this file to your component docs folder
  * 2. Replace all instances of "COMPONENT_NAME" with your component name
@@ -11,7 +11,7 @@
  * 4. Update the imports to match your component
  * 5. Define your component metadata and variants
  * 6. Create example components for each variant
- *
+ * 
  * Example: For a Badge component, you would:
  * - Replace COMPONENT_NAME with "badge"
  * - Replace ComponentName with "Badge"
@@ -19,10 +19,7 @@
  */
 
 import { Component } from '@angular/core';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 // TODO: Replace with your actual component imports
 // import { UiCOMPONENT_NAME } from 'ui';
 
@@ -33,9 +30,7 @@ import {
     <!-- TODO: Replace with your component's default usage -->
     <div uiCOMPONENT_NAME>Default Example</div>
   `,
-  imports: [
-    /* TODO: Add your component imports */
-  ],
+  imports: [/* TODO: Add your component imports */]
 })
 export class ComponentNameDefaultExample {}
 
@@ -45,9 +40,7 @@ export class ComponentNameDefaultExample {}
     <!-- TODO: Replace with your component's variant usage -->
     <div uiCOMPONENT_NAME variant="secondary">Variant Example</div>
   `,
-  imports: [
-    /* TODO: Add your component imports */
-  ],
+  imports: [/* TODO: Add your component imports */]
 })
 export class ComponentNameVariantExample {}
 
@@ -59,7 +52,7 @@ export const COMPONENT_NAMEMeta: IComponentMeta = {
   installation: {
     // package: '@your-org/ui', // TODO: Uncomment and modify if external package
     import: `import { UiCOMPONENT_NAME } from 'ui';`, // TODO: Replace with actual import
-    usage: `<div uiCOMPONENT_NAME>Content</div>`, // TODO: Replace with basic usage
+    usage: `<div uiCOMPONENT_NAME>Content</div>` // TODO: Replace with basic usage
   },
   api: {
     props: [
@@ -69,18 +62,18 @@ export const COMPONENT_NAMEMeta: IComponentMeta = {
         type: '"default" | "secondary"',
         default: '"default"',
         description: 'The visual variant of the component.',
-        required: false,
+        required: false
       },
       {
         name: 'size',
         type: '"sm" | "md" | "lg"',
         default: '"md"',
         description: 'The size of the component.',
-        required: false,
+        required: false
       },
       // Add more props as needed
-    ],
-  },
+    ]
+  }
 };
 
 export const COMPONENT_NAMEVariants: IVariant[] = [
@@ -88,13 +81,13 @@ export const COMPONENT_NAMEVariants: IVariant[] = [
     title: 'Default',
     description: 'The default component appearance.',
     code: `<div uiCOMPONENT_NAME>Default</div>`, // TODO: Replace with actual code
-    component: ComponentNameDefaultExample,
+    component: ComponentNameDefaultExample
   },
   {
     title: 'Variant',
     description: 'A variant of the component.',
     code: `<div uiCOMPONENT_NAME variant="secondary">Variant</div>`, // TODO: Replace with actual code
-    component: ComponentNameVariantExample,
+    component: ComponentNameVariantExample
   },
   // TODO: Add more variants as needed
 ];

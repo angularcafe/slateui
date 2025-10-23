@@ -1,26 +1,17 @@
 import { Component } from '@angular/core';
 import { UiDescription, UiFormField, UiInput, UiButton, UiLabel } from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'input-default-example',
   template: `
-    <input
-      uiInput
-      type="email"
-      placeholder="Email"
-      [(ngModel)]="email"
-      required
-    />
+    <input uiInput type="email" placeholder="Email" [(ngModel)]="email" required />
   `,
   imports: [UiInput, FormsModule],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
+    'class': 'w-2/3 space-y-6 mx-auto'
   },
 })
 export class InputDefaultExample {
@@ -38,7 +29,7 @@ export class InputDefaultExample {
   imports: [UiInput, UiLabel, UiFormField],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
+    'class': 'w-2/3 space-y-6 mx-auto'
   },
 })
 export class InputFileExample {}
@@ -46,18 +37,12 @@ export class InputFileExample {}
 @Component({
   selector: 'input-disabled-example',
   template: `
-    <input
-      uiInput
-      disabled
-      type="email"
-      placeholder="Email"
-      [(ngModel)]="disabledEmail"
-    />
+    <input uiInput disabled type="email" placeholder="Email" [(ngModel)]="disabledEmail" />
   `,
   imports: [UiInput, FormsModule],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
+    'class': 'w-2/3 space-y-6 mx-auto'
   },
 })
 export class InputDisabledExample {
@@ -69,20 +54,14 @@ export class InputDisabledExample {
   template: `
     <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
       <label uiLabel for="email">Email</label>
-      <input
-        uiInput
-        type="email"
-        id="email"
-        placeholder="Email"
-        [(ngModel)]="email"
-      />
+      <input uiInput type="email" id="email" placeholder="Email" [(ngModel)]="email" />
     </div>
   `,
   imports: [UiInput, UiLabel, UiFormField, FormsModule],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
-  },
+    'class': 'w-2/3 space-y-6 mx-auto'
+  }
 })
 export class InputWithLabelExample {
   email = '';
@@ -92,20 +71,17 @@ export class InputWithLabelExample {
   selector: 'input-with-button-example',
   template: `
     <div class="flex w-full max-w-sm items-center gap-2">
-      <input
-        uiInput
-        type="email"
-        placeholder="Email"
-        [(ngModel)]="subscribeEmail"
-      />
-      <button uiButton type="submit" variant="outline">Subscribe</button>
+      <input uiInput type="email" placeholder="Email" [(ngModel)]="subscribeEmail" />
+      <button uiButton type="submit" variant="outline">
+        Subscribe
+      </button>
     </div>
   `,
   imports: [UiInput, UiButton, FormsModule],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
-  },
+    'class': 'w-2/3 space-y-6 mx-auto'
+  }
 })
 export class InputWithButtonExample {
   subscribeEmail = '';
@@ -117,29 +93,16 @@ export class InputWithButtonExample {
     <form (ngSubmit)="onSubmit()">
       <div class="grid items-center gap-1.5" uiFormField>
         <label uiLabel>Username</label>
-        <input
-          uiInput
-          placeholder="slateui"
-          [(ngModel)]="username"
-          name="username"
-          required
-        />
+        <input uiInput placeholder="slateui" [(ngModel)]="username" name="username" required />
         <p uiDescription>This is your public display name.</p>
       </div>
       <button uiButton type="submit">Submit</button>
     </form>
   `,
-  imports: [
-    UiInput,
-    UiLabel,
-    UiButton,
-    FormsModule,
-    UiFormField,
-    UiDescription,
-  ],
+  imports: [UiInput, UiLabel, UiButton, FormsModule, UiFormField, UiDescription],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
+    'class': 'w-2/3 space-y-6 mx-auto'
   },
 })
 export class InputFormExample {
@@ -156,33 +119,17 @@ export const inputMeta: IComponentMeta = {
   installation: {
     package: 'input',
     import: `import { UiInput } from '@workspace/ui/directives/input';`,
-    usage: `<input uiInput type="text" placeholder="Enter text" />`,
+    usage: `<input uiInput type="text" placeholder="Enter text" />`
   },
   api: {
     props: [
-      {
-        name: 'uiInput',
-        type: 'Directive',
-        description: 'Input directive for styling and functionality.',
-      },
-      {
-        name: 'type',
-        type: 'string',
-        description: 'HTML input type (text, email, password, etc.).',
-      },
-      {
-        name: 'placeholder',
-        type: 'string',
-        description: 'Placeholder text for the input.',
-      },
-      {
-        name: 'disabled',
-        type: 'boolean',
-        description: 'Whether the input is disabled.',
-      },
-      { name: 'class', type: 'string', description: 'Additional CSS classes.' },
-    ],
-  },
+      { name: 'uiInput', type: 'Directive', description: 'Input directive for styling and functionality.' },
+      { name: 'type', type: 'string', description: 'HTML input type (text, email, password, etc.).' },
+      { name: 'placeholder', type: 'string', description: 'Placeholder text for the input.' },
+      { name: 'disabled', type: 'boolean', description: 'Whether the input is disabled.' },
+      { name: 'class', type: 'string', description: 'Additional CSS classes.' }
+    ]
+  }
 };
 
 export const inputVariants: IVariant[] = [
@@ -203,7 +150,7 @@ import { FormsModule } from '@angular/forms';
 export class InputDefaultExample {
   email = '';
 }`,
-    component: InputDefaultExample,
+    component: InputDefaultExample
   },
   {
     title: 'File',
@@ -224,7 +171,7 @@ import { UiFormField } from '@workspace/ui/directives/form-field';
   standalone: true
 })
 export class InputFileExample {}`,
-    component: InputFileExample,
+    component: InputFileExample
   },
   {
     title: 'Disabled',
@@ -243,7 +190,7 @@ import { FormsModule } from '@angular/forms';
 export class InputDisabledExample {
   disabledEmail = 'disabled@example.com';
 }`,
-    component: InputDisabledExample,
+    component: InputDisabledExample
   },
   {
     title: 'With Label',
@@ -267,7 +214,7 @@ import { FormsModule } from '@angular/forms';
 export class InputWithLabelExample {
   email = '';
 }`,
-    component: InputWithLabelExample,
+    component: InputWithLabelExample
   },
   {
     title: 'With Button',
@@ -292,12 +239,11 @@ import { FormsModule } from '@angular/forms';
 export class InputWithButtonExample {
   subscribeEmail = '';
 }`,
-    component: InputWithButtonExample,
+    component: InputWithButtonExample
   },
   {
     title: 'Form',
-    description:
-      'Simple form with input field using ngModel and form field directives.',
+    description: 'Simple form with input field using ngModel and form field directives.',
     code: `import { UiInput } from '@workspace/ui/directives/input';
 import { UiButton } from '@workspace/ui/directives/button';
 import { UiFormField, UiDescription, UiLabel } from '@workspace/ui/directives/form-field';
@@ -325,6 +271,6 @@ export class InputFormExample {
     console.log('Form submitted:', { username: this.username });
   }
 }`,
-    component: InputFormExample,
-  },
+    component: InputFormExample
+  }
 ];

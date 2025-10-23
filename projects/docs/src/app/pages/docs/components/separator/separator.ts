@@ -6,14 +6,14 @@ import { separatorVariants, separatorMeta } from './separator.variants';
   selector: 'docs-separator',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview
-      [meta]="separatorMeta"
-      [variants]="separatorVariants"
-    >
+    <docs-component-preview 
+      [meta]="separatorMeta" 
+      [variants]="separatorVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Separator {
   separatorMeta = separatorMeta;
   separatorVariants = separatorVariants;
 }
+

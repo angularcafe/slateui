@@ -1,25 +1,22 @@
-<div
-  class="hidden xl:block w-56 border-l border-border fixed right-0 top-16 h-[calc(100vh-4rem)]"
->
-  <div class="h-full overflow-y-auto px-6 py-6">
-    @if (links().length > 0) {
-      <div>
-        <h3 class="text-sm font-medium text-foreground mb-3">On this page</h3>
-        <ul class="space-y-1">
-          @for (link of links(); track $index) {
-            <li>
-              <a
-                (click)="scrollTo(link.id)"
-                class="block py-1 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-                [class.pl-4]="link.level > 2"
-                [class.text-xs]="link.level > 2"
-              >
-                {{ link.text }}
-              </a>
-            </li>
-          }
-        </ul>
-      </div>
-    }
-  </div>
+<div class="hidden xl:block w-56 border-l border-border fixed right-0 top-16 h-[calc(100vh-4rem)]">
+    <div class="h-full overflow-y-auto px-6 py-6">
+        @if (links().length > 0) {
+            <div>
+                <h3 class="text-sm font-medium text-foreground mb-3">On this page</h3>
+                <ul class="space-y-1">
+                    @for (link of links(); track $index) {
+                    <li>
+                        <a 
+                            (click)="scrollTo(link.id)"
+                            class="block py-1 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                            [class.pl-4]="link.level > 2"
+                            [class.text-xs]="link.level > 2">
+                            {{ link.text }}
+                        </a>
+                    </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
 </div>

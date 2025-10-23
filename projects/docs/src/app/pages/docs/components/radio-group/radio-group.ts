@@ -7,12 +7,11 @@ import { radioGroupVariants, radioGroupMeta } from './radio-group.variants';
   standalone: true,
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview
-      [meta]="radioGroupMeta"
-      [variants]="radioGroupVariants"
-    >
+    <docs-component-preview 
+      [meta]="radioGroupMeta" 
+      [variants]="radioGroupVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class RadioGroup {
   radioGroupMeta = radioGroupMeta;

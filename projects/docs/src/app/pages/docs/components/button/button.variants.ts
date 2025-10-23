@@ -1,56 +1,49 @@
 import { Component } from '@angular/core';
 import { UiButton } from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import {
-  lucideDownload,
-  lucideLoaderCircle,
-  lucideUpload,
-} from '@ng-icons/lucide';
+import { lucideDownload, lucideLoaderCircle, lucideUpload } from '@ng-icons/lucide';
 
 // Button example components for dynamic rendering
 @Component({
   selector: 'button-default-example',
   template: `<button uiButton>Button</button>`,
-  imports: [UiButton],
+  imports: [UiButton]
 })
 export class ButtonDefaultExample {}
 
 @Component({
   selector: 'button-outline-example',
   template: `<button uiButton variant="outline">Outline</button>`,
-  imports: [UiButton],
+  imports: [UiButton]
 })
 export class ButtonOutlineExample {}
 
 @Component({
   selector: 'button-destructive-example',
   template: `<button uiButton variant="destructive">Destructive</button>`,
-  imports: [UiButton],
+  imports: [UiButton]
 })
 export class ButtonDestructiveExample {}
 
 @Component({
   selector: 'button-secondary-example',
   template: `<button uiButton variant="secondary">Secondary</button>`,
-  imports: [UiButton],
+  imports: [UiButton]
 })
 export class ButtonSecondaryExample {}
 
 @Component({
   selector: 'button-ghost-example',
   template: `<button uiButton variant="ghost">Ghost</button>`,
-  imports: [UiButton],
+  imports: [UiButton]
 })
 export class ButtonGhostExample {}
 
 @Component({
   selector: 'button-link-example',
   template: `<button uiButton variant="link">Link</button>`,
-  imports: [UiButton],
+  imports: [UiButton]
 })
 export class ButtonLinkExample {}
 
@@ -63,7 +56,7 @@ export class ButtonLinkExample {}
       <button uiButton size="lg">Large</button>
     </div>
   `,
-  imports: [UiButton],
+  imports: [UiButton]
 })
 export class ButtonSizesExample {}
 
@@ -81,7 +74,7 @@ export class ButtonSizesExample {}
     </div>
   `,
   imports: [UiButton, NgIcon],
-  providers: [provideIcons({ lucideDownload, lucideUpload })],
+  providers: [provideIcons({ lucideDownload, lucideUpload })]
 })
 export class ButtonWithIconExample {}
 
@@ -91,11 +84,7 @@ export class ButtonWithIconExample {}
   providers: [provideIcons({ lucideLoaderCircle })],
   template: `
     <button uiButton disabled>
-      <ng-icon
-        class="animate-spin -ml-1 mr-2 h-4 w-4"
-        name="lucideLoaderCircle"
-        size="16"
-      />
+      <ng-icon class="animate-spin -ml-1 mr-2 h-4 w-4" name="lucideLoaderCircle" size="16" />
       Loading...
     </button>
   `,
@@ -108,7 +97,7 @@ export const buttonMeta: IComponentMeta = {
   installation: {
     package: 'button',
     import: `import { UiButton } from '@workspace/ui/directives/button';`,
-    usage: `<button uiButton>Button</button>`,
+    usage: `<button uiButton>Button</button>`
   },
   api: {
     props: [
@@ -116,27 +105,27 @@ export const buttonMeta: IComponentMeta = {
         name: 'variant',
         type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
         default: '"default"',
-        description: 'The visual variant of the button.',
+        description: 'The visual variant of the button.'
       },
       {
         name: 'size',
         type: '"default" | "sm" | "lg" | "icon"',
         default: '"default"',
-        description: 'The size of the button.',
+        description: 'The size of the button.'
       },
       {
         name: 'disabled',
         type: 'boolean',
         default: 'false',
-        description: 'Whether the button is disabled.',
+        description: 'Whether the button is disabled.'
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the button.',
-      },
-    ],
-  },
+        description: 'Additional CSS classes to apply to the button.'
+      }
+    ]
+  }
 };
 
 export const buttonVariants: IVariant[] = [
@@ -151,7 +140,7 @@ export const buttonVariants: IVariant[] = [
   imports: [UiButton]
 })
 export class ButtonDefaultExample {}`,
-    component: ButtonDefaultExample,
+    component: ButtonDefaultExample
   },
   {
     title: 'Outline',
@@ -164,7 +153,7 @@ export class ButtonDefaultExample {}`,
   imports: [UiButton]
 })
 export class ButtonOutlineExample {}`,
-    component: ButtonOutlineExample,
+    component: ButtonOutlineExample
   },
   {
     title: 'Destructive',
@@ -177,7 +166,7 @@ export class ButtonOutlineExample {}`,
   imports: [UiButton]
 })
 export class ButtonDestructiveExample {}`,
-    component: ButtonDestructiveExample,
+    component: ButtonDestructiveExample
   },
   {
     title: 'Secondary',
@@ -190,7 +179,7 @@ export class ButtonDestructiveExample {}`,
   imports: [UiButton]
 })
 export class ButtonSecondaryExample {}`,
-    component: ButtonSecondaryExample,
+    component: ButtonSecondaryExample
   },
   {
     title: 'Ghost',
@@ -203,7 +192,7 @@ export class ButtonSecondaryExample {}`,
   imports: [UiButton]
 })
 export class ButtonGhostExample {}`,
-    component: ButtonGhostExample,
+    component: ButtonGhostExample
   },
   {
     title: 'Link',
@@ -216,7 +205,7 @@ export class ButtonGhostExample {}`,
   imports: [UiButton]
 })
 export class ButtonLinkExample {}`,
-    component: ButtonLinkExample,
+    component: ButtonLinkExample
   },
   {
     title: 'Sizes',
@@ -235,7 +224,7 @@ export class ButtonLinkExample {}`,
   imports: [UiButton]
 })
 export class ButtonSizesExample {}`,
-    component: ButtonSizesExample,
+    component: ButtonSizesExample
   },
   {
     title: 'With Icon',
@@ -261,7 +250,7 @@ import { lucideDownload, lucideUpload } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideDownload, lucideUpload })]
 })
 export class ButtonWithIconExample {}`,
-    component: ButtonWithIconExample,
+    component: ButtonWithIconExample
   },
   {
     title: 'Loading State',
@@ -282,6 +271,6 @@ import { lucideLoaderCircle } from '@ng-icons/lucide';
   \`
 })
 export class ButtonLoadingExample {}`,
-    component: ButtonLoadingExample,
-  },
+    component: ButtonLoadingExample
+  }
 ];

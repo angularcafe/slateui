@@ -1,24 +1,21 @@
 import { Component } from '@angular/core';
-import {
-  UiDropdownMenu,
-  UiDropdownMenuTrigger,
-  UiDropdownMenuItem,
-  UiDropdownMenuShortcut,
-  UiDropdownMenuSeparator,
+import { 
+  UiDropdownMenu, 
+  UiDropdownMenuTrigger, 
+  UiDropdownMenuItem, 
+  UiDropdownMenuShortcut, 
+  UiDropdownMenuSeparator, 
   UiDropdownMenuLabel,
   UiDropdownSubmenuTrigger,
-  UiButton,
+  UiButton
 } from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import {
-  lucideChevronRight,
+import { 
+  lucideChevronRight, 
   lucideSettings,
   lucideUser,
-  lucideLogOut,
+  lucideLogOut
 } from '@ng-icons/lucide';
 
 // Basic dropdown menu example
@@ -48,15 +45,8 @@ import {
       </ng-template>
     </div>
   `,
-  imports: [
-    UiButton,
-    UiDropdownMenu,
-    UiDropdownMenuTrigger,
-    UiDropdownMenuItem,
-    UiDropdownMenuSeparator,
-    NgIcon,
-  ],
-  providers: [provideIcons({ lucideUser, lucideSettings, lucideLogOut })],
+  imports: [UiButton, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem, UiDropdownMenuSeparator, NgIcon],
+  providers: [provideIcons({ lucideUser, lucideSettings, lucideLogOut })]
 })
 export class DropdownMenuBasicExample {}
 
@@ -82,13 +72,7 @@ export class DropdownMenuBasicExample {}
       </ng-template>
     </div>
   `,
-  imports: [
-    UiButton,
-    UiDropdownMenu,
-    UiDropdownMenuTrigger,
-    UiDropdownMenuItem,
-    UiDropdownMenuShortcut,
-  ],
+  imports: [UiButton, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem, UiDropdownMenuShortcut]
 })
 export class DropdownMenuShortcutsExample {}
 
@@ -112,14 +96,7 @@ export class DropdownMenuShortcutsExample {}
       </ng-template>
     </div>
   `,
-  imports: [
-    UiButton,
-    UiDropdownMenu,
-    UiDropdownMenuTrigger,
-    UiDropdownMenuItem,
-    UiDropdownMenuLabel,
-    UiDropdownMenuSeparator,
-  ],
+  imports: [UiButton, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem, UiDropdownMenuLabel, UiDropdownMenuSeparator]
 })
 export class DropdownMenuLabelsExample {}
 
@@ -128,74 +105,43 @@ export class DropdownMenuLabelsExample {}
   selector: 'dropdown-menu-submenu-example',
   template: `
     <div class="relative">
-      <button uiButton variant="outline" [uiDropdownMenuTrigger]="menu1">
-        Open
-      </button>
-      <ng-template #menu1>
-        <div uiDropdownMenu class="w-56">
-          <div uiDropdownMenuLabel>My Account</div>
-          <div uiDropdownMenuSeparator></div>
-          <button uiDropdownMenuItem>
-            Profile
-            <div uiDropdownMenuShortcut>⌘P</div>
-          </button>
-          <button uiDropdownMenuItem>
-            Billing
-            <div uiDropdownMenuShortcut>⌘B</div>
-          </button>
-          <button uiDropdownMenuItem>
-            Settings
-            <div uiDropdownMenuShortcut>⌘S</div>
-          </button>
-          <button uiDropdownMenuItem>
-            Keyboard shortcuts
-            <div uiDropdownMenuShortcut>⌘K</div>
-          </button>
-          <div uiDropdownMenuSeparator></div>
-          <button uiDropdownMenuItem>Github</button>
-          <button uiDropdownMenuItem>Support</button>
-          <button uiDropdownMenuItem [uiDropdownSubmenuTrigger]="submenu">
-            Invite User
-            <div uiDropdownMenuShortcut>
-              <ng-icon name="lucideChevronRight" />
+    <button uiButton variant="outline" [uiDropdownMenuTrigger]="menu1">Open</button>
+        <ng-template #menu1>
+            <div uiDropdownMenu class="w-56">
+                <div uiDropdownMenuLabel>My Account</div>
+                <div uiDropdownMenuSeparator></div>
+                <button uiDropdownMenuItem>Profile <div uiDropdownMenuShortcut>⌘P</div></button>
+                <button uiDropdownMenuItem>Billing <div uiDropdownMenuShortcut>⌘B</div></button>
+                <button uiDropdownMenuItem>Settings <div uiDropdownMenuShortcut>⌘S</div></button>
+                <button uiDropdownMenuItem>Keyboard shortcuts <div uiDropdownMenuShortcut>⌘K</div></button>
+                <div uiDropdownMenuSeparator></div>
+                <button uiDropdownMenuItem>Github</button>
+                <button uiDropdownMenuItem>Support</button>
+                <button uiDropdownMenuItem [uiDropdownSubmenuTrigger]="submenu">Invite User
+                    <div uiDropdownMenuShortcut><ng-icon name="lucideChevronRight" /></div>
+                </button>
+                <div uiDropdownMenuSeparator></div>
+                <button uiDropdownMenuItem>Logout <div uiDropdownMenuShortcut>⌘Q</div></button>
             </div>
-          </button>
-          <div uiDropdownMenuSeparator></div>
-          <button uiDropdownMenuItem>
-            Logout
-            <div uiDropdownMenuShortcut>⌘Q</div>
-          </button>
-        </div>
-      </ng-template>
-      <ng-template #submenu>
-        <div uiDropdownMenu>
-          <button uiDropdownMenuItem>Email</button>
-          <button uiDropdownMenuItem>Message</button>
-          <div uiDropdownMenuSeparator></div>
-          <button uiDropdownMenuItem>More..</button>
-        </div>
-      </ng-template>
+        </ng-template>
+        <ng-template #submenu>
+            <div uiDropdownMenu>
+                <button uiDropdownMenuItem>Email</button>
+                <button uiDropdownMenuItem>Message</button>
+                <div uiDropdownMenuSeparator></div>
+                <button uiDropdownMenuItem>More..</button>
+            </div>
+        </ng-template>
     </div>
   `,
-  imports: [
-    UiButton,
-    UiDropdownMenu,
-    UiDropdownMenuTrigger,
-    UiDropdownMenuItem,
-    UiDropdownMenuShortcut,
-    UiDropdownSubmenuTrigger,
-    UiDropdownMenuSeparator,
-    UiDropdownMenuLabel,
-    NgIcon,
-  ],
-  providers: [provideIcons({ lucideChevronRight })],
+  imports: [UiButton, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem, UiDropdownMenuShortcut, UiDropdownSubmenuTrigger, UiDropdownMenuSeparator, UiDropdownMenuLabel, NgIcon],
+  providers: [provideIcons({ lucideChevronRight })]
 })
 export class DropdownMenuSubmenuExample {}
 
 export const dropdownMenuMeta: IComponentMeta = {
   title: 'Dropdown Menu',
-  description:
-    'A dropdown menu component that displays a list of actions or options in a floating panel.',
+  description: 'A dropdown menu component that displays a list of actions or options in a floating panel.',
   installation: {
     package: 'dropdown-menu',
     import: `import { 
@@ -213,74 +159,72 @@ import { UiButton } from '@workspace/ui/directives/button';`,
   <div uiDropdownMenu>
     <button uiDropdownMenuItem>Menu Item</button>
   </div>
-</ng-template>`,
+</ng-template>`
   },
   api: {
     props: [
       {
         name: 'class',
         type: 'string',
-        description:
-          'Additional CSS classes to apply to the dropdown menu components.',
+        description: 'Additional CSS classes to apply to the dropdown menu components.'
       },
       {
         name: 'disabled',
         type: 'boolean',
-        description:
-          'Whether the dropdown menu item is disabled (for UiDropdownMenuItem).',
+        description: 'Whether the dropdown menu item is disabled (for UiDropdownMenuItem).'
       },
       {
         name: 'uiDropdownMenuTrigger',
         type: 'string',
-        description: 'Reference to the dropdown menu to trigger.',
+        description: 'Reference to the dropdown menu to trigger.'
       },
       {
         name: 'uiDropdownMenuTriggerDisabled',
         type: 'boolean',
-        description: 'Whether the trigger is disabled.',
+        description: 'Whether the trigger is disabled.'
       },
       {
         name: 'uiDropdownMenuTriggerPlacement',
         type: '"top" | "bottom" | "left" | "right"',
-        description: 'Preferred placement of the dropdown menu.',
+        description: 'Preferred placement of the dropdown menu.'
       },
       {
         name: 'uiDropdownMenuTriggerOffset',
         type: 'number',
-        description: 'Offset distance from the trigger.',
+        description: 'Offset distance from the trigger.'
       },
       {
         name: 'uiDropdownMenuTriggerFlip',
         type: 'boolean',
-        description: 'Whether to flip the menu when it overflows.',
+        description: 'Whether to flip the menu when it overflows.'
       },
       {
         name: 'uiDropdownSubmenuTrigger',
         type: 'string',
-        description: 'Reference to the submenu to trigger.',
+        description: 'Reference to the submenu to trigger.'
       },
       {
         name: 'uiDropdownSubmenuTriggerDisabled',
         type: 'boolean',
-        description: 'Whether the submenu trigger is disabled.',
+        description: 'Whether the submenu trigger is disabled.'
       },
       {
         name: 'uiDropdownSubmenuTriggerPlacement',
         type: '"top" | "bottom" | "left" | "right"',
-        description: 'Preferred placement of the submenu.',
+        description: 'Preferred placement of the submenu.'
       },
       {
         name: 'uiDropdownSubmenuTriggerOffset',
         type: 'number',
-        description: 'Offset distance from the submenu trigger.',
+        description: 'Offset distance from the submenu trigger.'
       },
       {
         name: 'uiDropdownSubmenuTriggerFlip',
         type: 'boolean',
-        description: 'Whether to flip the submenu when it overflows.',
-      },
-    ],
-  },
+        description: 'Whether to flip the submenu when it overflows.'
+      }
+    ]
+  }
 };
 
 export const dropdownMenuVariants: IVariant[] = [
@@ -327,7 +271,7 @@ import { lucideUser, lucideSettings, lucideLogOut } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideUser, lucideSettings, lucideLogOut })]
 })
 export class DropdownMenuBasicExample {}`,
-    component: DropdownMenuBasicExample,
+    component: DropdownMenuBasicExample
   },
   {
     title: 'With Shortcuts',
@@ -364,12 +308,11 @@ import { UiButton } from '@workspace/ui/directives/button';
   imports: [UiButton, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem, UiDropdownMenuShortcut]
 })
 export class DropdownMenuShortcutsExample {}`,
-    component: DropdownMenuShortcutsExample,
+    component: DropdownMenuShortcutsExample
   },
   {
     title: 'With Labels',
-    description:
-      'Dropdown menu with grouped items using labels and separators.',
+    description: 'Dropdown menu with grouped items using labels and separators.',
     code: `import { 
   UiDropdownMenu, 
   UiDropdownMenuTrigger, 
@@ -401,7 +344,7 @@ import { UiButton } from '@workspace/ui/directives/button';
   imports: [UiButton, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem, UiDropdownMenuLabel, UiDropdownMenuSeparator]
 })
 export class DropdownMenuLabelsExample {}`,
-    component: DropdownMenuLabelsExample,
+    component: DropdownMenuLabelsExample
   },
   {
     title: 'With Submenu',
@@ -456,6 +399,6 @@ import { lucideChevronRight } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideChevronRight })]
 })
 export class DropdownMenuSubmenuExample {}`,
-    component: DropdownMenuSubmenuExample,
-  },
+    component: DropdownMenuSubmenuExample
+  }
 ];

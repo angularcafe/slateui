@@ -6,9 +6,11 @@ import { sheetVariants, sheetMeta } from './sheet.variants';
   selector: 'docs-sheet',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="sheetMeta" [variants]="sheetVariants">
+    <docs-component-preview 
+      [meta]="sheetMeta" 
+      [variants]="sheetVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Sheet {
   sheetMeta = sheetMeta;

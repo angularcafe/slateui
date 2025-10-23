@@ -1,8 +1,5 @@
 import { Injectable, Type } from '@angular/core';
-import {
-  IComponentMeta,
-  IVariant,
-} from '@components/component-preview/component-preview';
+import { IComponentMeta, IVariant } from '@components/component-preview/component-preview';
 
 export interface DocsConfig {
   title: string;
@@ -21,9 +18,10 @@ export interface DocsConfig {
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class DocsHelperService {
+  
   /**
    * Creates component metadata from a docs configuration
    */
@@ -34,11 +32,11 @@ export class DocsHelperService {
       installation: {
         package: config.packageName,
         import: config.importStatement,
-        usage: config.basicUsage,
+        usage: config.basicUsage
       },
       api: {
-        props: config.apiProps || [],
-      },
+        props: config.apiProps || []
+      }
     };
   }
 
@@ -49,30 +47,26 @@ export class DocsHelperService {
     title: string,
     description: string,
     code: string,
-    component: Type<any>,
+    component: Type<any>
   ): IVariant {
     return {
       title,
       description,
       code,
-      component,
+      component
     };
   }
 
   /**
    * Helper method to create consistent example components
    */
-  createExampleComponent(
-    selector: string,
-    template: string,
-    imports: any[],
-  ): Type<any> {
+  createExampleComponent(selector: string, template: string, imports: any[]): Type<any> {
     const componentClass = class {
       static selector = selector;
       static template = template;
       static imports = imports;
     };
-
+    
     return componentClass as Type<any>;
   }
 }

@@ -8,8 +8,9 @@ describe('QuickLinks', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [QuickLinks],
-    }).compileComponents();
+      imports: [QuickLinks]
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(QuickLinks);
     component = fixture.componentInstance;

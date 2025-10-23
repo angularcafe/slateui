@@ -1,28 +1,8 @@
 import { Component } from '@angular/core';
-import {
-  UiBreadcrumb,
-  UiBreadcrumbItem,
-  UiBreadcrumbLink,
-  UiBreadcrumbPage,
-  UiBreadcrumbSeparator,
-  UiBreadcrumbList,
-  UiDropdownMenu,
-  UiDropdownMenuTrigger,
-  UiDropdownMenuItem,
-  UiBreadcrumbEllipsis,
-} from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { UiBreadcrumb, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, UiBreadcrumbList, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem, UiBreadcrumbEllipsis } from 'ui';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import {
-  lucideChevronRight,
-  lucideHouse,
-  lucideFileText,
-  lucideSettings,
-  lucideEllipsis,
-} from '@ng-icons/lucide';
+import { lucideChevronRight, lucideHouse, lucideFileText, lucideSettings, lucideEllipsis } from '@ng-icons/lucide';
 
 // Breadcrumb example components for dynamic rendering
 @Component({
@@ -49,16 +29,8 @@ import {
       </ui-breadcrumb-list>
     </ui-breadcrumb>
   `,
-  imports: [
-    UiBreadcrumb,
-    UiBreadcrumbList,
-    UiBreadcrumbItem,
-    UiBreadcrumbLink,
-    UiBreadcrumbPage,
-    UiBreadcrumbSeparator,
-    NgIcon,
-  ],
-  providers: [provideIcons({ lucideChevronRight })],
+  imports: [UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, NgIcon],
+  providers: [provideIcons({ lucideChevronRight })]
 })
 export class BreadcrumbDefaultExample {}
 
@@ -95,23 +67,8 @@ export class BreadcrumbDefaultExample {}
       </ui-breadcrumb-list>
     </ui-breadcrumb>
   `,
-  imports: [
-    UiBreadcrumb,
-    UiBreadcrumbList,
-    UiBreadcrumbItem,
-    UiBreadcrumbLink,
-    UiBreadcrumbPage,
-    UiBreadcrumbSeparator,
-    NgIcon,
-  ],
-  providers: [
-    provideIcons({
-      lucideChevronRight,
-      lucideHouse,
-      lucideFileText,
-      lucideSettings,
-    }),
-  ],
+  imports: [UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, NgIcon],
+  providers: [provideIcons({ lucideChevronRight, lucideHouse, lucideFileText, lucideSettings })]
 })
 export class BreadcrumbWithIconsExample {}
 
@@ -152,28 +109,15 @@ export class BreadcrumbWithIconsExample {}
       </ui-breadcrumb-list>
     </ui-breadcrumb>
   `,
-  imports: [
-    UiBreadcrumb,
-    UiBreadcrumbList,
-    UiBreadcrumbItem,
-    UiBreadcrumbLink,
-    UiBreadcrumbPage,
-    UiBreadcrumbSeparator,
-    UiBreadcrumbEllipsis,
-    NgIcon,
-    UiDropdownMenu,
-    UiDropdownMenuTrigger,
-    UiDropdownMenuItem,
-  ],
-  providers: [provideIcons({ lucideChevronRight, lucideEllipsis })],
+  imports: [UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, UiBreadcrumbEllipsis, NgIcon, UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem],
+  providers: [provideIcons({ lucideChevronRight, lucideEllipsis })]
 })
 export class BreadcrumbCollapsedExample {}
 
 export const breadcrumbVariants: IVariant[] = [
   {
     title: 'Default',
-    description:
-      'A basic breadcrumb navigation showing the current page hierarchy.',
+    description: 'A basic breadcrumb navigation showing the current page hierarchy.',
     code: `import { 
   UiBreadcrumb, 
   UiBreadcrumbList, 
@@ -212,7 +156,7 @@ import { lucideChevronRight } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideChevronRight })]
 })
 export class BreadcrumbDefaultExample {}`,
-    component: BreadcrumbDefaultExample,
+    component: BreadcrumbDefaultExample
   },
   {
     title: 'With Icons',
@@ -264,12 +208,11 @@ import { lucideChevronRight, lucideHouse, lucideFileText, lucideSettings } from 
   providers: [provideIcons({ lucideChevronRight, lucideHouse, lucideFileText, lucideSettings })]
 })
 export class BreadcrumbWithIconsExample {}`,
-    component: BreadcrumbWithIconsExample,
+    component: BreadcrumbWithIconsExample
   },
   {
     title: 'Collapsed',
-    description:
-      'Breadcrumb with collapsed items shown in a dropdown menu for better space management.',
+    description: 'Breadcrumb with collapsed items shown in a dropdown menu for better space management.',
     code: `import { 
   UiBreadcrumb, 
   UiBreadcrumbList, 
@@ -323,14 +266,13 @@ import { lucideChevronRight, lucideEllipsis } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideChevronRight, lucideEllipsis })]
 })
 export class BreadcrumbCollapsedExample {}`,
-    component: BreadcrumbCollapsedExample,
-  },
+    component: BreadcrumbCollapsedExample
+  }
 ];
 
 export const breadcrumbMeta: IComponentMeta = {
   title: 'Breadcrumb',
-  description:
-    'A navigation component that shows the current page location within a hierarchy.',
+  description: 'A navigation component that shows the current page location within a hierarchy.',
   installation: {
     package: 'breadcrumb',
     import: `import { UiBreadcrumb, UiBreadcrumbList, UiBreadcrumbItem, UiBreadcrumbLink, UiBreadcrumbPage, UiBreadcrumbSeparator, UiBreadcrumbEllipsis } from '@workspace/ui/directives/breadcrumb';
@@ -347,45 +289,17 @@ import { UiDropdownMenu, UiDropdownMenuTrigger, UiDropdownMenuItem } from '@work
       <ui-breadcrumb-page>Current</ui-breadcrumb-page>
     </ui-breadcrumb-item>
   </ui-breadcrumb-list>
-</ui-breadcrumb>`,
+</ui-breadcrumb>`
   },
   api: {
     props: [
-      {
-        name: 'uiBreadcrumb',
-        description: 'Main breadcrumb navigation container',
-        type: 'Directive',
-      },
-      {
-        name: 'uiBreadcrumbList',
-        description: 'Breadcrumb list wrapper (ol/ul)',
-        type: 'Directive',
-      },
-      {
-        name: 'uiBreadcrumbItem',
-        description: 'Individual breadcrumb item',
-        type: 'Directive',
-      },
-      {
-        name: 'uiBreadcrumbLink',
-        description: 'Clickable breadcrumb link',
-        type: 'Directive',
-      },
-      {
-        name: 'uiBreadcrumbPage',
-        description: 'Current page indicator (non-clickable)',
-        type: 'Directive',
-      },
-      {
-        name: 'uiBreadcrumbSeparator',
-        description: 'Separator between breadcrumb items',
-        type: 'Directive',
-      },
-      {
-        name: 'uiBreadcrumbEllipsis',
-        description: 'Collapsed items indicator',
-        type: 'Directive',
-      },
-    ],
-  },
+      { name: 'uiBreadcrumb', description: 'Main breadcrumb navigation container', type: 'Directive' },
+      { name: 'uiBreadcrumbList', description: 'Breadcrumb list wrapper (ol/ul)', type: 'Directive' },
+      { name: 'uiBreadcrumbItem', description: 'Individual breadcrumb item', type: 'Directive' },
+      { name: 'uiBreadcrumbLink', description: 'Clickable breadcrumb link', type: 'Directive' },
+      { name: 'uiBreadcrumbPage', description: 'Current page indicator (non-clickable)', type: 'Directive' },
+      { name: 'uiBreadcrumbSeparator', description: 'Separator between breadcrumb items', type: 'Directive' },
+      { name: 'uiBreadcrumbEllipsis', description: 'Collapsed items indicator', type: 'Directive' }
+    ]
+  }
 };

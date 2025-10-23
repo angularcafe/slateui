@@ -1,22 +1,15 @@
-import {
-  ApplicationConfig,
-  provideBrowserGlobalErrorListeners,
-  provideZonelessChangeDetection,
-} from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideSlateUiTheme } from '@slateui/theme';
 import { routes } from './app.routes';
-import {
-  provideClientHydration,
-  withEventReplay,
-} from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHighlightOptions } from 'ngx-highlightjs';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideRouter(routes),
+    provideRouter(routes), 
     provideClientHydration(withEventReplay()),
     provideSlateUiTheme({
       strategy: 'class',
@@ -29,10 +22,10 @@ export const appConfig: ApplicationConfig = {
         html: () => import('highlight.js/lib/languages/xml'),
         bash: () => import('highlight.js/lib/languages/bash'),
         css: () => import('highlight.js/lib/languages/css'),
-        json: () => import('highlight.js/lib/languages/json'),
+        json: () => import('highlight.js/lib/languages/json')
       },
       // Theme configuration for light/dark mode
-      themePath: 'assets/styles/highlight-themes/github.css',
+      themePath: 'assets/styles/highlight-themes/github.css'
     }),
-  ],
+  ]
 };

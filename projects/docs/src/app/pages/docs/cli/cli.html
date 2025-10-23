@@ -1,86 +1,84 @@
 <div class="space-y-8">
-  <div class="space-y-4">
-    <h1 class="text-2xl font-semibold">CLI</h1>
-    <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
-      Use the SlateUI CLI to add components to your Angular project.
-    </p>
-  </div>
-
-  <!-- Installation -->
-  <div class="space-y-6">
-    <h2 class="text-2xl font-semibold" id="installation">Installation</h2>
     <div class="space-y-4">
-      <p class="text-muted-foreground leading-relaxed">
-        Install the SlateUI CLI as a dev dependency in your project:
-      </p>
-      <docs-code-block language="bash" code="npm install -D &#64;slateui/cli">
-      </docs-code-block>
+        <h1 class="text-2xl font-semibold">CLI</h1>
+        <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
+            Use the SlateUI CLI to add components to your Angular project.
+        </p>
     </div>
-  </div>
 
-  <!-- init -->
-  <div class="space-y-6">
-    <h2 class="text-2xl font-semibold" id="init">init</h2>
-    <div class="space-y-4">
-      <p class="text-muted-foreground leading-relaxed">
-        Use the <code class="inline-code">init</code> command to initialize
-        configuration and dependencies for a new project.
-      </p>
-      <p class="text-muted-foreground leading-relaxed">
-        The <code class="inline-code">init</code> command installs dependencies,
-        adds the <code class="inline-code">cn</code> util and configures CSS
-        variables for the project.
-      </p>
-
-      <div class="space-y-3">
-        <docs-code-block language="bash" code="ng g &#64;slateui/cli:init">
-        </docs-code-block>
-      </div>
+    <!-- Installation -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="installation">Installation</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Install the SlateUI CLI as a dev dependency in your project:
+            </p>
+            <docs-code-block 
+                language="bash"
+                code="npm install -D @slateui/cli">
+            </docs-code-block>
+        </div>
     </div>
-  </div>
 
-  <!-- add -->
-  <div class="space-y-6">
-    <h2 class="text-2xl font-semibold" id="add">add</h2>
-    <div class="space-y-4">
-      <p class="text-muted-foreground leading-relaxed">
-        Use the <code class="inline-code">add</code> command to add components
-        and dependencies to your project.
-      </p>
-
-      <div class="space-y-3">
-        <docs-code-block
-          class="block mb-2"
-          language="bash"
-          code="ng g &#64;slateui/cli:add button"
-        >
-        </docs-code-block>
-        <docs-code-block
-          class="block mb-2"
-          language="bash"
-          code="ng g &#64;slateui/cli:add card dialog"
-        >
-        </docs-code-block>
-        <docs-code-block language="bash" code="ng g &#64;slateui/cli:add --all">
-        </docs-code-block>
-      </div>
+    <!-- init -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="init">init</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Use the <code class="inline-code">init</code> command to initialize configuration and dependencies for a new project.
+            </p>
+            <p class="text-muted-foreground leading-relaxed">
+                The <code class="inline-code">init</code> command installs dependencies, adds the <code class="inline-code">cn</code> util and configures CSS variables for the project.
+            </p>
+            
+            <div class="space-y-3">
+                <docs-code-block 
+                    language="bash"
+                    code="ng g @slateui/cli:init">
+                </docs-code-block>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Next Steps -->
-  <div class="space-y-6">
-    <h2 class="text-2xl font-semibold" id="next-steps">Next Steps</h2>
-    <div class="space-y-4">
-      <p class="text-muted-foreground leading-relaxed">
-        After successfully adding components with the CLI:
-      </p>
-      <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
-        <li>Review the generated component files in your project</li>
-        <li>Check the updated Tailwind CSS configuration</li>
-        <li>Import and use the components in your Angular components</li>
-        <li>Customize the styling using the provided CSS variables</li>
-        <li>Explore the component variants and props</li>
-      </ul>
+    <!-- add -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="add">add</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Use the <code class="inline-code">add</code> command to add components and dependencies to your project.
+            </p>
+            
+            <div class="space-y-3">
+                <docs-code-block class="block mb-2" 
+                    language="bash"
+                    code="ng g @slateui/cli:add button">
+                </docs-code-block>
+                <docs-code-block class="block mb-2"
+                    language="bash"
+                    code="ng g @slateui/cli:add card dialog">
+                </docs-code-block>
+                <docs-code-block 
+                    language="bash"
+                    code="ng g @slateui/cli:add --all">
+                </docs-code-block>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <!-- Next Steps -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="next-steps">Next Steps</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                After successfully adding components with the CLI:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+                <li>Review the generated component files in your project</li>
+                <li>Check the updated Tailwind CSS configuration</li>
+                <li>Import and use the components in your Angular components</li>
+                <li>Customize the styling using the provided CSS variables</li>
+                <li>Explore the component variants and props</li>
+            </ul>
+        </div>
+    </div>
 </div>

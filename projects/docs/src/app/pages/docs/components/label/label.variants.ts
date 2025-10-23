@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { UiLabel, UiInput, UiFormField, UiDescription } from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 import { FormsModule } from '@angular/forms';
 
 // Label example components for dynamic rendering
@@ -12,19 +9,14 @@ import { FormsModule } from '@angular/forms';
   template: `
     <div class="grid gap-1.5" uiFormField>
       <label uiLabel>Email</label>
-      <input
-        uiInput
-        type="email"
-        placeholder="Enter your email"
-        [(ngModel)]="email"
-      />
+      <input uiInput type="email" placeholder="Enter your email" [(ngModel)]="email" />
     </div>
   `,
   imports: [UiLabel, UiInput, UiFormField, FormsModule],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
-  },
+    'class': 'w-2/3 space-y-6 mx-auto'
+  }
 })
 export class LabelDefaultExample {
   email = '';
@@ -36,19 +28,14 @@ export class LabelDefaultExample {
     <div class="grid gap-1.5" uiFormField>
       <label uiLabel>Username</label>
       <p uiDescription>Enter your username to sign in to your account.</p>
-      <input
-        uiInput
-        type="text"
-        placeholder="Enter your username"
-        [(ngModel)]="username"
-      />
+      <input uiInput type="text" placeholder="Enter your username" [(ngModel)]="username" />
     </div>
   `,
   imports: [UiLabel, UiInput, UiFormField, UiDescription, FormsModule],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
-  },
+    'class': 'w-2/3 space-y-6 mx-auto'
+  }
 })
 export class LabelWithDescriptionExample {
   username = '';
@@ -62,19 +49,14 @@ export class LabelWithDescriptionExample {
         Password
         <span class="text-destructive">*</span>
       </label>
-      <input
-        uiInput
-        type="password"
-        placeholder="Enter your password"
-        [(ngModel)]="password"
-      />
+      <input uiInput type="password" placeholder="Enter your password" [(ngModel)]="password" />
     </div>
   `,
   imports: [UiLabel, UiInput, UiFormField, FormsModule],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
-  },
+    'class': 'w-2/3 space-y-6 mx-auto'
+  }
 })
 export class LabelRequiredExample {
   password = '';
@@ -85,20 +67,14 @@ export class LabelRequiredExample {
   template: `
     <div class="grid gap-1.5" uiFormField>
       <label uiLabel class="opacity-50">Disabled Input</label>
-      <input
-        uiInput
-        type="text"
-        placeholder="This input is disabled"
-        [(ngModel)]="disabledValue"
-        disabled
-      />
+      <input uiInput type="text" placeholder="This input is disabled" [(ngModel)]="disabledValue" disabled />
     </div>
   `,
   imports: [UiLabel, UiInput, UiFormField, FormsModule],
   standalone: true,
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
-  },
+    'class': 'w-2/3 space-y-6 mx-auto'
+  }
 })
 export class LabelDisabledExample {
   disabledValue = 'Disabled value';
@@ -106,28 +82,26 @@ export class LabelDisabledExample {
 
 export const labelMeta: IComponentMeta = {
   title: 'Label',
-  description:
-    'Renders a label associated with a form control or other component.',
+  description: 'Renders a label associated with a form control or other component.',
   installation: {
     package: 'label',
     import: `import { UiLabel } from '@workspace/ui/directives/label';`,
-    usage: `<label uiLabel>Label Text</label>`,
+    usage: `<label uiLabel>Label Text</label>`
   },
   api: {
     props: [
       {
         name: 'uiLabel',
         type: 'Directive',
-        description:
-          'The label directive that provides proper styling and accessibility.',
+        description: 'The label directive that provides proper styling and accessibility.'
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the label.',
-      },
-    ],
-  },
+        description: 'Additional CSS classes to apply to the label.'
+      }
+    ]
+  }
 };
 
 export const labelVariants: IVariant[] = [
@@ -153,7 +127,7 @@ import { FormsModule } from '@angular/forms';
 export class LabelDefaultExample {
   email = '';
 }`,
-    component: LabelDefaultExample,
+    component: LabelDefaultExample
   },
   {
     title: 'With Description',
@@ -178,7 +152,7 @@ import { FormsModule } from '@angular/forms';
 export class LabelWithDescriptionExample {
   username = '';
 }`,
-    component: LabelWithDescriptionExample,
+    component: LabelWithDescriptionExample
   },
   {
     title: 'Required',
@@ -205,7 +179,7 @@ import { FormsModule } from '@angular/forms';
 export class LabelRequiredExample {
   password = '';
 }`,
-    component: LabelRequiredExample,
+    component: LabelRequiredExample
   },
   {
     title: 'Disabled',
@@ -229,6 +203,6 @@ import { FormsModule } from '@angular/forms';
 export class LabelDisabledExample {
   disabledValue = 'Disabled value';
 }`,
-    component: LabelDisabledExample,
-  },
-];
+    component: LabelDisabledExample
+  }
+]; 

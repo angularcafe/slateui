@@ -7,11 +7,13 @@ import { tabsVariants, tabsMeta } from './tabs.variants';
   standalone: true,
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="tabsMeta" [variants]="tabsVariants">
+    <docs-component-preview 
+      [meta]="tabsMeta" 
+      [variants]="tabsVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Tabs {
   tabsMeta = tabsMeta;
   tabsVariants = tabsVariants;
-}
+} 

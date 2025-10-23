@@ -1,15 +1,5 @@
 import { NgComponentOutlet, NgTemplateOutlet } from '@angular/common';
-import {
-  Component,
-  inject,
-  Injector,
-  input,
-  signal,
-  computed,
-  TemplateRef,
-  Type,
-  PLATFORM_ID,
-} from '@angular/core';
+import { Component, inject, Injector, input, signal, computed, TemplateRef, Type, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Tab } from '@components/tab/tab';
 import { Tabs } from '@components/tabs/tabs';
@@ -58,30 +48,26 @@ export interface IComponentMeta {
   templateUrl: './component-preview.html',
   host: {
     class: 'block',
-  },
+  }
 })
 export class ComponentPreview {
   // Angular 20 signal-based inputs
   meta = input<IComponentMeta>();
   variants = input<IVariant[]>([]);
-
+  
   // Injected dependencies using Angular 20 inject function
   private readonly injector = inject(Injector);
   private readonly platform = inject(PLATFORM_ID);
-
+  
   // Computed signals for derived state
   protected readonly apiProps = computed(() => this.meta()?.api?.props || []);
-  protected readonly apiOutputs = computed(
-    () => this.meta()?.api?.outputs || [],
-  );
+  protected readonly apiOutputs = computed(() => this.meta()?.api?.outputs || []);
   protected readonly hasVariants = computed(() => this.variants().length > 0);
-  protected readonly hasInstallation = computed(() =>
-    Boolean(this.meta()?.installation),
-  );
-
+  protected readonly hasInstallation = computed(() => Boolean(this.meta()?.installation));
+  
   // State management with signals
   private readonly _clipboardSupported = signal<boolean>(false);
-
+  
   constructor() {
     // Check clipboard support only in browser
     if (isPlatformBrowser(this.platform)) {
@@ -94,10 +80,7 @@ export class ComponentPreview {
   }
 
   generateSlug(title: string): string {
-    return title
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[^a-z0-9-]/g, '');
+    return title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
   }
 
   // Enhanced copy functionality using modern Clipboard API
@@ -125,13 +108,13 @@ export class ComponentPreview {
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-
+    
     try {
       document.execCommand('copy');
     } catch (error) {
       console.warn('Fallback copy failed:', error);
     }
-
+    
     document.body.removeChild(textArea);
   }
 

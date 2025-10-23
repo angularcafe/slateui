@@ -6,9 +6,11 @@ import { alertVariants, alertMeta } from './alert.variants';
   selector: 'docs-alert',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="alertMeta" [variants]="alertVariants">
+    <docs-component-preview 
+      [meta]="alertMeta" 
+      [variants]="alertVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Alert {
   alertMeta = alertMeta;

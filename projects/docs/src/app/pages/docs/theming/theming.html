@@ -1,160 +1,141 @@
 <div class="space-y-8">
-  <div class="space-y-4">
-    <h1 class="text-2xl font-semibold">Theming</h1>
-    <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
-      Using CSS Variables and color utilities for theming.
-    </p>
-    <p class="text-muted-foreground leading-relaxed">
-      You can choose between using CSS variables (recommended) or utility
-      classes for theming.
-    </p>
-  </div>
-
-  <!-- CSS Variables -->
-  <div class="space-y-6">
-    <h2 class="text-2xl font-semibold" id="css-variables">CSS Variables</h2>
     <div class="space-y-4">
-      <docs-code-block
-        language="html"
-        [code]="themingCodeExamples.cssVariablesExample"
-      >
-      </docs-code-block>
-
-      <p class="text-muted-foreground leading-relaxed">
-        CSS variables are automatically configured when you use the SlateUI CLI
-        to initialize your project.
-      </p>
+        <h1 class="text-2xl font-semibold">Theming</h1>
+        <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
+            Using CSS Variables and color utilities for theming.
+        </p>
+        <p class="text-muted-foreground leading-relaxed">
+            You can choose between using CSS variables (recommended) or utility classes for theming.
+        </p>
     </div>
-  </div>
 
-  <!-- Utility classes -->
-  <div class="space-y-6">
-    <h2 class="text-2xl font-semibold" id="utility-classes">Utility classes</h2>
-    <div class="space-y-4">
-      <docs-code-block
-        language="html"
-        [code]="themingCodeExamples.utilityClassesExample"
-      >
-      </docs-code-block>
-
-      <p class="text-muted-foreground leading-relaxed">
-        Utility classes are available as an alternative to CSS variables for
-        theming.
-      </p>
-    </div>
-  </div>
-
-  <!-- Convention -->
-  <div class="space-y-6">
-    <h2 class="text-2xl font-semibold" id="convention">Convention</h2>
-    <div class="space-y-4">
-      <p class="text-muted-foreground leading-relaxed">
-        We use a simple <code class="inline-code">background</code> and
-        <code class="inline-code">foreground</code> convention for colors. The
-        <code class="inline-code">background</code> variable is used for the
-        background color of the component and the
-        <code class="inline-code">foreground</code> variable is used for the
-        text color.
-      </p>
-
-      <p class="text-muted-foreground leading-relaxed">
-        The <code class="inline-code">background</code> suffix is omitted when
-        the variable is used for the background color of the component.
-      </p>
-
-      <p class="text-muted-foreground leading-relaxed">
-        Given the following CSS variables:
-      </p>
-
-      <docs-code-block
-        language="css"
-        [code]="themingCodeExamples.conventionExample"
-      >
-      </docs-code-block>
-
-      <p class="text-muted-foreground leading-relaxed">
-        The <code class="inline-code">background</code> color of the following
-        component will be <code class="inline-code">var(--primary)</code> and
-        the <code class="inline-code">foreground</code> color will be
-        <code class="inline-code">var(--primary-foreground)</code>.
-      </p>
-
-      <docs-code-block
-        language="html"
-        [code]="themingCodeExamples.conventionUsage"
-      >
-      </docs-code-block>
-    </div>
-  </div>
-
-  <!-- List of variables -->
-  <div class="space-y-6">
-    <h2 class="text-2xl font-semibold" id="list-of-variables">
-      List of variables
-    </h2>
-    <div class="space-y-4">
-      <p class="text-muted-foreground leading-relaxed">
-        Here's the list of variables available for customization:
-      </p>
-
-      <h3 class="text-lg font-medium">styles.css</h3>
-      <docs-code-block
-        language="css"
-        [code]="
-          themingCodeExamples.baseVariables + themingCodeExamples.darkVariables
-        "
-      >
-      </docs-code-block>
-    </div>
-  </div>
-
-  <!-- Base Colors -->
-  <div class="space-y-6">
-    <h2 class="text-2xl font-semibold" id="base-colors">Base Colors</h2>
+    <!-- CSS Variables -->
     <div class="space-y-6">
-      <!-- Neutral -->
-      <div class="space-y-4">
-        <h3 class="text-lg font-medium">Neutral</h3>
-        <docs-code-block
-          language="css"
-          [code]="themingCodeExamples.neutralColors"
-        >
-        </docs-code-block>
-      </div>
-
-      <!-- Stone -->
-      <div class="space-y-4">
-        <h3 class="text-lg font-medium">Stone</h3>
-        <docs-code-block
-          language="css"
-          [code]="themingCodeExamples.stoneColors"
-        >
-        </docs-code-block>
-      </div>
-
-      <!-- Zinc -->
-      <div class="space-y-4">
-        <h3 class="text-lg font-medium">Zinc</h3>
-        <docs-code-block language="css" [code]="themingCodeExamples.zincColors">
-        </docs-code-block>
-      </div>
-
-      <!-- Gray -->
-      <div class="space-y-4">
-        <h3 class="text-lg font-medium">Gray</h3>
-        <docs-code-block language="css" [code]="themingCodeExamples.grayColors">
-        </docs-code-block>
-      </div>
-
-      <!-- Slate -->
-      <div class="space-y-4">
-        <h3 class="text-lg font-medium">Slate</h3>
-        <docs-code-block
-          language="css"
-          [code]="themingCodeExamples.slateColors"
-        >
-        </docs-code-block>
-      </div>
+        <h2 class="text-2xl font-semibold" id="css-variables">CSS Variables</h2>
+        <div class="space-y-4">
+            <docs-code-block 
+                language="html"
+                [code]="themingCodeExamples.cssVariablesExample">
+            </docs-code-block>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                CSS variables are automatically configured when you use the SlateUI CLI to initialize your project.
+            </p>
+        </div>
     </div>
-  </div>
-</div>
+
+    <!-- Utility classes -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="utility-classes">Utility classes</h2>
+        <div class="space-y-4">
+            <docs-code-block 
+                language="html"
+                [code]="themingCodeExamples.utilityClassesExample">
+            </docs-code-block>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                Utility classes are available as an alternative to CSS variables for theming.
+            </p>
+        </div>
+    </div>
+
+    <!-- Convention -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="convention">Convention</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                We use a simple <code class="inline-code">background</code> and <code class="inline-code">foreground</code> convention for colors. The <code class="inline-code">background</code> variable is used for the background color of the component and the <code class="inline-code">foreground</code> variable is used for the text color.
+            </p>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                The <code class="inline-code">background</code> suffix is omitted when the variable is used for the background color of the component.
+            </p>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                Given the following CSS variables:
+            </p>
+            
+            <docs-code-block 
+                language="css"
+                [code]="themingCodeExamples.conventionExample">
+            </docs-code-block>
+            
+            <p class="text-muted-foreground leading-relaxed">
+                The <code class="inline-code">background</code> color of the following component will be <code class="inline-code">var(--primary)</code> and the <code class="inline-code">foreground</code> color will be <code class="inline-code">var(--primary-foreground)</code>.
+            </p>
+            
+            <docs-code-block 
+                language="html"
+                [code]="themingCodeExamples.conventionUsage">
+            </docs-code-block>
+        </div>
+    </div>
+
+    <!-- List of variables -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="list-of-variables">List of variables</h2>
+        <div class="space-y-4">
+            <p class="text-muted-foreground leading-relaxed">
+                Here's the list of variables available for customization:
+            </p>
+            
+            <h3 class="text-lg font-medium">styles.css</h3>
+            <docs-code-block 
+                language="css"
+                [code]="themingCodeExamples.baseVariables + themingCodeExamples.darkVariables">
+            </docs-code-block>
+        </div>
+    </div>
+
+    <!-- Base Colors -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-semibold" id="base-colors">Base Colors</h2>
+        <div class="space-y-6">
+            
+            <!-- Neutral -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Neutral</h3>
+                <docs-code-block 
+                    language="css"
+                    [code]="themingCodeExamples.neutralColors">
+                </docs-code-block>
+            </div>
+
+            <!-- Stone -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Stone</h3>
+                <docs-code-block 
+                    language="css"
+                    [code]="themingCodeExamples.stoneColors">
+                </docs-code-block>
+            </div>
+
+            <!-- Zinc -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Zinc</h3>
+                <docs-code-block 
+                    language="css"
+                    [code]="themingCodeExamples.zincColors">
+                </docs-code-block>
+            </div>
+
+            <!-- Gray -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Gray</h3>
+                <docs-code-block 
+                    language="css"
+                    [code]="themingCodeExamples.grayColors">
+                </docs-code-block>
+            </div>
+
+            <!-- Slate -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-medium">Slate</h3>
+                <docs-code-block 
+                    language="css"
+                    [code]="themingCodeExamples.slateColors">
+                </docs-code-block>
+            </div>
+        </div>
+    </div>
+</div> 
