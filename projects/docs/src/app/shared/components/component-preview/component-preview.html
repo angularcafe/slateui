@@ -1,189 +1,238 @@
 <div class="space-y-16">
-    <!-- Clean Header Section -->
-    @if (meta(); as componentMeta) {
-        <div class="space-y-4">
-            <h1 class="text-3xl font-bold tracking-tight">{{ componentMeta.title }}</h1>
-            <p class="text-lg text-muted-foreground">{{ componentMeta.description }}</p>
+  <!-- Clean Header Section -->
+  @if (meta(); as componentMeta) {
+  <div class="space-y-4">
+    <h1 class="text-3xl font-bold tracking-tight">{{ componentMeta.title }}</h1>
+    <p class="text-lg text-muted-foreground">{{ componentMeta.description }}</p>
 
-            @if (variants().length > 0) {
-                @let variant = variants()[0];
-                <div>
-                    <docs-tabs>
-                        <docs-tab value="preview" label="Preview">
-                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border p-8">
-                                @if (variant.template) {
-                                    <ng-container *ngTemplateOutlet="variant.template; injector: createInjector()"></ng-container>
-                                } @else if (variant.component) {
-                                    <ng-container *ngComponentOutlet="variant.component; injector: createInjector()"></ng-container>
-                                }
-                            </div>
-                        </docs-tab>
-                        <docs-tab value="code" label="Code">
-                            <docs-code-block [code]="variant.code" language="typescript"></docs-code-block>
-                        </docs-tab>
-                    </docs-tabs>
-                </div>
+    @if (variants().length > 0) { @let variant = variants()[0];
+    <div>
+      <docs-tabs>
+        <docs-tab value="preview" label="Preview">
+          <div
+            class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border p-8"
+          >
+            @if (variant.template) {
+            <ng-container
+              *ngTemplateOutlet="
+                      variant.template;
+                      injector: createInjector()
+                    "
+            ></ng-container>
+            } @else if (variant.component) {
+            <ng-container
+              *ngComponentOutlet="
+                      variant.component;
+                      injector: createInjector()
+                    "
+            ></ng-container>
             }
-        </div>
-        
-        <!-- Clean Installation Section -->
-        @if (componentMeta.installation) {
-            <div class="space-y-6">
-                <h2 class="text-xl font-semibold" id="installation">Installation</h2>
-                
-                <div class="space-y-6">
-                    @if (componentMeta.installation.package) {
-                        <docs-tabs>
-                            <docs-tab value="cli" label="Angular CLI">
-                                <docs-code-block 
-                                    [code]="'ng generate @slateui/cli:add ' + componentMeta.installation.package" 
-                                    language="bash">
-                                </docs-code-block>
-                            </docs-tab>
-                            <docs-tab value="code" label="Manual">
-                                <docs-code-block [code]="componentMeta.installation.package" language="typescript"></docs-code-block>
-                            </docs-tab>
-                        </docs-tabs>
-                    }
-                </div>
-
-                <h2 class="text-xl font-semibold">Usage</h2> 
-                <div class="">
-                    <docs-code-block class="mb-2"
-                        [code]="componentMeta.installation.import" 
-                        language="typescript">
-                    </docs-code-block>
-                    <div class="mb-2"></div>
-                    <div class="space-y-1">
-                        <docs-code-block 
-                            [code]="componentMeta.installation.usage" 
-                            language="html">
-                        </docs-code-block>
-                    </div>
-                </div>
-                
-                
-            </div>
-        }
+          </div>
+        </docs-tab>
+        <docs-tab value="code" label="Code">
+          <docs-code-block
+            [code]="variant.code"
+            language="typescript"
+          ></docs-code-block>
+        </docs-tab>
+      </docs-tabs>
+    </div>
     }
+  </div>
 
-    <!-- Clean Examples Section -->
-    @if (variants().length > 0) {
-        <div class="space-y-12">
-            <h2 class="text-xl font-semibold" id="installation">Examples</h2>
-            @for (variant of variants(); track variant.title) {
-                <div class="space-y-4">
-                    <div>
-                        <h3 class="text-lg font-semibold mb-2" [id]="generateSlug(variant.title)">
-                            {{ variant.title }}
-                        </h3>
-                        <!-- @if (variant.description) {
+  <!-- Clean Installation Section -->
+  @if (componentMeta.installation) {
+  <div class="space-y-6">
+    <h2 class="text-xl font-semibold" id="installation">Installation</h2>
+
+    <div class="space-y-6">
+      @if (componentMeta.installation.package) {
+      <docs-tabs>
+        <docs-tab value="cli" label="Angular CLI">
+          <docs-code-block
+            [code]="
+                    'ng generate &#64;slateui/cli:add ' +
+                    componentMeta.installation.package
+                  "
+            language="bash"
+          >
+          </docs-code-block>
+        </docs-tab>
+        <docs-tab value="code" label="Manual">
+          <docs-code-block
+            [code]="componentMeta.installation.package"
+            language="typescript"
+          ></docs-code-block>
+        </docs-tab>
+      </docs-tabs>
+      }
+    </div>
+
+    <h2 class="text-xl font-semibold">Usage</h2>
+    <div class="">
+      <docs-code-block
+        class="mb-2"
+        [code]="componentMeta.installation.import"
+        language="typescript"
+      >
+      </docs-code-block>
+      <div class="mb-2"></div>
+      <div class="space-y-1">
+        <docs-code-block
+          [code]="componentMeta.installation.usage"
+          language="html"
+        >
+        </docs-code-block>
+      </div>
+    </div>
+  </div>
+  } }
+
+  <!-- Clean Examples Section -->
+  @if (variants().length > 0) {
+  <div class="space-y-12">
+    <h2 class="text-xl font-semibold" id="installation">Examples</h2>
+    @for (variant of variants(); track variant.title) {
+    <div class="space-y-4">
+      <div>
+        <h3
+          class="text-lg font-semibold mb-2"
+          [id]="generateSlug(variant.title)"
+        >
+          {{ variant.title }}
+        </h3>
+        <!-- @if (variant.description) {
                             <p class="text-muted-foreground">{{ variant.description }}</p>
                         } -->
-                    </div>
-                    
-                    <docs-tabs>
-                        <docs-tab value="preview" label="Preview">
-                            <div class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border p-8">
-                                @if (variant.template) {
-                                    <ng-container *ngTemplateOutlet="variant.template; injector: createInjector()"></ng-container>
-                                } @else if (variant.component) {
-                                    <ng-container *ngComponentOutlet="variant.component; injector: createInjector()"></ng-container>
-                                }
-                            </div>
-                        </docs-tab>
-                        <docs-tab value="code" label="Code">
-                            <docs-code-block [code]="variant.code" language="typescript"></docs-code-block>
-                        </docs-tab>
-                    </docs-tabs>
-                </div>
+      </div>
+
+      <docs-tabs>
+        <docs-tab value="preview" label="Preview">
+          <div
+            class="flex h-fit min-h-[400px] items-center justify-center rounded-xl border p-8"
+          >
+            @if (variant.template) {
+            <ng-container
+              *ngTemplateOutlet="
+                      variant.template;
+                      injector: createInjector()
+                    "
+            ></ng-container>
+            } @else if (variant.component) {
+            <ng-container
+              *ngComponentOutlet="
+                      variant.component;
+                      injector: createInjector()
+                    "
+            ></ng-container>
             }
-        </div>
+          </div>
+        </docs-tab>
+        <docs-tab value="code" label="Code">
+          <docs-code-block
+            [code]="variant.code"
+            language="typescript"
+          ></docs-code-block>
+        </docs-tab>
+      </docs-tabs>
+    </div>
+    }
+  </div>
+  }
+
+  <!-- Clean API Reference Section -->
+  @if (meta(); as componentMeta) { @if (apiProps().length > 0 ||
+  apiOutputs().length > 0) {
+  <div class="space-y-6">
+    <h2 class="text-xl font-semibold" id="api">API Reference</h2>
+
+    <!-- Properties Table -->
+    @if (apiProps().length > 0) {
+    <div class="space-y-4">
+      <h3 class="text-lg font-semibold">Properties</h3>
+      <div class="border rounded-lg overflow-hidden">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b bg-muted/50">
+              <th class="text-left py-3 px-4 font-medium text-sm">Property</th>
+              <th class="text-left py-3 px-4 font-medium text-sm">Type</th>
+              <th class="text-left py-3 px-4 font-medium text-sm">Default</th>
+              <th class="text-left py-3 px-4 font-medium text-sm">
+                Description
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            @for ( prop of apiProps(); track prop.name; let isLast = $last ) {
+            <tr [class]="isLast ? '' : 'border-b'">
+              <td class="py-3 px-4 align-top">
+                <code class="text-sm font-mono">{{ prop.name }}</code>
+                @if (prop.required) {
+                <span class="ml-2 text-red-500 text-xs">*</span>
+                }
+              </td>
+              <td class="py-3 px-4 align-top">
+                <code class="text-sm font-mono text-muted-foreground"
+                  >{{ prop.type }}</code
+                >
+              </td>
+              <td class="py-3 px-4 align-top">
+                @if (prop.default) {
+                <code class="text-sm font-mono text-muted-foreground"
+                  >{{ prop.default }}</code
+                >
+                } @else {
+                <span class="text-muted-foreground text-sm">—</span>
+                }
+              </td>
+              <td class="py-3 px-4 align-top">
+                <span class="text-sm">{{ prop.description }}</span>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
     }
 
-    <!-- Clean API Reference Section -->
-    @if (meta(); as componentMeta) {
-        @if (apiProps().length > 0 || apiOutputs().length > 0) {
-            <div class="space-y-6">
-                <h2 class="text-xl font-semibold" id="api">API Reference</h2>
-                
-                <!-- Properties Table -->
-                @if (apiProps().length > 0) {
-                    <div class="space-y-4">
-                        <h3 class="text-lg font-semibold">Properties</h3>
-                        <div class="border rounded-lg overflow-hidden">
-                            <table class="w-full">
-                                <thead>
-                                    <tr class="border-b bg-muted/50">
-                                        <th class="text-left py-3 px-4 font-medium text-sm">Property</th>
-                                        <th class="text-left py-3 px-4 font-medium text-sm">Type</th>
-                                        <th class="text-left py-3 px-4 font-medium text-sm">Default</th>
-                                        <th class="text-left py-3 px-4 font-medium text-sm">Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @for (prop of apiProps(); track prop.name; let isLast = $last) {
-                                        <tr [class]="isLast ? '' : 'border-b'">
-                                            <td class="py-3 px-4 align-top">
-                                                <code class="text-sm font-mono">{{ prop.name }}</code>
-                                                @if (prop.required) {
-                                                    <span class="ml-2 text-red-500 text-xs">*</span>
-                                                }
-                                            </td>
-                                            <td class="py-3 px-4 align-top">
-                                                <code class="text-sm font-mono text-muted-foreground">{{ prop.type }}</code>
-                                            </td>
-                                            <td class="py-3 px-4 align-top">
-                                                @if (prop.default) {
-                                                    <code class="text-sm font-mono text-muted-foreground">{{ prop.default }}</code>
-                                                } @else {
-                                                    <span class="text-muted-foreground text-sm">—</span>
-                                                }
-                                            </td>
-                                            <td class="py-3 px-4 align-top">
-                                                <span class="text-sm">{{ prop.description }}</span>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                }
-                
-                <!-- Outputs Table -->
-                @if (apiOutputs().length > 0) {
-                    <div class="space-y-4">
-                        <h3 class="text-lg font-semibold">Outputs</h3>
-                        <div class="border rounded-lg overflow-hidden">
-                            <table class="w-full">
-                                <thead>
-                                    <tr class="border-b bg-muted/50">
-                                        <th class="text-left py-3 px-4 font-medium text-sm">Output</th>
-                                        <th class="text-left py-3 px-4 font-medium text-sm">Type</th>
-                                        <th class="text-left py-3 px-4 font-medium text-sm">Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @for (output of apiOutputs(); track output.name; let isLast = $last) {
-                                        <tr [class]="isLast ? '' : 'border-b'">
-                                            <td class="py-3 px-4 align-top">
-                                                <code class="text-sm font-mono">{{ output.name }}</code>
-                                            </td>
-                                            <td class="py-3 px-4 align-top">
-                                                <code class="text-sm font-mono text-muted-foreground">{{ output.type }}</code>
-                                            </td>
-                                            <td class="py-3 px-4 align-top">
-                                                <span class="text-sm">{{ output.description }}</span>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                }
-            </div>
-        }
+    <!-- Outputs Table -->
+    @if (apiOutputs().length > 0) {
+    <div class="space-y-4">
+      <h3 class="text-lg font-semibold">Outputs</h3>
+      <div class="border rounded-lg overflow-hidden">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b bg-muted/50">
+              <th class="text-left py-3 px-4 font-medium text-sm">Output</th>
+              <th class="text-left py-3 px-4 font-medium text-sm">Type</th>
+              <th class="text-left py-3 px-4 font-medium text-sm">
+                Description
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            @for ( output of apiOutputs(); track output.name; let isLast = $last
+            ) {
+            <tr [class]="isLast ? '' : 'border-b'">
+              <td class="py-3 px-4 align-top">
+                <code class="text-sm font-mono">{{ output.name }}</code>
+              </td>
+              <td class="py-3 px-4 align-top">
+                <code class="text-sm font-mono text-muted-foreground"
+                  >{{ output.type }}</code
+                >
+              </td>
+              <td class="py-3 px-4 align-top">
+                <span class="text-sm">{{ output.description }}</span>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
     }
+  </div>
+  } }
 </div>

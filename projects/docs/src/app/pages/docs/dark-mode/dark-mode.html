@@ -1,168 +1,229 @@
 <div class="space-y-8">
+  <div class="space-y-4">
+    <h1 class="text-2xl font-semibold">Dark Mode</h1>
+    <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
+      SlateUI provides built-in dark mode support through the
+      <code class="inline-code">&#64;slateui/theme</code> package. This package
+      offers automatic dark mode detection, theme switching, and persistent
+      theme preferences.
+    </p>
+  </div>
+
+  <!-- Package Information -->
+  <div class="space-y-6">
+    <h2 class="text-2xl font-semibold" id="package-info">
+      Package Information
+    </h2>
     <div class="space-y-4">
-        <h1 class="text-2xl font-semibold">Dark Mode</h1>
-        <p class="text-md text-muted-foreground leading-relaxed max-w-3xl">
-            SlateUI provides built-in dark mode support through the <code class="inline-code">@slateui/theme</code> package. 
-            This package offers automatic dark mode detection, theme switching, and persistent theme preferences.
+      <p class="text-muted-foreground leading-relaxed">
+        The dark mode functionality is provided by the
+        <code class="inline-code">&#64;slateui/theme</code> package:
+      </p>
+      <div class="bg-muted/50 rounded-lg p-4 border border-border">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-medium">&#64;slateui/theme</h3>
+            <p class="text-sm text-muted-foreground">
+              Theme management and dark mode support for SlateUI
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <a
+              href="https://www.npmjs.com/package/&#64;slateui/theme"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center px-3 py-1 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+            >
+              View on npm
+            </a>
+            <a
+              href="https://github.com/angularcafe/slateui"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center px-3 py-1 rounded-md border border-border text-sm font-medium hover:bg-muted/50 transition-colors"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Basic Setup -->
+  <div class="space-y-6">
+    <h2 class="text-2xl font-semibold" id="basic-setup">Basic Setup</h2>
+    <div class="space-y-4">
+      <p class="text-muted-foreground leading-relaxed">
+        Configure the theme service in your Angular application by importing
+        <code class="inline-code">provideSlateUiTheme</code> from
+        <code class="inline-code">&#64;slateui/theme</code> and adding it to
+        your app providers.
+      </p>
+    </div>
+  </div>
+
+  <!-- Theme Strategies -->
+  <div class="space-y-6">
+    <h2 class="text-2xl font-semibold" id="theme-strategies">
+      Theme Strategies
+    </h2>
+    <div class="space-y-4">
+      <p class="text-muted-foreground leading-relaxed">
+        SlateUI supports multiple theme strategies:
+      </p>
+
+      <div class="space-y-4">
+        <h3 class="text-lg font-medium">Class Strategy (Recommended)</h3>
+        <p class="text-muted-foreground leading-relaxed">
+          Uses CSS classes to control theme switching. This gives you full
+          control over when and how themes change.
         </p>
-    </div>
+      </div>
 
-    <!-- Package Information -->
-    <div class="space-y-6">
-        <h2 class="text-2xl font-semibold" id="package-info">Package Information</h2>
-        <div class="space-y-4">
-            <p class="text-muted-foreground leading-relaxed">
-                The dark mode functionality is provided by the <code class="inline-code">@slateui/theme</code> package:
-            </p>
-            <div class="bg-muted/50 rounded-lg p-4 border border-border">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h3 class="font-medium">@slateui/theme</h3>
-                        <p class="text-sm text-muted-foreground">Theme management and dark mode support for SlateUI</p>
-                    </div>
-                    <div class="flex gap-2">
-                        <a href="https://www.npmjs.com/package/@slateui/theme" target="_blank" rel="noopener noreferrer" 
-                           class="inline-flex items-center px-3 py-1 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
-                            View on npm
-                        </a>
-                        <a href="https://github.com/angularcafe/slateui" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center px-3 py-1 rounded-md border border-border text-sm font-medium hover:bg-muted/50 transition-colors">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="space-y-4">
+        <h3 class="text-lg font-medium">Media Strategy</h3>
+        <p class="text-muted-foreground leading-relaxed">
+          Automatically follows the system preference without user control.
+        </p>
+      </div>
     </div>
+  </div>
 
-    <!-- Basic Setup -->
-    <div class="space-y-6">
-        <h2 class="text-2xl font-semibold" id="basic-setup">Basic Setup</h2>
-        <div class="space-y-4">
-            <p class="text-muted-foreground leading-relaxed">
-                Configure the theme service in your Angular application by importing <code class="inline-code">provideSlateUiTheme</code> 
-                from <code class="inline-code">@slateui/theme</code> and adding it to your app providers.
-            </p>
-        </div>
+  <!-- Basic Usage -->
+  <div class="space-y-6">
+    <h2 class="text-2xl font-semibold" id="basic-usage">Basic Usage</h2>
+    <div class="space-y-4">
+      <p class="text-muted-foreground leading-relaxed">
+        Inject the <code class="inline-code">ThemeService</code> in your
+        components to control theme switching. Use methods like
+        <code class="inline-code">setTheme()</code>,
+        <code class="inline-code">isDark()</code>, and
+        <code class="inline-code">isLight()</code> to manage themes.
+      </p>
     </div>
+  </div>
 
-    <!-- Theme Strategies -->
-    <div class="space-y-6">
-        <h2 class="text-2xl font-semibold" id="theme-strategies">Theme Strategies</h2>
-        <div class="space-y-4">
-            <p class="text-muted-foreground leading-relaxed">
-                SlateUI supports multiple theme strategies:
-            </p>
-            
-            <div class="space-y-4">
-                <h3 class="text-lg font-medium">Class Strategy (Recommended)</h3>
-                <p class="text-muted-foreground leading-relaxed">
-                    Uses CSS classes to control theme switching. This gives you full control over when and how themes change.
-                </p>
-            </div>
-
-            <div class="space-y-4">
-                <h3 class="text-lg font-medium">Media Strategy</h3>
-                <p class="text-muted-foreground leading-relaxed">
-                    Automatically follows the system preference without user control.
-                </p>
-            </div>
-        </div>
+  <!-- Available Methods -->
+  <div class="space-y-6">
+    <h2 class="text-2xl font-semibold" id="available-methods">
+      Available Methods
+    </h2>
+    <div class="space-y-4">
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse border border-border">
+          <thead>
+            <tr class="bg-muted/50">
+              <th class="border border-border px-4 py-2 text-left font-medium">
+                Method
+              </th>
+              <th class="border border-border px-4 py-2 text-left font-medium">
+                Description
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-border px-4 py-2 font-mono text-sm">
+                setTheme(theme)
+              </td>
+              <td class="border border-border px-4 py-2">
+                Set theme to 'light', 'dark', or 'system'
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-2 font-mono text-sm">
+                getTheme()
+              </td>
+              <td class="border border-border px-4 py-2">
+                Get current theme setting
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-2 font-mono text-sm">
+                isDark()
+              </td>
+              <td class="border border-border px-4 py-2">
+                Check if dark mode is active
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-border px-4 py-2 font-mono text-sm">
+                isLight()
+              </td>
+              <td class="border border-border px-4 py-2">
+                Check if light mode is active
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 
-    <!-- Basic Usage -->
-    <div class="space-y-6">
-        <h2 class="text-2xl font-semibold" id="basic-usage">Basic Usage</h2>
-        <div class="space-y-4">
-            <p class="text-muted-foreground leading-relaxed">
-                Inject the <code class="inline-code">ThemeService</code> in your components to control theme switching. 
-                Use methods like <code class="inline-code">setTheme()</code>, <code class="inline-code">isDark()</code>, 
-                and <code class="inline-code">isLight()</code> to manage themes.
-            </p>
-        </div>
+  <!-- CSS Variables -->
+  <div class="space-y-6">
+    <h2 class="text-2xl font-semibold" id="css-variables">CSS Variables</h2>
+    <div class="space-y-4">
+      <p class="text-muted-foreground leading-relaxed">
+        SlateUI automatically manages CSS custom properties for theming. The
+        system provides variables for:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+        <li>Background and foreground colors</li>
+        <li>Primary, secondary, and accent colors</li>
+        <li>Muted and destructive colors</li>
+        <li>Border, input, and ring colors</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- Available Methods -->
-    <div class="space-y-6">
-        <h2 class="text-2xl font-semibold" id="available-methods">Available Methods</h2>
-        <div class="space-y-4">
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse border border-border">
-                    <thead>
-                        <tr class="bg-muted/50">
-                            <th class="border border-border px-4 py-2 text-left font-medium">Method</th>
-                            <th class="border border-border px-4 py-2 text-left font-medium">Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-border px-4 py-2 font-mono text-sm">setTheme(theme)</td>
-                            <td class="border border-border px-4 py-2">Set theme to 'light', 'dark', or 'system'</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-border px-4 py-2 font-mono text-sm">getTheme()</td>
-                            <td class="border border-border px-4 py-2">Get current theme setting</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-border px-4 py-2 font-mono text-sm">isDark()</td>
-                            <td class="border border-border px-4 py-2">Check if dark mode is active</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-border px-4 py-2 font-mono text-sm">isLight()</td>
-                            <td class="border border-border px-4 py-2">Check if light mode is active</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+  <!-- Tailwind Integration -->
+  <div class="space-y-6">
+    <h2 class="text-2xl font-semibold" id="tailwind-integration">
+      Tailwind CSS Integration
+    </h2>
+    <div class="space-y-4">
+      <p class="text-muted-foreground leading-relaxed">
+        Use theme-aware colors in your Tailwind classes like
+        <code class="inline-code">bg-background</code>,
+        <code class="inline-code">text-foreground</code>,
+        <code class="inline-code">text-primary</code>, etc.
+      </p>
     </div>
+  </div>
 
-    <!-- CSS Variables -->
-    <div class="space-y-6">
-        <h2 class="text-2xl font-semibold" id="css-variables">CSS Variables</h2>
-        <div class="space-y-4">
-            <p class="text-muted-foreground leading-relaxed">
-                SlateUI automatically manages CSS custom properties for theming. The system provides variables for:
-            </p>
-            <ul class="list-disc list-inside space-y-2 text-muted-foreground ml-4">
-                <li>Background and foreground colors</li>
-                <li>Primary, secondary, and accent colors</li>
-                <li>Muted and destructive colors</li>
-                <li>Border, input, and ring colors</li>
-            </ul>
-        </div>
+  <!-- Learn More -->
+  <div class="space-y-6">
+    <h2 class="text-2xl font-semibold" id="learn-more">Learn More</h2>
+    <div class="space-y-4">
+      <p class="text-muted-foreground leading-relaxed">
+        For more advanced usage and configuration options:
+      </p>
+      <div class="grid gap-4 md:grid-cols-2">
+        <a
+          href="https://www.npmjs.com/package/&#64;slateui/theme"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-4 rounded-lg border border-border hover:border-border/60 transition-colors duration-200"
+        >
+          <h3 class="font-medium mb-2">npm Package</h3>
+          <p class="text-sm text-muted-foreground">
+            View package details, versions, and documentation
+          </p>
+        </a>
+        <a
+          href="https://github.com/angularcafe/slateui-theme"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-4 rounded-lg border border-border hover:border-border/60 transition-colors duration-200"
+        >
+          <h3 class="font-medium mb-2">GitHub Repository</h3>
+          <p class="text-sm text-muted-foreground">
+            Browse source code, issues, and discussions
+          </p>
+        </a>
+      </div>
     </div>
-
-    <!-- Tailwind Integration -->
-    <div class="space-y-6">
-        <h2 class="text-2xl font-semibold" id="tailwind-integration">Tailwind CSS Integration</h2>
-        <div class="space-y-4">
-            <p class="text-muted-foreground leading-relaxed">
-                Use theme-aware colors in your Tailwind classes like <code class="inline-code">bg-background</code>, 
-                <code class="inline-code">text-foreground</code>, <code class="inline-code">text-primary</code>, etc.
-            </p>
-        </div>
-    </div>
-
-    <!-- Learn More -->
-    <div class="space-y-6">
-        <h2 class="text-2xl font-semibold" id="learn-more">Learn More</h2>
-        <div class="space-y-4">
-            <p class="text-muted-foreground leading-relaxed">
-                For more advanced usage and configuration options:
-            </p>
-            <div class="grid gap-4 md:grid-cols-2">
-                <a href="https://www.npmjs.com/package/@slateui/theme" target="_blank" rel="noopener noreferrer"
-                   class="p-4 rounded-lg border border-border hover:border-border/60 transition-colors duration-200">
-                    <h3 class="font-medium mb-2">npm Package</h3>
-                    <p class="text-sm text-muted-foreground">View package details, versions, and documentation</p>
-                </a>
-                <a href="https://github.com/angularcafe/slateui-theme" target="_blank" rel="noopener noreferrer"
-                   class="p-4 rounded-lg border border-border hover:border-border/60 transition-colors duration-200">
-                    <h3 class="font-medium mb-2">GitHub Repository</h3>
-                    <p class="text-sm text-muted-foreground">Browse source code, issues, and discussions</p>
-                </a>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>

@@ -5,8 +5,6 @@ import { CodeBlock } from '../../../shared/components/code-block/code-block';
   selector: 'docs-cli',
   standalone: true,
   imports: [CodeBlock],
-  templateUrl: './cli.html'
+  templateUrl: './cli.html',
 })
-export class Cli {
-
-}
+export class Cli {}

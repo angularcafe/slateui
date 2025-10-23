@@ -11,20 +11,26 @@ import { UiButton } from 'ui';
   viewProviders: [provideIcons({ lucideCopy, lucideCheck })],
   template: `
     <div class="relative group">
-    <div class="rounded-xl max-h-[400px] overflow-y-auto bg-muted">
-      <button uiButton variant="outline" size="icon"
-              class="absolute top-2 right-2"
-              (click)="copyCode()"
-              [title]="copied() ? 'Copied!' : 'Copy code'">
-              <ng-icon [name]="copied() ? 'lucideCheck' : 'lucideCopy'" size="16"></ng-icon>
-            </button>
-      <pre class="overflow-x-auto whitespace-nowrap">
+      <div class="rounded-xl max-h-[400px] overflow-y-auto bg-muted">
+        <button
+          uiButton
+          variant="outline"
+          size="icon"
+          class="absolute top-2 right-2"
+          (click)="copyCode()"
+          [title]="copied() ? 'Copied!' : 'Copy code'"
+        >
+          <ng-icon
+            [name]="copied() ? 'lucideCheck' : 'lucideCopy'"
+            size="16"
+          ></ng-icon>
+        </button>
+        <pre class="overflow-x-auto whitespace-nowrap">
           <code class="whitespace-pre language-typescript" [class]="'language-' + language()" [highlight]="code()" [language]="language()" lineNumbers></code>
       </pre>
+      </div>
     </div>
-      
-    </div>
-  `
+  `,
 })
 export class CodeBlock {
   code = input.required<string>();

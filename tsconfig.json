@@ -15,15 +15,9 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "ui": [
-        "./dist/ui"
-      ],
-      "cli": [
-        "./dist/cli"
-      ],
-      "@components/*": [
-        "./projects/docs/src/app/shared/components/*"
-      ],
+      "ui": ["./projects/ui/src/public-api"],
+      "cli": ["./projects/cli/src/public-api"],
+      "@components/*": ["./projects/docs/src/app/shared/components/*"]
     }
   },
   "angularCompilerOptions": {

@@ -1,6 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { UiProgress, UiProgressIndicator } from 'ui';
-import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
+import {
+  IVariant,
+  IComponentMeta,
+} from '@components/component-preview/component-preview';
 
 // Progress example components for dynamic rendering
 @Component({
@@ -12,61 +15,62 @@ import { IVariant, IComponentMeta } from '@components/component-preview/componen
   `,
   imports: [UiProgress, UiProgressIndicator],
   host: {
-    class: 'w-full'
-  }
+    class: 'w-full',
+  },
 })
 export class ProgressDefaultExample {
   readonly value = signal(33);
 }
 
-
 export const progressMeta: IComponentMeta = {
   title: 'Progress',
-  description: 'Displays an indicator showing the completion progress of a task.',
+  description:
+    'Displays an indicator showing the completion progress of a task.',
   installation: {
     package: 'progress',
     import: `import { UiProgress, UiProgressIndicator } from '@workspace/ui/directives/progress';`,
     usage: `
 <div uiProgress [uiProgressValue]="value()">
   <div uiProgressIndicator></div>
-</div>`
+</div>`,
   },
   api: {
     props: [
       {
         name: 'uiProgress',
         type: 'Directive',
-        description: 'The main progress container directive.'
+        description: 'The main progress container directive.',
       },
       {
         name: 'uiProgressIndicator',
         type: 'Directive',
-        description: 'The progress bar indicator that shows the current progress.'
+        description:
+          'The progress bar indicator that shows the current progress.',
       },
       {
         name: 'uiProgressValue',
         type: 'number',
-        description: 'The current progress value.'
+        description: 'The current progress value.',
       },
       {
         name: 'uiProgressMin',
         type: 'number',
         default: '0',
-        description: 'The minimum progress value.'
+        description: 'The minimum progress value.',
       },
       {
         name: 'uiProgressMax',
         type: 'number',
         default: '100',
-        description: 'The maximum progress value.'
+        description: 'The maximum progress value.',
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the element.'
-      }
-    ]
-  }
+        description: 'Additional CSS classes to apply to the element.',
+      },
+    ],
+  },
 };
 
 export const progressVariants: IVariant[] = [
@@ -87,6 +91,6 @@ export const progressVariants: IVariant[] = [
 export class ProgressDefaultExample {
   readonly value = signal(33);
 }`,
-    component: ProgressDefaultExample
-  }
-]; 
+    component: ProgressDefaultExample,
+  },
+];

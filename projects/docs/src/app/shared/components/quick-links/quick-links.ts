@@ -1,15 +1,25 @@
-import { afterNextRender, ChangeDetectorRef, Component, effect, inject, Injector, PLATFORM_ID, signal } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter, fromEvent } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { isPlatformBrowser } from '@angular/common';
+import {
+  afterNextRender,
+  ChangeDetectorRef,
+  Component,
+  DOCUMENT,
+  effect,
+  inject,
+  Injector,
+  PLATFORM_ID,
+  signal,
+} from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
+import { filter, fromEvent } from "rxjs";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { isPlatformBrowser } from "@angular/common";
 
 @Component({
-  selector: 'docs-quick-links',
+  selector: "docs-quick-links",
   imports: [],
-  templateUrl: './quick-links.html',
+  templateUrl: "./quick-links.html",
   host: {
-    class: 'hidden xl:block',
+    class: "hidden xl:block",
   },
 })
 export class QuickLinks {
@@ -17,14 +27,15 @@ export class QuickLinks {
   private readonly injector = inject(Injector);
   private readonly changeDetector = inject(ChangeDetectorRef);
   private readonly platform = inject(PLATFORM_ID);
-  
+  private readonly window = inject(DOCUMENT).defaultView!;
+
   protected links = signal<HeadingLink[]>([]);
   protected readingProgress = signal<number>(0);
 
   constructor() {
     this.router.events
       .pipe(
-        filter(event => event instanceof NavigationEnd),
+        filter((event) => event instanceof NavigationEnd),
         takeUntilDestroyed(),
       )
       .subscribe(() => {
@@ -40,7 +51,7 @@ export class QuickLinks {
 
     // Setup reading progress tracking
     if (isPlatformBrowser(this.platform)) {
-      fromEvent(window, 'scroll')
+      fromEvent(this.window, "scroll")
         .pipe(takeUntilDestroyed())
         .subscribe(() => this.updateReadingProgress());
 
@@ -57,42 +68,42 @@ export class QuickLinks {
     const element = document.getElementById(id);
     if (element) {
       const offset = element.offsetTop - 80; // Account for header
-      window.scrollTo({
+      this.window.scrollTo({
         top: offset,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   }
 
   scrollToTop(): void {
-    window.scrollTo({
+    this.window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 
   private updateReadingProgress(): void {
     if (!isPlatformBrowser(this.platform)) return;
 
-    const content = document.querySelector('[data-page-content]');
+    const content = document.querySelector("[data-page-content]");
     if (!content) return;
 
-    const scrollTop = window.scrollY;
+    const scrollTop = this.window.scrollY;
     const docHeight = content.scrollHeight;
-    const winHeight = window.innerHeight;
+    const winHeight = this.window.innerHeight;
     const scrollPercent = scrollTop / (docHeight - winHeight);
     const progress = Math.min(100, Math.max(0, scrollPercent * 100));
-    
+
     this.readingProgress.set(Math.round(progress));
-    
+
     // Update DOM elements directly for smooth animation
-    const progressElement = document.getElementById('reading-progress');
-    const progressBar = document.getElementById('progress-bar');
-    
+    const progressElement = document.getElementById("reading-progress");
+    const progressBar = document.getElementById("progress-bar");
+
     if (progressElement) {
       progressElement.textContent = `${Math.round(progress)}%`;
     }
-    
+
     if (progressBar) {
       progressBar.style.width = `${progress}%`;
     }
@@ -106,21 +117,21 @@ interface HeadingLink {
 }
 
 function getHeadingList(): HeadingLink[] {
-  const content = document.querySelector('[data-page-content]');
-  const headings = content?.querySelectorAll('h1[id], h2[id], h3[id], h4[id]');
-  
+  const content = document.querySelector("[data-page-content]");
+  const headings = content?.querySelectorAll("h1[id], h2[id], h3[id], h4[id]");
+
   return Array.from(headings ?? [])
-    .filter(heading => {
+    .filter((heading) => {
       // Include all component documentation headings
       return heading.id && heading.textContent?.trim();
     })
-    .map(heading => {
+    .map((heading) => {
       const level = parseInt(heading.tagName.substring(1));
       return {
         level,
         id: heading.id,
-        text: heading.textContent?.trim() || '',
+        text: heading.textContent?.trim() || "",
       };
     })
-    .filter(link => link.text); // Remove empty text entries
+    .filter((link) => link.text); // Remove empty text entries
 }
