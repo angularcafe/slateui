@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { UiAvatar, UiAvatarFallback, UiAvatarImage } from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 
 @Component({
   selector: 'avatar-default-example',
@@ -13,7 +10,7 @@ import {
       <ui-avatar-fallback>AB</ui-avatar-fallback>
     </ui-avatar>
   `,
-  imports: [UiAvatar, UiAvatarImage, UiAvatarFallback],
+  imports: [UiAvatar, UiAvatarImage, UiAvatarFallback]
 })
 export class AvatarDefaultExample {}
 
@@ -25,7 +22,7 @@ export class AvatarDefaultExample {}
       <ui-avatar-fallback delay="500">AB</ui-avatar-fallback>
     </ui-avatar>
   `,
-  imports: [UiAvatar, UiAvatarImage, UiAvatarFallback],
+  imports: [UiAvatar, UiAvatarImage, UiAvatarFallback]
 })
 export class AvatarFallbackDelayExample {}
 
@@ -38,23 +35,14 @@ export const avatarMeta: IComponentMeta = {
     usage: `<ui-avatar>
   <ui-avatar-image src="assets/avatar.png" alt="" />
   <ui-avatar-fallback>AB</ui-avatar-fallback>
-</ui-avatar>`,
+</ui-avatar>`
   },
   api: {
     props: [
-      {
-        name: 'class',
-        type: 'string',
-        description: 'Additional CSS classes for the avatar container.',
-      },
-      {
-        name: 'delay',
-        type: 'number',
-        default: '0',
-        description: 'Delay in ms before showing fallback.',
-      },
-    ],
-  },
+      { name: 'class', type: 'string', description: 'Additional CSS classes for the avatar container.' },
+      { name: 'delay', type: 'number', default: '0', description: 'Delay in ms before showing fallback.' }
+    ]
+  }
 };
 
 export const avatarVariants: IVariant[] = [
@@ -74,7 +62,7 @@ export const avatarVariants: IVariant[] = [
   imports: [UiAvatar, UiAvatarImage, UiAvatarFallback]
 })
 export class AvatarDefaultExample {}`,
-    component: AvatarDefaultExample,
+    component: AvatarDefaultExample
   },
   {
     title: 'Fallback delay',
@@ -92,6 +80,7 @@ export class AvatarDefaultExample {}`,
   imports: [UiAvatar, UiAvatarImage, UiAvatarFallback]
 })
 export class AvatarFallbackDelayExample {}`,
-    component: AvatarFallbackDelayExample,
-  },
+    component: AvatarFallbackDelayExample
+  }
 ];
+

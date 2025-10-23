@@ -1,23 +1,22 @@
 import { Component, model } from '@angular/core';
 import { UiToggle } from 'ui';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBold, lucideItalic, lucideUnderline } from '@ng-icons/lucide';
 
 // Toggle example components for dynamic rendering
 @Component({
   selector: 'toggle-default-example',
-  template: ` <button uiToggle [(uiToggleSelected)]="selected">
+  template: `
+  <button uiToggle [(uiToggleSelected)]="selected">
     <ng-icon name="lucideBold" size="16" />
   </button>`,
   imports: [UiToggle, NgIcon],
   providers: [provideIcons({ lucideBold })],
+
 })
 export class ToggleDefaultExample {
-  selected = model(false);
+    selected = model(false);
 }
 
 @Component({
@@ -27,9 +26,10 @@ export class ToggleDefaultExample {
   </button>`,
   imports: [UiToggle, NgIcon],
   providers: [provideIcons({ lucideItalic })],
+
 })
 export class ToggleOutlineExample {
-  selected = model(false);
+    selected = model(false);
 }
 
 @Component({
@@ -40,9 +40,10 @@ export class ToggleOutlineExample {
   </button>`,
   imports: [UiToggle, NgIcon],
   providers: [provideIcons({ lucideItalic })],
+
 })
 export class ToggleWithTextExample {
-  selected = model(false);
+    selected = model(false);
 }
 
 @Component({
@@ -62,11 +63,12 @@ export class ToggleWithTextExample {
   `,
   imports: [UiToggle, NgIcon],
   providers: [provideIcons({ lucideBold })],
+
 })
 export class ToggleSizesExample {
-  selectedSm = model(false);
-  selectedDefault = model(false);
-  selectedLg = model(false);
+    selectedSm = model(false);
+    selectedDefault = model(false);
+    selectedLg = model(false);
 }
 
 @Component({
@@ -76,10 +78,13 @@ export class ToggleSizesExample {
   </button>`,
   imports: [UiToggle, NgIcon],
   providers: [provideIcons({ lucideUnderline })],
+
 })
 export class ToggleDisabledExample {
-  selected = model(false);
+    selected = model(false);
 }
+
+
 
 export const toggleMeta: IComponentMeta = {
   title: 'Toggle',
@@ -87,7 +92,7 @@ export const toggleMeta: IComponentMeta = {
   installation: {
     package: 'toggle',
     import: `import { UiToggle } from '@workspace/ui/directives/toggle';`,
-    usage: `<button uiToggle [(uiToggleSelected)]="selected">Toggle</button>`,
+    usage: `<button uiToggle [(uiToggleSelected)]="selected">Toggle</button>`
   },
   api: {
     props: [
@@ -95,33 +100,33 @@ export const toggleMeta: IComponentMeta = {
         name: 'variant',
         type: '"default" | "outline"',
         default: '"default"',
-        description: 'The visual variant of the toggle.',
+        description: 'The visual variant of the toggle.'
       },
       {
         name: 'size',
         type: '"default" | "sm" | "lg"',
         default: '"default"',
-        description: 'The size of the toggle.',
+        description: 'The size of the toggle.'
       },
       {
         name: 'disabled',
         type: 'boolean',
         default: 'false',
-        description: 'Whether the toggle is disabled.',
+        description: 'Whether the toggle is disabled.'
       },
       {
         name: 'uiToggleSelected',
         type: 'boolean',
         default: 'false',
-        description: 'Two-way binding for the toggle state.',
+        description: 'Two-way binding for the toggle state.'
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the toggle.',
-      },
-    ],
-  },
+        description: 'Additional CSS classes to apply to the toggle.'
+      }
+    ]
+  }
 };
 
 export const toggleVariants: IVariant[] = [
@@ -144,7 +149,7 @@ import { lucideBold } from '@ng-icons/lucide';
 export class ToggleDefaultExample {
     selected = model(false);
 }`,
-    component: ToggleDefaultExample,
+    component: ToggleDefaultExample
   },
   {
     title: 'Outline',
@@ -165,7 +170,7 @@ import { lucideItalic } from '@ng-icons/lucide';
 export class ToggleOutlineExample {
     selected = model(false);
 }`,
-    component: ToggleOutlineExample,
+    component: ToggleOutlineExample
   },
   {
     title: 'With Text',
@@ -187,7 +192,7 @@ import { lucideItalic } from '@ng-icons/lucide';
 export class ToggleWithTextExample {
     selected = model(false);
 }`,
-    component: ToggleWithTextExample,
+    component: ToggleWithTextExample
   },
   {
     title: 'Sizes',
@@ -220,7 +225,7 @@ export class ToggleSizesExample {
     selectedDefault = model(false);
     selectedLg = model(false);
 }`,
-    component: ToggleSizesExample,
+    component: ToggleSizesExample
   },
   {
     title: 'Disabled',
@@ -241,6 +246,6 @@ import { lucideUnderline } from '@ng-icons/lucide';
 export class ToggleDisabledExample {
     selected = model(false);
 }`,
-    component: ToggleDisabledExample,
-  },
+    component: ToggleDisabledExample
+  }
 ];

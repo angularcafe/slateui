@@ -6,9 +6,11 @@ import { switchVariants, switchMeta } from './switch.variants';
   selector: 'docs-switch',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="switchMeta" [variants]="switchVariants">
+    <docs-component-preview 
+      [meta]="switchMeta" 
+      [variants]="switchVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Switch {
   switchMeta = switchMeta;

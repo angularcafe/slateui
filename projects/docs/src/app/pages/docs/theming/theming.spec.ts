@@ -8,8 +8,9 @@ describe('Theming', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Theming],
-    }).compileComponents();
+      imports: [Theming]
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(Theming);
     component = fixture.componentInstance;

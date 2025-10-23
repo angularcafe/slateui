@@ -7,9 +7,11 @@ import { tableVariants, tableMeta } from './table.variants';
   standalone: true,
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="tableMeta" [variants]="tableVariants">
+    <docs-component-preview 
+      [meta]="tableMeta" 
+      [variants]="tableVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Table {
   tableMeta = tableMeta;

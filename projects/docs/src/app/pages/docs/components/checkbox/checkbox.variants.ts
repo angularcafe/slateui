@@ -1,8 +1,5 @@
 import { Component, signal } from '@angular/core';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 import { UiCheckbox, UiLabel, UiButton, UiFormField, UiDescription } from 'ui';
 
 // Default checkbox example
@@ -10,72 +7,70 @@ import { UiCheckbox, UiLabel, UiButton, UiFormField, UiDescription } from 'ui';
   selector: 'checkbox-default-example',
   template: `
     <div class="flex flex-col gap-6">
-      <div class="flex items-center gap-3" uiFormField>
-        <ui-checkbox [(checked)]="termsChecked" />
-        <label uiLabel>Accept terms and conditions</label>
-      </div>
-      <div class="flex items-start gap-3" uiFormField>
-        <ui-checkbox [(checked)]="termsWithDescChecked"></ui-checkbox>
-        <div class="grid gap-2">
-          <label uiLabel>Accept terms and conditions</label>
-          <p uiDescription>
-            By clicking this checkbox, you agree to the terms and conditions.
-          </p>
+        <div class="flex items-center gap-3" uiFormField>
+            <ui-checkbox [(checked)]="termsChecked" />
+            <label uiLabel>Accept terms and conditions</label>
         </div>
-      </div>
-      <div class="flex items-center gap-3" uiFormField>
-        <ui-checkbox [(checked)]="disabledChecked" disabled />
-        <label uiLabel>Accept terms and conditions</label>
-      </div>
-      <div class="grid w-full max-w-md items-start gap-3" uiLabel uiFormField>
-        <div
-          class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950"
-        >
-          <ui-checkbox
-            [(checked)]="notificationsChecked"
-            class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600"
-          ></ui-checkbox>
-          <div class="grid gap-1.5 font-normal">
-            <p uiLabel>Enable notifications</p>
-            <p uiDescription>
-              You can enable or disable notifications at any time.
-            </p>
-          </div>
+        <div class="flex items-start gap-3" uiFormField>
+            <ui-checkbox [(checked)]="termsWithDescChecked"></ui-checkbox>
+            <div class="grid gap-2">
+            <label uiLabel>Accept terms and conditions</label>
+                <p uiDescription>
+                    By clicking this checkbox, you agree to the terms and conditions.
+                </p>
+            </div>
         </div>
-      </div>
+        <div class="flex items-center gap-3" uiFormField>
+            <ui-checkbox [(checked)]="disabledChecked" disabled />
+            <label uiLabel>Accept terms and conditions</label>
+        </div>
+        <div class="grid w-full max-w-md items-start gap-3" uiLabel uiFormField>
+            <div class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
+            <ui-checkbox [(checked)]="notificationsChecked"
+            class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600"></ui-checkbox>
+                <div class="grid gap-1.5 font-normal">
+                <p uiLabel>
+                    Enable notifications
+                </p>
+                <p uiDescription>
+                    You can enable or disable notifications at any time.
+                </p>
+                </div>
+            </div>
+        </div>
     </div>
   `,
   standalone: true,
   imports: [UiCheckbox, UiLabel, UiFormField, UiDescription],
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
-  },
+    'class': 'w-2/3 space-y-6 mx-auto'
+  }
 })
 export class CheckboxDefaultExample {
-  termsChecked = signal(false);
-  termsWithDescChecked = signal(true);
-  disabledChecked = signal(false);
-  notificationsChecked = signal(true);
-  termsCheckedChange(event: boolean) {
-    console.log('termsCheckedChange', event);
-  }
+    termsChecked = signal(false);
+    termsWithDescChecked = signal(true);
+    disabledChecked = signal(false);
+    notificationsChecked = signal(true);
+    termsCheckedChange(event: boolean) {
+        console.log('termsCheckedChange', event);
+    }
 }
 
 // Checkbox with label example
 @Component({
-  selector: 'checkbox-with-label-example',
-  template: `
-    <div class="flex items-center gap-3" uiFormField>
-      <ui-checkbox [(checked)]="checked" />
-      <label uiLabel>Accept terms and conditions</label>
+    selector: 'checkbox-with-label-example',
+    template: `
+      <div class="flex items-center gap-3" uiFormField>
+        <ui-checkbox [(checked)]="checked" />
+        <label uiLabel>Accept terms and conditions</label>
     </div>
-  `,
-  standalone: true,
-  imports: [UiCheckbox, UiLabel, UiFormField],
-})
-export class CheckboxWithLabelExample {
-  checked = signal(true);
-}
+    `,
+    standalone: true,
+    imports: [UiCheckbox, UiLabel, UiFormField]
+  })
+  export class CheckboxWithLabelExample {
+    checked = signal(true);
+  }
 
 // Checkbox with description example
 @Component({
@@ -94,7 +89,7 @@ export class CheckboxWithLabelExample {
     </div>
   `,
   standalone: true,
-  imports: [UiCheckbox, UiLabel, UiFormField, UiDescription],
+  imports: [UiCheckbox, UiLabel, UiFormField, UiDescription]
 })
 export class CheckboxWithDescriptionExample {
   checked = signal(true);
@@ -114,8 +109,8 @@ export class CheckboxWithDescriptionExample {
   standalone: true,
   imports: [UiCheckbox, UiLabel, UiFormField],
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
-  },
+    'class': 'w-2/3 space-y-6 mx-auto'
+  }
 })
 export class CheckboxDisabledExample {
   checked = signal(false);
@@ -126,25 +121,23 @@ export class CheckboxDisabledExample {
   selector: 'checkbox-custom-styling-example',
   template: `
     <div class="grid w-full max-w-md items-start gap-3" uiLabel uiFormField>
-      <div
-        class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950"
-      >
-        <ui-checkbox
-          [(checked)]="checked"
-          class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600"
-        >
+      <div class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
+        <ui-checkbox [(checked)]="checked" 
+        class="data-[checked]:border-blue-600 data-[checked]:bg-blue-600 data-[checked]:text-white dark:data-[checked]:border-blue-700 dark:data-[checked]:bg-blue-600">
         </ui-checkbox>
         <div class="grid gap-1.5 font-normal">
-          <p uiLabel>Enable notifications</p>
-          <p uiDescription>
-            You can enable or disable notifications at any time.
-          </p>
+            <p uiLabel>
+                Enable notifications
+            </p>
+            <p uiDescription>
+                You can enable or disable notifications at any time.
+            </p>
+            </div>
         </div>
-      </div>
     </div>
   `,
   standalone: true,
-  imports: [UiCheckbox, UiFormField, UiDescription, UiLabel],
+  imports: [UiCheckbox, UiFormField, UiDescription, UiLabel]
 })
 export class CheckboxCustomStylingExample {
   checked = signal(true);
@@ -162,7 +155,7 @@ export class CheckboxCustomStylingExample {
             Select the items you want to display in the sidebar.
           </p>
         </div>
-
+        
         <div class="space-y-3">
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
@@ -170,35 +163,35 @@ export class CheckboxCustomStylingExample {
               <label uiLabel class="text-sm font-normal">Recents</label>
             </div>
           </div>
-
+          
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
               <ui-checkbox [(checked)]="home" />
               <label uiLabel class="text-sm font-normal">Home</label>
             </div>
           </div>
-
+          
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
               <ui-checkbox [(checked)]="applications" />
               <label uiLabel class="text-sm font-normal">Applications</label>
             </div>
           </div>
-
+          
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
               <ui-checkbox [(checked)]="desktop" />
               <label uiLabel class="text-sm font-normal">Desktop</label>
             </div>
           </div>
-
+          
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
               <ui-checkbox [(checked)]="downloads" />
               <label uiLabel class="text-sm font-normal">Downloads</label>
             </div>
           </div>
-
+          
           <div class="grid w-full max-w-sm items-center gap-3" uiFormField>
             <div class="flex items-center gap-2">
               <ui-checkbox [(checked)]="documents" />
@@ -206,16 +199,15 @@ export class CheckboxCustomStylingExample {
             </div>
           </div>
         </div>
-
-        <button
-          uiButton
+        
+        <button 
+          uiButton 
           (click)="submitForm()"
           [disabled]="selectedItems.length === 0"
-          class="w-full"
-        >
+          class="w-full">
           Submit
         </button>
-
+        
         @if (selectedItems.length > 0) {
           <div class="text-sm text-muted-foreground">
             Selected: {{ selectedItems.join(', ') }}
@@ -227,8 +219,8 @@ export class CheckboxCustomStylingExample {
   standalone: true,
   imports: [UiCheckbox, UiLabel, UiButton, UiFormField],
   host: {
-    class: 'w-2/3 space-y-6 mx-auto',
-  },
+    'class': 'w-2/3 space-y-6 mx-auto'
+  }
 })
 export class CheckboxFormExample {
   recents = signal(true);
@@ -245,10 +237,12 @@ export class CheckboxFormExample {
       { key: 'applications', checked: this.applications },
       { key: 'desktop', checked: this.desktop },
       { key: 'downloads', checked: this.downloads },
-      { key: 'documents', checked: this.documents },
+      { key: 'documents', checked: this.documents }
     ];
-
-    return items.filter((item) => item.checked()).map((item) => item.key);
+    
+    return items
+      .filter(item => item.checked())
+      .map(item => item.key);
   }
 
   submitForm(): void {
@@ -259,11 +253,10 @@ export class CheckboxFormExample {
 
 export const checkboxMeta: IComponentMeta = {
   title: 'Checkbox',
-  description:
-    'A control that allows the user to toggle between checked and not checked.',
+  description: 'A control that allows the user to toggle between checked and not checked.',
   installation: {
     import: `import { UiCheckbox } from '@workspace/ui/checkbox';`,
-    usage: `<ui-checkbox [(checked)]="checked" />`,
+    usage: `<ui-checkbox [(checked)]="checked" />`
   },
   api: {
     props: [
@@ -272,50 +265,50 @@ export const checkboxMeta: IComponentMeta = {
         type: 'boolean',
         default: 'false',
         description: 'Whether the checkbox is checked.',
-        required: false,
+        required: false
       },
       {
         name: 'indeterminate',
         type: 'boolean',
         default: 'false',
         description: 'Whether the checkbox is in an indeterminate state.',
-        required: false,
+        required: false
       },
       {
         name: 'required',
         type: 'boolean',
         default: 'false',
         description: 'Whether the checkbox is required.',
-        required: false,
+        required: false
       },
       {
         name: 'disabled',
         type: 'boolean',
         default: 'false',
         description: 'Whether the checkbox is disabled.',
-        required: false,
+        required: false
       },
       {
         name: 'class',
         type: 'string',
         default: '""',
         description: 'Additional CSS classes to apply to the checkbox.',
-        required: false,
-      },
+        required: false
+      }
     ],
     outputs: [
       {
         name: 'checkedChange',
         type: 'boolean',
-        description: 'Emitted when the checked state changes.',
+        description: 'Emitted when the checked state changes.'
       },
       {
         name: 'indeterminateChange',
         type: 'boolean',
-        description: 'Emitted when the indeterminate state changes.',
-      },
-    ],
-  },
+        description: 'Emitted when the indeterminate state changes.'
+      }
+    ]
+  }
 };
 
 export const checkboxVariants: IVariant[] = [
@@ -377,7 +370,7 @@ export class CheckboxDefaultExample {
         console.log('termsCheckedChange', event);
     }
 }`,
-    component: CheckboxDefaultExample,
+    component: CheckboxDefaultExample
   },
   {
     title: 'With Label',
@@ -399,7 +392,7 @@ import { UiCheckbox, UiLabel, UiFormField } from '@workspace/ui/checkbox';
   export class CheckboxWithLabelExample {
     checked = signal(true);
   }`,
-    component: CheckboxWithLabelExample,
+    component: CheckboxWithLabelExample
   },
   {
     title: 'With Description',
@@ -428,7 +421,7 @@ import { UiCheckbox, UiLabel, UiFormField, UiDescription } from '@workspace/ui/c
 export class CheckboxWithDescriptionExample {
   checked = signal(true);
 }`,
-    component: CheckboxWithDescriptionExample,
+    component: CheckboxWithDescriptionExample
   },
   {
     title: 'Disabled',
@@ -455,7 +448,7 @@ import { UiCheckbox, UiLabel, UiFormField } from '@workspace/ui/checkbox';
 export class CheckboxDisabledExample {
   checked = signal(false);
 }`,
-    component: CheckboxDisabledExample,
+    component: CheckboxDisabledExample
   },
   {
     title: 'Custom Styling',
@@ -488,7 +481,7 @@ import { UiCheckbox, UiFormField, UiDescription, UiLabel } from '@workspace/ui/c
 export class CheckboxCustomStylingExample {
   checked = signal(true);
 }`,
-    component: CheckboxCustomStylingExample,
+    component: CheckboxCustomStylingExample
   },
   {
     title: 'Form with Multiple Checkboxes',
@@ -602,6 +595,6 @@ export class CheckboxFormExample {
     // In a real app, you would submit this data
   }
 }`,
-    component: CheckboxFormExample,
-  },
+    component: CheckboxFormExample
+  }
 ];

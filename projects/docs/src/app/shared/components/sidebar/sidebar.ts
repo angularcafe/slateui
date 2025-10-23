@@ -24,21 +24,19 @@ interface NavSection {
   selector: 'docs-sidebar',
   standalone: true,
   imports: [RouterLink, NgIcon, NgTemplateOutlet, RouterLinkActive, UiButton],
-  viewProviders: [
-    provideIcons({ lucideX, bootstrapGithub, bootstrapTwitterX, tablerBlur }),
-  ],
-  templateUrl: './sidebar.html',
+  viewProviders: [provideIcons({ lucideX, bootstrapGithub, bootstrapTwitterX, tablerBlur })],
+  templateUrl: './sidebar.html'
 })
 export class Sidebar {
   themeService = inject(ThemeService);
   // Two-way binding model signal for menu state
   readonly menuOpen = model(false);
-
+  
   // Sort method for components
   private sortComponents(components: NavLink[]): NavLink[] {
     return components.sort((a, b) => a.name.localeCompare(b.name));
   }
-
+  
   // Clean navigation structure
   readonly sections = signal<NavSection[]>([
     {
@@ -48,8 +46,8 @@ export class Sidebar {
         { name: 'Installation', path: 'installation' },
         { name: 'Theming', path: 'theming' },
         { name: 'Dark Mode', path: 'dark-mode' },
-        { name: 'CLI', path: 'cli' },
-      ],
+        { name: 'CLI', path: 'cli' }
+      ]
     },
     {
       title: 'Components',
@@ -82,9 +80,9 @@ export class Sidebar {
         { name: 'Table', path: 'table' },
         { name: 'Toggle', path: 'toggle' },
         { name: 'Toggle Group', path: 'toggle-group' },
-        { name: 'Skeleton', path: 'skeleton' },
-      ]),
-    },
+        { name: 'Skeleton', path: 'skeleton' }
+      ])
+    }
   ]);
 
   // Close menu method for better UX
@@ -93,6 +91,8 @@ export class Sidebar {
   }
 
   toggleTheme() {
-    this.themeService.setTheme(this.themeService.isDark() ? 'light' : 'dark');
+    this.themeService.setTheme(
+      this.themeService.isDark() ? 'light' : 'dark'
+    );
   }
 }

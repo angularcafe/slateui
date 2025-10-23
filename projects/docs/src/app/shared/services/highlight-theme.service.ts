@@ -9,27 +9,19 @@ export interface HighlightTheme {
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class HighlightThemeService {
   private hljsLoader = inject(HighlightLoader);
   private themeService = inject(ThemeService);
   readonly availableThemes: HighlightTheme[] = [
-    {
-      name: 'GitHub Light',
-      path: 'assets/styles/highlight-themes/github.css',
-      type: 'light',
-    },
-    {
-      name: 'GitHub Dark',
-      path: 'assets/styles/highlight-themes/github-dark.css',
-      type: 'dark',
-    },
+    { name: 'GitHub Light', path: 'assets/styles/highlight-themes/github.css', type: 'light' },
+    { name: 'GitHub Dark', path: 'assets/styles/highlight-themes/github-dark.css', type: 'dark' }
   ];
 
   constructor() {
     this.setInitialTheme();
-
+    
     // Watch theme changes and update highlight.js theme accordingly
     effect(() => {
       const currentTheme = this.themeService.resolvedTheme();
@@ -50,7 +42,7 @@ export class HighlightThemeService {
    * @param theme The current theme ('light' or 'dark')
    */
   private updateHighlightTheme(theme: 'light' | 'dark'): void {
-    const matchingTheme = this.availableThemes.find((t) => t.type === theme);
+    const matchingTheme = this.availableThemes.find(t => t.type === theme);
     if (matchingTheme) {
       this.hljsLoader.setTheme(matchingTheme.path);
     }
@@ -62,6 +54,6 @@ export class HighlightThemeService {
    */
   getCurrentTheme(): HighlightTheme | undefined {
     const currentAppTheme = this.themeService.isDark() ? 'dark' : 'light';
-    return this.availableThemes.find((t) => t.type === currentAppTheme);
+    return this.availableThemes.find(t => t.type === currentAppTheme);
   }
-}
+} 

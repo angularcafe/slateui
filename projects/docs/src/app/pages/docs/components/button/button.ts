@@ -6,9 +6,11 @@ import { buttonVariants, buttonMeta } from './button.variants';
   selector: 'docs-button',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="buttonMeta" [variants]="buttonVariants">
+    <docs-component-preview 
+      [meta]="buttonMeta" 
+      [variants]="buttonVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Button {
   buttonMeta = buttonMeta;

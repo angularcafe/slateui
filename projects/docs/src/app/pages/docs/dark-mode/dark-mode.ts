@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
   selector: 'docs-dark-mode',
   standalone: true,
   imports: [],
-  templateUrl: './dark-mode.html',
+  templateUrl: './dark-mode.html'
 })
-export class DarkMode {}
+export class DarkMode {
+
+}

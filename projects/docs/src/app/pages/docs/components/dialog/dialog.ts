@@ -6,11 +6,14 @@ import { dialogVariants, dialogMeta } from './dialog.variants';
   selector: 'docs-dialog',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="dialogMeta" [variants]="dialogVariants">
+    <docs-component-preview 
+      [meta]="dialogMeta" 
+      [variants]="dialogVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Dialog {
   dialogMeta = dialogMeta;
   dialogVariants = dialogVariants;
 }
+

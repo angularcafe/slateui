@@ -7,11 +7,13 @@ import { progressVariants, progressMeta } from './progress.variants';
   standalone: true,
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview [meta]="progressMeta" [variants]="progressVariants">
+    <docs-component-preview 
+      [meta]="progressMeta" 
+      [variants]="progressVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Progress {
   progressMeta = progressMeta;
   progressVariants = progressVariants;
-}
+} 

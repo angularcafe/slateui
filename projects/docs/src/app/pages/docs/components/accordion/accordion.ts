@@ -6,14 +6,14 @@ import { accordionVariants, accordionMeta } from './accordion.variants';
   selector: 'docs-accordion',
   imports: [ComponentPreview],
   template: `
-    <docs-component-preview
-      [meta]="accordionMeta"
-      [variants]="accordionVariants"
-    >
+    <docs-component-preview 
+      [meta]="accordionMeta" 
+      [variants]="accordionVariants">
     </docs-component-preview>
-  `,
+  `
 })
 export class Accordion {
   accordionMeta = accordionMeta;
   accordionVariants = accordionVariants;
 }
+

@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from 'ui';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideUser, lucideLock } from '@ng-icons/lucide';
-import {
-  IVariant,
-  IComponentMeta,
-} from '@components/component-preview/component-preview';
+import { IVariant, IComponentMeta } from '@components/component-preview/component-preview';
 
 // Tabs example components for dynamic rendering
 @Component({
@@ -24,7 +21,7 @@ import {
       </div>
     </div>
   `,
-  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent],
+  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent]
 })
 export class TabsDefaultExample {}
 
@@ -51,7 +48,7 @@ export class TabsDefaultExample {}
     </div>
   `,
   imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent, NgIcon],
-  providers: [provideIcons({ lucideUser, lucideLock })],
+  providers: [provideIcons({ lucideUser, lucideLock })]
 })
 export class TabsWithIconsExample {}
 
@@ -62,9 +59,7 @@ export class TabsWithIconsExample {}
       <div uiTabsList class="flex-col h-auto">
         <button uiTabsTrigger uiTabsTriggerValue="account">Account</button>
         <button uiTabsTrigger uiTabsTriggerValue="password">Password</button>
-        <button uiTabsTrigger uiTabsTriggerValue="notifications">
-          Notifications
-        </button>
+        <button uiTabsTrigger uiTabsTriggerValue="notifications">Notifications</button>
       </div>
       <div uiTabsContent uiTabsContentValue="account">
         <div class="p-4">Make changes to your account here.</div>
@@ -77,7 +72,7 @@ export class TabsWithIconsExample {}
       </div>
     </div>
   `,
-  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent],
+  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent]
 })
 export class TabsVerticalExample {}
 
@@ -87,16 +82,8 @@ export class TabsVerticalExample {}
     <div uiTabs class="w-full max-w-md">
       <div uiTabsList>
         <button uiTabsTrigger uiTabsTriggerValue="account">Account</button>
-        <button
-          uiTabsTrigger
-          uiTabsTriggerValue="password"
-          uiTabsTriggerDisabled
-        >
-          Password
-        </button>
-        <button uiTabsTrigger uiTabsTriggerValue="notifications">
-          Notifications
-        </button>
+        <button uiTabsTrigger uiTabsTriggerValue="password" uiTabsTriggerDisabled>Password</button>
+        <button uiTabsTrigger uiTabsTriggerValue="notifications">Notifications</button>
       </div>
       <div uiTabsContent uiTabsContentValue="account">
         <div class="p-4">Make changes to your account here.</div>
@@ -109,14 +96,13 @@ export class TabsVerticalExample {}
       </div>
     </div>
   `,
-  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent],
+  imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent]
 })
 export class TabsDisabledExample {}
 
 export const tabsMeta: IComponentMeta = {
   title: 'Tabs',
-  description:
-    'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
+  description: 'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
   installation: {
     package: 'tabs',
     import: `import { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@workspace/ui/directives';`,
@@ -126,65 +112,64 @@ export const tabsMeta: IComponentMeta = {
     <button uiTabsTrigger uiTabsTriggerValue="tab1">Tab 1</button>
   </div>
   <div uiTabsContent uiTabsContentValue="tab1">Content</div>
-</div>`,
+</div>`
   },
   api: {
     props: [
       {
         name: 'uiTabs',
         type: 'Directive',
-        description: 'The main tabs container directive.',
+        description: 'The main tabs container directive.'
       },
       {
         name: 'uiTabsList',
         type: 'Directive',
-        description: 'The container for tab triggers.',
+        description: 'The container for tab triggers.'
       },
       {
         name: 'uiTabsTrigger',
         type: 'Directive',
-        description: 'The clickable tab button.',
+        description: 'The clickable tab button.'
       },
       {
         name: 'uiTabsContent',
         type: 'Directive',
-        description: 'The content panel for each tab.',
+        description: 'The content panel for each tab.'
       },
       {
         name: 'uiTabsValue',
         type: 'string',
-        description: 'The value of the currently selected tab.',
+        description: 'The value of the currently selected tab.'
       },
       {
         name: 'uiTabsOrientation',
         type: '"horizontal" | "vertical"',
         default: '"horizontal"',
-        description: 'The orientation of the tabs.',
+        description: 'The orientation of the tabs.'
       },
       {
         name: 'uiTabsTriggerValue',
         type: 'string',
-        description: 'The value associated with this tab trigger.',
+        description: 'The value associated with this tab trigger.'
       },
       {
         name: 'uiTabsTriggerDisabled',
         type: 'boolean',
         default: 'false',
-        description: 'Whether the tab trigger is disabled.',
+        description: 'Whether the tab trigger is disabled.'
       },
       {
         name: 'uiTabsContentValue',
         type: 'string',
-        description:
-          'The value that matches this content panel to its trigger.',
+        description: 'The value that matches this content panel to its trigger.'
       },
       {
         name: 'class',
         type: 'string',
-        description: 'Additional CSS classes to apply to the element.',
-      },
-    ],
-  },
+        description: 'Additional CSS classes to apply to the element.'
+      }
+    ]
+  }
 };
 
 export const tabsVariants: IVariant[] = [
@@ -212,7 +197,7 @@ export const tabsVariants: IVariant[] = [
   imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent]
 })
 export class TabsDefaultExample {}`,
-    component: TabsDefaultExample,
+    component: TabsDefaultExample
   },
   {
     title: 'With Icons',
@@ -247,7 +232,7 @@ import { lucideUser, lucideLock } from '@ng-icons/lucide';
   providers: [provideIcons({ lucideUser, lucideLock })]
 })
 export class TabsWithIconsExample {}`,
-    component: TabsWithIconsExample,
+    component: TabsWithIconsExample
   },
   {
     title: 'Disabled',
@@ -277,6 +262,6 @@ export class TabsWithIconsExample {}`,
   imports: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent]
 })
 export class TabsDisabledExample {}`,
-    component: TabsDisabledExample,
-  },
-];
+    component: TabsDisabledExample
+  }
+]; 
